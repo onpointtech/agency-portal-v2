@@ -1,0 +1,18 @@
+{
+    "cluster": "{{Cluster}}",
+    "serviceName": "{{ServiceName}}",
+    "taskDefinition": "{{TaskDefName}}",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "{{TargetGroupArn}}",
+            "containerName": "{{TaskDefName}}-Container",
+            "containerPort": {{containerPort}}
+        }  
+    ],
+    "desiredCount": 1,
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 0
+    },
+    "healthCheckGracePeriodSeconds": 60
+}
