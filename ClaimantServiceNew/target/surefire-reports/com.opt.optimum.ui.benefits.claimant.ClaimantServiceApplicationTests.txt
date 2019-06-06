@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.opt.optimum.ui.benefits.claimant.ClaimantServiceApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.659 s - in com.opt.optimum.ui.benefits.claimant.ClaimantServiceApplicationTests
