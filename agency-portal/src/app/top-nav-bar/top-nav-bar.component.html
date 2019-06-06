@@ -1,0 +1,30 @@
+  <!--Top Nav Bar Section-->
+  <nav class="navbar navbar-default" aria-label="Top Nav Bar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-7 col-sm-push-5 margin-bot-sm">
+           <div class="row pull-right">
+            <span class="hidden-xs">
+              <span class="icon margin-right custom-welcome">Welcome User</span>
+            </span>
+            <a [routerLink] = "['login']" class="view icon p-2 custom-m-1" ui-sref="sign-out({ manualSignout:true })">Logout</a>
+            <span ng-if="searchBar.displayLanguageTranslator" ></span>
+          </div>
+        </div>
+        <div class="col-sm-5 col-sm-pull-7">
+          <button type="button" id="sidebarCollapse" class="pull-left icon btn btn-primary" title="Menu" aria-label="Menu">
+            <i class="fa fa-bars"></i>
+          </button>
+          <form role="search" class="navbar-form-custom searchbar-custom search-bar-width" >
+            <div class="input-group">
+              <input type="text" placeholder="Search" ng-model="searchBar.searchText" class="form-control" name="top-search" id="top-search" aria-label="search-field">
+              <span class="input-group-addon" ng-click="searchBar.searchClaimant()">
+               <i class="fa fa-search"></i>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--End Top Nav Bar-->
