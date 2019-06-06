@@ -1,12 +1,17 @@
 package com.opt.optimum.ui.benefits.claimant.entity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -35,6 +40,10 @@ public class ClaimantProfile {
 	String lastInsertUpdateBy;
 	String ivrPin;
 	String documentDeliveryPreference;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "claimantId", nullable = false)
+	public List<Address> address;
 	
 	public long getClaimantId() {
 		return claimantId;
@@ -137,5 +146,11 @@ public class ClaimantProfile {
 	}
 	public void setDocumentDeliveryPreference(String documentDeliveryPreference) {
 		this.documentDeliveryPreference = documentDeliveryPreference;
+	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
 }
