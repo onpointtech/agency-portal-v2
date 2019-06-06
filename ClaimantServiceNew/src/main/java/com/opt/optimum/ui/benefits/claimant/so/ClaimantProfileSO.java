@@ -1,6 +1,14 @@
 package com.opt.optimum.ui.benefits.claimant.so;
 
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.opt.optimum.ui.benefits.claimant.entity.Address;
 
 public class ClaimantProfileSO {
 	long claimantId;
@@ -18,6 +26,12 @@ public class ClaimantProfileSO {
 	String ethnicity;
 	String ivrPin;
 	String documentDeliveryPreference;
+	OffsetDateTime lastInsertUpdateTS;
+	String lastInsertUpdateBy;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "claimantId", nullable = false)
+	public List<Address> address;
 	
 	public long getClaimantId() {
 		return claimantId;
@@ -108,6 +122,24 @@ public class ClaimantProfileSO {
 	}
 	public void setDocumentDeliveryPreference(String documentDeliveryPreference) {
 		this.documentDeliveryPreference = documentDeliveryPreference;
+	}
+	public OffsetDateTime getLastInsertUpdateTS() {
+		return lastInsertUpdateTS;
+	}
+	public void setLastInsertUpdateTS(OffsetDateTime lastInsertUpdateTS) {
+		this.lastInsertUpdateTS = lastInsertUpdateTS;
+	}
+	public String getLastInsertUpdateBy() {
+		return lastInsertUpdateBy;
+	}
+	public void setLastInsertUpdateBy(String lastInsertUpdateBy) {
+		this.lastInsertUpdateBy = lastInsertUpdateBy;
+	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
 	@Override
 	public String toString() {
