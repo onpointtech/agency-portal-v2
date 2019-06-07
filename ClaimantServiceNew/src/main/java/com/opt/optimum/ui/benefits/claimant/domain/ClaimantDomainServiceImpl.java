@@ -4,6 +4,7 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.text.RandomStringGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,8 @@ import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
 import com.opt.optimum.ui.benefits.claimant.repo.AddressRepository;
 import com.opt.optimum.ui.benefits.claimant.repo.ClaimantProfileRepository;
 import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
+import java.lang.Object;
+
 
 @Service("ClaimantDomainServiceImpl")
 public class ClaimantDomainServiceImpl implements ClaimantDomainService{
@@ -25,20 +28,36 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		this.addressRepository = addressRepository;
 	}
 	
+	
 	public long registerClaimant(ClaimantProfile claimantProfile) {
 		claimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
 		for(Address address : claimantProfile.address) {
 			address.setLastInsertUpdateTS(OffsetDateTime.now());
 		}
-		ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
 		
+		String alternateIdToCheck = generateAlternateId();
+		
+		//generate an initial value for alternateId
+		//while getClaimantByAlternateId(alternateIdToCheck) returns a value
+		//then generate a new alternateClaimantId
+		//when while loop stops then assign claimantprofile with the alternateID
+		
+		claimantProfile.setAlternateClaimantId(alternateIdToCheck);
+		ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
+
 		return newClaimantProfile.getClaimantId();
+		
 	}
 
 	@Override
 	public ClaimantProfile getClaimantById(long claimantId) {
 		return claimantProfileRepository.findById(claimantId).get();
 	}
+	
+	public ClaimantProfile getClaimantByAlternateId(long alternateClaimantId) {
+		return claimantProfileRepository.findById(alternateClaimantId).get();
+	}
+	
 	
 	public List<ClaimantProfile> getAllClaimants() {
 		List<ClaimantProfile> claimantProfiles = new ArrayList<>();
@@ -96,4 +115,13 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		
 		return claimantProfileRepository.save(oldClaimantProfile);
 	}
+	
+	public String generateAlternateId() {
+		RandomStringGenerator generator = new RandomStringGenerator.Builder()
+											.withinRange('0','Z')
+											.build();
+		return generator.generate(9);
+		
+	}
+	
 }

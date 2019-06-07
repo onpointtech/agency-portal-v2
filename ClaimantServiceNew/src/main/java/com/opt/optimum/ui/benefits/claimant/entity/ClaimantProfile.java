@@ -15,12 +15,18 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.apache.commons.text.RandomStringGenerator;
+
+import java.lang.Object;
+
+
 @Entity
 public class ClaimantProfile {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long claimantId;
+	String alternateClaimantId;
 	String ssn;
 	LocalDate dateOfBirth;	
 	@NotNull @Size(max=50)
@@ -51,6 +57,16 @@ public class ClaimantProfile {
 	public void setClaimantId(long claimantId) {
 		this.claimantId = claimantId;
 	}
+	
+	
+	public String getAlternateClaimantId() {
+		return alternateClaimantId;
+	}
+	public void setAlternateClaimantId(String alternateClaimantId) {
+		this.alternateClaimantId = alternateClaimantId;
+	}
+	
+	
 	public String getSsn() {
 		return ssn;
 	}
