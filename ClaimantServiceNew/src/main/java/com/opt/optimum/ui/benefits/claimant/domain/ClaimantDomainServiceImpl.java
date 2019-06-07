@@ -27,6 +27,9 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 	
 	public long registerClaimant(ClaimantProfile claimantProfile) {
 		claimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
+		for(Address address : claimantProfile.address) {
+			address.setLastInsertUpdateTS(OffsetDateTime.now());
+		}
 		ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
 		
 		return newClaimantProfile.getClaimantId();
@@ -84,6 +87,12 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		if(updatedClaimantProfile.getRace() != null && updatedClaimantProfile.getRace() != "") {
 			oldClaimantProfile.setRace(updatedClaimantProfile.getRace());
 		}
+		
+		if(updatedClaimantProfile.getLastInsertUpdateBy() != null && updatedClaimantProfile.getLastInsertUpdateBy() != "") {
+			oldClaimantProfile.setLastInsertUpdateBy(updatedClaimantProfile.getLastInsertUpdateBy());
+		}
+		
+		oldClaimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
 		
 		return claimantProfileRepository.save(oldClaimantProfile);
 	}
