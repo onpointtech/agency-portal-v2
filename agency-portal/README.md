@@ -1,8 +1,27 @@
 # Cid's guide
 
-## how to install
+## how to install (Windows)
+install git
+
+git clone the repository
+`https://github.com/onpointtech/agency-portal-v2.git`
+
+Open the folder agency-portal
+`cd agency-portal`
+
+
+Install the node modules
+`npm install`
+
 
 ## how to run
+To run type
+`ng serve`
+
+open this in your browser
+`localhost:4200`
+
+
 
 ## how to develop
 
