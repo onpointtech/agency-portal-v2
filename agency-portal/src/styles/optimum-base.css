@@ -720,18 +720,6 @@ div[id^="toast-container"] {
   z-index: 999999;
   /*overrides*/
 }
-div[id^="toast-container"] > .toast-info:before {
-    content: "\f05a";
-}
-div[id^="toast-container"] > .toast-warning:before {
-  content: "\f071";
-}
-div[id^="toast-container"] > .toast-error:before {
-  content: "\f057";
-}
-div[id^="toast-container"] > .toast-success:before {
-  content: "\f00c";
-}
 div[id^="toast-container"] .toast {
   position: relative;
   overflow: hidden;

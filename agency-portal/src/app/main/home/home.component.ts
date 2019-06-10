@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { ToastContainerDirective } from 'ngx-toastr';
+import { ToasterService } from '../../portal-services/toaster.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
 
-  constructor() { }
+  constructor(private toasterService: ToasterService) { }
 
   ngOnInit() {
+    this.toasterService.overlayContainer = this.toastContainer;
+  }
+
+  success(){
+    this.toasterService.success("Success!", "Welcome to Home", 200);
   }
 
 }
