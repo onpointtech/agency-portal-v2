@@ -2,9 +2,9 @@ package com.opt.optimum.ui.benefits.claimant.domain;
 
 import java.util.List;
 
-import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
-import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
+
+
 
 public interface ClaimantDomainService {
 

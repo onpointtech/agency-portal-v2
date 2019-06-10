@@ -2,6 +2,8 @@ package com.opt.optimum.ui.benefits.claimant.so;
 
 import java.time.OffsetDateTime;
 
+import com.opt.optimum.ui.benefits.claimant.entity.ClaimantPaymentMethod;
+
 public class UpdateClaimantProfileSO {
 	String middleInitial;
 	String homePhone;
@@ -9,13 +11,20 @@ public class UpdateClaimantProfileSO {
 	String languagePreference;
 	String educationLevel;
 	String gender;
-	String race;;
+	String race;
 	String ethnicity;
 	String ivrPin;
 	String documentDeliveryPreference;
 	OffsetDateTime lastInsertUpdateTS;
 	String lastInsertUpdateBy;
+	ClaimantPaymentMethod paymentMethod;
 	
+	public ClaimantPaymentMethod getPaymentMethod() {
+		return paymentMethod;
+	}
+	public void setPaymentMethod(ClaimantPaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
 	public String getMiddleInitial() {
 		return middleInitial;
 	}
@@ -75,12 +84,6 @@ public class UpdateClaimantProfileSO {
 	}
 	public void setDocumentDeliveryPreference(String documentDeliveryPreference) {
 		this.documentDeliveryPreference = documentDeliveryPreference;
-	}
-	public OffsetDateTime getLastInsertUpdateTS() {
-		return lastInsertUpdateTS;
-	}
-	public void setLastInsertUpdateTS(OffsetDateTime lastInsertUpdateTS) {
-		this.lastInsertUpdateTS = lastInsertUpdateTS;
 	}
 	public String getLastInsertUpdateBy() {
 		return lastInsertUpdateBy;

@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.claimant.domain.ClaimantDomainService;
 import com.opt.optimum.ui.benefits.claimant.domain.ClaimantDomainServiceImpl;
-import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
+
+
 import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
 import com.opt.optimum.ui.benefits.claimant.so.UpdateClaimantProfileSO;
 
@@ -51,4 +52,7 @@ public class ClaimantBusinessServiceImpl implements ClaimantBusinessService{
 		ClaimantProfile claimantProfile = modelMapper.map(updateClaimantProfileSO, ClaimantProfile.class);
 		return claimantDomainService.updateClaimant(claimantProfile, claimantId);
 	}
+
+
+	
 }

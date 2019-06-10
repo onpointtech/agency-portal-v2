@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessService;
-import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessServiceImpl;
-import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
 import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
 import com.opt.optimum.ui.benefits.claimant.so.UpdateClaimantProfileSO;
+
 
 @RestController
 @RequestMapping("/api/claimant")
@@ -30,26 +29,36 @@ public class ClaimantController {
 		this.claimantBusinessService = claimantBusinessService;
 	}
 	
-	@RequestMapping(value = "/registerClaimant", method = RequestMethod.POST)
+	@RequestMapping(value = "/register-claimant", method = RequestMethod.POST)
 	public long registerClaimant(@RequestBody ClaimantProfileSO claimantProfileSO) {
 		logger.info("Register Claimant Request Received ", claimantProfileSO.toString());
 		return claimantBusinessService.registerClaimant(claimantProfileSO);
 	}
 	
-	@RequestMapping(value = "/getClaimantById/{claimantId}", method = RequestMethod.GET)
+	/*
+	 * @RequestMapping(value = "/update-claimant-payment/{claimantId}", method =
+	 * RequestMethod.POST) public PaymentMethod updateClaimantPayment(@RequestBody
+	 * ClaimantPaymentSO claimantPaymentSO, @PathVariable long claimantId) { return
+	 * claimantBusinessService.updateClaimantPayment(claimantPaymentSO, claimantId);
+	 * }
+	 */
+	
+	@RequestMapping(value = "/get-claimant/{claimantId}", method = RequestMethod.GET)
 	public ClaimantProfile  getClaimantById(@PathVariable long claimantId) {
 		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantById(claimantId);
 		return claimantProfile;
 	}
 	
-	@RequestMapping(value = "/getAllClaimants", method = RequestMethod.GET)
+	@RequestMapping(value = "/get-claimants-list", method = RequestMethod.GET)
 	public List<ClaimantProfile> getAllClaimants() {
 		List<ClaimantProfile> claimantProfiles = claimantBusinessService.getAllClaimants();
 		return claimantProfiles;
 	}
 	
-	@RequestMapping(value = "/updateClaimant/{claimantId}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/update-claimant/{claimantId}", method = RequestMethod.PUT)
 	public ClaimantProfile updateClaimant(@RequestBody UpdateClaimantProfileSO claimantProfileSO, @PathVariable long claimantId) {
 		return claimantBusinessService.updateClaimant(claimantProfileSO, claimantId);
 	}
+	
+	
 }

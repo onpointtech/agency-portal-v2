@@ -10,10 +10,9 @@ import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
+
 import com.opt.optimum.ui.benefits.claimant.repo.AddressRepository;
 import com.opt.optimum.ui.benefits.claimant.repo.ClaimantProfileRepository;
-import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
-import java.lang.Object;
 
 
 @Service("ClaimantDomainServiceImpl")
@@ -36,11 +35,15 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		}
 		
 		String alternateIdToCheck = generateAlternateId();
-		
-		//generate an initial value for alternateId
-		//while getClaimantByAlternateId(alternateIdToCheck) returns a value
-		//then generate a new alternateClaimantId
-		//when while loop stops then assign claimantprofile with the alternateID
+		int infiniteLoopChecker = 0;
+		while (getClaimantByAlternateId(alternateIdToCheck)!= null) {
+			alternateIdToCheck = generateAlternateId();
+			// how to avoid an infinite loop
+			infiniteLoopChecker++;
+				if(infiniteLoopChecker > 5) {
+					throw  new RuntimeException();
+					}
+			}
 		
 		claimantProfile.setAlternateClaimantId(alternateIdToCheck);
 		ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
@@ -54,8 +57,8 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		return claimantProfileRepository.findById(claimantId).get();
 	}
 	
-	public ClaimantProfile getClaimantByAlternateId(long alternateClaimantId) {
-		return claimantProfileRepository.findById(alternateClaimantId).get();
+	public ClaimantProfile getClaimantByAlternateId(String alternateClaimantId) {
+		return claimantProfileRepository.findClaimantProfileByAlternateClaimantId(alternateClaimantId);
 	}
 	
 	
@@ -115,6 +118,7 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		
 		return claimantProfileRepository.save(oldClaimantProfile);
 	}
+	
 	
 	public String generateAlternateId() {
 		RandomStringGenerator generator = new RandomStringGenerator.Builder()
