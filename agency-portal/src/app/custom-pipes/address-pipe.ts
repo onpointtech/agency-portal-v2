@@ -1,8 +1,9 @@
 import { Pipe, PipeTransform } from "../../../node_modules/@angular/core";
+import { Address } from '../service-objects/address';
 
 @Pipe({name: 'addressFormat'})
 export class AddressFormatPipe implements PipeTransform {
-    transform(address: string[]): string {
+    transform(address: Address[]): string {
         let newAddress: string = "";
 
         for(var count = 0; count < Object.keys(address).length; count++){
