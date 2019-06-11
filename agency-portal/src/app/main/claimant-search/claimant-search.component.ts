@@ -8,16 +8,20 @@ import { ClaimantSO } from '../../service-objects/claimant-so';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  claimantSO: ClaimantSO[]
+  claimantSO: ClaimantSO[];
 
-  constructor(private claimantService: ClaimantService) { } //
+  columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+  
+  constructor(private claimantService: ClaimantService) { }
 
   ngOnInit() {
     this.getClaimantSO();
   }
 
   getClaimantSO(): void {
-    this.claimantService.getAllClaimants().subscribe(claimant => this.claimant = claimant);
+    this.claimantService
+      .getAllClaimants()
+      .subscribe(claimantSO => this.claimantSO = claimantSO);
   }
 
 }

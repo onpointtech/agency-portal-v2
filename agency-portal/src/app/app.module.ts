@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 
@@ -20,7 +22,9 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-import { HttpClient } from '@angular/common/http';
+import { SSNFormatPipe } from './custom-pipes/ssn-pipe';
+import { MobilePhoneFormatPipe } from './custom-pipes/mobile-phone-pipe';
+import { AddressFormatPipe } from './custom-pipes/address-pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,9 @@ import { HttpClient } from '@angular/common/http';
     ClaimantProfileComponent,
     ClaimantRegistrationComponent,
     ClaimComponent,
+    SSNFormatPipe,
+    MobilePhoneFormatPipe,
+    AddressFormatPipe,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,8 @@ import { HttpClient } from '@angular/common/http';
       closeButton: true,
       disableTimeOut: true,
     }),
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

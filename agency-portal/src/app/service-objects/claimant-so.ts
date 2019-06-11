@@ -1,3 +1,5 @@
+import { Address } from './address';
+
 export class ClaimantSO {
     claimantId: number;
     ssn: string;
@@ -12,8 +14,9 @@ export class ClaimantSO {
     gender: string;
     race: string;
     ethnicity: string;
-    ivrPin: string;
-    documentDeliveryPreference: string;
     lastInsertUpdateTS: Date;
     lastInsertUpdateBy: string;
+    ivrPin: string;
+    documentDeliveryPreference: string;
+    address: Address[];
 }
