@@ -23,8 +23,8 @@ export class ToasterService {
     this.toastr.warning("You are about to enter sensitive information.", "Warning")
  }
 
- danger(){
-  this.toastr.error("DANGER", "Danger")
+ danger(title: string, text:string){
+  this.toastr.error(text, title);
  }
 
 

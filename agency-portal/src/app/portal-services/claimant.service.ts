@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { Observable, EMPTY, BehaviorSubject } from 'rxjs';
 import { ClaimantSO } from '../service-objects/claimant-so';
-import { UpdateClaimantSO } from '../service-objects/update-claimant-so';
+import { ToasterService } from './toaster.service';
+import { catchError } from 'rxjs/operators'
 //import { Claimant } from '../mock-claimant';
 
 
@@ -11,9 +12,7 @@ import { UpdateClaimantSO } from '../service-objects/update-claimant-so';
 })
 export class ClaimantService {
 
-  constructor(private http: HttpClient) { }
-
-  private claimantUrl = 'http://localhost:8080/api/claimant/getAllClaimants';
+  constructor(private http: HttpClient, private toasterService: ToasterService) { }
 
   // getClaimantById(id: number): Observable<ClaimantSO> {
   //   const url = `$(this.claimantUrl)/$(id)`;
@@ -21,8 +20,20 @@ export class ClaimantService {
   // }
 
   getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
-    return this.http.get<ClaimantSO[]>(this.claimantUrl)
+    const claimantUrl = 'http://localhost:8080/api/claimant/getAllClaimants';
+    return this.http.get<ClaimantSO[]>(claimantUrl).pipe(catchError((err: any) => {
+      this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
+      return EMPTY;
+    }));
   }
+
+  searchClaimant(claimantInfo: string): Observable<ClaimantSO[]> {
+    const claimantUrl = `http://localhost:8080/api/claimant/searchClaimant/${claimantInfo}`;
+    return this.http.get<ClaimantSO[]>(claimantUrl).pipe(catchError((err: any) => {
+      this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
+      return EMPTY;
+    }));
+  } 
 
   // registerClaimant(claimantSO:ClaimantSO): Observable<number> {
   //   return this.http.post<number>(this.claimantUrl, claimantSO)

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
+import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-claimant-search',
@@ -8,14 +9,16 @@ import { ClaimantSO } from '../../service-objects/claimant-so';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
+  public claimantInfo: string
   claimantSO: ClaimantSO[];
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getClaimantSO();
+    this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
+    this.searchClaimant(this.claimantInfo)
   }
 
   getClaimantSO(): void {
@@ -24,4 +27,9 @@ export class ClaimantSearchComponent implements OnInit {
       .subscribe(claimantSO => this.claimantSO = claimantSO);
   }
 
+  searchClaimant(claimantInfo: string){
+    this.claimantService
+    .searchClaimant(claimantInfo)
+    .subscribe(claimantSO => this.claimantSO = claimantSO);
+  }
 }

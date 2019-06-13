@@ -54,4 +54,11 @@ public class ClaimantController {
 	public ClaimantProfile updateClaimant(@RequestBody UpdateClaimantProfileSO claimantProfileSO, @PathVariable long claimantId) {
 		return claimantBusinessService.updateClaimant(claimantProfileSO, claimantId);
 	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/searchClaimant/{claimantInfo}", method = RequestMethod.GET)
+	public List<ClaimantProfile> searchClaimant(@PathVariable String claimantInfo) {
+		List<ClaimantProfile> claimantProfiles = claimantBusinessService.searchClaimant(claimantInfo);
+		return claimantProfiles;
+	}
 }

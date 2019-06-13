@@ -52,10 +52,11 @@ import { AddressFormatPipe } from './custom-pipes/address-pipe';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      positionClass: "toastr-top-center",
+      positionClass: "toast-top-full-width",
       closeButton: true,
       disableTimeOut: true,
     }),
+    ToastContainerModule,
     HttpClientModule,
     MatTableModule
   ],

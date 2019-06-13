@@ -58,6 +58,10 @@ const routes: Routes = [
           path:'claimant-search',
           component:ClaimantSearchComponent
         },
+        {
+          path:'claimant-search?searchText=:claimantInfo',
+          component:ClaimantSearchComponent
+        },
         {  
            path:'**',
            redirectTo:'home'
