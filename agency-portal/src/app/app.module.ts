@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { OptimumComponentsModule } from 'optimum-components';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageOneComponent } from './main/page-one/page-one.component';
 import { PageTwoComponent } from './main/page-two/page-two.component';
 import { HomeComponent } from './main/home/home.component';
+import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,14 @@ import { HomeComponent } from './main/home/home.component';
     FooterComponent,
     PageOneComponent,
     PageTwoComponent,
-    HomeComponent
+    HomeComponent,
+    OptimumFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    OptimumComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

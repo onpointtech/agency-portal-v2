@@ -5,7 +5,7 @@ import { MainComponent } from './main/main.component';
 import { PageOneComponent } from './main/page-one/page-one.component';
 import { PageTwoComponent } from './main/page-two/page-two.component';
 import { HomeComponent } from './main/home/home.component';
-
+import { OptimumFormComponent } from './main/optimum-form/optimum-form.component'
 
 const routes: Routes = [  
   {  
@@ -33,6 +33,10 @@ const routes: Routes = [
            path:'home',
            component:HomeComponent
         },
+        {  
+         path:'optimum-form',
+         component:OptimumFormComponent
+      },
         {  
            path:'**',
            redirectTo:'home'

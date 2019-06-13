@@ -1,0 +1,21 @@
+{
+  "name": "optimum-components",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
+  },
+  "main": "bundles/optimum-components.umd.js",
+  "module": "fesm5/optimum-components.js",
+  "es2015": "fesm2015/optimum-components.js",
+  "esm5": "esm5/optimum-components.js",
+  "esm2015": "esm2015/optimum-components.js",
+  "fesm5": "fesm5/optimum-components.js",
+  "fesm2015": "fesm2015/optimum-components.js",
+  "typings": "optimum-components.d.ts",
+  "metadata": "optimum-components.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

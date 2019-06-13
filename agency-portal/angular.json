@@ -114,6 +114,41 @@
           }
         }
       }
+    },
+    "optimum-components": {
+      "projectType": "library",
+      "root": "projects/optimum-components",
+      "sourceRoot": "projects/optimum-components/src",
+      "prefix": "optimum",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/optimum-components/tsconfig.lib.json",
+            "project": "projects/optimum-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/optimum-components/src/test.ts",
+            "tsConfig": "projects/optimum-components/tsconfig.spec.json",
+            "karmaConfig": "projects/optimum-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/optimum-components/tsconfig.lib.json",
+              "projects/optimum-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "agency-portal"
 }
