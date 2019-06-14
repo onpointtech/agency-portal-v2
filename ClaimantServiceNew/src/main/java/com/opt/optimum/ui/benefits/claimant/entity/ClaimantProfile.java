@@ -1,6 +1,7 @@
 package com.opt.optimum.ui.benefits.claimant.entity;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -11,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -21,7 +21,6 @@ public class ClaimantProfile {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long claimantId;
-	String alternateClaimantId;
 	String ssn;
 	LocalDate dateOfBirth;	
 	@NotNull @Size(max=50)
@@ -42,10 +41,6 @@ public class ClaimantProfile {
 	String ivrPin;
 	String documentDeliveryPreference;
 	
-	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "claimantId", nullable = false)
-	ClaimantPaymentMethod paymentMethod;
-	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "claimantId", nullable = false)
 	public List<Address> address;
@@ -56,16 +51,6 @@ public class ClaimantProfile {
 	public void setClaimantId(long claimantId) {
 		this.claimantId = claimantId;
 	}
-	
-	
-	public String getAlternateClaimantId() {
-		return alternateClaimantId;
-	}
-	public void setAlternateClaimantId(String alternateClaimantId) {
-		this.alternateClaimantId = alternateClaimantId;
-	}
-	
-	
 	public String getSsn() {
 		return ssn;
 	}
