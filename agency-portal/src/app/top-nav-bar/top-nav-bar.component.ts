@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router"
+import { Router, NavigationEnd } from "@angular/router"
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -8,7 +8,19 @@ import { Router } from "@angular/router"
 })
 export class TopNavBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = function(){
+      return false;
+   }
+
+   this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+         this.router.navigated = false;
+         window.scrollTo(0, 0);
+      }
+    });
+
+  }
 
   ngOnInit() {
   }
