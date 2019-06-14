@@ -1,0 +1,38 @@
+<div class="container">
+    <div *ngIf="debug==true">
+      <h4> Optimum-text-area-input component</h4>
+    </div>
+    <form [formGroup]="profileForm" novalidate>
+      <div class="form-group">
+        <label for="textAreaInput"> {{labelName}}:
+          <textarea class="form-control" id="textAreaInput" [(ngModel)]="userProfileModel.textAreaInput"
+            formControlName="textAreaInput"> </textarea>
+        </label>
+        <div *ngIf="debug==true">
+          <br>
+          DEBUG: model.textInput content: {{userProfileModel.textInput}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+        <div
+          *ngIf="profileForm.controls['textAreaInput'].invalid && (profileForm.controls['textAreaInput'].dirty || profileForm.controls['textAreaInput'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="profileForm.controls['textAreaInput'].errors.required">
+            This is required.
+          </div>
+          <div *ngIf="profileForm.controls['textAreaInput'].invalid">
+            Error in input.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" onclick="onSubmit()">Submit</button>
+  
+    </form>
+  </div>

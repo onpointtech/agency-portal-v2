@@ -11,6 +11,7 @@ import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profi
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
 
+import { OptimumFormComponent } from './main/optimum-form/optimum-form.component'
 
 const routes: Routes = [  
   {  
@@ -58,6 +59,10 @@ const routes: Routes = [
           path:'claimant-search/:claimantInfo',
           component:ClaimantSearchComponent
         },
+        {  
+         path:'optimum-form',
+         component:OptimumFormComponent
+      },
         {  
            path:'**',
            redirectTo:'home'

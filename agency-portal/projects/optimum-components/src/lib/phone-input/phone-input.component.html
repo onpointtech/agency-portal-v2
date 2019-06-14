@@ -1,0 +1,38 @@
+<div class="container">
+    <div *ngIf="debug==true">
+      <h4> Optimum-phone-input component</h4>
+    </div>
+    <form [formGroup]="profileForm" novalidate>
+      <div class="form-group">
+        <label for="phone"> {{labelName}}: XXX-XXX-XXXX
+          <input  type="tel" class="form-control" id="phone" [(ngModel)]="userProfileModel.phone"
+            formControlName="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+        </label>
+        <div *ngIf="debug==true">
+          <br>
+          DEBUG: model.textInput content: {{userProfileModel.textInput}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+        <div
+          *ngIf="profileForm.controls['phone'].invalid && (profileForm.controls['phone'].dirty || profileForm.controls['phone'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="profileForm.controls['phone'].errors.required">
+            This is required.
+          </div>
+          <div *ngIf="profileForm.controls['phone'].invalid">
+            Error in input.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" onclick="onSubmit()">Submit</button>
+  
+    </form>
+  </div>

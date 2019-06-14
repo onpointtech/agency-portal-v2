@@ -6,6 +6,9 @@ import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { OptimumComponentsModule } from 'optimum-components';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,7 @@ import { ClaimComponent } from './main/claim/claim.component';
 import { SSNFormatPipe } from './custom-pipes/ssn-pipe';
 import { MobilePhoneFormatPipe } from './custom-pipes/mobile-phone-pipe';
 import { AddressFormatPipe } from './custom-pipes/address-pipe';
+import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,7 @@ import { AddressFormatPipe } from './custom-pipes/address-pipe';
     SSNFormatPipe,
     MobilePhoneFormatPipe,
     AddressFormatPipe,
+    OptimumFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,9 @@ import { AddressFormatPipe } from './custom-pipes/address-pipe';
     }),
     ToastContainerModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule,
+    OptimumComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

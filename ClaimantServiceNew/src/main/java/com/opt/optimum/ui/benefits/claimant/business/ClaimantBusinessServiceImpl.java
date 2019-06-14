@@ -51,8 +51,4 @@ public class ClaimantBusinessServiceImpl implements ClaimantBusinessService{
 		ClaimantProfile claimantProfile = modelMapper.map(updateClaimantProfileSO, ClaimantProfile.class);
 		return claimantDomainService.updateClaimant(claimantProfile, claimantId);
 	}
-	
-	public List<ClaimantProfile> searchClaimant(String claimantInfo) {
-		return claimantDomainService.searchClaimant(claimantInfo);
-	}
 }

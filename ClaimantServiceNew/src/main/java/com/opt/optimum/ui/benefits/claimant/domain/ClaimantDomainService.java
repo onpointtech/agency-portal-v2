@@ -15,6 +15,4 @@ public interface ClaimantDomainService {
 	List<ClaimantProfile> getAllClaimants();
 
 	ClaimantProfile updateClaimant(ClaimantProfile claimantProfile, long claimantId);
-
-	List<ClaimantProfile> searchClaimant(String claimantInfo);
 }

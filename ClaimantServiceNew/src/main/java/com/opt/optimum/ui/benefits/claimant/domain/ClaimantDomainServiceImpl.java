@@ -96,11 +96,4 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		
 		return claimantProfileRepository.save(oldClaimantProfile);
 	}
-
-	@Override
-	public List<ClaimantProfile> searchClaimant(String claimantInfo) {
-		List<ClaimantProfile> claimantProfiles = new ArrayList<>();
-		claimantProfileRepository.searchClaimant(claimantInfo).forEach(e -> claimantProfiles.add(e));
-		return claimantProfiles;
-	}
 }

@@ -1,0 +1,41 @@
+<div class="container">
+  <div *ngIf="debug==true">
+    <h4> Optimum-radio-input component</h4>
+  </div>
+  <form [formGroup]="profileForm" #f="ngForm" (ngSubmit)="onSubmit()"  novalidate>
+    <div class="form-group">
+      <label for="radio"> {{labelName}}:
+      </label>
+
+      <div *ngFor="let choice of radioChoices" >
+      <input type="radio" class="form-control" id="radio"
+        [(ngModel)]="userProfileModel.radio" formControlName="radio" [value]="choice"> {{choice}}
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.textInput content: {{userProfileModel.textInput}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+      <div
+        *ngIf="profileForm.controls['radio'].invalid && (profileForm.controls['radio'].dirty || profileForm.controls['radio'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="profileForm.controls['radio'].errors.required">
+          This is required.
+        </div>
+        <div *ngIf="profileForm.controls['radio'].invalid">
+          Error in input.
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form >
+
+</div>

@@ -5,7 +5,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,14 +36,12 @@ public class ClaimantController {
 		return claimantBusinessService.registerClaimant(claimantProfileSO);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/getClaimantById/{claimantId}", method = RequestMethod.GET)
 	public ClaimantProfile  getClaimantById(@PathVariable long claimantId) {
 		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantById(claimantId);
 		return claimantProfile;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/getAllClaimants", method = RequestMethod.GET)
 	public List<ClaimantProfile> getAllClaimants() {
 		List<ClaimantProfile> claimantProfiles = claimantBusinessService.getAllClaimants();
@@ -54,12 +51,5 @@ public class ClaimantController {
 	@RequestMapping(value = "/updateClaimant/{claimantId}", method = RequestMethod.PUT)
 	public ClaimantProfile updateClaimant(@RequestBody UpdateClaimantProfileSO claimantProfileSO, @PathVariable long claimantId) {
 		return claimantBusinessService.updateClaimant(claimantProfileSO, claimantId);
-	}
-	
-	@CrossOrigin(origins = "http://localhost:4200")
-	@RequestMapping(value = "/searchClaimant/{claimantInfo}", method = RequestMethod.GET)
-	public List<ClaimantProfile> searchClaimant(@PathVariable String claimantInfo) {
-		List<ClaimantProfile> claimantProfiles = claimantBusinessService.searchClaimant(claimantInfo);
-		return claimantProfiles;
 	}
 }

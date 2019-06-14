@@ -1,0 +1,39 @@
+<div class="container">
+    <div *ngIf="debug==true">
+      <h4> Optimum-dropdown-input component</h4>
+    </div>
+    <form [formGroup]="profileForm" #f="ngForm" (ngSubmit)="onSubmit()"  novalidate>
+      <div class="form-group">
+        <label for="dropdown"> {{labelName}}:
+        </label>
+        <select  id="dropdown" class="form-control" [(ngModel)]="userProfileModel.dropdown" formControlName="dropdown" >
+        <option *ngFor="let choice of dropdownChoices; let i=index" [ngValue]="choice"> {{choice}}</option>
+        </select>
+        <div *ngIf="debug==true">
+          <br>
+          DEBUG: model.textInput content: {{userProfileModel.textInput}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+        <div
+          *ngIf="profileForm.controls['dropdown'].invalid && (profileForm.controls['dropdown'].dirty || profileForm.controls['dropdown'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="profileForm.controls['dropdown'].errors.required">
+            This is required.
+          </div>
+          <div *ngIf="profileForm.controls['dropdown'].invalid">
+            Error in input.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form >
+  
+  </div>
