@@ -17,8 +17,6 @@ import { MainComponent } from './main/main.component';
 import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { PageOneComponent } from './main/page-one/page-one.component';
-import { PageTwoComponent } from './main/page-two/page-two.component';
 import { HomeComponent } from './main/home/home.component';
 import { ClaimantSearchComponent } from './main/claimant-search/claimant-search.component';
 import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-overview.component';
@@ -38,8 +36,6 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
     SideNavBarComponent,
     TopNavBarComponent,
     FooterComponent,
-    PageOneComponent,
-    PageTwoComponent,
     HomeComponent,
     ClaimantSearchComponent,
     ClaimantOverviewComponent,
@@ -60,6 +56,7 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
       positionClass: "toast-top-full-width",
       closeButton: true,
       disableTimeOut: true,
+      maxOpened: 1,
     }),
     ToastContainerModule,
     HttpClientModule,

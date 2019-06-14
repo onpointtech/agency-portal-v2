@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, Router, ActivatedRoute} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { PageOneComponent } from './main/page-one/page-one.component';
-import { PageTwoComponent } from './main/page-two/page-two.component';
 import { HomeComponent } from './main/home/home.component';
 import { ClaimantSearchComponent } from './main/claimant-search/claimant-search.component';
 import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-overview.component';
@@ -26,15 +24,7 @@ const routes: Routes = [
   {  
      path:'main',
      component:MainComponent,
-     children:[  
-        {  
-           path:'page-one',
-           component:PageOneComponent
-        },
-        {  
-           path:'page-two',
-           component:PageTwoComponent
-        },
+     children:[
         {  
            path:'home',
            component:HomeComponent
@@ -62,7 +52,7 @@ const routes: Routes = [
         {  
          path:'optimum-form',
          component:OptimumFormComponent
-      },
+        },
         {  
            path:'**',
            redirectTo:'home'
