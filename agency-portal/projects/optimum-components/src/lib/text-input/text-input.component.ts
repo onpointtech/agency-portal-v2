@@ -13,7 +13,6 @@ export class TextInputComponent implements OnInit {
   @Input() userProfileModel: UserProfileModel;
   @Input() profileForm: FormGroup;
 
-
   constructor() { }
 
   

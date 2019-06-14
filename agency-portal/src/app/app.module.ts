@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { OptimumComponentsModule } from 'optimum-components';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -65,6 +65,7 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
     HttpClientModule,
     MatTableModule,
     FormsModule,
+    ReactiveFormsModule,
     OptimumComponentsModule
   ],
   providers: [],

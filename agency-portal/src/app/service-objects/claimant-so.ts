@@ -1,22 +1,26 @@
 import { Address } from './address';
 
 export class ClaimantSO {
-    claimantId: number;
-    ssn: string;
-    dateOfBirth: Date;
-    firstName: string;
-    middleInitial: string;
-    lastName: string;
-    homePhone: string;
-    mobilePhone: string;
-    languagePreference: string;
-    educationalLevel: string;
-    gender: string;
-    race: string;
-    ethnicity: string;
-    lastInsertUpdateTS: Date;
-    lastInsertUpdateBy: string;
-    ivrPin: string;
-    documentDeliveryPreference: string;
-    address: Address[];
+
+        public claimantId: number;
+        public ssn: string;
+        public dateOfBirth: Date;
+        public firstName: string;
+        public middleInitial: string;
+        public lastName: string;
+        public homePhone: string;
+        public mobilePhone: string;
+        public languagePreference: string;
+        public educationalLevel: string;
+        public gender: string;
+        public race: string;
+        public ethnicity: string;
+        public lastInsertUpdateTS: Date;
+        public lastInsertUpdateBy: string;
+        public ivrPin: string;
+        public documentDeliveryPreference: string;
+        public address: Address[];
+ 
+    
+
 }

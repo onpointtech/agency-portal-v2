@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessService;
-import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessServiceImpl;
-import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
 import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
 import com.opt.optimum.ui.benefits.claimant.so.UpdateClaimantProfileSO;
@@ -30,6 +29,7 @@ public class ClaimantController {
 		this.claimantBusinessService = claimantBusinessService;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/registerClaimant", method = RequestMethod.POST)
 	public long registerClaimant(@RequestBody ClaimantProfileSO claimantProfileSO) {
 		logger.info("Register Claimant Request Received ", claimantProfileSO.toString());

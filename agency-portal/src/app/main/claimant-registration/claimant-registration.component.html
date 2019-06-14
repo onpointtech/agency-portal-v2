@@ -1,3 +1,154 @@
-<p>
-  claimant-registration works!
-</p>
+<h3>
+  Register
+</h3>
+<form [formGroup]="profileForm" novalidate>
+  <div class="form-group">
+
+  
+
+    <label for="ssn"> ssn:
+      <input type="text" class="form-control" [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
+    </label>
+    <div *ngIf="debug==true">
+      <br>
+      DEBUG: model.ssn content: {{userProfileModel.ssn}}
+      <br>
+      DEBUG: profileForm status: {{profileForm.status}}
+      <br>
+      DEBUG: profileForm dirty: {{profileForm.dirty}}
+      <br>
+      DEBUG: profileForm touched: {{profileForm.touched}}
+      <br>
+      DEBUG: model content: {{ userProfileModel | json }}
+      <br>
+    </div>
+    <div
+      *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
+      class="alert alert-danger">
+      <div *ngIf="profileForm.controls['ssn'].errors.required">
+        This is required.
+      </div>
+      <div *ngIf="profileForm.controls['ssn'].invalid">
+        Error in input.
+      </div>
+    </div>
+    <br>
+
+    <!-- <label for="dateOfBirth"> dateOfBirth:
+        <input type="date" class="form-control" [(ngModel)]="userProfileModel.dateOfBirth" formControlName="dateOfBirth">
+      </label>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.dateOfBirth content: {{userProfileModel.dateOfBirth}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+      <div
+        *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="profileForm.controls['dateOfBirth'].errors.required">
+          This is required.
+        </div>
+        <div *ngIf="profileForm.controls['dateOfBirth'].invalid">
+          Error in input.
+        </div>
+      </div>
+      <br> -->
+
+      <label for="firstName"> firstName:
+          <input type="text" class="form-control" [(ngModel)]="userProfileModel.firstName" formControlName="firstName">
+        </label>
+        <div *ngIf="debug==true">
+          <br>
+          DEBUG: model.firstName content: {{userProfileModel.firstName}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+        <div
+          *ngIf="profileForm.controls['firstName'].invalid && (profileForm.controls['firstName'].dirty || profileForm.controls['firstName'].touched)"
+          class="alert alert-danger">
+          <div *ngIf="profileForm.controls['firstName'].errors.required">
+            This is required.
+          </div>
+          <div *ngIf="profileForm.controls['firstName'].invalid">
+            Error in input.
+          </div>
+        </div>
+        <br>
+  
+        <label for="middleInitial"> middleInitial:
+            <input type="text" class="form-control" [(ngModel)]="userProfileModel.middleInitial" formControlName="middleInitial">
+          </label>
+          <div *ngIf="debug==true">
+            <br>
+            DEBUG: model.middleInitial content: {{userProfileModel.middleInitial}}
+            <br>
+            DEBUG: profileForm status: {{profileForm.status}}
+            <br>
+            DEBUG: profileForm dirty: {{profileForm.dirty}}
+            <br>
+            DEBUG: profileForm touched: {{profileForm.touched}}
+            <br>
+            DEBUG: model content: {{ userProfileModel | json }}
+            <br>
+          </div>
+          <div
+            *ngIf="profileForm.controls['middleInitial'].invalid && (profileForm.controls['middleInitial'].dirty || profileForm.controls['middleInitial'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="profileForm.controls['middleInitial'].errors.required">
+              This is required.
+            </div>
+            <div *ngIf="profileForm.controls['middleInitial'].invalid">
+              Error in input.
+            </div>
+          </div>
+          <br>
+
+          <label for="lastName"> lastName:
+              <input type="text" class="form-control" [(ngModel)]="userProfileModel.lastName" formControlName="lastName">
+            </label>
+            <div *ngIf="debug==true">
+              <br>
+              DEBUG: model.lastName content: {{userProfileModel.lastName}}
+              <br>
+              DEBUG: profileForm status: {{profileForm.status}}
+              <br>
+              DEBUG: profileForm dirty: {{profileForm.dirty}}
+              <br>
+              DEBUG: profileForm touched: {{profileForm.touched}}
+              <br>
+              DEBUG: model content: {{ userProfileModel | json }}
+              <br>
+            </div>
+            <div
+              *ngIf="profileForm.controls['lastName'].invalid && (profileForm.controls['lastName'].dirty || profileForm.controls['lastName'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="profileForm.controls['lastName'].errors.required">
+                This is required.
+              </div>
+              <div *ngIf="profileForm.controls['lastName'].invalid">
+                Error in input.
+              </div>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+
+  </div>
+</form>
+
+{{userProfileModel | json}}

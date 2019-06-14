@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   success(){
-    this.toasterService.success("Success!", "Welcome to Home", 200);
+    this.toasterService.success("Success!", "Welcome to Home");
   }
 
 }

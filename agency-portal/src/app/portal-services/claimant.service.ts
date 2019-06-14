@@ -14,12 +14,12 @@ export class ClaimantService {
 
   constructor(private http: HttpClient, private toasterService: ToasterService) { }
 
-  getClaimantById(claimantId: number): Observable<ClaimantSO> {
+  public getClaimantById(claimantId: number): Observable<ClaimantSO> {
     const claimantUrl = `http://localhost:8080/api/claimant/getClaimantById/${claimantId}`;
     return this.http.get<ClaimantSO>(claimantUrl)
   }
 
-  getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
+  public getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
     const claimantUrl = 'http://localhost:8080/api/claimant/getAllClaimants';
     return this.http.get<ClaimantSO[]>(claimantUrl).pipe(catchError((err: any) => {
       this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
@@ -27,7 +27,7 @@ export class ClaimantService {
     }));
   }
 
-  searchClaimant(claimantInfo: string): Observable<ClaimantSO[]> {
+  public searchClaimant(claimantInfo: string): Observable<ClaimantSO[]> {
     const claimantUrl = `http://localhost:8080/api/claimant/searchClaimant/${claimantInfo}`;
     return this.http.get<ClaimantSO[]>(claimantUrl).pipe(catchError((err: any) => {
       this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
@@ -35,9 +35,15 @@ export class ClaimantService {
     }));
   } 
 
-  // registerClaimant(claimantSO:ClaimantSO): Observable<number> {
-  //   return this.http.post<number>(this.claimantUrl, claimantSO)
-  // }
+  public registerClaimant(claimantSO:ClaimantSO): Observable<number> {
+    console.log(123);
+    const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
+    return this.http.post<number>(claimantUrl, claimantSO).pipe(catchError((err: any) => {
+      console.log(12);
+      this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
+      return EMPTY;
+    }));
+  }
 
   // updateClaimantPayment() {
 
