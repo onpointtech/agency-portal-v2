@@ -14,10 +14,10 @@ export class ClaimantService {
 
   constructor(private http: HttpClient, private toasterService: ToasterService) { }
 
-  // getClaimantById(id: number): Observable<ClaimantSO> {
-  //   const url = `$(this.claimantUrl)/$(id)`;
-  //   return this.http.get<ClaimantSO>(url)
-  // }
+  getClaimantById(claimantId: number): Observable<ClaimantSO> {
+    const claimantUrl = `http://localhost:8080/api/claimant/getClaimantById/${claimantId}`;
+    return this.http.get<ClaimantSO>(claimantUrl)
+  }
 
   getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
     const claimantUrl = 'http://localhost:8080/api/claimant/getAllClaimants';

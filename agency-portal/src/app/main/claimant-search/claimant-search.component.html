@@ -1,18 +1,18 @@
-<div>
+<ng-container *ngIf="claimantSO">
   <ng-container *ngIf="claimantSO.length == 0; else showTable">
       <h1>There is no data for this filter</h1>
-      {{info()}}
+      <button (click)="registerClaimant()">Register Claimant</button>
   </ng-container>
   <ng-template #showTable>
     <mat-table [dataSource]="claimantSO">
         <ng-container matColumnDef="ssn">
           <th mat-header-cell *matHeaderCellDef>SSN</th>
-          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.ssn | ssnFormat}}</td>
+          <td mat-cell *matCellDef="let ClaimantSO" routerLink="/main/claimant-overview/{{ClaimantSO.claimantId}}">{{ClaimantSO.ssn | ssnFormat}}</td>
         </ng-container>
       
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.lastName}}, {{ClaimantSO.firstName}} {{ClaimantSO.middleInitial}}</td>
+          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>
         </ng-container>
       
         <ng-container matColumnDef="dateOfBirth">
@@ -38,4 +38,4 @@
       <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
     </mat-table>
   </ng-template>
-</div>
+</ng-container>

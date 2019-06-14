@@ -37,6 +37,7 @@ public class ClaimantController {
 		return claimantBusinessService.registerClaimant(claimantProfileSO);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/getClaimantById/{claimantId}", method = RequestMethod.GET)
 	public ClaimantProfile  getClaimantById(@PathVariable long claimantId) {
 		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantById(claimantId);

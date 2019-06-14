@@ -43,11 +43,11 @@ const routes: Routes = [
           component: ClaimComponent
         },
         {
-          path:'claimant-overview',
+          path:'claimant-overview/:claimantId',
           component:ClaimantOverviewComponent
         },
         {
-          path:'claimant-profile',
+          path:'claimant-profile/:claimantId',
           component:ClaimantProfileComponent
         },
         {

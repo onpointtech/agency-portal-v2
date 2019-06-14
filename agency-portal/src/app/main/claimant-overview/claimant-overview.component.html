@@ -1,3 +1,8 @@
-<p>
-  claimant-overview works!
-</p>
+<ng-container *ngIf="claimantSO">
+  <h1>{{claimantSO.firstName}} {{claimantSO.lastName}}</h1>
+  <h2>{{claimantSO.ssn | ssnFormat}}</h2>
+  <h2>{{claimantSO.dateOfBirth | date:"MM/dd/yyyy"}}</h2>
+  <h2>{{claimantSO.mobilePhone | mobilePhoneFormat}}</h2>
+  <h2>{{claimantSO.address | addressFormat}}</h2>
+  <button (click)="viewClaimantProfile()">View Claimant Profile</button>
+</ng-container>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, SystemJsNgModuleLoader } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ClaimantSearchComponent implements OnInit {
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
@@ -29,8 +29,18 @@ export class ClaimantSearchComponent implements OnInit {
   }
 
   searchClaimant(claimantInfo: string){
-    this.claimantService
+     this.claimantService
     .searchClaimant(claimantInfo)
     .subscribe(claimantSO => this.claimantSO = claimantSO);
+
+    // if(this.claimantSO.length > 0){
+    //   this.toasterService.success(String(this.claimantSO.length), "hello", 3);
+    // } else {
+    //   this.toasterService.info("hello", "hello");
+    // }
+  }
+
+  registerClaimant() {
+    this.router.navigate([`main/claimant-registration`])
   }
 }
