@@ -1,0 +1,28 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { NgModule } from '@angular/core';
+import { OptimumComponentsComponent } from './optimum-components.component';
+import { TextAreaInputComponent } from './text-area-input/text-area-input.component';
+import { TextInputComponent } from './text-input/text-input.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
+import { PhoneInputComponent } from './phone-input/phone-input.component';
+import { RadioInputComponent } from './radio-input/radio-input.component';
+import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
+var OptimumComponentsModule = /** @class */ (function () {
+    function OptimumComponentsModule() {
+    }
+    OptimumComponentsModule.decorators = [
+        { type: NgModule, args: [{
+                    declarations: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent, RadioInputComponent, DropdownInputComponent],
+                    imports: [FormsModule, CommonModule, ReactiveFormsModule
+                    ],
+                    exports: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent, RadioInputComponent, DropdownInputComponent]
+                },] }
+    ];
+    return OptimumComponentsModule;
+}());
+export { OptimumComponentsModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoib3B0aW11bS1jb21wb25lbnRzLm1vZHVsZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL29wdGltdW0tY29tcG9uZW50cy8iLCJzb3VyY2VzIjpbImxpYi9vcHRpbXVtLWNvbXBvbmVudHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsUUFBUSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBRSwwQkFBMEIsRUFBRSxNQUFNLGdDQUFnQyxDQUFDO0FBQzVFLE9BQU8sRUFBRSxzQkFBc0IsRUFBRSxNQUFNLDZDQUE2QyxDQUFDO0FBQ3JGLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLG1DQUFtQyxDQUFDO0FBQ3ZFLE9BQU8sRUFBRSxXQUFXLEVBQUUsbUJBQW1CLEVBQUUsTUFBTSxnQkFBZ0IsQ0FBQztBQUNsRSxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0saUJBQWlCLENBQUM7QUFDL0MsT0FBTyxFQUFFLG1CQUFtQixFQUFFLE1BQU0scUNBQXFDLENBQUM7QUFDMUUsT0FBTyxFQUFFLG1CQUFtQixFQUFFLE1BQU0scUNBQXFDLENBQUM7QUFDMUUsT0FBTyxFQUFFLHNCQUFzQixFQUFFLE1BQU0sMkNBQTJDLENBQUE7QUFFbEY7SUFBQTtJQU11QyxDQUFDOztnQkFOdkMsUUFBUSxTQUFDO29CQUNSLFlBQVksRUFBRSxDQUFDLDBCQUEwQixFQUFFLHNCQUFzQixFQUFFLGtCQUFrQixFQUFFLG1CQUFtQixFQUFFLG1CQUFtQixFQUFFLHNCQUFzQixDQUFDO29CQUN4SixPQUFPLEVBQUUsQ0FBQyxXQUFXLEVBQUUsWUFBWSxFQUFDLG1CQUFtQjtxQkFDdEQ7b0JBQ0QsT0FBTyxFQUFFLENBQUMsMEJBQTBCLEVBQUUsc0JBQXNCLEVBQUUsa0JBQWtCLEVBQUUsbUJBQW1CLEVBQUMsbUJBQW1CLEVBQUUsc0JBQXNCLENBQUM7aUJBQ25KOztJQUNzQyw4QkFBQztDQUFBLEFBTnhDLElBTXdDO1NBQTNCLHVCQUF1QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBPcHRpbXVtQ29tcG9uZW50c0NvbXBvbmVudCB9IGZyb20gJy4vb3B0aW11bS1jb21wb25lbnRzLmNvbXBvbmVudCc7XG5pbXBvcnQgeyBUZXh0QXJlYUlucHV0Q29tcG9uZW50IH0gZnJvbSAnLi90ZXh0LWFyZWEtaW5wdXQvdGV4dC1hcmVhLWlucHV0LmNvbXBvbmVudCc7XG5pbXBvcnQgeyBUZXh0SW5wdXRDb21wb25lbnQgfSBmcm9tICcuL3RleHQtaW5wdXQvdGV4dC1pbnB1dC5jb21wb25lbnQnO1xuaW1wb3J0IHsgRm9ybXNNb2R1bGUsIFJlYWN0aXZlRm9ybXNNb2R1bGUgfSBmcm9tICdAYW5ndWxhci9mb3Jtcyc7XG5pbXBvcnQgeyBDb21tb25Nb2R1bGUgfSBmcm9tIFwiQGFuZ3VsYXIvY29tbW9uXCI7XG5pbXBvcnQgeyBQaG9uZUlucHV0Q29tcG9uZW50IH0gZnJvbSAnLi9waG9uZS1pbnB1dC9waG9uZS1pbnB1dC5jb21wb25lbnQnO1xuaW1wb3J0IHsgUmFkaW9JbnB1dENvbXBvbmVudCB9IGZyb20gJy4vcmFkaW8taW5wdXQvcmFkaW8taW5wdXQuY29tcG9uZW50JztcbmltcG9ydCB7IERyb3Bkb3duSW5wdXRDb21wb25lbnQgfSBmcm9tICcuL2Ryb3Bkb3duLWlucHV0L2Ryb3Bkb3duLWlucHV0LmNvbXBvbmVudCdcblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbT3B0aW11bUNvbXBvbmVudHNDb21wb25lbnQsIFRleHRBcmVhSW5wdXRDb21wb25lbnQsIFRleHRJbnB1dENvbXBvbmVudCwgUGhvbmVJbnB1dENvbXBvbmVudCwgUmFkaW9JbnB1dENvbXBvbmVudCwgRHJvcGRvd25JbnB1dENvbXBvbmVudF0sXG4gIGltcG9ydHM6IFtGb3Jtc01vZHVsZSwgQ29tbW9uTW9kdWxlLFJlYWN0aXZlRm9ybXNNb2R1bGVcbiAgXSxcbiAgZXhwb3J0czogW09wdGltdW1Db21wb25lbnRzQ29tcG9uZW50LCBUZXh0QXJlYUlucHV0Q29tcG9uZW50LCBUZXh0SW5wdXRDb21wb25lbnQsIFBob25lSW5wdXRDb21wb25lbnQsUmFkaW9JbnB1dENvbXBvbmVudCwgRHJvcGRvd25JbnB1dENvbXBvbmVudF1cbn0pXG5leHBvcnQgY2xhc3MgT3B0aW11bUNvbXBvbmVudHNNb2R1bGUgeyB9XG4iXX0=

@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import com.opt.optimum.ui.benefits.claimant.entity.Address;
+import com.opt.optimum.ui.benefits.claimant.entity.ClaimantPaymentMethod;
 
 public class ClaimantProfileSO {
 	long claimantId;
@@ -26,11 +27,9 @@ public class ClaimantProfileSO {
 	String ethnicity;
 	String ivrPin;
 	String documentDeliveryPreference;
-	OffsetDateTime lastInsertUpdateTS;
 	String lastInsertUpdateBy;
+	ClaimantPaymentMethod claimantPaymentMethod;
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "claimantId", nullable = false)
 	public List<Address> address;
 	
 	public long getClaimantId() {
@@ -123,12 +122,6 @@ public class ClaimantProfileSO {
 	public void setDocumentDeliveryPreference(String documentDeliveryPreference) {
 		this.documentDeliveryPreference = documentDeliveryPreference;
 	}
-	public OffsetDateTime getLastInsertUpdateTS() {
-		return lastInsertUpdateTS;
-	}
-	public void setLastInsertUpdateTS(OffsetDateTime lastInsertUpdateTS) {
-		this.lastInsertUpdateTS = lastInsertUpdateTS;
-	}
 	public String getLastInsertUpdateBy() {
 		return lastInsertUpdateBy;
 	}
@@ -141,6 +134,12 @@ public class ClaimantProfileSO {
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
+	public ClaimantPaymentMethod getClaimantPaymentMethod() {
+		return claimantPaymentMethod;
+	}
+	public void setClaimantPaymentMethod(ClaimantPaymentMethod claimantPaymentMethod) {
+		this.claimantPaymentMethod = claimantPaymentMethod;
+	}
 	@Override
 	public String toString() {
 		return "ClaimantProfileSO [claimantId=" + claimantId + ", ssn=" + ssn + ", dateOfBirth=" + dateOfBirth
@@ -148,6 +147,8 @@ public class ClaimantProfileSO {
 				+ ", homePhone=" + homePhone + ", mobilePhone=" + mobilePhone + ", languagePreference="
 				+ languagePreference + ", educationLevel=" + educationLevel + ", gender=" + gender + ", race=" + race
 				+ ", ethnicity=" + ethnicity + ", ivrPin=" + ivrPin + ", documentDeliveryPreference="
-				+ documentDeliveryPreference + "]";
+				+ documentDeliveryPreference + ", lastInsertUpdateBy=" + lastInsertUpdateBy + ", claimantPaymentMethod="
+				+ claimantPaymentMethod + ", address=" + address + "]";
 	}
+	
 }

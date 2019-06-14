@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "optimum-components": [
+        "dist/optimum-components"
+      ],
+      "optimum-components/*": [
+        "dist/optimum-components/*"
+      ]
+    }
   }
 }

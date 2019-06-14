@@ -15,7 +15,5 @@ public interface ClaimantBusinessService {
 
 	List<ClaimantProfile> getAllClaimants();
 
-	ClaimantProfile updateClaimant(UpdateClaimantProfileSO updateClaimantProfileSO, long claimantId);
-
-	List<ClaimantProfile> searchClaimant(String claimantInfo);
+	ClaimantProfile updateClaimant(UpdateClaimantProfileSO updateClaimantProfileSO, long claimantId);	
 }
