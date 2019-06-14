@@ -10,15 +10,17 @@ import { Validators } from '@angular/forms';
 })
 export class TextAreaInputComponent implements OnInit {
   @Input() labelName: string;
-  userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-  profileForm = this.fb.group({
-    //textInput: ['', Validators.compose([Validators.required])],
-    textAreaInput: ['', Validators.compose([Validators.required])],
-    //phone: ['', Validators.compose([Validators.required])],
-    //select: ['', Validators.compose([Validators.required])],
-    //radio: ['', Validators.compose([Validators.required])],
-    //dropdown: ['', Validators.compose([Validators.required])],
-  },{updateOn: 'blur'});
+  @Input() userProfileModel: UserProfileModel;
+  @Input() profileForm: FormGroup;
+  // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+  // profileForm = this.fb.group({
+  //   //textInput: ['', Validators.compose([Validators.required])],
+  //   textAreaInput: ['', Validators.compose([Validators.required])],
+  //   //phone: ['', Validators.compose([Validators.required])],
+  //   //select: ['', Validators.compose([Validators.required])],
+  //   //radio: ['', Validators.compose([Validators.required])],
+  //   //dropdown: ['', Validators.compose([Validators.required])],
+  // },{updateOn: 'blur'});
 
   constructor(private fb: FormBuilder) { }
 

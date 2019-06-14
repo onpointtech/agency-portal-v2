@@ -52,30 +52,23 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
-    var UserProfileModel = /** @class */ (function () {
-        function UserProfileModel(textInput, textAreaInput, phone, select, radio, dropdown) {
-            this.textInput = textInput;
-            this.textAreaInput = textAreaInput;
-            this.phone = phone;
-            this.select = select;
-            this.radio = radio;
-            this.dropdown = dropdown;
-        }
-        return UserProfileModel;
-    }());
 
     /**
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TextAreaInputComponent = /** @class */ (function () {
+        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+        // profileForm = this.fb.group({
+        //   //textInput: ['', Validators.compose([Validators.required])],
+        //   textAreaInput: ['', Validators.compose([Validators.required])],
+        //   //phone: ['', Validators.compose([Validators.required])],
+        //   //select: ['', Validators.compose([Validators.required])],
+        //   //radio: ['', Validators.compose([Validators.required])],
+        //   //dropdown: ['', Validators.compose([Validators.required])],
+        // },{updateOn: 'blur'});
         function TextAreaInputComponent(fb) {
             this.fb = fb;
-            this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-            this.profileForm = this.fb.group({
-                //textInput: ['', Validators.compose([Validators.required])],
-                textAreaInput: ['', forms.Validators.compose([forms.Validators.required])],
-            }, { updateOn: 'blur' });
             this.debug = true;
             this.submitted = false;
         }
@@ -106,7 +99,9 @@
             { type: forms.FormBuilder }
         ]; };
         TextAreaInputComponent.propDecorators = {
-            labelName: [{ type: core.Input }]
+            labelName: [{ type: core.Input }],
+            userProfileModel: [{ type: core.Input }],
+            profileForm: [{ type: core.Input }]
         };
         return TextAreaInputComponent;
     }());
@@ -116,12 +111,17 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TextInputComponent = /** @class */ (function () {
+        //userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+        // profileForm = this.fb.group({
+        //   textInput: ['', Validators.compose([Validators.required])],
+        //   //textAreaInput: ['', Validators.compose([Validators.required])],
+        //   //phone: ['', Validators.compose([Validators.required])],
+        //   //select: ['', Validators.compose([Validators.required])],
+        //   //radio: ['', Validators.compose([Validators.required])],
+        //   //dropdown: ['', Validators.compose([Validators.required])],
+        // });
         function TextInputComponent(fb) {
             this.fb = fb;
-            this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-            this.profileForm = this.fb.group({
-                textInput: ['', forms.Validators.compose([forms.Validators.required])],
-            }, { updateOn: 'blur' });
             this.debug = true;
             this.submitted = false;
         }
@@ -152,7 +152,9 @@
             { type: forms.FormBuilder }
         ]; };
         TextInputComponent.propDecorators = {
-            labelName: [{ type: core.Input }]
+            labelName: [{ type: core.Input }],
+            userProfileModel: [{ type: core.Input }],
+            profileForm: [{ type: core.Input }]
         };
         return TextInputComponent;
     }());
@@ -162,14 +164,17 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var PhoneInputComponent = /** @class */ (function () {
+        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+        // profileForm = this.fb.group({
+        //   //textInput: ['', Validators.compose([Validators.required])],
+        //   //textAreaInput: ['', Validators.compose([Validators.required])],
+        //   phone: ['', Validators.compose([Validators.required])],
+        //   //select: ['', Validators.compose([Validators.required])],
+        //   //radio: ['', Validators.compose([Validators.required])],
+        //   //dropdown: ['', Validators.compose([Validators.required])],
+        // },{updateOn: 'blur'});
         function PhoneInputComponent(fb) {
             this.fb = fb;
-            this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-            this.profileForm = this.fb.group({
-                //textInput: ['', Validators.compose([Validators.required])],
-                //textAreaInput: ['', Validators.compose([Validators.required])],
-                phone: ['', forms.Validators.compose([forms.Validators.required])],
-            }, { updateOn: 'blur' });
             this.debug = false;
             this.submitted = false;
         }
@@ -200,7 +205,9 @@
             { type: forms.FormBuilder }
         ]; };
         PhoneInputComponent.propDecorators = {
-            labelName: [{ type: core.Input }]
+            labelName: [{ type: core.Input }],
+            userProfileModel: [{ type: core.Input }],
+            profileForm: [{ type: core.Input }]
         };
         return PhoneInputComponent;
     }());
@@ -210,17 +217,18 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var RadioInputComponent = /** @class */ (function () {
+        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+        // profileForm = this.fb.group({
+        //   //textInput: ['', Validators.compose([Validators.required])],
+        //   //textAreaInput: ['', Validators.compose([Validators.required])],
+        //   //phone: ['', Validators.compose([Validators.required])],
+        //   //select: ['', Validators.compose([Validators.required])],
+        //   radio: ['', Validators.compose([Validators.required])],
+        //   //dropdown: ['', Validators.compose([Validators.required])],
+        // },{updateOn: 'blur'});
         //radioChoices = ['yes', 'no', 'unsure'];
         function RadioInputComponent(fb) {
             this.fb = fb;
-            this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-            this.profileForm = this.fb.group({
-                //textInput: ['', Validators.compose([Validators.required])],
-                //textAreaInput: ['', Validators.compose([Validators.required])],
-                //phone: ['', Validators.compose([Validators.required])],
-                //select: ['', Validators.compose([Validators.required])],
-                radio: ['', forms.Validators.compose([forms.Validators.required])],
-            }, { updateOn: 'blur' });
             this.debug = true;
             this.submitted = false;
         }
@@ -252,7 +260,9 @@
         ]; };
         RadioInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
-            radioChoices: [{ type: core.Input }]
+            radioChoices: [{ type: core.Input }],
+            userProfileModel: [{ type: core.Input }],
+            profileForm: [{ type: core.Input }]
         };
         return RadioInputComponent;
     }());
@@ -262,18 +272,18 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var DropdownInputComponent = /** @class */ (function () {
+        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+        // profileForm = this.fb.group({
+        //   //textInput: ['', Validators.compose([Validators.required])],
+        //   //textAreaInput: ['', Validators.compose([Validators.required])],
+        //   //phone: ['', Validators.compose([Validators.required])],
+        //   //select: ['', Validators.compose([Validators.required])],
+        //   //radio: ['', Validators.compose([Validators.required])],
+        //   dropdown: ['', Validators.compose([Validators.required])],
+        // },{updateOn: 'blur'});
         //dropdownChoices = ['male', 'female', 'pride'];
         function DropdownInputComponent(fb) {
             this.fb = fb;
-            this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-            this.profileForm = this.fb.group({
-                //textInput: ['', Validators.compose([Validators.required])],
-                //textAreaInput: ['', Validators.compose([Validators.required])],
-                //phone: ['', Validators.compose([Validators.required])],
-                //select: ['', Validators.compose([Validators.required])],
-                //radio: ['', Validators.compose([Validators.required])],
-                dropdown: ['', forms.Validators.compose([forms.Validators.required])],
-            }, { updateOn: 'blur' });
             this.debug = true;
             this.submitted = false;
         }
@@ -305,7 +315,9 @@
         ]; };
         DropdownInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
-            dropdownChoices: [{ type: core.Input }]
+            dropdownChoices: [{ type: core.Input }],
+            userProfileModel: [{ type: core.Input }],
+            profileForm: [{ type: core.Input }]
         };
         return DropdownInputComponent;
     }());

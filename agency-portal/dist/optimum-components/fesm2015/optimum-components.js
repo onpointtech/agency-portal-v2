@@ -1,5 +1,5 @@
 import { Injectable, ɵɵdefineInjectable, Component, Input, NgModule } from '@angular/core';
-import { Validators, FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -47,40 +47,26 @@ OptimumComponentsComponent.ctorParameters = () => [];
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class UserProfileModel {
-    /**
-     * @param {?} textInput
-     * @param {?} textAreaInput
-     * @param {?} phone
-     * @param {?} select
-     * @param {?} radio
-     * @param {?} dropdown
-     */
-    constructor(textInput, textAreaInput, phone, select, radio, dropdown) {
-        this.textInput = textInput;
-        this.textAreaInput = textAreaInput;
-        this.phone = phone;
-        this.select = select;
-        this.radio = radio;
-        this.dropdown = dropdown;
-    }
-}
 
 /**
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TextAreaInputComponent {
+    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+    // profileForm = this.fb.group({
+    //   //textInput: ['', Validators.compose([Validators.required])],
+    //   textAreaInput: ['', Validators.compose([Validators.required])],
+    //   //phone: ['', Validators.compose([Validators.required])],
+    //   //select: ['', Validators.compose([Validators.required])],
+    //   //radio: ['', Validators.compose([Validators.required])],
+    //   //dropdown: ['', Validators.compose([Validators.required])],
+    // },{updateOn: 'blur'});
     /**
      * @param {?} fb
      */
     constructor(fb) {
         this.fb = fb;
-        this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-        this.profileForm = this.fb.group({
-            //textInput: ['', Validators.compose([Validators.required])],
-            textAreaInput: ['', Validators.compose([Validators.required])],
-        }, { updateOn: 'blur' });
         this.debug = true;
         this.submitted = false;
     }
@@ -106,7 +92,9 @@ TextAreaInputComponent.ctorParameters = () => [
     { type: FormBuilder }
 ];
 TextAreaInputComponent.propDecorators = {
-    labelName: [{ type: Input }]
+    labelName: [{ type: Input }],
+    userProfileModel: [{ type: Input }],
+    profileForm: [{ type: Input }]
 };
 
 /**
@@ -114,15 +102,20 @@ TextAreaInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TextInputComponent {
+    //userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+    // profileForm = this.fb.group({
+    //   textInput: ['', Validators.compose([Validators.required])],
+    //   //textAreaInput: ['', Validators.compose([Validators.required])],
+    //   //phone: ['', Validators.compose([Validators.required])],
+    //   //select: ['', Validators.compose([Validators.required])],
+    //   //radio: ['', Validators.compose([Validators.required])],
+    //   //dropdown: ['', Validators.compose([Validators.required])],
+    // });
     /**
      * @param {?} fb
      */
     constructor(fb) {
         this.fb = fb;
-        this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-        this.profileForm = this.fb.group({
-            textInput: ['', Validators.compose([Validators.required])],
-        }, { updateOn: 'blur' });
         this.debug = true;
         this.submitted = false;
     }
@@ -148,7 +141,9 @@ TextInputComponent.ctorParameters = () => [
     { type: FormBuilder }
 ];
 TextInputComponent.propDecorators = {
-    labelName: [{ type: Input }]
+    labelName: [{ type: Input }],
+    userProfileModel: [{ type: Input }],
+    profileForm: [{ type: Input }]
 };
 
 /**
@@ -156,17 +151,20 @@ TextInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class PhoneInputComponent {
+    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+    // profileForm = this.fb.group({
+    //   //textInput: ['', Validators.compose([Validators.required])],
+    //   //textAreaInput: ['', Validators.compose([Validators.required])],
+    //   phone: ['', Validators.compose([Validators.required])],
+    //   //select: ['', Validators.compose([Validators.required])],
+    //   //radio: ['', Validators.compose([Validators.required])],
+    //   //dropdown: ['', Validators.compose([Validators.required])],
+    // },{updateOn: 'blur'});
     /**
      * @param {?} fb
      */
     constructor(fb) {
         this.fb = fb;
-        this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-        this.profileForm = this.fb.group({
-            //textInput: ['', Validators.compose([Validators.required])],
-            //textAreaInput: ['', Validators.compose([Validators.required])],
-            phone: ['', Validators.compose([Validators.required])],
-        }, { updateOn: 'blur' });
         this.debug = false;
         this.submitted = false;
     }
@@ -192,7 +190,9 @@ PhoneInputComponent.ctorParameters = () => [
     { type: FormBuilder }
 ];
 PhoneInputComponent.propDecorators = {
-    labelName: [{ type: Input }]
+    labelName: [{ type: Input }],
+    userProfileModel: [{ type: Input }],
+    profileForm: [{ type: Input }]
 };
 
 /**
@@ -200,20 +200,21 @@ PhoneInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class RadioInputComponent {
+    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+    // profileForm = this.fb.group({
+    //   //textInput: ['', Validators.compose([Validators.required])],
+    //   //textAreaInput: ['', Validators.compose([Validators.required])],
+    //   //phone: ['', Validators.compose([Validators.required])],
+    //   //select: ['', Validators.compose([Validators.required])],
+    //   radio: ['', Validators.compose([Validators.required])],
+    //   //dropdown: ['', Validators.compose([Validators.required])],
+    // },{updateOn: 'blur'});
     //radioChoices = ['yes', 'no', 'unsure'];
     /**
      * @param {?} fb
      */
     constructor(fb) {
         this.fb = fb;
-        this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-        this.profileForm = this.fb.group({
-            //textInput: ['', Validators.compose([Validators.required])],
-            //textAreaInput: ['', Validators.compose([Validators.required])],
-            //phone: ['', Validators.compose([Validators.required])],
-            //select: ['', Validators.compose([Validators.required])],
-            radio: ['', Validators.compose([Validators.required])],
-        }, { updateOn: 'blur' });
         this.debug = true;
         this.submitted = false;
     }
@@ -240,7 +241,9 @@ RadioInputComponent.ctorParameters = () => [
 ];
 RadioInputComponent.propDecorators = {
     labelName: [{ type: Input }],
-    radioChoices: [{ type: Input }]
+    radioChoices: [{ type: Input }],
+    userProfileModel: [{ type: Input }],
+    profileForm: [{ type: Input }]
 };
 
 /**
@@ -248,21 +251,21 @@ RadioInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class DropdownInputComponent {
+    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
+    // profileForm = this.fb.group({
+    //   //textInput: ['', Validators.compose([Validators.required])],
+    //   //textAreaInput: ['', Validators.compose([Validators.required])],
+    //   //phone: ['', Validators.compose([Validators.required])],
+    //   //select: ['', Validators.compose([Validators.required])],
+    //   //radio: ['', Validators.compose([Validators.required])],
+    //   dropdown: ['', Validators.compose([Validators.required])],
+    // },{updateOn: 'blur'});
     //dropdownChoices = ['male', 'female', 'pride'];
     /**
      * @param {?} fb
      */
     constructor(fb) {
         this.fb = fb;
-        this.userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default');
-        this.profileForm = this.fb.group({
-            //textInput: ['', Validators.compose([Validators.required])],
-            //textAreaInput: ['', Validators.compose([Validators.required])],
-            //phone: ['', Validators.compose([Validators.required])],
-            //select: ['', Validators.compose([Validators.required])],
-            //radio: ['', Validators.compose([Validators.required])],
-            dropdown: ['', Validators.compose([Validators.required])],
-        }, { updateOn: 'blur' });
         this.debug = true;
         this.submitted = false;
     }
@@ -289,7 +292,9 @@ DropdownInputComponent.ctorParameters = () => [
 ];
 DropdownInputComponent.propDecorators = {
     labelName: [{ type: Input }],
-    dropdownChoices: [{ type: Input }]
+    dropdownChoices: [{ type: Input }],
+    userProfileModel: [{ type: Input }],
+    profileForm: [{ type: Input }]
 };
 
 /**
