@@ -1,6 +1,6 @@
 <ng-container *ngIf="claimantSO">
   <ng-container *ngIf="claimantSO.length == 0; else showTable">
-      <h1>There is no data for this filter</h1>
+      <h1>There are no data for this filter</h1>
       <button (click)="registerClaimant()">Register Claimant</button>
   </ng-container>
   <ng-template #showTable>

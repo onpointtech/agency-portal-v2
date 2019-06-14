@@ -29,15 +29,15 @@ export class ClaimantSearchComponent implements OnInit {
   }
 
   searchClaimant(claimantInfo: string){
-     this.claimantService
+    this.claimantService
     .searchClaimant(claimantInfo)
-    .subscribe(claimantSO => this.claimantSO = claimantSO);
-
-    // if(this.claimantSO.length > 0){
-    //   this.toasterService.success(String(this.claimantSO.length), "hello", 3);
-    // } else {
-    //   this.toasterService.info("hello", "hello");
-    // }
+    .subscribe(claimantSO => {this.claimantSO = claimantSO;
+      if(claimantSO.length > 0){
+        this.toasterService.success("Success", "There were " + String(claimantSO.length) + " for your query.");
+      } else if(claimantSO.length == 0) {
+        this.toasterService.info("Information", "There are no data for this filter");
+      }
+    });
   }
 
   registerClaimant() {

@@ -11,8 +11,8 @@ export class ToasterService {
     this.toastr = toastr;
   }
 
-  success(title: string, text: string, id: number){
-    this.toastr.success(text, title + " " + id);
+  success(title: string, text: string){
+    this.toastr.success(text, title);
   }
 
   info(title: string, text:string){
