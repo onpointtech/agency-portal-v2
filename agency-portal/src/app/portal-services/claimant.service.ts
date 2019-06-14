@@ -19,7 +19,7 @@ export class ClaimantService {
     return this.http.get<ClaimantSO>(claimantUrl)
   }
 
-  getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
+  getAllClaimants(): Observable<ClaimantSO[]> {
     const claimantUrl = 'http://localhost:8080/api/claimant/getAllClaimants';
     return this.http.get<ClaimantSO[]>(claimantUrl).pipe(catchError((err: any) => {
       this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");

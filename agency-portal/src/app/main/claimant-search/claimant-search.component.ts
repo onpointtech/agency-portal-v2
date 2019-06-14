@@ -32,9 +32,11 @@ export class ClaimantSearchComponent implements OnInit {
     this.claimantService
     .searchClaimant(claimantInfo)
     .subscribe(claimantSO => {this.claimantSO = claimantSO;
-      if(claimantSO.length > 0){
-        this.toasterService.success("Success", "There were " + String(claimantSO.length) + " for your query.");
-      } else if(claimantSO.length == 0) {
+      if(claimantSO.length > 1){
+        this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
+      } else if(claimantSO.length == 1) {
+        this.toasterService.success("Success", "There is " + String(claimantSO.length) + " for your query.");
+      }else if(claimantSO.length == 0) {
         this.toasterService.info("Information", "There are no data for this filter");
       }
     });

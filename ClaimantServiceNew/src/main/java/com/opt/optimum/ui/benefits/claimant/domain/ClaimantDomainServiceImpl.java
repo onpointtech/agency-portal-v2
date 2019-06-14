@@ -96,4 +96,10 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		
 		return claimantProfileRepository.save(oldClaimantProfile);
 	}
+
+	public List<ClaimantProfile> searchClaimant(String claimantInfo) {
+		List<ClaimantProfile> claimantProfiles = new ArrayList<>();
+		claimantProfileRepository.claimantSearch(claimantInfo).forEach(e -> claimantProfiles.add(e));
+		return claimantProfiles;
+	}
 }
