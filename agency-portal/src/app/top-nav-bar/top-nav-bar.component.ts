@@ -13,8 +13,9 @@ export class TopNavBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchClaimant(claimantInfo: string){
-    this.router.navigate([`main/claimant-search?searchText=${claimantInfo}`])
+  searchClaimant(){
+    var claimantInfo = (<HTMLInputElement>document.getElementById('searchText')).value;
+    this.router.navigate([`main/claimant-search/${claimantInfo}`])
   }
 
 }

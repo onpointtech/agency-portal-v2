@@ -15,12 +15,12 @@ export class ToasterService {
     this.toastr.success(text, title + " " + id);
   }
 
-  info(){
-     this.toastr.info("This is the Agency Portal", "Information")
+  info(title: string, text:string){
+     this.toastr.info(text, title)
   }
 
- warning(){
-    this.toastr.warning("You are about to enter sensitive information.", "Warning")
+ warning(title: string, text:string){
+    this.toastr.warning(text, title)
  }
 
  danger(title: string, text:string){

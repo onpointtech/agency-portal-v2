@@ -1,7 +1,8 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, ViewChild, SystemJsNgModuleLoader } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { ToasterService } from '../../portal-services/toaster.service';
 
 @Component({
   selector: 'app-claimant-search',
@@ -14,7 +15,7 @@ export class ClaimantSearchComponent implements OnInit {
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService) { }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');

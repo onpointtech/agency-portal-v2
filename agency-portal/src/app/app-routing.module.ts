@@ -55,11 +55,7 @@ const routes: Routes = [
           component:ClaimantRegistrationComponent
         },
         {
-          path:'claimant-search',
-          component:ClaimantSearchComponent
-        },
-        {
-          path:'claimant-search?searchText=:claimantInfo',
+          path:'claimant-search/:claimantInfo',
           component:ClaimantSearchComponent
         },
         {  
