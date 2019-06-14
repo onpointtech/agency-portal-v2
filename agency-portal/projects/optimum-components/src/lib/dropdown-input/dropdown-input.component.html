@@ -7,7 +7,7 @@
         <label for="dropdown"> {{labelName}}:
         </label>
         <select  id="dropdown" class="form-control" [(ngModel)]="userProfileModel.dropdown" formControlName="dropdown" >
-        <option *ngFor="let choice of dropdownChoices" [ngValue]="choice"> {{choice}} </option>
+        <option *ngFor="let choice of dropdownChoices; let i=index" [ngValue]="choice"> {{choice}}</option>
         </select>
         <div *ngIf="debug==true">
           <br>

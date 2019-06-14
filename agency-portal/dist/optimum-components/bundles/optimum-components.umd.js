@@ -58,18 +58,8 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TextAreaInputComponent = /** @class */ (function () {
-        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-        // profileForm = this.fb.group({
-        //   //textInput: ['', Validators.compose([Validators.required])],
-        //   textAreaInput: ['', Validators.compose([Validators.required])],
-        //   //phone: ['', Validators.compose([Validators.required])],
-        //   //select: ['', Validators.compose([Validators.required])],
-        //   //radio: ['', Validators.compose([Validators.required])],
-        //   //dropdown: ['', Validators.compose([Validators.required])],
-        // },{updateOn: 'blur'});
-        function TextAreaInputComponent(fb) {
-            this.fb = fb;
-            this.debug = true;
+        function TextAreaInputComponent() {
+            this.debug = false;
             this.submitted = false;
         }
         /**
@@ -95,9 +85,7 @@
                     }] }
         ];
         /** @nocollapse */
-        TextAreaInputComponent.ctorParameters = function () { return [
-            { type: forms.FormBuilder }
-        ]; };
+        TextAreaInputComponent.ctorParameters = function () { return []; };
         TextAreaInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             userProfileModel: [{ type: core.Input }],
@@ -111,18 +99,8 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TextInputComponent = /** @class */ (function () {
-        //userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-        // profileForm = this.fb.group({
-        //   textInput: ['', Validators.compose([Validators.required])],
-        //   //textAreaInput: ['', Validators.compose([Validators.required])],
-        //   //phone: ['', Validators.compose([Validators.required])],
-        //   //select: ['', Validators.compose([Validators.required])],
-        //   //radio: ['', Validators.compose([Validators.required])],
-        //   //dropdown: ['', Validators.compose([Validators.required])],
-        // });
-        function TextInputComponent(fb) {
-            this.fb = fb;
-            this.debug = true;
+        function TextInputComponent() {
+            this.debug = false;
             this.submitted = false;
         }
         /**
@@ -148,9 +126,7 @@
                     }] }
         ];
         /** @nocollapse */
-        TextInputComponent.ctorParameters = function () { return [
-            { type: forms.FormBuilder }
-        ]; };
+        TextInputComponent.ctorParameters = function () { return []; };
         TextInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             userProfileModel: [{ type: core.Input }],
@@ -164,17 +140,7 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var PhoneInputComponent = /** @class */ (function () {
-        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-        // profileForm = this.fb.group({
-        //   //textInput: ['', Validators.compose([Validators.required])],
-        //   //textAreaInput: ['', Validators.compose([Validators.required])],
-        //   phone: ['', Validators.compose([Validators.required])],
-        //   //select: ['', Validators.compose([Validators.required])],
-        //   //radio: ['', Validators.compose([Validators.required])],
-        //   //dropdown: ['', Validators.compose([Validators.required])],
-        // },{updateOn: 'blur'});
-        function PhoneInputComponent(fb) {
-            this.fb = fb;
+        function PhoneInputComponent() {
             this.debug = false;
             this.submitted = false;
         }
@@ -201,9 +167,7 @@
                     }] }
         ];
         /** @nocollapse */
-        PhoneInputComponent.ctorParameters = function () { return [
-            { type: forms.FormBuilder }
-        ]; };
+        PhoneInputComponent.ctorParameters = function () { return []; };
         PhoneInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             userProfileModel: [{ type: core.Input }],
@@ -217,19 +181,8 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var RadioInputComponent = /** @class */ (function () {
-        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-        // profileForm = this.fb.group({
-        //   //textInput: ['', Validators.compose([Validators.required])],
-        //   //textAreaInput: ['', Validators.compose([Validators.required])],
-        //   //phone: ['', Validators.compose([Validators.required])],
-        //   //select: ['', Validators.compose([Validators.required])],
-        //   radio: ['', Validators.compose([Validators.required])],
-        //   //dropdown: ['', Validators.compose([Validators.required])],
-        // },{updateOn: 'blur'});
-        //radioChoices = ['yes', 'no', 'unsure'];
-        function RadioInputComponent(fb) {
-            this.fb = fb;
-            this.debug = true;
+        function RadioInputComponent() {
+            this.debug = false;
             this.submitted = false;
         }
         /**
@@ -255,9 +208,7 @@
                     }] }
         ];
         /** @nocollapse */
-        RadioInputComponent.ctorParameters = function () { return [
-            { type: forms.FormBuilder }
-        ]; };
+        RadioInputComponent.ctorParameters = function () { return []; };
         RadioInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             radioChoices: [{ type: core.Input }],
@@ -272,18 +223,7 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var DropdownInputComponent = /** @class */ (function () {
-        // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-        // profileForm = this.fb.group({
-        //   //textInput: ['', Validators.compose([Validators.required])],
-        //   //textAreaInput: ['', Validators.compose([Validators.required])],
-        //   //phone: ['', Validators.compose([Validators.required])],
-        //   //select: ['', Validators.compose([Validators.required])],
-        //   //radio: ['', Validators.compose([Validators.required])],
-        //   dropdown: ['', Validators.compose([Validators.required])],
-        // },{updateOn: 'blur'});
-        //dropdownChoices = ['male', 'female', 'pride'];
-        function DropdownInputComponent(fb) {
-            this.fb = fb;
+        function DropdownInputComponent() {
             this.debug = true;
             this.submitted = false;
         }
@@ -305,14 +245,12 @@
         DropdownInputComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'optimum-dropdown-input',
-                        template: "<div class=\"container\">\n    <div *ngIf=\"debug==true\">\n      <h4> Optimum-dropdown-input component</h4>\n    </div>\n    <form [formGroup]=\"profileForm\" #f=\"ngForm\" (ngSubmit)=\"onSubmit()\"  novalidate>\n      <div class=\"form-group\">\n        <label for=\"dropdown\"> {{labelName}}:\n        </label>\n        <select  id=\"dropdown\" class=\"form-control\" [(ngModel)]=\"userProfileModel.dropdown\" formControlName=\"dropdown\" >\n        <option *ngFor=\"let choice of dropdownChoices\" [ngValue]=\"choice\"> {{choice}} </option>\n        </select>\n        <div *ngIf=\"debug==true\">\n          <br>\n          DEBUG: model.textInput content: {{userProfileModel.textInput}}\n          <br>\n          DEBUG: profileForm status: {{profileForm.status}}\n          <br>\n          DEBUG: profileForm dirty: {{profileForm.dirty}}\n          <br>\n          DEBUG: profileForm touched: {{profileForm.touched}}\n          <br>\n          DEBUG: model content: {{ userProfileModel | json }}\n          <br>\n        </div>\n        <div\n          *ngIf=\"profileForm.controls['dropdown'].invalid && (profileForm.controls['dropdown'].dirty || profileForm.controls['dropdown'].touched)\"\n          class=\"alert alert-danger\">\n          <div *ngIf=\"profileForm.controls['dropdown'].errors.required\">\n            This is required.\n          </div>\n          <div *ngIf=\"profileForm.controls['dropdown'].invalid\">\n            Error in input.\n          </div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n    </form >\n  \n  </div>",
+                        template: "<div class=\"container\">\n    <div *ngIf=\"debug==true\">\n      <h4> Optimum-dropdown-input component</h4>\n    </div>\n    <form [formGroup]=\"profileForm\" #f=\"ngForm\" (ngSubmit)=\"onSubmit()\"  novalidate>\n      <div class=\"form-group\">\n        <label for=\"dropdown\"> {{labelName}}:\n        </label>\n        <select  id=\"dropdown\" class=\"form-control\" [(ngModel)]=\"userProfileModel.dropdown\" formControlName=\"dropdown\" >\n        <option *ngFor=\"let choice of dropdownChoices; let i=index\" [ngValue]=\"choice\"> {{choice}}</option>\n        </select>\n        <div *ngIf=\"debug==true\">\n          <br>\n          DEBUG: model.textInput content: {{userProfileModel.textInput}}\n          <br>\n          DEBUG: profileForm status: {{profileForm.status}}\n          <br>\n          DEBUG: profileForm dirty: {{profileForm.dirty}}\n          <br>\n          DEBUG: profileForm touched: {{profileForm.touched}}\n          <br>\n          DEBUG: model content: {{ userProfileModel | json }}\n          <br>\n        </div>\n        <div\n          *ngIf=\"profileForm.controls['dropdown'].invalid && (profileForm.controls['dropdown'].dirty || profileForm.controls['dropdown'].touched)\"\n          class=\"alert alert-danger\">\n          <div *ngIf=\"profileForm.controls['dropdown'].errors.required\">\n            This is required.\n          </div>\n          <div *ngIf=\"profileForm.controls['dropdown'].invalid\">\n            Error in input.\n          </div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n    </form >\n  \n  </div>",
                         styles: ['input.ng-invalid.ng-touched  {border: 2px solid #a94442; /* red */ }']
                     }] }
         ];
         /** @nocollapse */
-        DropdownInputComponent.ctorParameters = function () { return [
-            { type: forms.FormBuilder }
-        ]; };
+        DropdownInputComponent.ctorParameters = function () { return []; };
         DropdownInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             dropdownChoices: [{ type: core.Input }],

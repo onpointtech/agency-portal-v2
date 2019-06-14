@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserProfileModel } from '../user-profile-model';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormGroup} from '@angular/forms';
+
 
 
 
@@ -15,17 +15,7 @@ export class PhoneInputComponent implements OnInit {
   @Input() userProfileModel: UserProfileModel;
   @Input() profileForm: FormGroup;
 
-  // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-  // profileForm = this.fb.group({
-  //   //textInput: ['', Validators.compose([Validators.required])],
-  //   //textAreaInput: ['', Validators.compose([Validators.required])],
-  //   phone: ['', Validators.compose([Validators.required])],
-  //   //select: ['', Validators.compose([Validators.required])],
-  //   //radio: ['', Validators.compose([Validators.required])],
-  //   //dropdown: ['', Validators.compose([Validators.required])],
-  // },{updateOn: 'blur'});
-
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 import { Injectable, ɵɵdefineInjectable, Component, Input, NgModule } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -53,21 +53,8 @@ OptimumComponentsComponent.ctorParameters = () => [];
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TextAreaInputComponent {
-    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-    // profileForm = this.fb.group({
-    //   //textInput: ['', Validators.compose([Validators.required])],
-    //   textAreaInput: ['', Validators.compose([Validators.required])],
-    //   //phone: ['', Validators.compose([Validators.required])],
-    //   //select: ['', Validators.compose([Validators.required])],
-    //   //radio: ['', Validators.compose([Validators.required])],
-    //   //dropdown: ['', Validators.compose([Validators.required])],
-    // },{updateOn: 'blur'});
-    /**
-     * @param {?} fb
-     */
-    constructor(fb) {
-        this.fb = fb;
-        this.debug = true;
+    constructor() {
+        this.debug = false;
         this.submitted = false;
     }
     /**
@@ -88,9 +75,7 @@ TextAreaInputComponent.decorators = [
             }] }
 ];
 /** @nocollapse */
-TextAreaInputComponent.ctorParameters = () => [
-    { type: FormBuilder }
-];
+TextAreaInputComponent.ctorParameters = () => [];
 TextAreaInputComponent.propDecorators = {
     labelName: [{ type: Input }],
     userProfileModel: [{ type: Input }],
@@ -102,21 +87,8 @@ TextAreaInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TextInputComponent {
-    //userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-    // profileForm = this.fb.group({
-    //   textInput: ['', Validators.compose([Validators.required])],
-    //   //textAreaInput: ['', Validators.compose([Validators.required])],
-    //   //phone: ['', Validators.compose([Validators.required])],
-    //   //select: ['', Validators.compose([Validators.required])],
-    //   //radio: ['', Validators.compose([Validators.required])],
-    //   //dropdown: ['', Validators.compose([Validators.required])],
-    // });
-    /**
-     * @param {?} fb
-     */
-    constructor(fb) {
-        this.fb = fb;
-        this.debug = true;
+    constructor() {
+        this.debug = false;
         this.submitted = false;
     }
     /**
@@ -137,9 +109,7 @@ TextInputComponent.decorators = [
             }] }
 ];
 /** @nocollapse */
-TextInputComponent.ctorParameters = () => [
-    { type: FormBuilder }
-];
+TextInputComponent.ctorParameters = () => [];
 TextInputComponent.propDecorators = {
     labelName: [{ type: Input }],
     userProfileModel: [{ type: Input }],
@@ -151,20 +121,7 @@ TextInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class PhoneInputComponent {
-    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-    // profileForm = this.fb.group({
-    //   //textInput: ['', Validators.compose([Validators.required])],
-    //   //textAreaInput: ['', Validators.compose([Validators.required])],
-    //   phone: ['', Validators.compose([Validators.required])],
-    //   //select: ['', Validators.compose([Validators.required])],
-    //   //radio: ['', Validators.compose([Validators.required])],
-    //   //dropdown: ['', Validators.compose([Validators.required])],
-    // },{updateOn: 'blur'});
-    /**
-     * @param {?} fb
-     */
-    constructor(fb) {
-        this.fb = fb;
+    constructor() {
         this.debug = false;
         this.submitted = false;
     }
@@ -186,9 +143,7 @@ PhoneInputComponent.decorators = [
             }] }
 ];
 /** @nocollapse */
-PhoneInputComponent.ctorParameters = () => [
-    { type: FormBuilder }
-];
+PhoneInputComponent.ctorParameters = () => [];
 PhoneInputComponent.propDecorators = {
     labelName: [{ type: Input }],
     userProfileModel: [{ type: Input }],
@@ -200,22 +155,8 @@ PhoneInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class RadioInputComponent {
-    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-    // profileForm = this.fb.group({
-    //   //textInput: ['', Validators.compose([Validators.required])],
-    //   //textAreaInput: ['', Validators.compose([Validators.required])],
-    //   //phone: ['', Validators.compose([Validators.required])],
-    //   //select: ['', Validators.compose([Validators.required])],
-    //   radio: ['', Validators.compose([Validators.required])],
-    //   //dropdown: ['', Validators.compose([Validators.required])],
-    // },{updateOn: 'blur'});
-    //radioChoices = ['yes', 'no', 'unsure'];
-    /**
-     * @param {?} fb
-     */
-    constructor(fb) {
-        this.fb = fb;
-        this.debug = true;
+    constructor() {
+        this.debug = false;
         this.submitted = false;
     }
     /**
@@ -236,9 +177,7 @@ RadioInputComponent.decorators = [
             }] }
 ];
 /** @nocollapse */
-RadioInputComponent.ctorParameters = () => [
-    { type: FormBuilder }
-];
+RadioInputComponent.ctorParameters = () => [];
 RadioInputComponent.propDecorators = {
     labelName: [{ type: Input }],
     radioChoices: [{ type: Input }],
@@ -251,21 +190,7 @@ RadioInputComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class DropdownInputComponent {
-    // userProfileModel = new UserProfileModel('default', 'default', 'default', 'default', 'default', 'default')
-    // profileForm = this.fb.group({
-    //   //textInput: ['', Validators.compose([Validators.required])],
-    //   //textAreaInput: ['', Validators.compose([Validators.required])],
-    //   //phone: ['', Validators.compose([Validators.required])],
-    //   //select: ['', Validators.compose([Validators.required])],
-    //   //radio: ['', Validators.compose([Validators.required])],
-    //   dropdown: ['', Validators.compose([Validators.required])],
-    // },{updateOn: 'blur'});
-    //dropdownChoices = ['male', 'female', 'pride'];
-    /**
-     * @param {?} fb
-     */
-    constructor(fb) {
-        this.fb = fb;
+    constructor() {
         this.debug = true;
         this.submitted = false;
     }
@@ -282,14 +207,12 @@ class DropdownInputComponent {
 DropdownInputComponent.decorators = [
     { type: Component, args: [{
                 selector: 'optimum-dropdown-input',
-                template: "<div class=\"container\">\n    <div *ngIf=\"debug==true\">\n      <h4> Optimum-dropdown-input component</h4>\n    </div>\n    <form [formGroup]=\"profileForm\" #f=\"ngForm\" (ngSubmit)=\"onSubmit()\"  novalidate>\n      <div class=\"form-group\">\n        <label for=\"dropdown\"> {{labelName}}:\n        </label>\n        <select  id=\"dropdown\" class=\"form-control\" [(ngModel)]=\"userProfileModel.dropdown\" formControlName=\"dropdown\" >\n        <option *ngFor=\"let choice of dropdownChoices\" [ngValue]=\"choice\"> {{choice}} </option>\n        </select>\n        <div *ngIf=\"debug==true\">\n          <br>\n          DEBUG: model.textInput content: {{userProfileModel.textInput}}\n          <br>\n          DEBUG: profileForm status: {{profileForm.status}}\n          <br>\n          DEBUG: profileForm dirty: {{profileForm.dirty}}\n          <br>\n          DEBUG: profileForm touched: {{profileForm.touched}}\n          <br>\n          DEBUG: model content: {{ userProfileModel | json }}\n          <br>\n        </div>\n        <div\n          *ngIf=\"profileForm.controls['dropdown'].invalid && (profileForm.controls['dropdown'].dirty || profileForm.controls['dropdown'].touched)\"\n          class=\"alert alert-danger\">\n          <div *ngIf=\"profileForm.controls['dropdown'].errors.required\">\n            This is required.\n          </div>\n          <div *ngIf=\"profileForm.controls['dropdown'].invalid\">\n            Error in input.\n          </div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n    </form >\n  \n  </div>",
+                template: "<div class=\"container\">\n    <div *ngIf=\"debug==true\">\n      <h4> Optimum-dropdown-input component</h4>\n    </div>\n    <form [formGroup]=\"profileForm\" #f=\"ngForm\" (ngSubmit)=\"onSubmit()\"  novalidate>\n      <div class=\"form-group\">\n        <label for=\"dropdown\"> {{labelName}}:\n        </label>\n        <select  id=\"dropdown\" class=\"form-control\" [(ngModel)]=\"userProfileModel.dropdown\" formControlName=\"dropdown\" >\n        <option *ngFor=\"let choice of dropdownChoices; let i=index\" [ngValue]=\"choice\"> {{choice}}</option>\n        </select>\n        <div *ngIf=\"debug==true\">\n          <br>\n          DEBUG: model.textInput content: {{userProfileModel.textInput}}\n          <br>\n          DEBUG: profileForm status: {{profileForm.status}}\n          <br>\n          DEBUG: profileForm dirty: {{profileForm.dirty}}\n          <br>\n          DEBUG: profileForm touched: {{profileForm.touched}}\n          <br>\n          DEBUG: model content: {{ userProfileModel | json }}\n          <br>\n        </div>\n        <div\n          *ngIf=\"profileForm.controls['dropdown'].invalid && (profileForm.controls['dropdown'].dirty || profileForm.controls['dropdown'].touched)\"\n          class=\"alert alert-danger\">\n          <div *ngIf=\"profileForm.controls['dropdown'].errors.required\">\n            This is required.\n          </div>\n          <div *ngIf=\"profileForm.controls['dropdown'].invalid\">\n            Error in input.\n          </div>\n        </div>\n      </div>\n      <button type=\"submit\" class=\"btn btn-success\">Submit</button>\n    </form >\n  \n  </div>",
                 styles: ['input.ng-invalid.ng-touched  {border: 2px solid #a94442; /* red */ }']
             }] }
 ];
 /** @nocollapse */
-DropdownInputComponent.ctorParameters = () => [
-    { type: FormBuilder }
-];
+DropdownInputComponent.ctorParameters = () => [];
 DropdownInputComponent.propDecorators = {
     labelName: [{ type: Input }],
     dropdownChoices: [{ type: Input }],
