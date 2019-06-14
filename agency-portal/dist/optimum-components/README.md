@@ -10,6 +10,8 @@ Run `ng generate component component-name --project optimum-components` to gener
 ## Build
 
 Run `ng build optimum-components` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build optimum-components --watch` to build the project while constantly updating the code.
+
 
 ## Publishing
 

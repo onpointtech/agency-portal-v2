@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OptimumComponentsModule } from 'optimum-components';
 import { UserProfileModel } from '../optimum-form/user-profile-model';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 
@@ -38,5 +38,9 @@ export class OptimumFormComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
 
 }
