@@ -1,42 +1,168 @@
 <h3>
-  Register
+  Claimant Registration
 </h3>
+
+
 <form [formGroup]="profileForm" novalidate>
   <div class="form-group">
-
-  
-
-    <label for="ssn"> ssn:
-      <input type="text" class="form-control" [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
-    </label>
-    <div *ngIf="debug==true">
-      <br>
-      DEBUG: model.ssn content: {{userProfileModel.ssn}}
-      <br>
-      DEBUG: profileForm status: {{profileForm.status}}
-      <br>
-      DEBUG: profileForm dirty: {{profileForm.dirty}}
-      <br>
-      DEBUG: profileForm touched: {{profileForm.touched}}
-      <br>
-      DEBUG: model content: {{ userProfileModel | json }}
-      <br>
-    </div>
-    <div
-      *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
-      class="alert alert-danger">
-      <div *ngIf="profileForm.controls['ssn'].errors.required">
-        This is required.
-      </div>
-      <div *ngIf="profileForm.controls['ssn'].invalid">
-        Error in input.
-      </div>
-    </div>
-    <br>
-
-    <!-- <label for="dateOfBirth"> dateOfBirth:
-        <input type="date" class="form-control" [(ngModel)]="userProfileModel.dateOfBirth" formControlName="dateOfBirth">
+    <div class="col-xs-12 col-md-6">
+      <label for="ssn" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        SSN:
       </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
+        <span
+          *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter a first
+          name.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.ssn content: {{userProfileModel.ssn}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="ssn" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Confirm SSN:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
+        <span
+          *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter a first
+          name.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.ssn content: {{userProfileModel.ssn}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <label for="firstName" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        First Name:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.firstName"
+          formControlName="firstName">
+        <span
+          *ngIf="profileForm.controls['firstName'].invalid && (profileForm.controls['firstName'].dirty || profileForm.controls['firstName'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback has-error text-danger"
+          aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['firstName'].invalid && (profileForm.controls['firstName'].dirty || profileForm.controls['firstName'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter a first
+          name.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.firstName content: {{userProfileModel.firstName}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="lastName" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Last Name:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.lastName"
+          formControlName="lastName">
+        <span
+          *ngIf="profileForm.controls['lastName'].invalid && (profileForm.controls['lastName'].dirty || profileForm.controls['lastName'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['lastName'].invalid && (profileForm.controls['lastName'].dirty || profileForm.controls['lastName'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a last name.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.lastName content: {{userProfileModel.lastName}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="middleInitial" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Middle Initial:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.middleInitial"
+          formControlName="middleInitial">
+        <span
+          *ngIf="profileForm.controls['middleInitial'].invalid && (profileForm.controls['middleInitial'].dirty || profileForm.controls['middleInitial'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['middleInitial'].invalid && (profileForm.controls['middleInitial'].dirty || profileForm.controls['middleInitial'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a middle initial.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.middleInitial content: {{userProfileModel.middleInitial}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="dateOfBirth" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Date of Birth:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="date" class="form-control edit_field" [(ngModel)]="userProfileModel.dateOfBirth"
+          formControlName="dateOfBirth">
+        <span
+          *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a date of birth.</p>
+      </div>
       <div *ngIf="debug==true">
         <br>
         DEBUG: model.dateOfBirth content: {{userProfileModel.dateOfBirth}}
@@ -50,24 +176,167 @@
         DEBUG: model content: {{ userProfileModel | json }}
         <br>
       </div>
-      <div
-        *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
-        class="alert alert-danger">
-        <div *ngIf="profileForm.controls['dateOfBirth'].errors.required">
-          This is required.
-        </div>
-        <div *ngIf="profileForm.controls['dateOfBirth'].invalid">
-          Error in input.
-        </div>
-      </div>
-      <br> -->
+    </div>
 
-      <label for="firstName"> firstName:
-          <input type="text" class="form-control" [(ngModel)]="userProfileModel.firstName" formControlName="firstName">
+    <div class="col-xs-12 col-md-6">
+      <label for="homePhone" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Home Phone:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.homePhone"
+          formControlName="homePhone">
+        <span
+          *ngIf="profileForm.controls['homePhone'].invalid && (profileForm.controls['homePhone'].dirty || profileForm.controls['homePhone'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['homePhone'].invalid && (profileForm.controls['homePhone'].dirty || profileForm.controls['homePhone'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a home phone.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.homePhone content: {{userProfileModel.homePhone}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.mobilePhone"
+          formControlName="mobilePhone">
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.mobilePhone content: {{userProfileModel.mobilePhone}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-md-6">
+      <label for="preferredOccupation" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Preferred Occupation:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" formControlName="preferredOccupation">
+        <span
+          *ngIf="profileForm.controls['preferredOccupation'].invalid && (profileForm.controls['preferredOccupation'].dirty || profileForm.controls['preferredOccupation'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['preferredOccupation'].invalid && (profileForm.controls['preferredOccupation'].dirty || profileForm.controls['preferredOccupation'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter preferred occupation.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.preferredOccupation content:
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <label for="languagePreference" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Language Preference:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <select class="edit_field" formControlName="languagePreference" [compareWith]="compareFn">
+          <option [value]="choice" *ngFor="let choice of languagePreferenceChoices">{{choice}}</option>
+        </select>
+        <span
+          *ngIf="profileForm.controls['languagePreference'].invalid && (profileForm.controls['languagePreference'].dirty || profileForm.controls['languagePreference'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['languagePreference'].invalid && (profileForm.controls['languagePreference'].dirty || profileForm.controls['languagePreference'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter language preference.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.languagePreference content: {{userProfileModel.languagePreference}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="Gender" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Gender:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <select class="edit_field" formControlName="gender" [compareWith]="compareFn">
+          <option [value]="choice" *ngFor="let choice of genderChoices">{{choice}}</option>
+        </select>
+        <span
+          *ngIf="profileForm.controls['gender'].invalid && (profileForm.controls['gender'].dirty || profileForm.controls['gender'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['gender'].invalid && (profileForm.controls['gender'].dirty || profileForm.controls['gender'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter gender.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.gender content: {{userProfileModel.gender}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+        <label for="educationalLevel" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+          Educational Level:
         </label>
+        <div class="col-xs-12 has-feedback">
+          <select class="edit_field" formControlName="educationalLevel" [compareWith]="compareFn">
+            <option [value]="choice" *ngFor="let choice of educationalLevelChoices">{{choice}}</option>
+          </select>
+          <span
+            *ngIf="profileForm.controls['educationalLevel'].invalid && (profileForm.controls['educationalLevel'].dirty || profileForm.controls['educationalLevel'].touched)"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+          <p *ngIf="profileForm.controls['educationalLevel'].invalid && (profileForm.controls['educationalLevel'].dirty || profileForm.controls['educationalLevel'].touched)"
+            class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+            Please enter educational level.</p>
+        </div>
         <div *ngIf="debug==true">
           <br>
-          DEBUG: model.firstName content: {{userProfileModel.firstName}}
+          DEBUG: model.educationalLevel content: {{userProfileModel.educationalLevel}}
           <br>
           DEBUG: profileForm status: {{profileForm.status}}
           <br>
@@ -78,76 +347,264 @@
           DEBUG: model content: {{ userProfileModel | json }}
           <br>
         </div>
-        <div
-          *ngIf="profileForm.controls['firstName'].invalid && (profileForm.controls['firstName'].dirty || profileForm.controls['firstName'].touched)"
-          class="alert alert-danger">
-          <div *ngIf="profileForm.controls['firstName'].errors.required">
-            This is required.
-          </div>
-          <div *ngIf="profileForm.controls['firstName'].invalid">
-            Error in input.
-          </div>
-        </div>
-        <br>
+      </div>
   
-        <label for="middleInitial"> middleInitial:
-            <input type="text" class="form-control" [(ngModel)]="userProfileModel.middleInitial" formControlName="middleInitial">
-          </label>
-          <div *ngIf="debug==true">
-            <br>
-            DEBUG: model.middleInitial content: {{userProfileModel.middleInitial}}
-            <br>
-            DEBUG: profileForm status: {{profileForm.status}}
-            <br>
-            DEBUG: profileForm dirty: {{profileForm.dirty}}
-            <br>
-            DEBUG: profileForm touched: {{profileForm.touched}}
-            <br>
-            DEBUG: model content: {{ userProfileModel | json }}
-            <br>
-          </div>
-          <div
-            *ngIf="profileForm.controls['middleInitial'].invalid && (profileForm.controls['middleInitial'].dirty || profileForm.controls['middleInitial'].touched)"
-            class="alert alert-danger">
-            <div *ngIf="profileForm.controls['middleInitial'].errors.required">
-              This is required.
-            </div>
-            <div *ngIf="profileForm.controls['middleInitial'].invalid">
-              Error in input.
-            </div>
-          </div>
+  
+  
+      <div class="col-xs-12 col-md-6">
+        <label for="race" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+          Race:
+        </label>
+        <div class="col-xs-12 has-feedback">
+          <select class="edit_field" formControlName="race" [compareWith]="compareFn">
+            <option [value]="choice" *ngFor="let choice of raceChoices">{{choice}}</option>
+          </select>
+          <span
+            *ngIf="profileForm.controls['race'].invalid && (profileForm.controls['race'].dirty || profileForm.controls['race'].touched)"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+          <p *ngIf="profileForm.controls['race'].invalid && (profileForm.controls['race'].dirty || profileForm.controls['race'].touched)"
+            class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+            Please enter race.</p>
+        </div>
+        <div *ngIf="debug==true">
           <br>
+          DEBUG: model.race content: {{userProfileModel.race}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+  
+      </div>
+  
+      <div class="col-xs-12 col-md-6">
+        <label for="ethnicity" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+          Ethnicity:
+        </label>
+        <div class="col-xs-12 has-feedback">
+          <select class="edit_field" formControlName="ethnicity" [compareWith]="compareFn">
+            <option [value]="choice" *ngFor="let choice of ethnicityChoices">{{choice}}</option>
+          </select>
+          <span
+            *ngIf="profileForm.controls['ethnicity'].invalid && (profileForm.controls['ethnicity'].dirty || profileForm.controls['ethnicity'].touched)"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+          <p *ngIf="profileForm.controls['ethnicity'].invalid && (profileForm.controls['ethnicity'].dirty || profileForm.controls['ethnicity'].touched)"
+            class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+            Please enter ethnicity.</p>
+        </div>
+        <div *ngIf="debug==true">
+          <br>
+          DEBUG: model.ethnicity content: {{userProfileModel.ethnicity}}
+          <br>
+          DEBUG: profileForm status: {{profileForm.status}}
+          <br>
+          DEBUG: profileForm dirty: {{profileForm.dirty}}
+          <br>
+          DEBUG: profileForm touched: {{profileForm.touched}}
+          <br>
+          DEBUG: model content: {{ userProfileModel | json }}
+          <br>
+        </div>
+  
+      </div>
+  
+      <h3>
+          Claimant Address
+        </h3>
 
-          <label for="lastName"> lastName:
-              <input type="text" class="form-control" [(ngModel)]="userProfileModel.lastName" formControlName="lastName">
-            </label>
-            <div *ngIf="debug==true">
-              <br>
-              DEBUG: model.lastName content: {{userProfileModel.lastName}}
-              <br>
-              DEBUG: profileForm status: {{profileForm.status}}
-              <br>
-              DEBUG: profileForm dirty: {{profileForm.dirty}}
-              <br>
-              DEBUG: profileForm touched: {{profileForm.touched}}
-              <br>
-              DEBUG: model content: {{ userProfileModel | json }}
-              <br>
-            </div>
-            <div
-              *ngIf="profileForm.controls['lastName'].invalid && (profileForm.controls['lastName'].dirty || profileForm.controls['lastName'].touched)"
-              class="alert alert-danger">
-              <div *ngIf="profileForm.controls['lastName'].errors.required">
-                This is required.
-              </div>
-              <div *ngIf="profileForm.controls['lastName'].invalid">
-                Error in input.
-              </div>
-            </div>
-            <br>
+    <div class="col-xs-12 col-md-12">
+      <label for="addressLine1" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Address Line 1:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].addressLine1"
+          formControlName="addressLine1">
+        <span
+          *ngIf="profileForm.controls['addressLine1'].invalid && (profileForm.controls['addressLine1'].dirty || profileForm.controls['addressLine1'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['addressLine1'].invalid && (profileForm.controls['addressLine1'].dirty || profileForm.controls['addressLine1'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter an Address Line 1.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.addressLine1 content: {{userProfileModel.address[0].addressLine1}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
 
-            <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>
+    </div>
 
+    <div class="col-xs-12 col-md-12">
+      <label for="addressLine2" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Address Line 2:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].addressLine2"
+          formControlName="addressLine2">
+        <span
+          *ngIf="profileForm.controls['addressLine2'].invalid && (profileForm.controls['addressLine2'].dirty || profileForm.controls['addressLine2'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['addressLine2'].invalid && (profileForm.controls['addressLine2'].dirty || profileForm.controls['addressLine2'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter an Address Line 2.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.addressLine2 content: {{userProfileModel.address[0].addressLine2}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="city" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        City:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].city"
+          formControlName="city">
+        <span
+          *ngIf="profileForm.controls['city'].invalid && (profileForm.controls['city'].dirty || profileForm.controls['city'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['city'].invalid && (profileForm.controls['city'].dirty || profileForm.controls['city'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a city.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.city content: {{userProfileModel.address[0].city}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="state" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        State:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].state"
+          formControlName="state">
+        <span
+          *ngIf="profileForm.controls['state'].invalid && (profileForm.controls['state'].dirty || profileForm.controls['state'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['state'].invalid && (profileForm.controls['state'].dirty || profileForm.controls['state'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a state.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.state content: {{userProfileModel.address[0].state}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="zipCode" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Zip Code:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].zipCode"
+          formControlName="zipCode">
+        <span
+          *ngIf="profileForm.controls['zipCode'].invalid && (profileForm.controls['zipCode'].dirty || profileForm.controls['zipCode'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['zipCode'].invalid && (profileForm.controls['zipCode'].dirty || profileForm.controls['zipCode'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a Zip Code.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.zipCode content: {{userProfileModel.address[0].zipCode}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <label for="zipExt" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        Zip Code Extension:
+      </label>
+      <div class="col-xs-12 has-feedback">
+        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.address[0].zipExt"
+          formControlName="zipExt">
+        <span
+          *ngIf="profileForm.controls['zipExt'].invalid && (profileForm.controls['zipExt'].dirty || profileForm.controls['zipExt'].touched)"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
+        <p *ngIf="profileForm.controls['zipExt'].invalid && (profileForm.controls['zipExt'].dirty || profileForm.controls['zipExt'].touched)"
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
+          Please enter a Zip Code Extension.</p>
+      </div>
+      <div *ngIf="debug==true">
+        <br>
+        DEBUG: model.zipExt content: {{userProfileModel.address[0].zipExt}}
+        <br>
+        DEBUG: profileForm status: {{profileForm.status}}
+        <br>
+        DEBUG: profileForm dirty: {{profileForm.dirty}}
+        <br>
+        DEBUG: profileForm touched: {{profileForm.touched}}
+        <br>
+        DEBUG: model content: {{ userProfileModel | json }}
+        <br>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="col-xs-12 col-md-12">
+      <button type="submit" class="btn btn-success" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
   </div>
 </form>
 
