@@ -19,4 +19,7 @@ export class ClaimantSO {
     ivrPin: string;
     documentDeliveryPreference: string;
     address: Address[];
+    email: string;
+    preferredOccupation: string;
+    alternateClaimantId: string;
 }

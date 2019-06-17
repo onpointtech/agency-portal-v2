@@ -40,6 +40,9 @@ public class ClaimantProfile {
 	String lastInsertUpdateBy;
 	String ivrPin;
 	String documentDeliveryPreference;
+	String email;
+	String preferredOccupation;
+	String alternateClaimantId;
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name = "claimantId", nullable = false)
@@ -152,5 +155,23 @@ public class ClaimantProfile {
 	}
 	public void setAddress(List<Address> address) {
 		this.address = address;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPreferredOccupation() {
+		return preferredOccupation;
+	}
+	public void setPreferredOccupation(String preferredOccupation) {
+		this.preferredOccupation = preferredOccupation;
+	}
+	public String getAlternateClaimantId() {
+		return alternateClaimantId;
+	}
+	public void setAlternateClaimantId(String alternateClaimantId) {
+		this.alternateClaimantId = alternateClaimantId;
 	}
 }
