@@ -6,23 +6,20 @@ export class AddressFormatPipe implements PipeTransform {
     transform(address: Address[]): string {
         let newAddress: string = "";
 
-        for(var count = 0; count < Object.keys(address).length; count++){
-            newAddress += address[count].addressLine1;
+            newAddress += address[0].addressLine1;
 
-            if(address[count].addressLine2 != null) {
+            if(address[0].addressLine2 != null) {
                 newAddress += ", ";
-                newAddress += address[count].addressLine2;
+                newAddress += address[0].addressLine2;
             }
 
-            newAddress = newAddress + ", " + address[count].city + ", " + address[count].state + ", " + address[count].zipCode;
+            newAddress = newAddress + ", " + "\n" + address[0].city + ", " + address[0].state + ", " + address[0].zipCode;
     
-            if(address[count].zipExt != null) {
+            if(address[0].zipExt != null) {
                 newAddress += "-";
-                newAddress += address[count].zipExt;
+                newAddress += address[0].zipExt;
             }
 
-            newAddress += "\n";
-        }
         return newAddress;
     }
 }
