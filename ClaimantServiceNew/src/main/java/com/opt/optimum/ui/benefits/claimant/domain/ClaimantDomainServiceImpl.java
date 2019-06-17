@@ -27,9 +27,9 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 	}
 	
 	public long registerClaimant(ClaimantProfile claimantProfile) {
+		String alternateClaimantId = randomGenerator();
+		
 		claimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
-		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'Z' ).filteredBy(Character::isLetterOrDigit).build();
-		String alternateClaimantId = generator.generate(9);
 		claimantProfile.setAlternateClaimantId(alternateClaimantId);
 		for(Address address : claimantProfile.address) {
 			address.setLastInsertUpdateTS(OffsetDateTime.now());
@@ -105,5 +105,11 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		List<ClaimantProfile> claimantProfiles = new ArrayList<>();
 		claimantProfileRepository.claimantSearch(claimantInfo).forEach(e -> claimantProfiles.add(e));
 		return claimantProfiles;
+	}
+	
+	public String randomGenerator() {
+		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'Z' ).filteredBy(Character::isLetterOrDigit).build();
+		String alternateClaimantId = generator.generate(9);
+		return alternateClaimantId;
 	}
 }
