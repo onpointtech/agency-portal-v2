@@ -4,13 +4,34 @@ import { Pipe, PipeTransform } from "../../../node_modules/@angular/core";
 export class SSNFormatPipe implements PipeTransform {
     transform(ssn: string): string {
         let newSSN: string = "";
-        for(var count = 0; count < ssn.length; count++){
-            if((count == 3) || (count == 5)){
-                newSSN += "-"
-            }
+        if(ssn.length == 9) {
+            for(var count = 0; count < ssn.length; count++){
+                if((count == 3) || (count == 5)){
+                    newSSN += "-"
+                }
 
-            newSSN += ssn.charAt(count);
+                if((count >= 0) && (count <= 4)) {
+                    newSSN += "X"
+                } else {
+                    newSSN += ssn.charAt(count);
+                }
+            }
+            return newSSN;
+        } else if(ssn.length == 4) {
+            for(var count = 0; count < 9; count++) {
+                if((count == 3) || (count == 5)){
+                    newSSN += "-"
+                }
+
+                if((count >= 0) && (count <= 4)) {
+                    newSSN += "X"
+                } else {
+                    newSSN += ssn.charAt(count - 5);
+                }
+            }
+            return newSSN;
+        } else {
+            return ssn;
         }
-        return newSSN;
     }
 }
