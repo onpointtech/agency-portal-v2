@@ -18,7 +18,7 @@ export class DropdownInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  debug = true;
+  debug = false;
   submitted = false;
 
   onSubmit() { this.submitted = true; }

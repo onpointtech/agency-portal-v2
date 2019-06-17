@@ -4,7 +4,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { OptimumComponentsModule } from 'optimum-components';
@@ -67,6 +67,7 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     FormsModule,
     OptimumComponentsModule,
     NgxMaskModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]

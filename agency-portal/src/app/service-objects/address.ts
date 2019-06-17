@@ -6,6 +6,6 @@ export class Address {
     city: string;
     zipCode: string;
     zipExt: string;
-    lastInsertUpdateTS: string;
+    lastInsertUpdateTS: Date;
     lastInsertUpdateBy: string;
 }

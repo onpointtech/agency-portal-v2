@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessService;
-import com.opt.optimum.ui.benefits.claimant.business.ClaimantBusinessServiceImpl;
-import com.opt.optimum.ui.benefits.claimant.entity.Address;
 import com.opt.optimum.ui.benefits.claimant.entity.ClaimantProfile;
 import com.opt.optimum.ui.benefits.claimant.so.ClaimantProfileSO;
 import com.opt.optimum.ui.benefits.claimant.so.UpdateClaimantProfileSO;
@@ -31,6 +29,7 @@ public class ClaimantController {
 		this.claimantBusinessService = claimantBusinessService;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/registerClaimant", method = RequestMethod.POST)
 	public long registerClaimant(@RequestBody ClaimantProfileSO claimantProfileSO) {
 		logger.info("Register Claimant Request Received ", claimantProfileSO.toString());
