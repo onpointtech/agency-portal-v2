@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { OptimumComponentsModule } from 'optimum-components';
-import { NgxMaskModule } from 'ngx-mask';
+import { NgxMaskModule, MaskPipe } from 'ngx-mask';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,7 @@ import { SSNFormatPipe } from './custom-pipes/ssn-pipe';
 import { MobilePhoneFormatPipe } from './custom-pipes/mobile-phone-pipe';
 import { AddressFormatPipe } from './custom-pipes/address-pipe';
 import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
+import { OPTDatePipe } from './custom-pipes/opt-date-pipe';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
     SSNFormatPipe,
     MobilePhoneFormatPipe,
     AddressFormatPipe,
+    OPTDatePipe,
     OptimumFormComponent,
   ],
   imports: [
@@ -66,7 +68,7 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
     OptimumComponentsModule,
     NgxMaskModule.forRoot(),
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

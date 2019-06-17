@@ -3,7 +3,6 @@ import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
-import { DatePipe } from '../../../../node_modules/@angular/common';
 
 @Component({
   selector: 'app-claimant-search',
@@ -16,15 +15,11 @@ export class ClaimantSearchComponent implements OnInit {
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router, private datePipe: DatePipe) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo)
-  }
-
-  transformDate(date) {
-    return this.datePipe.transform(date, 'MM/dd/yyyy');
   }
 
   getClaimantSO(): void {
