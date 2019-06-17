@@ -3,6 +3,7 @@ import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
+import { DatePipe } from '../../../../node_modules/@angular/common';
 
 @Component({
   selector: 'app-claimant-search',
@@ -15,11 +16,15 @@ export class ClaimantSearchComponent implements OnInit {
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router, private datePipe: DatePipe) { }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo)
+  }
+
+  transformDate(date) {
+    return this.datePipe.transform(date, 'MM/dd/yyyy');
   }
 
   getClaimantSO(): void {
@@ -35,7 +40,7 @@ export class ClaimantSearchComponent implements OnInit {
       if(claimantSO.length > 1){
         this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
       } else if(claimantSO.length == 1) {
-        this.toasterService.success("Success", "There is " + String(claimantSO.length) + " for your query.");
+        this.toasterService.success("Success", "There is " + String(claimantSO.length) + " result for your query.");
       }else if(claimantSO.length == 0) {
         this.toasterService.info("Information", "There are no data for this filter");
       }

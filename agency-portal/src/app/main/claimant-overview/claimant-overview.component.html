@@ -45,7 +45,7 @@
                                                  <p><strong>Date of Birth:</strong></p>
                                  </div>
                                  <div class="col-lg-6 overview-text">
-                                                 <p>{{claimantSO.dateOfBirth | date:"MM/dd/yyyy"}}</p>
+                                                 <p>{{transformDate(claimantSO.dateOfBirth)}}</p>
                                  </div>
                    </div>
                    <div class="col-xs-12 no-padding">
@@ -61,7 +61,12 @@
                                                  <p><strong>Mobile Phone:</strong></p>
                                  </div>
                                  <div class="col-lg-6 overview-text">
-                                                 <p>{{claimantSO.mobilePhone | mobilePhoneFormat}}</p>
+                                              <ng-container *ngIf="claimantSO.mobilePhone.length == 10; else showMobilePhone">
+                                                <p>{{claimantSO.mobilePhone | mask: '(000) 000-0000'}}</p>
+                                              </ng-container>
+                                              <ng-template #showMobilePhone>
+                                                  <p>{{claimantSO.mobilePhone | mask: '+0 (000) 000-0000'}}</p>
+                                              </ng-template>
                                  </div>
                    </div>
                    <div class="col-xs-12 no-padding">

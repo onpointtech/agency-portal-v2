@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { OptimumComponentsModule } from 'optimum-components';
-import { FormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -62,9 +63,10 @@ import { OptimumFormComponent } from './main/optimum-form/optimum-form.component
     HttpClientModule,
     MatTableModule,
     FormsModule,
-    OptimumComponentsModule
+    OptimumComponentsModule,
+    NgxMaskModule.forRoot(),
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
