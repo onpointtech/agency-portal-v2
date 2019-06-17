@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, SystemJsNgModuleLoader } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ActivatedRoute, Router } from '../../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
 
 @Component({

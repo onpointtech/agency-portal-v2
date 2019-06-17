@@ -55,4 +55,8 @@ public class ClaimantBusinessServiceImpl implements ClaimantBusinessService{
 	public List<ClaimantProfile> searchClaimant(String claimantInfo) {
 		return claimantDomainService.searchClaimant(claimantInfo);
 	}
+	
+	public ClaimantProfile getClaimantBySsn(String ssn) {
+		return claimantDomainService.getClaimantBySsn(ssn);
+	}
 }

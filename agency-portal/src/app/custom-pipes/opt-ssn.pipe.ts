@@ -1,7 +1,7 @@
-import { Pipe, PipeTransform } from "../../../node_modules/@angular/core";
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({name: 'ssnFormat'})
-export class SSNFormatPipe implements PipeTransform {
+@Pipe({name: 'optSsnPipe'})
+export class OptSsnPipe implements PipeTransform {
     transform(ssn: string): string {
         let newSSN: string = "";
         if(ssn.length == 9) {

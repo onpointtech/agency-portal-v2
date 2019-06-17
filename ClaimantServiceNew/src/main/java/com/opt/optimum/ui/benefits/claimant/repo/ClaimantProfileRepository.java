@@ -21,4 +21,6 @@ public interface ClaimantProfileRepository extends CrudRepository<ClaimantProfil
 			+ "OR b.zipCode LIKE %?1% "
 			+ "OR b.zipExt LIKE %?1%")
 	public List<ClaimantProfile> claimantSearch(String claimantInfo);
+
+	public ClaimantProfile findFirstBySsn(String ssn);
 }

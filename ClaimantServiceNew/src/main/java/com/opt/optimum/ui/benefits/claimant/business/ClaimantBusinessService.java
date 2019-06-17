@@ -18,4 +18,6 @@ public interface ClaimantBusinessService {
 	ClaimantProfile updateClaimant(UpdateClaimantProfileSO updateClaimantProfileSO, long claimantId);
 
 	List<ClaimantProfile> searchClaimant(String claimantInfo);
+
+	ClaimantProfile getClaimantBySsn(String ssn);
 }

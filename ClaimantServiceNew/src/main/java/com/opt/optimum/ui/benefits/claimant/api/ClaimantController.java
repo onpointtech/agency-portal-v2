@@ -61,4 +61,10 @@ public class ClaimantController {
 	public List<ClaimantProfile> searchClaimant(@PathVariable String claimantInfo) {
 		return claimantBusinessService.searchClaimant(claimantInfo);
 	}
+	
+	@RequestMapping(value = "/getClaimantBySsn/{ssn}", method = RequestMethod.GET)
+	public ClaimantProfile  getClaimantBySsn(@PathVariable String ssn) {
+		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantBySsn(ssn);
+		return claimantProfile;
+	}
 }

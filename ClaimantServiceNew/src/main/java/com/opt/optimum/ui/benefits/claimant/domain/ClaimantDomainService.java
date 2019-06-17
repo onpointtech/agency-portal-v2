@@ -17,4 +17,6 @@ public interface ClaimantDomainService {
 	ClaimantProfile updateClaimant(ClaimantProfile claimantProfile, long claimantId);
 
 	List<ClaimantProfile> searchClaimant(String claimantInfo);
+
+	ClaimantProfile getClaimantBySsn(String ssn);
 }

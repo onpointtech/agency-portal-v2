@@ -1,8 +1,8 @@
-import { Pipe, PipeTransform } from "../../../node_modules/@angular/core";
+import { Pipe, PipeTransform } from "@angular/core";
 import { DatePipe } from '@angular/common';
 
 @Pipe({name: 'optDatePipe'})
-export class OPTDatePipe implements PipeTransform {
+export class OptDatePipe implements PipeTransform {
 
     constructor(private datePipe: DatePipe) {}
 

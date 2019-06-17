@@ -9,7 +9,7 @@
           <th mat-header-cell *matHeaderCellDef>SSN</th>
           <td mat-cell *matCellDef="let ClaimantSO" >
             <a class="parent" style="display: block; color:blue;" routerLink="/main/claimant-overview/{{ClaimantSO.claimantId}}">
-            {{ClaimantSO.ssn | ssnFormat}}
+            {{ClaimantSO.ssn | optSsnPipe}}
             </a>
           </td>
         </ng-container>
@@ -31,12 +31,12 @@
       
         <ng-container matColumnDef="mobilePhone">
           <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>
-          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.mobilePhone | mobilePhoneFormat}}</td>
+          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>
         </ng-container>
       
         <ng-container matColumnDef="address">
           <th mat-header-cell *matHeaderCellDef>Address</th>
-          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.address | addressFormat}}</td>
+          <td mat-cell *matCellDef="let ClaimantSO">{{ClaimantSO.address | optAddressPipe}}</td>
         </ng-container>
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>

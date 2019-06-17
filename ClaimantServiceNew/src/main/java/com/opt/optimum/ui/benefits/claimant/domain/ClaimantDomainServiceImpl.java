@@ -27,16 +27,22 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 	}
 	
 	public long registerClaimant(ClaimantProfile claimantProfile) {
-		String alternateClaimantId = randomGenerator();
+		ClaimantProfile claimantCheck = claimantProfileRepository.findFirstBySsn(claimantProfile.getSsn());
 		
-		claimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
-		claimantProfile.setAlternateClaimantId(alternateClaimantId);
-		for(Address address : claimantProfile.address) {
-			address.setLastInsertUpdateTS(OffsetDateTime.now());
+		if(claimantCheck == null) {
+			String alternateClaimantId = randomGenerator();
+			
+			claimantProfile.setLastInsertUpdateTS(OffsetDateTime.now());
+			claimantProfile.setAlternateClaimantId(alternateClaimantId);
+			for(Address address : claimantProfile.address) {
+				address.setLastInsertUpdateTS(OffsetDateTime.now());
+			}
+			ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
+			
+			return newClaimantProfile.getClaimantId();
+		} else {
+			throw new RuntimeException("SSN already exists");
 		}
-		ClaimantProfile newClaimantProfile = claimantProfileRepository.save(claimantProfile);
-		
-		return newClaimantProfile.getClaimantId();
 	}
 
 	@Override
@@ -111,5 +117,10 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 		RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'Z' ).filteredBy(Character::isLetterOrDigit).build();
 		String alternateClaimantId = generator.generate(9);
 		return alternateClaimantId;
+	}
+
+	@Override
+	public ClaimantProfile getClaimantBySsn(String ssn) {
+		return claimantProfileRepository.findFirstBySsn(ssn);
 	}
 }

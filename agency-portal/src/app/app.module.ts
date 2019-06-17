@@ -24,11 +24,11 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-import { SSNFormatPipe } from './custom-pipes/ssn-pipe';
-import { MobilePhoneFormatPipe } from './custom-pipes/mobile-phone-pipe';
-import { AddressFormatPipe } from './custom-pipes/address-pipe';
+import { OptSsnPipe } from './custom-pipes/opt-ssn.pipe';
+import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
+import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
 import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
-import { OPTDatePipe } from './custom-pipes/opt-date-pipe';
+import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 
 @NgModule({
   declarations: [
@@ -44,10 +44,10 @@ import { OPTDatePipe } from './custom-pipes/opt-date-pipe';
     ClaimantProfileComponent,
     ClaimantRegistrationComponent,
     ClaimComponent,
-    SSNFormatPipe,
-    MobilePhoneFormatPipe,
-    AddressFormatPipe,
-    OPTDatePipe,
+    OptSsnPipe,
+    OptPhonePipe,
+    OptAddressPipe,
+    OptDatePipe,
     OptimumFormComponent,
   ],
   imports: [

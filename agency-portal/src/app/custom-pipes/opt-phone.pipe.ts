@@ -1,8 +1,8 @@
-import { Pipe, PipeTransform } from "../../../node_modules/@angular/core";
-import { MaskPipe } from '../../../node_modules/ngx-mask';
+import { Pipe, PipeTransform } from "@angular/core";
+import { MaskPipe } from 'ngx-mask';
 
-@Pipe({name: 'mobilePhoneFormat'})
-export class MobilePhoneFormatPipe implements PipeTransform {
+@Pipe({name: 'optPhonePipe'})
+export class OptPhonePipe implements PipeTransform {
 
     constructor(private maskPipe: MaskPipe) {}
 
