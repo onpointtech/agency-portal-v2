@@ -45,7 +45,7 @@ export class ClaimantService {
   }
 
   extractData(res: Response) {
-    this.toasterService.success("Success!", "Profile has been registered");
+    // this.toasterService.success("Success!", "Profile has been registered");
     console.log(res);
   }
 

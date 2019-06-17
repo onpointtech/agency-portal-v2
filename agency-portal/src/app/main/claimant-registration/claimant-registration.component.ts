@@ -119,6 +119,9 @@ export class ClaimantRegistrationComponent implements OnInit {
       ivrPin: '', 
       documentDeliveryPreference: '', 
       address: [this.addressInitial],
+      email: 'string',
+      preferredOccupation: 'string',
+      alternateClaimantId: 'string',
  };
   }
 
@@ -133,16 +136,16 @@ export class ClaimantRegistrationComponent implements OnInit {
   onSubmit() {
     this.claimantService
     .registerClaimant(this.userProfileModel)
-    .then(
-      res => {
-        this.toasterService.success("Success", "Claimant registered successfully");
-      }
-    )
-    .catch(
-      err => {
-        this.toasterService.danger("Error", err);
-      }
-    )
+    // .then(
+    //   res => {
+    //     this.toasterService.success("Success", "Claimant registered successfully");
+    //   }
+    // )
+    // .catch(
+    //   err => {
+    //     this.toasterService.danger("Error", err);
+    //   }
+    // )
     
   }
 

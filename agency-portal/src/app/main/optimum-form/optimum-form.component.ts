@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { OptimumComponentsModule } from 'optimum-components';
+// import { OptimumComponentsModule } from 'optimum-components';
 import { UserProfileModel } from '../optimum-form/user-profile-model';
 import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';

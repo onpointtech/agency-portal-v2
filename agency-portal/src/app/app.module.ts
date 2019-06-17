@@ -65,7 +65,6 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     HttpClientModule,
     MatTableModule,
     FormsModule,
-    OptimumComponentsModule,
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
   ],
