@@ -4236,6 +4236,7 @@ a.close-canvas-menu:hover {
 }
 .modal {
   z-index: 2050 !important;
+  opacity: unset !important;
 }
 .spiner-example {
   height: 200px;

@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, SystemJsNgModuleLoader } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
+import { Subscription } from '../../../../node_modules/rxjs';
 
 @Component({
   selector: 'app-claimant-search',
@@ -10,17 +11,24 @@ import { ToasterService } from '../../portal-services/toaster.service';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  public claimantInfo: string
+  public claimantInfo: string;
   claimantSO: ClaimantSO[];
+  previousUrl: string;
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { }
+  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { 
+  }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo)
+    this.router.events.subscribe(e => {if(e instanceof NavigationEnd){console.log("From " + this.previousUrl + " to " + e.url); this.previousUrl = e.url;}});
   }
+
+  // ngOnDestroy(): void {
+  //   this.subscription.unsubscribe()
+  // }
 
   getClaimantSO(): void {
     this.claimantService
@@ -45,4 +53,6 @@ export class ClaimantSearchComponent implements OnInit {
   registerClaimant() {
     this.router.navigate([`main/claimant-registration`])
   }
+
+  
 }

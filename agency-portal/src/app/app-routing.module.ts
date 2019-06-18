@@ -9,7 +9,8 @@ import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profi
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
 
-import { OptimumFormComponent } from './main/optimum-form/optimum-form.component'
+import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
+import { HomeSampleComponent } from './home-sample/home-sample.component';
 
 const routes: Routes = [  
   {  
