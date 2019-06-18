@@ -13,7 +13,7 @@ import { catchError } from 'rxjs/operators'
 })
 export class ClaimantService {
 
-  constructor(private http: HttpClient, private toasterService: ToasterService) { }
+  constructor(private http: HttpClient, public toasterService: ToasterService) { }
   public getClaimantById(claimantId: number): Observable<ClaimantSO> {
     const claimantUrl = `http://localhost:8080/api/claimant/getClaimantById/${claimantId}`;
     return this.http.get<ClaimantSO>(claimantUrl)
@@ -33,33 +33,48 @@ export class ClaimantService {
       this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
       return EMPTY;
     }));
-  } 
-
-  public registerClaimant(claimantSO:ClaimantSO): Promise<any> {
-    console.log("inside register claimant");
-    const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
-    return this.http.post(claimantUrl, claimantSO)
-    .toPromise()
-    .then(this.extractData)
-    .catch(this.handleErrorPromise)
   }
 
-  extractData(res: Response) {
-    // this.toasterService.success("Success!", "Profile has been registered");
+  public registerClaimant(claimantSO: ClaimantSO){
+    console.log("inside register claimant");
+    const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
+    return this.http.post(claimantUrl, claimantSO).pipe(catchError((err: any) => {
+      this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
+      return EMPTY;
+    }))
+      .toPromise()
+      .then(this.extractData);
+  }
+
+  public extractData(res: Response) {
+    this.toasterService.success("Success!", "Profile has been registered");
     console.log(res);
   }
 
-  handleErrorPromise (error: Response | any) {
+  public handleErrorPromise(error: Response | any) {
     // this.toasterService.danger("ERROR", error);
     console.error(error.message || error);
     return Promise.reject(error.message || error);
-  } 
-  // updateClaimantPayment() {
+  }
 
+  // public registerClaimant(claimantSO: ClaimantSO){
+  //   console.log("inside register claimant");
+  //   const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
+  //    this.http.post(claimantUrl, claimantSO)
+  //     .toPromise()
+  //     .then(this.extractData)
+  //     .catch(this.handleErrorPromise)
   // }
 
-  // updateClaimant(id: number, updateClaimantSO: UpdateClaimantSO): Observable<UpdateClaimantSO> {
-  //   const url = `$(this.claimantUrl)/$(id)`;
-  //   return this.http.put<UpdateClaimantSO>(url, updateClaimantSO)
+  // public extractData(res: Response) {
+  //   this.toasterService.success("Success!", "Profile has been registered");
+  //   console.log(res);
   // }
+
+  // public handleErrorPromise(error: Response | any) {
+  //   // this.toasterService.danger("ERROR", error);
+  //   console.error(error.message || error);
+  //   return Promise.reject(error.message || error);
+  // }
+ 
 }
