@@ -7,12 +7,34 @@ import { CommonModule } from "@angular/common";
 import { PhoneInputComponent } from './phone-input/phone-input.component';
 import { RadioInputComponent } from './radio-input/radio-input.component';
 import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
-import { OptimumSubmitComponent } from './optimum-submit/optimum-submit.component'
+import { OptimumSubmitComponent } from './optimum-submit/optimum-submit.component';
+import { FormTextInputComponent } from './form-text-input/form-text-input.component'
 
-@NgModule({
-  declarations: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent, RadioInputComponent, DropdownInputComponent, OptimumSubmitComponent],
-  imports: [FormsModule, CommonModule,ReactiveFormsModule
+@NgModule({  
+  declarations:[  
+     OptimumComponentsComponent,
+     TextAreaInputComponent,
+     TextInputComponent,
+     PhoneInputComponent,
+     RadioInputComponent,
+     DropdownInputComponent,
+     OptimumSubmitComponent,
+     FormTextInputComponent
   ],
-  exports: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent,RadioInputComponent, DropdownInputComponent, OptimumSubmitComponent]
+  imports:[  
+     FormsModule,
+     CommonModule,
+     ReactiveFormsModule
+  ],
+  exports:[  
+     OptimumComponentsComponent,
+     TextAreaInputComponent,
+     TextInputComponent,
+     PhoneInputComponent,
+     RadioInputComponent,
+     DropdownInputComponent,
+     OptimumSubmitComponent,
+     FormTextInputComponent
+  ]
 })
 export class OptimumComponentsModule { }

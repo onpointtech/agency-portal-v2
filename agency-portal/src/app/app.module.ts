@@ -67,6 +67,7 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     FormsModule,
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
+    OptimumComponentsModule
   ],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]

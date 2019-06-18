@@ -1,5 +1,5 @@
 import { OnInit } from '@angular/core';
-import { UserProfileModel } from 'optimum-components/lib/user-profile-model';
+import { UserProfileModel } from '../user-profile-model';
 import { FormGroup } from '@angular/forms';
 export declare class DropdownInputComponent implements OnInit {
     labelName: string;

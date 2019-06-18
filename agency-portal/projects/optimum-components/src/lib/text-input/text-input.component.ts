@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Renderer2, ViewChild } from '@angular/core';
 import { UserProfileModel } from '../user-profile-model';
-import { FormGroup} from '@angular/forms';
+import { FormGroup, ControlValueAccessor} from '@angular/forms';
 
 @Component({
   selector: 'optimum-text-input',
@@ -9,17 +9,23 @@ import { FormGroup} from '@angular/forms';
 })
 export class TextInputComponent implements OnInit {
 
-  @Input() labelName: string;
-  @Input() userProfileModel: UserProfileModel;
-  @Input() profileForm: FormGroup;
 
-  constructor() { }
+  @Input() labelName: string;
+  @Input() userProfileModel: any;
+  @Input() profileForm: FormGroup;
+  @Input() formInput: string;
+  @Output() userProfileModelChange = new EventEmitter<any>();
+  emitCity() {
+    this.userProfileModelChange.emit(this.userProfileModel);
+      }
+
+  constructor(private renderer : Renderer2) { }
 
   
 
   ngOnInit() {
   }
-  debug = false;
+  debug = true;
   submitted = false;
 
   onSubmit() { this.submitted = true; }

@@ -1,0 +1,9 @@
+
+<label>
+  {{label}}
+  <input type="text" [formControl]="form" [(ngModel)]="model" (change)="modelChanged()">
+</label>
+<p> 
+ inside input component  
+  {{model | json }}
+</p>

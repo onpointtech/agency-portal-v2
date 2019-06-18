@@ -1,12 +1,12 @@
-<!-- <p>
+<p>
   inside the optimum-form component!
 </p>
 
 <h3> Optimum-Components Library Imported</h3>
 
-<optimum-text-input [labelName]="textInputLabel" [userProfileModel]="userProfileModel2" [profileForm]="profileForm">
+<!--<optimum-text-input [labelName]="firstNameLabel" [userProfileModel]="userProfileModel.firstName" [profileForm]="profileForm" [formInput]="firstNameType">
 </optimum-text-input>
-<optimum-text-input [labelName]="textInputLabel" [userProfileModel]="userProfileModel" [profileForm]="profileForm">
+<optimum-text-input [labelName]="firstNameLabel" [userProfileModel]="userProfileModel" [profileForm]="profileForm">
 </optimum-text-input>
 <optimum-text-area-input [labelName]="textAreaInputLabel" [userProfileModel]="userProfileModel"
   [profileForm]="profileForm"></optimum-text-area-input>
@@ -15,4 +15,29 @@
 <optimum-radio-input [labelName]="radioInputLabel" [radioChoices]="radioChoices" [userProfileModel]="userProfileModel"
   [profileForm]="profileForm"></optimum-radio-input>
 <optimum-dropdown-input [labelName]="dropdownInputLabel" [dropdownChoices]="dropdownChoices"
-  [userProfileModel]="userProfileModel" [profileForm]="profileForm"></optimum-dropdown-input> -->
+  [userProfileModel]="userProfileModel" [profileForm]="profileForm"></optimum-dropdown-input>
+
+  {{userProfileModel | json }}-->
+
+  <optimum-form-text-input (modelChange) = "onChange($event)" [label] = "firstNameLabel" [model] = "userProfileModel" #firstNameInput></optimum-form-text-input>
+  <optimum-form-text-input  [label] = "lastNameLabel" [model] = "userProfileModel" #lastNameInput></optimum-form-text-input>
+  <optimum-form-text-input [label] = "middleInitialLabel" [model] = "userProfileModel" #middleInitialInput></optimum-form-text-input>
+
+
+  <p> inside parent component
+  {{ firstNameInput.model | json}}</p>
+
+    <h3>actual model </h3>
+  <p>
+ {{userProfileModel | json}}
+  </p>
+
+  <button (click)="onChange($event)"> Button1 </button>
+
+  <button (click)="update(
+    firstNameInput.model,
+    lastNameInput.model,
+    middleInitialInput.model
+    )"> Press this</button>
+
+

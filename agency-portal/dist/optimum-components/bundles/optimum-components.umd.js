@@ -99,10 +99,21 @@
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var TextInputComponent = /** @class */ (function () {
-        function TextInputComponent() {
-            this.debug = false;
+        function TextInputComponent(renderer) {
+            this.renderer = renderer;
+            this.userProfileModelChange = new core.EventEmitter();
+            this.debug = true;
             this.submitted = false;
         }
+        /**
+         * @return {?}
+         */
+        TextInputComponent.prototype.emitCity = /**
+         * @return {?}
+         */
+        function () {
+            this.userProfileModelChange.emit(this.userProfileModel);
+        };
         /**
          * @return {?}
          */
@@ -121,16 +132,20 @@
         TextInputComponent.decorators = [
             { type: core.Component, args: [{
                         selector: 'optimum-text-input',
-                        template: "<div class=\"container\">\r\n  <div *ngIf=\"debug==true\">\r\n    <h4> Optimum-text-input component</h4>\r\n  </div>\r\n  <form [formGroup]=\"profileForm\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"textInput\"> {{labelName}}:\r\n        <input type=\"text\" class=\"form-control\" id=\"textInput\" [(ngModel)]=\"userProfileModel.textInput\"\r\n          formControlName=\"textInput\">\r\n      </label>\r\n      <div *ngIf=\"debug==true\">\r\n        <br>\r\n        DEBUG: model.textInput content: {{userProfileModel.textInput}}\r\n        <br>\r\n        DEBUG: profileForm status: {{profileForm.status}}\r\n        <br>\r\n        DEBUG: profileForm dirty: {{profileForm.dirty}}\r\n        <br>\r\n        DEBUG: profileForm touched: {{profileForm.touched}}\r\n        <br>\r\n        DEBUG: model content: {{ userProfileModel | json }}\r\n        <br>\r\n      </div>\r\n      <div\r\n        *ngIf=\"profileForm.controls['textInput'].invalid && (profileForm.controls['textInput'].dirty || profileForm.controls['textInput'].touched)\"\r\n        class=\"alert alert-danger\">\r\n        <div *ngIf=\"profileForm.controls['textInput'].errors.required\">\r\n          This is required.\r\n        </div>\r\n        <div *ngIf=\"profileForm.controls['textInput'].invalid\">\r\n          Error in input.\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>",
+                        template: "<div class=\"container\">\r\n  <div *ngIf=\"debug==true\">\r\n    <h4> Optimum-text-input component</h4>\r\n  </div>\r\n  <form [formGroup]=\"profileForm\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"textInput\"> {{labelName}}:\r\n        <input type=\"text\" class=\"form-control\" id=\"textInput\" \r\n        [(ngModel)]=\"userProfileModel\"\r\n        (ngModelChange)=\"userProfileModelChange.emit(userProfileModel)\"\r\n          formControlName=\"textInput\">\r\n      </label>\r\n      <button (click)=\"emitCity()\"> Update </button>\r\n      <div *ngIf=\"debug==true\">\r\n        <br>\r\n        DEBUG: model.textInput content: {{userProfileModel | json}}\r\n        <br>\r\n        DEBUG: profileForm status: {{profileForm.status}}\r\n        <br>\r\n        DEBUG: profileForm dirty: {{profileForm.dirty}}\r\n        <br>\r\n        DEBUG: profileForm touched: {{profileForm.touched}}\r\n        <br>\r\n        DEBUG: model content: {{ userProfileModel | json }}\r\n        <br>\r\n      </div>\r\n      <div\r\n        *ngIf=\"profileForm.controls['textInput'].invalid && (profileForm.controls['textInput'].dirty || profileForm.controls['textInput'].touched)\"\r\n        class=\"alert alert-danger\">\r\n        <div *ngIf=\"profileForm.controls['textInput'].errors.required\">\r\n          This is required.\r\n        </div>\r\n        <div *ngIf=\"profileForm.controls['textInput'].invalid\">\r\n          Error in input.\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>",
                         styles: ['input.ng-invalid.ng-touched  {border: 2px solid #a94442; /* red */ }']
                     }] }
         ];
         /** @nocollapse */
-        TextInputComponent.ctorParameters = function () { return []; };
+        TextInputComponent.ctorParameters = function () { return [
+            { type: core.Renderer2 }
+        ]; };
         TextInputComponent.propDecorators = {
             labelName: [{ type: core.Input }],
             userProfileModel: [{ type: core.Input }],
-            profileForm: [{ type: core.Input }]
+            profileForm: [{ type: core.Input }],
+            formInput: [{ type: core.Input }],
+            userProfileModelChange: [{ type: core.Output }]
         };
         return TextInputComponent;
     }());
@@ -302,15 +317,95 @@
      * @fileoverview added by tsickle
      * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
+    var FormTextInputComponent = /** @class */ (function () {
+        function FormTextInputComponent() {
+            this.modelChange = new core.EventEmitter();
+        }
+        /**
+         * @param {?} changes
+         * @return {?}
+         */
+        FormTextInputComponent.prototype.ngOnChanges = /**
+         * @param {?} changes
+         * @return {?}
+         */
+        function (changes) {
+            if (changes.model.currentValue == changes.model.previousValue) {
+                console.log("No change is detected");
+            }
+            else {
+                console.log("Change is detected");
+            }
+        };
+        /**
+         * @return {?}
+         */
+        FormTextInputComponent.prototype.modelChanged = /**
+         * @return {?}
+         */
+        function () {
+            console.log("trigger child component");
+            this.modelChange.emit(this.model);
+        };
+        /**
+         * @return {?}
+         */
+        FormTextInputComponent.prototype.ngOnInit = /**
+         * @return {?}
+         */
+        function () {
+            this.form = new forms.FormControl('');
+        };
+        FormTextInputComponent.decorators = [
+            { type: core.Component, args: [{
+                        selector: 'optimum-form-text-input',
+                        template: "\n<label>\n  {{label}}\n  <input type=\"text\" [formControl]=\"form\" [(ngModel)]=\"model\" (change)=\"modelChanged()\">\n</label>\n<p> \n inside input component  \n  {{model | json }}\n</p>"
+                    }] }
+        ];
+        /** @nocollapse */
+        FormTextInputComponent.ctorParameters = function () { return []; };
+        FormTextInputComponent.propDecorators = {
+            label: [{ type: core.Input }],
+            model: [{ type: core.Input }],
+            modelChange: [{ type: core.Output }]
+        };
+        return FormTextInputComponent;
+    }());
+
+    /**
+     * @fileoverview added by tsickle
+     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
     var OptimumComponentsModule = /** @class */ (function () {
         function OptimumComponentsModule() {
         }
         OptimumComponentsModule.decorators = [
             { type: core.NgModule, args: [{
-                        declarations: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent, RadioInputComponent, DropdownInputComponent, OptimumSubmitComponent],
-                        imports: [forms.FormsModule, common.CommonModule, forms.ReactiveFormsModule
+                        declarations: [
+                            OptimumComponentsComponent,
+                            TextAreaInputComponent,
+                            TextInputComponent,
+                            PhoneInputComponent,
+                            RadioInputComponent,
+                            DropdownInputComponent,
+                            OptimumSubmitComponent,
+                            FormTextInputComponent
                         ],
-                        exports: [OptimumComponentsComponent, TextAreaInputComponent, TextInputComponent, PhoneInputComponent, RadioInputComponent, DropdownInputComponent, OptimumSubmitComponent]
+                        imports: [
+                            forms.FormsModule,
+                            common.CommonModule,
+                            forms.ReactiveFormsModule
+                        ],
+                        exports: [
+                            OptimumComponentsComponent,
+                            TextAreaInputComponent,
+                            TextInputComponent,
+                            PhoneInputComponent,
+                            RadioInputComponent,
+                            DropdownInputComponent,
+                            OptimumSubmitComponent,
+                            FormTextInputComponent
+                        ]
                     },] }
         ];
         return OptimumComponentsModule;
@@ -325,6 +420,7 @@
     exports.ɵd = RadioInputComponent;
     exports.ɵe = DropdownInputComponent;
     exports.ɵf = OptimumSubmitComponent;
+    exports.ɵg = FormTextInputComponent;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
