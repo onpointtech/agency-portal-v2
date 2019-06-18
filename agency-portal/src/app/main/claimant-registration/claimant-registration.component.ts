@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { OptimumComponentsModule } from 'optimum-components';
+import { OptimumComponentsModule } from 'optimum-components/optimum-components';
 import { UserProfileModel } from '../optimum-form/user-profile-model';
 import { ClaimantSO } from '../../service-objects/claimant-so'
 import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { ClaimantRegistrationModel } from '../claimant-registration/claimant-registration-model';
+import { ClaimantRegistrationModel } from './claimant-registration-model';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { Address } from '../../service-objects/address';
 //import { HttpClient } from 'selenium-webdriver/http';
@@ -90,38 +90,38 @@ export class ClaimantRegistrationComponent implements OnInit {
   ngOnInit() {
     this.addressInitial = {
       id: null,
-      addressLine1: 'Line 1',
-      addressLine2: 'Line 2',
-      state: 'Less',
-      city: 'Owl',
-      zipCode: '8001',
-      zipExt: '1008',
+      addressLine1: '',
+      addressLine2: '',
+      state: '',
+      city: '',
+      zipCode: '',
+      zipExt: '',
       lastInsertUpdateTS: new Date(2013, 9, 22),
       lastInsertUpdateBy: '',
     },
 
     this.userProfileModel = { 
       claimantId: 0, 
-      ssn: '123456789', 
+      ssn: '', 
       dateOfBirth: new Date('2013-09-22'), 
-      firstName: 'Jay', 
-      middleInitial: 'E', 
-      lastName: 'Ibardaloza', 
-      homePhone: '9999999999', 
-      mobilePhone: '99999999998', 
-      languagePreference: 'English', 
-      educationalLevel: 'Doctoral Degree', 
-      gender: 'Male', 
-      race: 'Asian', 
-      ethnicity: 'I prefer not to answer', 
+      firstName: '', 
+      middleInitial: '', 
+      lastName: '',
+      homePhone: '',
+      mobilePhone: '',
+      languagePreference: '',
+      educationalLevel: '', 
+      gender: '',
+      race: '', 
+      ethnicity: '',
       lastInsertUpdateTS: new Date(2013, 9, 22), 
       lastInsertUpdateBy: '', 
       ivrPin: '', 
       documentDeliveryPreference: '', 
       address: [this.addressInitial],
-      email: 'string',
-      preferredOccupation: 'string',
-      alternateClaimantId: 'string',
+      email: '',
+      preferredOccupation: '',
+      alternateClaimantId: '',
  };
   }
 

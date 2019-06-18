@@ -15,8 +15,8 @@
           *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
           class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
         <p *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
-          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter a first
-          name.</p>
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter an ssn
+         .</p>
       </div>
       <div *ngIf="debug==true">
         <br>
@@ -39,13 +39,12 @@
         Confirm SSN:
       </label>
       <div class="col-xs-12 has-feedback">
-        <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
+        <input type="text" class="form-control edit_field" formControlName="ssn">
         <span
           *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
           class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
         <p *ngIf="profileForm.controls['ssn'].invalid && (profileForm.controls['ssn'].dirty || profileForm.controls['ssn'].touched)"
-          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please enter a first
-          name.</p>
+          class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>Please confirm ssn.</p>
       </div>
       <div *ngIf="debug==true">
         <br>
@@ -607,5 +606,3 @@
     </div>
   </div>
 </form>
-
-{{userProfileModel | json}}
