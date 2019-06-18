@@ -132,17 +132,7 @@ export class ClaimantRegistrationComponent implements OnInit {
 
   onSubmit() {
     this.claimantService
-    .registerClaimant(this.userProfileModel)
-    .then(
-      res => {
-        this.toasterService.success("Success", "Claimant registered successfully");
-      }
-    )
-    .catch(
-      err => {
-        this.toasterService.danger("Error", err);
-      }
-    )
+    .registerClaimant(this.userProfileModel);
     
   }
 
