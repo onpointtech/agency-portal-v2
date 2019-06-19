@@ -60,10 +60,11 @@ export class ClaimantRegistrationComponent implements OnInit {
 
   profileForm = this.fb.group({
     claimantId: [0, Validators.required],
-    ssn: ['', Validators.required],
+    ssn: ['', Validators.compose([Validators.required, Validators.minLength(9), Validators.maxLength(9),Validators.pattern("[0-9]{9}")])],
+    confirmSsn: ['', Validators.compose([Validators.required])],
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
-    middleInitial: ['', Validators.required],
+    middleInitial: ['', Validators.compose([Validators.required, Validators.maxLength(1),Validators.pattern("[a-zA-z]")])],
     dateOfBirth: [new Date(2019, 1, 1), Validators.required],
     homePhone: ['', Validators.required],
     mobilePhone: ['', Validators.required],
