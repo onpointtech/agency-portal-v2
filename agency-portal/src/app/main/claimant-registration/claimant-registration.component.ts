@@ -4,6 +4,9 @@ import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { Address } from '../../service-objects/address';
+import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
+import { ToasterService } from 'src/app/portal-services/toaster.service';
+
 
 @Component({
   selector: 'app-claimant-registration',
@@ -13,40 +16,12 @@ import { Address } from '../../service-objects/address';
 export class ClaimantRegistrationComponent implements OnInit {
   userProfileModel = new ClaimantSO();
   addressInitial = new Address();
-
-  genderChoices = ['Male', 'Female', 'I prefer not to answer',];
-  raceChoices = [
-  'White',
-  'Black or African American', 
-  'American Indian or Alaska Native', 
-  'Native Hawaiian or other Pacific Islander', 
-  'Asian', 
-  'I prefer not to answer'
-];
-  languagePreferenceChoices = ['English', 'Spanish'];
-  ethnicityChoices = ['Hispanic or Latino', 'Not Hispanic or Latino', 'I prefer not to answer'];
-  educationLevelChoices = [
-  'Completed 1st Grade', 
-  'Completed 2nd Grade', 
-  'Completed 3rd Grade', 
-  'Completed 4th Grade', 
-  'Completed 5th Grade', 
-  'Completed 6th Grade', 
-  'Completed 7th Grade', 
-  'Completed 8th Grade', 
-  'Completed 9th Grade', 
-  'Completed 10th Grade', 
-  'Completed 11th Grade', 
-  'High School Degree', 
-  'GED or High School Equivalency Diploma',
-  'Some Vocational or Technical School (No Certificate)',
-  'Some College (No Degree)',
-  'Associate\'s Degree',
-  'Bachelor\'s Degree',
-  'Master\'s Degree',
-  'Doctoral Degree',
-  'Post-Doctorate Studies'
-  ];
+  stateChoices = STATECHOICES;
+  genderChoices = GENDERCHOICES;
+  raceChoices = RACECHOICES;
+  ethnicityChoices = ETHNICITYCHOICES;
+  educationLevelChoices = EDUCATIONLEVELCHOICES;
+  languagePreferenceChoices = LANGUAGEPREFERENCECHOICES;
 
 
 
@@ -76,7 +51,7 @@ export class ClaimantRegistrationComponent implements OnInit {
   });
 
 
-  constructor(private fb: FormBuilder, private claimantService: ClaimantService) {
+  constructor(private fb: FormBuilder, private claimantService: ClaimantService, private toasterService:ToasterService) {
 
   }
 
@@ -124,10 +99,22 @@ export class ClaimantRegistrationComponent implements OnInit {
   debug = false;
   submitted = false;
 
+  verifyBeforeSubmit(){
+    if(this.profileForm.valid){
+      console.log("Legit siya");
+      this.toasterService.success("Success", "Form was submitted");
+      this.onSubmit();
+    }
+    else{
+      console.log("HINDI Legit siya");
+      this.toasterService.danger("Error", "Some forms are not yet filled");
+      
+    }
+  }
+
   onSubmit() {
     this.claimantService
     .registerClaimant(this.userProfileModel);
-    
   }
 
   thenFn(): any{

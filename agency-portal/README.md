@@ -1,6 +1,6 @@
 # Cid's guide
 
-## how to install (Windows)
+## How to install (Windows)
 install git
 
 git clone the repository
@@ -14,16 +14,21 @@ Install the node modules
 `npm install`
 
 
-## how to run
+## how to run the frontend (angular)
 To run type
 `ng serve`
 
 open this in your browser
 `localhost:4200`
 
+## how to run the backend (angular)
+open eclipse
 
+build the project as maven project
 
-## how to develop
+run the application
+
+## How to develop
 
 
 
