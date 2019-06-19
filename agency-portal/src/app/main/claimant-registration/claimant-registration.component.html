@@ -319,23 +319,23 @@
     </div>
 
     <div class="col-xs-12 col-md-6">
-        <label for="educationalLevel" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+        <label for="educationLevel" class="col-xs-12 head control-label"><span class="text-danger">*</span>
           Educational Level:
         </label>
         <div class="col-xs-12 has-feedback">
-          <select class="edit_field" formControlName="educationalLevel" [compareWith]="compareFn">
-            <option [value]="choice" *ngFor="let choice of educationalLevelChoices">{{choice}}</option>
+          <select class="edit_field" formControlName="educationLevel" [compareWith]="compareFn">
+            <option [value]="choice" *ngFor="let choice of educationLevelChoices">{{choice}}</option>
           </select>
           <span
-            *ngIf="profileForm.controls['educationalLevel'].invalid && (profileForm.controls['educationalLevel'].dirty || profileForm.controls['educationalLevel'].touched)"
+            *ngIf="profileForm.controls['educationLevel'].invalid && (profileForm.controls['educationLevel'].dirty || profileForm.controls['educationLevel'].touched)"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
-          <p *ngIf="profileForm.controls['educationalLevel'].invalid && (profileForm.controls['educationalLevel'].dirty || profileForm.controls['educationalLevel'].touched)"
+          <p *ngIf="profileForm.controls['educationLevel'].invalid && (profileForm.controls['educationLevel'].dirty || profileForm.controls['educationLevel'].touched)"
             class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
             Please enter educational level.</p>
         </div>
         <div *ngIf="debug==true">
           <br>
-          DEBUG: model.educationalLevel content: {{userProfileModel.educationalLevel}}
+          DEBUG: model.educationLevel content: {{userProfileModel.educationLevel}}
           <br>
           DEBUG: profileForm status: {{profileForm.status}}
           <br>

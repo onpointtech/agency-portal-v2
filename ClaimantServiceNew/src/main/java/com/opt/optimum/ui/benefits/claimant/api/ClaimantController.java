@@ -50,6 +50,7 @@ public class ClaimantController {
 		return claimantProfiles;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/updateClaimant/{claimantId}", method = RequestMethod.PUT)
 	public ClaimantProfile updateClaimant(@RequestBody UpdateClaimantProfileSO claimantProfileSO, @PathVariable long claimantId) {
 		return claimantBusinessService.updateClaimant(claimantProfileSO, claimantId);

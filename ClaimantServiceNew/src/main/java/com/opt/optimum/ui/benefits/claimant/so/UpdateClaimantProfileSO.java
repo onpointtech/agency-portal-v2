@@ -1,6 +1,13 @@
 package com.opt.optimum.ui.benefits.claimant.so;
 
 import java.time.OffsetDateTime;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.opt.optimum.ui.benefits.claimant.entity.Address;
 
 public class UpdateClaimantProfileSO {
 	String middleInitial;
@@ -15,6 +22,8 @@ public class UpdateClaimantProfileSO {
 	String documentDeliveryPreference;
 	OffsetDateTime lastInsertUpdateTS;
 	String lastInsertUpdateBy;
+	
+	public List<Address> address;
 	
 	public String getMiddleInitial() {
 		return middleInitial;
@@ -87,5 +96,11 @@ public class UpdateClaimantProfileSO {
 	}
 	public void setLastInsertUpdateBy(String lastInsertUpdateBy) {
 		this.lastInsertUpdateBy = lastInsertUpdateBy;
+	}
+	public List<Address> getAddress() {
+		return address;
+	}
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
 }

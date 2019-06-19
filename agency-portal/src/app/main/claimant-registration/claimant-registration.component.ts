@@ -33,7 +33,7 @@ export class ClaimantRegistrationComponent implements OnInit {
 ];
   languagePreferenceChoices = ['English', 'Spanish'];
   ethnicityChoices = ['Hispanic or Latino', 'Not Hispanic or Latino', 'I prefer not to answer'];
-  educationalLevelChoices = [
+  educationLevelChoices = [
   'Completed 1st Grade', 
   'Completed 2nd Grade', 
   'Completed 3rd Grade', 
@@ -70,7 +70,7 @@ export class ClaimantRegistrationComponent implements OnInit {
     preferredOccupation: ['', Validators.required],
     languagePreference: ['Please select at least one', Validators.required],
     gender: ['Please select at least one', Validators.required],
-    educationalLevel: ['Please select at least one', Validators.required],
+    educationLevel: ['Please select at least one', Validators.required],
     race: ['Please select at least one', Validators.required],
     ethnicity: ['Please select at least one', Validators.required],
     addressLine1: ['', Validators.required],
@@ -110,7 +110,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       homePhone: '',
       mobilePhone: '',
       languagePreference: '',
-      educationalLevel: '', 
+      educationLevel: '', 
       gender: '',
       race: '', 
       ethnicity: '',

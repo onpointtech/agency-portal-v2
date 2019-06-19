@@ -8,8 +8,11 @@ export class ModalService {
   constructor(public modalService: NgbModal) {
   }
 
-  open(content: any) {
-    this.modalService.open(content);
+  open(classToRender: any, content: any) {
+    const modalReference = this.modalService.open(classToRender);
+    if (modalReference.componentInstance) {
+      modalReference.componentInstance.input = content;
+    }
   }
 
   close() {

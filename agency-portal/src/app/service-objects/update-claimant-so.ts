@@ -1,5 +1,17 @@
+import { Address } from './address';
+
 export class UpdateClaimantSO {
-    id: number;
-    name: string;
-    
+    middleInitial: string;
+    homePhone: string;
+    mobilePhone: string;
+    languagePreference: string;
+    educationLevel: string;
+    gender: string;
+    race: string;
+    ethnicity: string;
+    ivrPin: string;
+    documentDeliveryPreference: string;
+    lastInsertUpdateTS: Date;
+    lastInsertUpdateBy: string;
+    address: Address[];
 }

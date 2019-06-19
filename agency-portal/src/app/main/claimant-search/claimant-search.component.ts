@@ -3,7 +3,7 @@ import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
-import { Subscription } from '../../../../node_modules/rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-claimant-search',
@@ -13,7 +13,8 @@ import { Subscription } from '../../../../node_modules/rxjs';
 export class ClaimantSearchComponent implements OnInit {
   public claimantInfo: string;
   claimantSO: ClaimantSO[];
-  previousUrl: string;
+  previousUrl: any;
+  subscription: Subscription;
 
   columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
   
@@ -23,12 +24,7 @@ export class ClaimantSearchComponent implements OnInit {
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo)
-    this.router.events.subscribe(e => {if(e instanceof NavigationEnd){console.log("From " + this.previousUrl + " to " + e.url); this.previousUrl = e.url;}});
   }
-
-  // ngOnDestroy(): void {
-  //   this.subscription.unsubscribe()
-  // }
 
   getClaimantSO(): void {
     this.claimantService

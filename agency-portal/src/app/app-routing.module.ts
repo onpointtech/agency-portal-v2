@@ -10,7 +10,6 @@ import { ClaimantRegistrationComponent } from './main/claimant-registration/clai
 import { ClaimComponent } from './main/claim/claim.component';
 
 import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
-import { HomeSampleComponent } from './home-sample/home-sample.component';
 
 const routes: Routes = [  
   {  
@@ -39,7 +38,7 @@ const routes: Routes = [
           component:ClaimantOverviewComponent
         },
         {
-          path:'claimant-profile/:claimantId',
+          path:'claimant-profile',
           component:ClaimantProfileComponent
         },
         {
