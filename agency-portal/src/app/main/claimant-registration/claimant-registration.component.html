@@ -17,8 +17,13 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['ssn'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.ssn" formControlName="ssn">
+            type="text" 
+            [placeholder]="profileForm.controls['ssn'].invalid? '(Required)' : '' "
+            [(ngModel)]="userProfileModel.ssn"
+            formControlName="ssn"
+            [hiddenInput]="true"
+            mask="XXX-XX0-000"
+            [showMaskTyped] = "true">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched"
@@ -65,8 +70,12 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
-            formControlName="confirmSsn">
+            type="text"
+            [placeholder]="profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
+            formControlName="confirmSsn"
+            [hiddenInput]="true"
+            mask="XXX-XX0-000"
+            [showMaskTyped] = "true">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
@@ -214,7 +223,9 @@
           <input
             [class]="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched ? 'edit_field error': 'edit_field'"
             type="text" [placeholder]="profileForm.controls['middleInitial'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.middleInitial" formControlName="middleInitial">
+            [(ngModel)]="userProfileModel.middleInitial"
+            formControlName="middleInitial"
+            mask="A">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
@@ -296,8 +307,12 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
-            [(ngModel)]="userProfileModel.homePhone" formControlName="homePhone">
+            type="text"
+            [placeholder]="profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
+            [(ngModel)]="userProfileModel.homePhone"
+            formControlName="homePhone"
+            mask="(000) 000-0000"
+            >
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
@@ -340,8 +355,13 @@
         <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
         </label>
         <div class="col-xs-12 has-feedback">
-          <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.mobilePhone"
-            formControlName="mobilePhone" placeholder="(000) 000-000">
+          <input type="text"
+          class="form-control edit_field"
+          [(ngModel)]="userProfileModel.mobilePhone"
+          formControlName="mobilePhone"
+          placeholder="(000) 000-000"
+          mask="(000) 000-0000"
+          >
         </div>
         <div *ngIf="debug==true">
           <br>
@@ -426,7 +446,7 @@
       </div>
     </div>
 
-    <!-- Gender and Educational Level div -->
+    <!-- Gender and education Level div -->
     <div class="col-xs-12 no-padding">
       <div class="col-xs-12 col-md-6">
         <label class="col-xs-12 head control-label">
@@ -460,31 +480,31 @@
 
       <div class="col-xs-12 col-md-6">
         <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Educational Level:
+          <span class="text-danger">*</span> Education Level:
         </label>
         <div
-          [class]="profileForm.controls['educationalLevel'].invalid && profileForm.controls['educationalLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="educationalLevel" [compareWith]="compareFn">
+          <select class="edit_field" formControlName="educationLevel" [compareWith]="compareFn">
             <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of educationalLevelChoices">{{choice}}</option>
+            <option [value]="choice" *ngFor="let choice of educationLevelChoices">{{choice}}</option>
           </select>
 
           <!-- ERROR   -->
           <span
-            *ngIf="profileForm.controls['educationalLevel'].invalid && profileForm.controls['educationalLevel'].touched"
+            *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
 
           <div
-            *ngIf="profileForm.controls['educationalLevel'].invalid && profileForm.controls['educationalLevel'].touched"
+            *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
             class="text-danger">
 
             <!-- ERROR LIST -->
 
-            <p *ngIf="profileForm.controls['educationalLevel'].invalid" class="ng-scope">
+            <p *ngIf="profileForm.controls['educationLevel'].invalid" class="ng-scope">
               <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Educational Level.
+              Please enter a valid Education Level.
             </p>
           </div>
         </div>

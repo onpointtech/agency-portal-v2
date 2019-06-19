@@ -1,17 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { OptimumComponentsModule } from 'optimum-components/optimum-components';
-import { UserProfileModel } from '../optimum-form/user-profile-model';
+import { Component, OnInit } from '@angular/core';
 import { ClaimantSO } from '../../service-objects/claimant-so'
-import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { ClaimantRegistrationModel } from './claimant-registration-model';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { Address } from '../../service-objects/address';
-//import { HttpClient } from 'selenium-webdriver/http';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
-import { ToasterService } from '../../portal-services/toaster.service';
-
-
 
 @Component({
   selector: 'app-claimant-registration',
@@ -33,7 +25,7 @@ export class ClaimantRegistrationComponent implements OnInit {
 ];
   languagePreferenceChoices = ['English', 'Spanish'];
   ethnicityChoices = ['Hispanic or Latino', 'Not Hispanic or Latino', 'I prefer not to answer'];
-  educationalLevelChoices = [
+  educationLevelChoices = [
   'Completed 1st Grade', 
   'Completed 2nd Grade', 
   'Completed 3rd Grade', 
@@ -67,11 +59,11 @@ export class ClaimantRegistrationComponent implements OnInit {
     middleInitial: ['', Validators.compose([Validators.required, Validators.maxLength(1),Validators.pattern("[a-zA-z]")])],
     dateOfBirth: [new Date(2019, 1, 1), Validators.required],
     homePhone: ['', Validators.required],
-    mobilePhone: ['', Validators.required],
+    mobilePhone: [''],
     preferredOccupation: ['', Validators.required],
     languagePreference: ['Please select at least one', Validators.required],
     gender: ['Please select at least one', Validators.required],
-    educationalLevel: ['Please select at least one', Validators.required],
+    educationLevel: ['Please select at least one', Validators.required],
     race: ['Please select at least one', Validators.required],
     ethnicity: ['Please select at least one', Validators.required],
     addressLine1: ['', Validators.required],
@@ -111,7 +103,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       homePhone: '',
       mobilePhone: '',
       languagePreference: '',
-      educationalLevel: '', 
+      educationLevel: '', 
       gender: '',
       race: '', 
       ethnicity: '',
@@ -126,8 +118,6 @@ export class ClaimantRegistrationComponent implements OnInit {
  };
   }
 
-  private http: HttpClient;
-  private toasterService: ToasterService
 
 
 

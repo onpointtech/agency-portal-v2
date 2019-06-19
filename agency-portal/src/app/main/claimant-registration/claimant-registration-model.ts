@@ -9,7 +9,7 @@ export class ClaimantRegistrationModel {
     public homePhone: string,
     public mobilePhone: string,
     public languagePreference: string,
-    public educationalLevel: string,
+    public educationLevel: string,
     public gender: string,
     public race: string,
     public ethnicity: string,
