@@ -79,7 +79,7 @@ export class OptimumFormComponent implements OnInit {
       homePhone: '',
       mobilePhone: '',
       languagePreference: '',
-      educationalLevel: '', 
+      educationLevel: '', 
       gender: '',
       race: '', 
       ethnicity: '',
