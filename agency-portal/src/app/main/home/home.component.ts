@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ToastContainerDirective } from 'ngx-toastr';
 import { ToasterService } from '../../portal-services/toaster.service';
-import { ModalService } from '../../portal-services/modal.service';
-import { NgbActiveModal } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +9,11 @@ import { NgbActiveModal } from '../../../../node_modules/@ng-bootstrap/ng-bootst
   styles: []
 })
 export class HomeComponent implements OnInit {
+
   @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
 
-  constructor(private toasterService: ToasterService, public modalService: ModalService) { }
+  constructor(private toasterService: ToasterService) { }
+
 
   ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
@@ -22,9 +22,4 @@ export class HomeComponent implements OnInit {
   success(){
     this.toasterService.success("Success!", "Welcome to Home");
   }
-
-  open(){
-    this.modalService.open();
-  }
-
 }

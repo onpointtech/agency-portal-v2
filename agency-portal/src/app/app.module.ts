@@ -5,10 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
-import { OptimumComponentsModule } from 'optimum-components';
 import { NgxMaskModule, MaskPipe } from 'ngx-mask';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,8 @@ import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
 import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
 import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
 import { OptDatePipe } from './custom-pipes/opt-date.pipe';
+import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
+import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     OptAddressPipe,
     OptDatePipe,
     OptimumFormComponent,
+    EditClaimantDetailsComponent,
+    EditClaimantAddressesComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,15 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     FormsModule,
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
+    NgbModule.forRoot(),
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn',
+    })
   ],
+  entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressesComponent],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
 })
