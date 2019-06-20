@@ -1,11 +1,14 @@
+
+
 <h3>
   Claimant Registration
 </h3>
 
+{{userProfileModel | json}}
+
 
 <form [formGroup]="profileForm">
   <div class="form-group">
-
     <!-- SSN and CONFIRM SSN div -->
     <div class="col-xs-12 no-padding">
       <div class="col-xs-12 col-md-6">
@@ -17,13 +20,9 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'edit_field error': 'edit_field'"
-            type="text" 
-            [placeholder]="profileForm.controls['ssn'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.ssn"
-            formControlName="ssn"
-            [hiddenInput]="true"
-            mask="XXX-XX0-000"
-            [showMaskTyped] = "true">
+            type="text" [placeholder]="profileForm.controls['ssn'].invalid? '(Required)' : '' "
+            [(ngModel)]="userProfileModel.ssn" formControlName="ssn" [hiddenInput]="true" mask="XXX-XX0-000"
+            [showMaskTyped]="true">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched"
@@ -70,12 +69,8 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'edit_field error': 'edit_field'"
-            type="text"
-            [placeholder]="profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
-            formControlName="confirmSsn"
-            [hiddenInput]="true"
-            mask="XXX-XX0-000"
-            [showMaskTyped] = "true">
+            type="text" [placeholder]="profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
+            formControlName="confirmSsn" [hiddenInput]="true" mask="XXX-XX0-000" [showMaskTyped]="true">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
@@ -217,16 +212,11 @@
         <label class="col-xs-12 head control-label">
           Middle Initial:
         </label>
-        <div
-          class="col-xs-12 has-feedback">
+        <div class="col-xs-12 has-feedback">
           <!-- FORM INPUT -->
-          <input
-            class = "edit_field"
-            type="text"
-            [(ngModel)]="userProfileModel.middleInitial"
-            formControlName="middleInitial"
-            >
-          </div>
+          <input class="edit_field" type="text" [(ngModel)]="userProfileModel.middleInitial"
+            formControlName="middleInitial">
+        </div>
         <div *ngIf="debug==true">
           <br>
           DEBUG: model.middleInitial content: {{userProfileModel.middleInitial}}
@@ -245,11 +235,13 @@
 
       <div class="col-xs-12 col-md-6">
         <label for="dateOfBirth" class="col-xs-12 head control-label"><span class="text-danger">*</span>
-          Date of Birth:
+          Date of Birth:  <span class="glyphicon glyphicon-calendar" (click)="d.open()"></span>
         </label>
         <div class="col-xs-12 has-feedback">
-          <input type="date" class="form-control edit_field" [(ngModel)]="userProfileModel.dateOfBirth"
-            formControlName="dateOfBirth">
+          <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.dateOfBirth"
+            formControlName="dateOfBirth" ngbDatepicker #d="ngbDatepicker" mask="9999-99-99">
+            
+
           <span
             *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
@@ -284,12 +276,8 @@
           <!-- FORM INPUT -->
           <input
             [class]="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
-            type="text"
-            [placeholder]="profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
-            [(ngModel)]="userProfileModel.homePhone"
-            formControlName="homePhone"
-            mask="(000) 000-0000"
-            >
+            type="text" [placeholder]="profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
+            [(ngModel)]="userProfileModel.homePhone" formControlName="homePhone" mask="(000) 000-0000">
 
           <!-- ERROR   -->
           <span *ngIf="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
@@ -332,13 +320,8 @@
         <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
         </label>
         <div class="col-xs-12 has-feedback">
-          <input type="text"
-          class="form-control edit_field"
-          [(ngModel)]="userProfileModel.mobilePhone"
-          formControlName="mobilePhone"
-          placeholder="(000) 000-000"
-          mask="(000) 000-0000"
-          >
+          <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.mobilePhone"
+            formControlName="mobilePhone" placeholder="(000) 000-000" mask="(000) 000-0000">
         </div>
         <div *ngIf="debug==true">
           <br>
@@ -397,7 +380,9 @@
         <div
           [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="languagePreference" [compareWith]="compareFn">
+          <select
+            [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="languagePreference" [compareWith]="compareFn">
             <option value="" disabled=true>(Required)</option>
             <option [value]="choice" *ngFor="let choice of languagePreferenceChoices">{{choice}}</option>
           </select>
@@ -432,7 +417,9 @@
         <div
           [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="gender" [compareWith]="compareFn">
+          <select
+            [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="gender" [compareWith]="compareFn">
             <option value="" disabled=true>(Required)</option>
             <option [value]="choice" *ngFor="let choice of genderChoices">{{choice}}</option>
           </select>
@@ -462,18 +449,18 @@
         <div
           [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="educationLevel" [compareWith]="compareFn" required>
+          <select
+            [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="educationLevel" [compareWith]="compareFn" required>
             <option value="" disabled=true>(Required)</option>
             <option [value]="choice" *ngFor="let choice of educationLevelChoices">{{choice}}</option>
           </select>
           <!-- ERROR   -->
-          <span
-            *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
+          <span *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
 
-          <div
-            *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
+          <div *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
             class="text-danger">
 
             <!-- ERROR LIST -->
@@ -496,7 +483,9 @@
         <div
           [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="race" [compareWith]="compareFn">
+          <select
+            [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="race" [compareWith]="compareFn">
             <option value="" disabled=true>(Required)</option>
             <option [value]="choice" *ngFor="let choice of raceChoices">{{choice}}</option>
           </select>
@@ -525,7 +514,9 @@
         <div
           [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select class="edit_field" formControlName="ethnicity" [compareWith]="compareFn">
+          <select
+            [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="ethnicity" [compareWith]="compareFn">
             <option value="" disabled=true>(Required)</option>
             <option [value]="choice" *ngFor="let choice of ethnicityChoices">{{choice}}</option>
           </select>
@@ -557,199 +548,191 @@
 
     <!-- Address Line 1 -->
     <div class="col-xs-12 col-md-12">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Address Line 1:
-        </label>
-        <div
-          [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-          <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['addressLine1'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.address[0].addressLine1" formControlName="addressLine1">
+      <label class="col-xs-12 head control-label">
+        <span class="text-danger">*</span> Address Line 1:
+      </label>
+      <div
+        [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <!-- FORM INPUT -->
+        <input
+          [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'edit_field error': 'edit_field'"
+          type="text" [placeholder]="profileForm.controls['addressLine1'].invalid? '(Required)' : '' "
+          [(ngModel)]="userProfileModel.address[0].addressLine1" formControlName="addressLine1">
 
-          <!-- ERROR   -->
-          <span
-            *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+        <!-- ERROR   -->
+        <span *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
 
-          <div
-            *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
-            class="text-danger">
+        <div *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
+          class="text-danger">
 
-            <!-- ERROR LIST -->
+          <!-- ERROR LIST -->
 
-            <p *ngIf="profileForm.controls['addressLine1'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Address Line 1.
-            </p>
-          </div>
+          <p *ngIf="profileForm.controls['addressLine1'].invalid" class="ng-scope">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Please enter a valid Address Line 1.
+          </p>
         </div>
       </div>
+    </div>
 
     <!-- Address Line 2 -->
     <div class="col-xs-12 col-md-12">
+      <label class="col-xs-12 head control-label">
+        <span class="text-danger">*</span> Address Line 2:
+      </label>
+      <div
+        [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <!-- FORM INPUT -->
+        <input
+          [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
+          type="text" [placeholder]="profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
+          [(ngModel)]="userProfileModel.address[0].addressLine2" formControlName="addressLine2">
+
+        <!-- ERROR   -->
+        <span *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
+          class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+
+        <div *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
+          class="text-danger">
+
+          <!-- ERROR LIST -->
+
+          <p *ngIf="profileForm.controls['addressLine2'].invalid" class="ng-scope">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            Please enter a valid Address Line 2.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- City and State div -->
+    <div class="col-xs-12 no-padding">
+      <div class="col-xs-12 col-md-6">
         <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Address Line 2:
+          <span class="text-danger">*</span> City:
         </label>
         <div
-          [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <input
-            [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.address[0].addressLine2" formControlName="addressLine2">
+            [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'edit_field error': 'edit_field'"
+            type="text" [placeholder]="profileForm.controls['city'].invalid? '(Required)' : '' "
+            [(ngModel)]="userProfileModel.address[0].city" formControlName="city">
 
           <!-- ERROR   -->
-          <span
-            *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
+          <span *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
 
-          <div
-            *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
-            class="text-danger">
+          <div *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched" class="text-danger">
 
             <!-- ERROR LIST -->
 
-            <p *ngIf="profileForm.controls['addressLine2'].invalid" class="ng-scope">
+            <p *ngIf="profileForm.controls['city'].invalid" class="ng-scope">
               <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Address Line 2.
+              Please enter a valid City.
             </p>
           </div>
         </div>
       </div>
 
-    <!-- City and State div -->
-    <div class="col-xs-12 no-padding">
-        <div class="col-xs-12 col-md-6">
-            <label class="col-xs-12 head control-label">
-              <span class="text-danger">*</span> City:
-            </label>
-            <div
-              [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-              <!-- FORM INPUT -->
-              <input
-                [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'edit_field error': 'edit_field'"
-                type="text" [placeholder]="profileForm.controls['city'].invalid? '(Required)' : '' "
-                [(ngModel)]="userProfileModel.address[0].city" formControlName="city">
-    
-              <!-- ERROR   -->
-              <span
-                *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
-                class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
-    
-    
-              <div
-                *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
-                class="text-danger">
-    
-                <!-- ERROR LIST -->
-    
-                <p *ngIf="profileForm.controls['city'].invalid" class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                  Please enter a valid City.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="col-xs-12 col-md-6">
+        <label class="col-xs-12 head control-label">
+          <span class="text-danger">*</span> State:
+        </label>
+        <div
+          [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <!-- FORM INPUT -->
+          <select
+            [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'edit_field error': 'edit_field'"
+            formControlName="state" [compareWith]="compareFn">
+            <option value="" disabled=true>(Required)</option>
+            <option [value]="choice" *ngFor="let choice of stateChoices">{{choice}}</option>
+          </select>
 
-          <div class="col-xs-12 col-md-6">
-              <label class="col-xs-12 head control-label">
-                <span class="text-danger">*</span> State:
-              </label>
-              <div
-                [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-                <!-- FORM INPUT -->
-                <select class="edit_field" formControlName="state" [compareWith]="compareFn">
-                  <option value="" disabled=true>(Required)</option>
-                  <option [value]="choice" *ngFor="let choice of stateChoices">{{choice}}</option>
-                </select>
-      
-                <!-- ERROR   -->
-                <span *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
-                  class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
-      
-      
-                <div *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched" class="text-danger">
-      
-                  <!-- ERROR LIST -->
-      
-                  <p *ngIf="profileForm.controls['state'].invalid" class="ng-scope">
-                    <span class="glyphicon glyphicon-exclamation-sign"></span>
-                    Please enter a valid State.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <!-- ERROR   -->
+          <span *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+
+          <div *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
+            class="text-danger">
+
+            <!-- ERROR LIST -->
+
+            <p *ngIf="profileForm.controls['state'].invalid" class="ng-scope">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+              Please enter a valid State.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Zip code and Zip code extension -->
     <div class="col-xs-12 no-padding">
-        <div class="col-xs-12 col-md-6">
-            <label class="col-xs-12 head control-label">
-              <span class="text-danger">*</span> Zip Code:
-            </label>
-            <div
-              [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-              <!-- FORM INPUT -->
-              <input
-                [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'edit_field error': 'edit_field'"
-                type="text" [placeholder]="profileForm.controls['zipCode'].invalid? '(Required)' : '' "
-                [(ngModel)]="userProfileModel.address[0].zipCode" formControlName="zipCode">
-    
-              <!-- ERROR   -->
-              <span
-                *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
-                class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
-    
-    
-              <div
-                *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
-                class="text-danger">
-    
-                <!-- ERROR LIST -->
-    
-                <p *ngIf="profileForm.controls['zipCode'].invalid" class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                  Please enter a valid Zip Code.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="col-xs-12 col-md-6">
+        <label class="col-xs-12 head control-label">
+          <span class="text-danger">*</span> Zip Code:
+        </label>
+        <div
+          [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <!-- FORM INPUT -->
+          <input
+            [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'edit_field error': 'edit_field'"
+            type="text" [placeholder]="profileForm.controls['zipCode'].invalid? '(Required)' : '' "
+            [(ngModel)]="userProfileModel.address[0].zipCode" formControlName="zipCode">
 
-          <div class="col-xs-12 col-md-6">
-              <label class="col-xs-12 head control-label">
-                <span class="text-danger">*</span> Zip Code Extension:
-              </label>
-              <div
-                [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-                <!-- FORM INPUT -->
-                <input
-                  [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'edit_field error': 'edit_field'"
-                  type="text" [placeholder]="profileForm.controls['zipExt'].invalid? '(Required)' : '' "
-                  [(ngModel)]="userProfileModel.address[0].zipExt" formControlName="zipExt">
-      
-                <!-- ERROR   -->
-                <span
-                  *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
-                  class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
-      
-      
-                <div
-                  *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
-                  class="text-danger">
-      
-                  <!-- ERROR LIST -->
-      
-                  <p *ngIf="profileForm.controls['zipExt'].invalid" class="ng-scope">
-                    <span class="glyphicon glyphicon-exclamation-sign"></span>
-                    Please enter a valid Zip Code Extension.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <!-- ERROR   -->
+          <span *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+
+          <div *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
+            class="text-danger">
+
+            <!-- ERROR LIST -->
+
+            <p *ngIf="profileForm.controls['zipCode'].invalid" class="ng-scope">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+              Please enter a valid Zip Code.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6">
+        <label class="col-xs-12 head control-label">
+          <span class="text-danger">*</span> Zip Code Extension:
+        </label>
+        <div
+          [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <!-- FORM INPUT -->
+          <input
+            [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'edit_field error': 'edit_field'"
+            type="text" [placeholder]="profileForm.controls['zipExt'].invalid? '(Required)' : '' "
+            [(ngModel)]="userProfileModel.address[0].zipExt" formControlName="zipExt">
+
+          <!-- ERROR   -->
+          <span *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+
+          <div *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
+            class="text-danger">
+
+            <!-- ERROR LIST -->
+
+            <p *ngIf="profileForm.controls['zipExt'].invalid" class="ng-scope">
+              <span class="glyphicon glyphicon-exclamation-sign"></span>
+              Please enter a valid Zip Code Extension.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -758,6 +741,11 @@
       <button type="submit" class="btn btn-success" (click)="verifyBeforeSubmit()">
         Submit
       </button>
+
+      <button class="btn btn-success" (click)="fill()">
+        Fill Up & Submit
+      </button>
     </div>
   </div>
+
 </form>

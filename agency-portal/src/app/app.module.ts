@@ -29,6 +29,9 @@ import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
 import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
 import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
 import { OptDatePipe } from './custom-pipes/opt-date.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     OptimumFormComponent,
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     CommonModule,
@@ -67,7 +71,8 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
     FormsModule,
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
-    OptimumComponentsModule
+    OptimumComponentsModule,
+
   ],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
