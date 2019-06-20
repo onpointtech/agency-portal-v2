@@ -30,7 +30,8 @@ import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
 import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
+import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
 
 
 
@@ -52,6 +53,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     OptPhonePipe,
     OptAddressPipe,
     OptDatePipe,
+    EditClaimantAddressesComponent,
+    EditClaimantDetailsComponent
   ],
   imports: [
     NgbModule,

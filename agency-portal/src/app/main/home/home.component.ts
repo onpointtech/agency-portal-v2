@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
     this.toasterService.success("Success!", "Welcome to Home");
   }
 
-  open(){
-    this.modalService.open();
-  }
+  // open(){
+  //   this.modalService.open();
+  // }
 
 }
