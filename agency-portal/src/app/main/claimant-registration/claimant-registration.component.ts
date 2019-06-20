@@ -6,6 +6,11 @@ import { ClaimantService } from '../../portal-services/claimant.service';
 import { Address } from '../../service-objects/address';
 import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
 import { ToasterService } from 'src/app/portal-services/toaster.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material';
+
+
+
 
 @Component({
   selector: 'app-claimant-registration',

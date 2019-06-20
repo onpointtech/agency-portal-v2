@@ -27,9 +27,10 @@ import { ClaimComponent } from './main/claim/claim.component';
 import { OptSsnPipe } from './custom-pipes/opt-ssn.pipe';
 import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
 import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
-import { OptimumFormComponent } from './main/optimum-form/optimum-form.component';
 import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 
@@ -51,7 +52,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     OptPhonePipe,
     OptAddressPipe,
     OptDatePipe,
-    OptimumFormComponent,
   ],
   imports: [
     NgbModule,
@@ -71,8 +71,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
-    OptimumComponentsModule,
-
+    MatDatepickerModule
   ],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]

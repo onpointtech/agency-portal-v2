@@ -4,11 +4,9 @@
   Claimant Registration
 </h3>
 
-{{userProfileModel | json}}
-
-
 <form [formGroup]="profileForm">
   <div class="form-group">
+
     <!-- SSN and CONFIRM SSN div -->
     <div class="col-xs-12 no-padding">
       <div class="col-xs-12 col-md-6">
@@ -235,13 +233,19 @@
 
       <div class="col-xs-12 col-md-6">
         <label for="dateOfBirth" class="col-xs-12 head control-label"><span class="text-danger">*</span>
-          Date of Birth:  <span class="glyphicon glyphicon-calendar" (click)="d.open()"></span>
+          Date of Birth: <span class="glyphicon glyphicon-calendar "></span>
         </label>
-        <div class="col-xs-12 has-feedback">
-          <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.dateOfBirth"
-            formControlName="dateOfBirth" ngbDatepicker #d="ngbDatepicker">
-            
-
+        <div 
+        [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <input 
+          type="text" 
+          [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'edit_field error': 'edit_field'"
+          [(ngModel)]="userProfileModel.dateOfBirth"
+          formControlName="dateOfBirth"
+          ngbDatepicker
+          #d="ngbDatepicker"
+          (click)="d.toggle()"
+          >
           <span
             *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
@@ -741,7 +745,7 @@
       <button type="submit" class="btn btn-success" (click)="verifyBeforeSubmit()">
         Submit
       </button>
-
+      <br>
       <button class="btn btn-success" (click)="fill()">
         Fill Up & Submit
       </button>
