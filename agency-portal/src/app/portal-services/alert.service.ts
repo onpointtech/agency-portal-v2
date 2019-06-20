@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2';
 import { SwalObject } from '../service-objects/swal-object';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SweetAlertService {
+export class AlertService {
 
   constructor(private router: Router) { }
 
