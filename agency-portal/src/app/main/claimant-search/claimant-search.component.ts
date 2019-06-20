@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild, SystemJsNgModuleLoader } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClaimantService } from '../../portal-services/claimant.service';
 import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
+import { Subscription } from 'rxjs';
+import { SweetAlertService } from '../../portal-services/sweet-alert.service';
 
 @Component({
   selector: 'app-claimant-search',
@@ -10,16 +12,36 @@ import { ToasterService } from '../../portal-services/toaster.service';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  public claimantInfo: string
-  claimantSO: ClaimantSO[];
 
-  columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+  public claimantInfo: string;
+  claimantSO: ClaimantSO[];
+  previousUrl: any;
+  subscription: Subscription;
+  columnsToDisplay: string[];
+  noSearchResultObject: object;
   
-  constructor(private claimantService: ClaimantService, private route: ActivatedRoute, private toasterService: ToasterService, private router: Router) { }
+  constructor(private claimantService: ClaimantService, 
+    private route: ActivatedRoute, 
+    private toasterService: ToasterService, 
+    private sweetAlert: SweetAlertService, 
+    private router: Router) { 
+
+  }
 
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-    this.searchClaimant(this.claimantInfo)
+    this.searchClaimant(this.claimantInfo);
+
+    this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+
+    this.noSearchResultObject = {
+      type: 'info',
+      title: "Info",
+      text: "Sorry, there are no results for the given string",
+      showCancelButton: true,
+      confirmButtonText: 'Go to Claimant Registration',
+      cancelButtonText: 'Cancel'
+    }
   }
 
   getClaimantSO(): void {
@@ -28,21 +50,32 @@ export class ClaimantSearchComponent implements OnInit {
       .subscribe(claimantSO => this.claimantSO = claimantSO);
   }
 
-  searchClaimant(claimantInfo: string){
+  searchClaimant(claimantInfo: string) {
     this.claimantService
     .searchClaimant(claimantInfo)
     .subscribe(claimantSO => {this.claimantSO = claimantSO;
-      if(claimantSO.length > 1){
-        this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
+      if(claimantSO.length > 1) {
+        this.toasterService.success(
+          "Success", 
+          "There are " + String(claimantSO.length) + " results for your query."
+        );
       } else if(claimantSO.length == 1) {
-        this.toasterService.success("Success", "There is " + String(claimantSO.length) + " result for your query.");
-      }else if(claimantSO.length == 0) {
-        this.toasterService.info("Information", "There are no data for this filter");
+        this.toasterService.success(
+          "Success", 
+          "There is " + String(claimantSO.length) + " result for your query.");
+      } else if(claimantSO.length == 0) {
+        this.sweetAlert
+        .custom(this.noSearchResultObject)
+        .then((result) => {
+          if(result.value) {
+            this.noSearchResult();
+          }
+        })
       }
     });
   }
 
-  registerClaimant() {
-    this.router.navigate([`main/claimant-registration`])
+  noSearchResult() {
+    this.router.navigate([`main/claimant-registration`]);
   }
 }

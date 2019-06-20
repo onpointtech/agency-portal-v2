@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ClaimantService } from '../../portal-services/claimant.service';
+import { PortalService } from '../../portal-services/portal.service';
 
 @Component({
   selector: 'app-claimant-overview',
@@ -12,7 +13,7 @@ export class ClaimantOverviewComponent implements OnInit {
   claimantSO: ClaimantSO
   claimantId: number
 
-  constructor(private route: ActivatedRoute, private claimantService: ClaimantService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private claimantService: ClaimantService, private router: Router, private claimantUsed: PortalService) { }
 
   ngOnInit() {
     this.claimantId = Number(this.route.snapshot.paramMap.get('claimantId'));
@@ -22,11 +23,6 @@ export class ClaimantOverviewComponent implements OnInit {
   claimantOverview(claimantId: number){
     this.claimantService.
     getClaimantById(claimantId)
-    .subscribe(claimantSO => this.claimantSO = claimantSO);
+    .subscribe(claimantSO => {this.claimantSO = claimantSO, this.claimantUsed.claimantSO = this.claimantSO});
   }
-
-  viewClaimantProfile(){
-    this.router.navigate([`main/claimant-profile/${this.claimantId}`])
-  }
-
 }

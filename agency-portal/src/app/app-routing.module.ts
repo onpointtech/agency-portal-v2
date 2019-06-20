@@ -36,7 +36,7 @@ const routes: Routes = [
           component:ClaimantOverviewComponent
         },
         {
-          path:'claimant-profile/:claimantId',
+          path:'claimant-profile',
           component:ClaimantProfileComponent
         },
         {

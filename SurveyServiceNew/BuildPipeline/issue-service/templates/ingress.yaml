@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+  namespace: {{ .Release.Namespace }}
+  {{- if eq .Values.ingress.protocol "https"}}
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  {{- end}}
+spec:
+  {{- if eq .Values.ingress.protocol "https"}}
+  tls:
+  - secretName: "{{ .Release.Namespace }}-wildcard-certs"
+    hosts:
+    {{- if .Values.ingress.apiFqdn }}
+    - "{{ .Values.ingress.apiFqdn }}"
+    {{- else}}
+    - "api.{{ .Release.Namespace }}.{{ .Values.dnsDomain }}"
+    {{- end}}
+  {{- end}}
+  rules:
+  {{- if .Values.ingress.apiFqdn }}
+  - host: "{{ .Values.ingress.apiFqdn }}"
+  {{- else}}
+  - host: "api.{{ .Release.Namespace }}.{{ .Values.dnsDomain }}"
+  {{- end}}
+    http:
+      paths:
+      - path: "/{{ template "name" . }}"
+        backend:
+          serviceName: {{ template "name" . }}
+          servicePort: {{ .Values.service.externalPort }}
+          

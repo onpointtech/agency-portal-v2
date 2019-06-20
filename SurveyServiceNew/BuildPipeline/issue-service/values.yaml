@@ -1,0 +1,40 @@
+---
+
+# Default values for .
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+dnsDomain: optimumui.com
+
+replicaCount: 1
+
+image:
+  repository: 825590272106.dkr.ecr.us-east-1.amazonaws.com/issue-service
+  tag: 1.0.22
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: us-east-1-ecr-registry
+
+service:
+  name: issue-service
+  tier: backend
+  type: ClusterIP
+  protocol: TCP
+  internalPort: 8080
+  externalPort: 80
+
+ingress:
+  protocol: https
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 1024Mi
+  requests:
+    cpu: 250m
+    memory: 512Mi
+
+configServer:
+  fqdn: config-server
+  path: /config-server/
+  protocol: http  

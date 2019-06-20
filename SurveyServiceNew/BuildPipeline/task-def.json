@@ -1,0 +1,42 @@
+{
+    "family": "{{ServiceName}}",
+    "containerDefinitions": [ 
+        {
+            "name": "{{ServiceName}}-Container",
+            "image": "{{RepositoryUrl}}/{{ServiceName}}:1.0.{{BUILD_NUMBER}}",
+            "cpu": 128,
+            "memory": 384,
+    
+            "portMappings": [
+                    {
+                      "hostPort": 0,
+                      "protocol": "tcp",
+                      "containerPort": 8080
+                    }
+             ],
+			"environment": [
+			        {
+			          "name": "SERVER_SERVLET_CONTEXT_PATH",
+			          "value": "/{{ServiceName}}"
+			        },
+			        {
+			          "name": "SPRING_PROFILES_ACTIVE",
+			          "value": "{{StackName}}"
+			        },  
+			        {
+			          "name": "SPRING_CLOUD_CONFIG_URI",
+			          "value": "{{ConfigServerUri}}"
+			        }                    
+             ], 
+             "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "{{StackName}}",
+                    "awslogs-region": "{{Aws_Region}}",
+                    "awslogs-stream-prefix": "{{ServiceName}}"
+                }
+              },                                    	            
+	         "essential": true
+        }
+    ]
+} 
