@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2';
 import { SwalObject } from '../service-objects/swal-object';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SweetAlertService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   success(title: string, text: string) {
     Swal.fire({
@@ -41,17 +42,15 @@ export class SweetAlertService {
     })
   }
 
-  custom(alertObject: SwalObject, action: string) {
-    if(action === "success"){
-      this.success(alertObject.title, alertObject.text);
-    } else if(action === "error"){
-      this.error(alertObject.title, alertObject.text);
-    } else if(action === "info"){
-      this.info(alertObject.title, alertObject.text);
-    } else if(action === "warning"){
-      this.warning(alertObject.title, alertObject.text);
-    } else {
-      this.error("Error", "You have input an invalid action");
-    }
+  custom(alertObject: any, action: any) {
+    Swal.fire(alertObject).then((result) => {
+      if(result.value) {
+        this.action(action);
+      }
+    })
+  }
+
+  action(action: string) {
+    this.router.navigate([`${action}`]);
   }
 }
