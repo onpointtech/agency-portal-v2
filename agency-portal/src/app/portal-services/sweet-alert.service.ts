@@ -42,15 +42,7 @@ export class SweetAlertService {
     })
   }
 
-  custom(alertObject: any, action: any) {
-    Swal.fire(alertObject).then((result) => {
-      if(result.value) {
-        this.action(action);
-      }
-    })
-  }
-
-  action(action: string) {
-    this.router.navigate([`${action}`]);
+  custom(swalObject: any){
+    return Swal.fire(swalObject);
   }
 }
