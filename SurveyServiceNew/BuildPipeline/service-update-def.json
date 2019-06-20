@@ -1,0 +1,11 @@
+{
+    "cluster": "{{Cluster}}",
+    "service": "{{ServiceName}}",
+    "desiredCount": 1,
+    "taskDefinition": "{{TaskDefName}}",
+    "deploymentConfiguration": {
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 0
+    },
+    "healthCheckGracePeriodSeconds": 120
+}
