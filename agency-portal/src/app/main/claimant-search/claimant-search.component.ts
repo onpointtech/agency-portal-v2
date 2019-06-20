@@ -4,7 +4,7 @@ import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { ToasterService } from '../../portal-services/toaster.service';
 import { Subscription } from 'rxjs';
-import { SweetAlertService } from '../../portal-services/sweet-alert.service';
+import { AlertService } from '../../portal-services/alert.service';
 
 @Component({
   selector: 'app-claimant-search',
@@ -23,7 +23,7 @@ export class ClaimantSearchComponent implements OnInit {
   constructor(private claimantService: ClaimantService, 
     private route: ActivatedRoute, 
     private toasterService: ToasterService, 
-    private sweetAlert: SweetAlertService, 
+    private alert: AlertService, 
     private router: Router) { 
 
   }
@@ -64,7 +64,7 @@ export class ClaimantSearchComponent implements OnInit {
           "Success", 
           "There is " + String(claimantSO.length) + " result for your query.");
       } else if(claimantSO.length == 0) {
-        this.sweetAlert
+        this.alert
         .custom(this.noSearchResultObject)
         .then((result) => {
           if(result.value) {
