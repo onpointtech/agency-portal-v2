@@ -200,3 +200,41 @@ These are pieces of code that are used again and again throughout the site. Thin
 to make a service run
 `ng generate service some`
 
+# Coding Standards
+`import {ThisModule } from 'here';
+import { ThisComponent } from 'here as well';
+
+import { OTHERMODELS } from '../../this place';
+
+@Component({
+...
+})
+export class SomeComponent {
+//Input && Output goes first
+  @Input() input;
+  @Output() output; // this is usually an event emitter
+
+//Variable declarations goes next
+  variable1: number;
+  variablesAreCamelCase: any;
+  variablesCanGetFrom = OTHERMODELS;
+
+//Constructor goes next
+  constructor(public variable) { }
+
+//NgOnInit goes next
+  ngOnInit() {
+    this.variable1 = 1;
+    //instantiate the variables here
+  }
+
+
+//Next set of functions goes next
+  function1() {
+  }
+
+  function2() {
+  }
+
+}
+`
