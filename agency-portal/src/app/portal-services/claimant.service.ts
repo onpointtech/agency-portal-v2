@@ -61,7 +61,7 @@ export class ClaimantService {
   updateClaimant(id: number, updateClaimantSO: UpdateClaimantSO): Observable<UpdateClaimantSO> {
     const claimantUrl = `${this.url}/updateClaimant/${id}`;
     return this.http.put<UpdateClaimantSO>(claimantUrl, updateClaimantSO).pipe(catchError((err: any) => {
-      this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
+      this.toasterService.danger("ERROR", "Cannot update profile.");
       return EMPTY;
     }));
   }

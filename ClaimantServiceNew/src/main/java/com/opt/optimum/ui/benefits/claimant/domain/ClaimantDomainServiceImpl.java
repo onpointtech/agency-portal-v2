@@ -102,11 +102,13 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 			oldClaimantProfile.setLastInsertUpdateBy(updatedClaimantProfile.getLastInsertUpdateBy());
 		}
 		
-		if(updatedClaimantProfile.getAddress().isEmpty() == false) {
-			oldClaimantProfile.getAddress().clear();
-			oldClaimantProfile.getAddress().addAll(updatedClaimantProfile.getAddress());
-			for(Address address : oldClaimantProfile.address) {
-				address.setLastInsertUpdateTS(OffsetDateTime.now());
+		if(updatedClaimantProfile.getAddress() != null) {
+			if(updatedClaimantProfile.getAddress().isEmpty() == false) {
+				oldClaimantProfile.getAddress().clear();
+				oldClaimantProfile.getAddress().addAll(updatedClaimantProfile.getAddress());
+				for(Address address : oldClaimantProfile.address) {
+					address.setLastInsertUpdateTS(OffsetDateTime.now());
+				}
 			}
 		}
 		

@@ -30,7 +30,6 @@ export class ClaimantRegistrationComponent implements OnInit {
 
 
   profileForm = this.fb.group({
-    claimantId: [0, Validators.required],
     ssn: ['', Validators.compose([Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern("[0-9]{9}")])],
     confirmSsn: ['', Validators.compose([Validators.required])],
     firstName: ['', Validators.required],
@@ -142,13 +141,13 @@ export class ClaimantRegistrationComponent implements OnInit {
 
       this.userProfileModel = {
         claimantId: null,
-        ssn: Math.random().toString(10).substr(2,10),
+        ssn: Math.random().toString(10).substr(2,9),
         dateOfBirth: null,
         firstName: 'J'+ this.vowel()+'y'+this.vowel()+'m',
         middleInitial: this.vowel().toUpperCase(),
         lastName: this.vowel().toUpperCase()+'b'+this.vowel()+'rd'+this.vowel()+'l'+this.vowel()+'z'+this.vowel(),
-        homePhone: Math.random().toString(10).substr(2,11),
-        mobilePhone: Math.random().toString(10).substr(2,11),
+        homePhone: Math.random().toString(10).substr(2,10),
+        mobilePhone: Math.random().toString(10).substr(2,10),
         languagePreference: this.languagePreferenceChoices[1],
         educationLevel: this.educationLevelChoices[5],
         gender: this.genderChoices[0],
