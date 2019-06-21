@@ -124,7 +124,14 @@ export class ClaimantRegistrationComponent implements OnInit {
       .registerClaimant(this.userProfileModel);
   }
 
-  fill() {
+  
+  compareFn(c1: any, c2: any): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
+
+  //FILLER FUNCTIONS
+
+  FillForm() {
     console.log(this.vowel())
 
     this.addressInitial = {
@@ -142,7 +149,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       this.userProfileModel = {
         claimantId: null,
         ssn: Math.random().toString(10).substr(2,9),
-        dateOfBirth: null,
+        dateOfBirth: new Date(this.day(),this.month(), this.year()),
         firstName: 'J'+ this.vowel()+'y'+this.vowel()+'m',
         middleInitial: this.vowel().toUpperCase(),
         lastName: this.vowel().toUpperCase()+'b'+this.vowel()+'rd'+this.vowel()+'l'+this.vowel()+'z'+this.vowel(),
@@ -170,8 +177,18 @@ export class ClaimantRegistrationComponent implements OnInit {
     return Math.random().toString(5).replace('0.', '').substr(0,1).replace('1','a').replace('0','e').replace('2','i').replace('3','o').replace('4','u')
   }
 
-  compareFn(c1: any, c2: any): boolean {
-    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  day(): number {
+    return Math.floor(Math.random() * 30)
   }
+
+  month(): number {
+    return Math.floor(Math.random() * 12)
+  }
+
+  year(): number {
+    return 1990 + Math.floor(Math.random() * 29)
+  }
+
+
 
 }

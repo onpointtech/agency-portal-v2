@@ -21,7 +21,7 @@
           </label>
           <div class="col-xs-12 has-feedback">
             <!-- FORM INPUT -->
-            <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.ssn" formControlName="ssn"
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.ssn" formControlName="ssn"
               readonly="readonly" placeholder="{{claimantProfileCopy.ssn}}">
           </div>
           <div *ngIf="debug==true">
@@ -45,7 +45,7 @@
           </label>
           <div class="col-xs-12 has-feedback">
             <!-- FORM INPUT -->
-            <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.alternateClaimantId"
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.alternateClaimantId"
               formControlName="alternateClaimantId" readonly="readonly"
               placeholder="{{claimantProfileCopy.alternateClaimantId}}">
           </div>
@@ -74,7 +74,7 @@
           </label>
           <div class="col-xs-12 has-feedback">
             <!-- FORM INPUT -->
-            <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.firstName"
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.firstName"
               formControlName="firstName" readonly="readonly" placeholder="{{claimantProfileCopy.firstName}}">
           </div>
           <div *ngIf="debug==true">
@@ -98,7 +98,7 @@
           </label>
           <div class="col-xs-12 has-feedback">
             <!-- FORM INPUT -->
-            <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.lastName" formControlName="lastName"
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.lastName" formControlName="lastName"
               readonly="readonly" placeholder="{{claimantProfileCopy.lastName}}">
           </div>
           <div *ngIf="debug==true">
