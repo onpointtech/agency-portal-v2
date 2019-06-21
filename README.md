@@ -96,34 +96,34 @@ __Imported:__
 `import { SomeComponent } from './some-place/some.component';`
 
 __Inside the declarations:__
-`... 
+```... 
 @NgModule({  
   declarations:[  
 ...
      SomeComponent
   ],
   ...
-  `
+  ```
 __Inside the exports:__
 You should not find your component yet, you need to explicitly add it there. Modify it to be like this
 
 from this
-`
+```
   exports:[  
 ...
 AnotherComponent
   ]
 
-`
+```
 to this
-`
+```
   exports:[  
 ...
     AnotherComponent,
     SomeComponent
   ]
 
-`
+```
 ### 4. Build the library and do an npm install
 We have to build the library every time we edit it.
 This should build the library
@@ -179,18 +179,23 @@ You continue normal app development in angular. And use number 6 above, to see h
 These are portions of the website that have code + html (+ css + tests)
 
 to make a component run
+
 `ng generate component some`
 
 the is shortcut for this:
+
 `ng g c some`
 
 there is a command to skip making css files and test files:
+
 `ng g c some -is --skipTests`
 
 to use the component in a parent html, import it first:
+
 `import { SomeComponent } from './some-place/some.component';`
 
 then in the html, you can now use the component as
+
 `<app-name-some></app-name-some>`
 
 
@@ -198,10 +203,12 @@ then in the html, you can now use the component as
 These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
 
 to make a service run
+
 `ng generate service some`
 
 # Coding Standards
-` import {ThisModule } from 'here';
+```
+ import {ThisModule } from 'here';
 import { ThisComponent } from 'here as well';
 
 import { OTHERMODELS } from '../../this place';
@@ -236,4 +243,5 @@ export class SomeComponent {
   function2() {
   }
 
-} `
+} 
+```
