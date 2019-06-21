@@ -201,7 +201,7 @@ to make a service run
 `ng generate service some`
 
 # Coding Standards
-`import {ThisModule } from 'here';
+` import {ThisModule } from 'here';
 import { ThisComponent } from 'here as well';
 
 import { OTHERMODELS } from '../../this place';
@@ -236,5 +236,4 @@ export class SomeComponent {
   function2() {
   }
 
-}
-`
+} `

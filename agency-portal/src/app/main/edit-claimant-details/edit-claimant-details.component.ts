@@ -48,6 +48,10 @@ export class EditClaimantDetailsComponent {
     };
 
     this.profileForm = this.fb.group({
+      ssn: [null],
+      alternateClaimantId: [null],    
+      firstName: [null],
+      lastName: [null],      
       middleInitial: [null],
       homePhone: [null],
       mobilePhone: [null],
@@ -67,6 +71,24 @@ export class EditClaimantDetailsComponent {
   }
 
   updateClaimantDetails() {
+    this.updateClaimant = {
+      middleInitial: this.claimantProfileCopy.middleInitial,
+      homePhone: this.claimantProfileCopy.homePhone,
+      mobilePhone: this.claimantProfileCopy.mobilePhone,
+      languagePreference: this.claimantProfileCopy.languagePreference,
+      gender: this.claimantProfileCopy.gender,
+      educationLevel: this.claimantProfileCopy.educationLevel,
+      race: this.claimantProfileCopy.race,
+      ethnicity: this.claimantProfileCopy.ethnicity,
+      ivrPin: null,
+      documentDeliveryPreference: null,
+      lastInsertUpdateTS: null,
+      lastInsertUpdateBy: null,
+      address: null,
+    }
+
+
+
     this.id = this.portalService.claimantSO.claimantId;
     this.claimantService.updateClaimant(this.id, this.updateClaimant)
       .subscribe(updateClaimant => { this.updateClaimant = updateClaimant });
