@@ -4,31 +4,36 @@
 install git
 
 git clone the repository
+
 `https://github.com/onpointtech/agency-portal-v2.git`
 
 Open the folder agency-portal
+
 `cd agency-portal`
 
 
 Install the node modules
+
 `npm install`
 
 
 ## how to run the frontend (angular)
 To run, open the directory, open terminal and type
+
 `ng serve`
 
 Then open this link in your browser
+
 `localhost:4200`
 
 ## how to run the backend (angular)
-open eclipse
+1. open eclipse
 
-build the project as maven project
+2. build the project as maven project
 
-run the application
+3. run the application
 
-open this link in your browser
+4. open this link in your browser
 `http://localhost:8080/swagger-ui.html`
 
 ## How to develop the agency portal
@@ -139,24 +144,26 @@ We need to do three things here
 1) import the library to your modules
 * Add on top `import { LibraryNameModule } from 'library-name';`
 2) put the components you will use in the declarations
-`... 
+```
+... 
 @NgModule({  
   declarations:[  
 ...
      SomeComponent
   ],
   ...
-  `
+```
 3)  put the library name in your imports
-`
+```
   imports:[  
 ...
     LibraryNameModule
   ]
-`
+```
 ### 6. Editing the components live
 We will assume you are doing an ng serve while the app is importing a component that is being edited
 Instead of our usual build library we will use the `--watch` to have the changes compiled live
+
 `ng build library-name --watch`
 
 #### Errors
@@ -208,9 +215,9 @@ to make a service run
 
 # Coding Standards
 ```
- import {ThisModule } from 'here';
+import {ThisModule } from 'here';
 import { ThisComponent } from 'here as well';
-
+//may add a space
 import { OTHERMODELS } from '../../this place';
 
 @Component({
