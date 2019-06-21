@@ -1,31 +1,358 @@
-<ng-container *ngIf="claimantSO">
-   
-    <div class="col-xs-12 no-padding">
-        <h4 class="p-2">Claimant Profile</h4>
-     </div>
-     <div class="col-xs-12">
-        <div class="col-xs-12 col-lg-6 overview-text">
-                       <h2 class="m-5">{{claimantSO.firstName}} {{claimantSO.lastName}}</h2>
-                       <h4 class="no-margin"><strong class="">{{claimantSO.ssn | optSsnPipe}}</strong></h4>
-                       <ul class="list-unstyled">
-                                     <li>
-                                       <div style="white-space: pre-wrap">
-                                                     <p>{{claimantSO.address | optAddressPipe}}</p>
-                                        </div>
-                                     </li>
-                       </ul>
+<ng-container>
+    <h3>
+        Claimant Profile
+    </h3>
+
+    <form [formGroup] = "profileForm">
+        <div class = "form-group">
+
+            <!-- SSN and CONFIRM SSN div -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>SSN:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.ssn}}
+                            [(ngModel)] = "claimantSO.ssn" 
+                            formControlName = "ssn" 
+                            readonly = "readonly">
+                    </div>
+
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Alternate SSN:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.alternateClaimantId}} 
+                            [(ngModel)] = "claimantSO.alternateClaimantId" 
+                            formControlName = "alternateClaimantId" 
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Name and Last Name div -->
+            <div class="col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>First Name:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.firstName}} 
+                            [(ngModel)] = "claimantSO.firstName" 
+                            formControlName = "firstName" 
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Last Name:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.lastName}} 
+                            [(ngModel)] = "claimantSO.lastName" 
+                            formControlName = "lastName" 
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Initial and Date of Birth div -->
+            <div class="col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        Middle Initial:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.middleInitial}} 
+                            [(ngModel)] = "claimantSO.middleInitial" 
+                            formControlName = "middleInitial" 
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Date of Birth:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input class = "field"
+                            type = "text" 
+                            placeholder = {{claimantSO.dateOfBirth}} 
+                            [(ngModel)] = "claimantSO.dateOfBirth" 
+                            formControlName = "dateOfBirth"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Phone and Mobile Phone div -->
+            <div class="col-xs-12 no-padding">
+                <div class="col-xs-12 col-md-6">
+                    <label class="col-xs-12 head control-label">
+                        <span class="text-danger">*</span>Home Phone:
+                    </label>
+                    <div class="col-xs-12 has-feedback">
+                        <!-- FORM INPUT -->
+                        <input class="field"
+                            type="text" 
+                            placeholder= {{claimantSO.homePhone}}
+                            [(ngModel)]="claimantSO.homePhone" 
+                            formControlName="homePhone" 
+                            mask="(000) 000-0000" 
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">Mobile Phone:</label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.mobilePhone}} 
+                            [(ngModel)] = "claimantSO.mobilePhone" 
+                            formControlName = "mobilePhone"
+                            mask = "(000) 000-0000"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferred Occupation and Language Preference div -->
+            <div class="col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">Preferred Occupation:</label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.preferredOccupation}} 
+                            [(ngModel)] = "claimantSO.preferredOccupation" 
+                            formControlName = "preferredOccupation"
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Language Preference:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.languagePreference}} 
+                            [(ngModel)] = "claimantSO.languagePreference" 
+                            formControlName = "languagePreference"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gender and education Level div -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Gender:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.gender}} 
+                            [(ngModel)] = "claimantSO.gender" 
+                            formControlName = "gender"
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Educational Level:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.educationLevel}} 
+                            [(ngModel)] = "claimantSO.educationLevel" 
+                            formControlName = "educationLevel"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Race and Ethnicity div -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Race:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                                class = "field" 
+                                placeholder = {{claimantSO.race}} 
+                                [(ngModel)] = "claimantSO.race" 
+                                formControlName = "race"
+                                readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Ethnicity:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.ethnicity}} 
+                            [(ngModel)] = "claimantSO.ethnicity" 
+                            formControlName = "ethnicity"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Claimant Details Button -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <button type = "button" 
+                        class = "btn btn-primary" 
+                        (click) = "openEditClaimantDetails(claimantSO)">
+                            <b>Edit Claimant Details</b>
+                    </button>
+                </div>
+                <br>
+                <br>
+            </div>
+
+            <!-- Address fields -->
+            <h3>
+                Claimant Address
+            </h3>
+
+            <!-- Address Line 1 -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Address Line 1:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].addressLine1}} 
+                            [(ngModel)] = "claimantSO.address[0].addressLine1" 
+                            formControlName = "addressLine1"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Line 2 -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Address Line 2:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].addressLine2}} 
+                            [(ngModel)] = "claimantSO.address[0].addressLine2" 
+                            formControlName = "addressLine2"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- City and State div -->
+            <div class = "col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>City:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].city}} 
+                            [(ngModel)] = "claimantSO.address[0].city" 
+                            formControlName = "city"
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>State:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].state}} 
+                            [(ngModel)] = "claimantSO.address[0].state" 
+                            formControlName = "state"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zip code and Zip code extension -->
+            <div class="col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Zip Code:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].zipCode}} 
+                            [(ngModel)] = "claimantSO.address[0].zipCode" 
+                            formControlName = "zipCode"
+                            readonly = "readonly">
+                    </div>
+                </div>
+
+                <div class = "col-xs-12 col-md-6">
+                    <label class = "col-xs-12 head control-label">
+                        <span class = "text-danger">*</span>Zip Code Extension:
+                    </label>
+                    <div class = "col-xs-12 has-feedback">
+                        <input type = "text" 
+                            class = "field" 
+                            placeholder = {{claimantSO.address[0].zipExt}} 
+                            [(ngModel)] = "claimantSO.address[0].zipExt" 
+                            formControlName = "zipExt"
+                            readonly = "readonly">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Claimant Address Button -->
+            <div class ="col-xs-12 no-padding">
+                <div class = "col-xs-12 col-md-6">
+                    <button type = "button" 
+                        class = "btn btn-primary" 
+                        (click) = "openEditClaimantAddresses(claimantSO.address)">
+                        <b>Edit Claimant Address</b>
+                    </button>
+                </div>
+            </div>
+
         </div>
-     </div>
-     <div class="col-xs-12 btn_margin">
-        <button type="button" class="btn btn-primary" (click)="openEditClaimantDetails(claimantSO)">
-        <b>Edit Claimant Details</b>
-        </button>
-     </div>
-     <div class="col-xs-12 btn_margin">
-        <button type="button" class="btn btn-primary" (click)="openEditClaimantAddresses(claimantSO.address)">
-            <b>Edit Claimant Address</b>
-        </button>
-     </div>
-     </ng-container>
-    
-    
+    </form>
+</ng-container>
