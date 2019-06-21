@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { NgxMaskModule, MaskPipe } from 'ngx-mask';
@@ -75,12 +75,15 @@ import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
     MatDatepickerModule,
-    NgbModule.forRoot(),
+    NgbModule.forRoot({
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn btn-info',
+    }),
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',
       confirmButtonClass: 'btn btn-primary',
-      cancelButtonClass: 'btn',
+      cancelButtonClass: 'btn btn-info',
     })
   ],
   entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressesComponent],

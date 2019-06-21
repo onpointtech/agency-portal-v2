@@ -40,7 +40,9 @@ export class ClaimantSearchComponent implements OnInit {
       text: "Sorry, there are no results for the given string",
       showCancelButton: true,
       confirmButtonText: 'Go to Claimant Registration',
-      cancelButtonText: 'Cancel'
+      cancelButtonText: 'Cancel',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn btn-info',
     }
   }
 
