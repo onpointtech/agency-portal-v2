@@ -4,6 +4,8 @@ import * as SurveyCreator from "survey-creator";
 import * as widgets from "surveyjs-widgets";
 
 import "inputmask/dist/inputmask/phone-codes/phone.js";
+import { SurveyService } from './survey-editor-services/survey.service';
+import { Survey } from './service-objects/survey';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -49,7 +51,18 @@ export class SurveyCreatorComponent {
   surveyCreator: SurveyCreator.SurveyCreator;
   @Input() json: any;
   @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
+  survey: Survey;
+
+  constructor(private surveyService: SurveyService) {}
+
   ngOnInit() {
+    this.survey = {
+      surveyId: 0,
+      name: "",
+      surveyDefinition: "",
+      lastInsertUpdateTS: null,
+      lastInsertUpdateBy: ""
+    }
     SurveyKo.JsonObject.metaData.addProperty(
       "questionbase",
       "popupdescription:text"
@@ -66,7 +79,10 @@ export class SurveyCreatorComponent {
   }
 
   saveMySurvey = () => {
-    console.log(JSON.stringify(this.surveyCreator.text));
-    this.surveySaved.emit(JSON.parse(this.surveyCreator.text));
+    this.survey.name = this.json.title;
+    this.survey.surveyDefinition = this.surveyCreator.text
+    this.surveyService
+      .createSurvey(this.survey)
+      .subscribe(survey => this.survey = survey);
   };
 }

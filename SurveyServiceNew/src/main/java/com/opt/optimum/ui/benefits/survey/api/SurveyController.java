@@ -3,6 +3,7 @@ package com.opt.optimum.ui.benefits.survey.api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +32,9 @@ public class SurveyController {
 		return survey;
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/createSurvey", method = RequestMethod.POST)
-	public long registerSurvey(@RequestBody Survey survey) {
+	public long createSurvey(@RequestBody Survey survey) {
 		logger.info("Create Survey Request Received ", survey.toString());
 		return surveyBusinessService.createSurvey(survey);
 	}

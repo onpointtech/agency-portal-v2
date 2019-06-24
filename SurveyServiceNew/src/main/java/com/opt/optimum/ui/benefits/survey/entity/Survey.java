@@ -16,6 +16,7 @@ public class Survey {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long surveyId;
 	String name;
+	@Size(min = 1, max = 9999)
 	String surveyDefinition;
 	OffsetDateTime lastInsertUpdateTS;
 	String lastInsertUpdateBy;
