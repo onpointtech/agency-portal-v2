@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
 import * as Survey from 'survey-angular';
 import * as widgets from 'surveyjs-widgets';
 
@@ -23,20 +22,21 @@ Survey.JsonObject.metaData.addProperty('questionbase', 'popupdescription:text');
 Survey.JsonObject.metaData.addProperty('page', 'popupdescription:text');
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'survey',
-  templateUrl: './survey.component.html',
-  styleUrls: ['./survey.component.css']
+  template: `<div class='survey-container contentcontainer codecontainer'><div id='surveyElement'></div></div>`
 })
 export class SurveyComponent implements OnInit {
   @Output() submitSurvey = new EventEmitter<any>();
 
-  @Input() json: object;
+  @Input()
+  json: object;
+
 
   click(result) {
     console.log(result);
-  }
 
-  constructor() { }
+  }
 
   ngOnInit() {
     const surveyModel = new Survey.Model(this.json);
@@ -64,5 +64,4 @@ export class SurveyComponent implements OnInit {
       );
     Survey.SurveyNG.render('surveyElement', { model: surveyModel });
   }
-
 }

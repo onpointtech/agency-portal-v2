@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import * as SurveyKo from "survey-knockout";
 import * as SurveyCreator from "survey-creator";
 import * as widgets from "surveyjs-widgets";
@@ -40,12 +40,12 @@ SurveyCreator.SurveyPropertyModalEditor.registerCustomWidget(
 );
 
 @Component({
-  selector: 'survey-creator',
-  templateUrl: './survey-creator.component.html',
-  styleUrls: ['./survey-creator.component.css']
+  selector: "survey-creator",
+  template: `
+    <div id="surveyCreatorContainer"></div>
+  `
 })
-export class SurveyCreatorComponent implements OnInit {
-
+export class SurveyCreatorComponent {
   surveyCreator: SurveyCreator.SurveyCreator;
   @Input() json: any;
   @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
@@ -69,6 +69,4 @@ export class SurveyCreatorComponent implements OnInit {
     console.log(JSON.stringify(this.surveyCreator.text));
     this.surveySaved.emit(JSON.parse(this.surveyCreator.text));
   };
-
-  constructor() { }
 }

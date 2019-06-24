@@ -1,6 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <router-outlet></router-outlet> -->
-<script src="https://surveyjs.azureedge.net/1.0.94/survey.angular.min.js"></script>
+<h1>
+  {{ title }}
+</h1>
 
-<h1>Survey</h1><survey [json] = "json"></survey>
-<h1>SurveyJS Creator</h1><survey-creator></survey-creator>
+<h1>Survey</h1>
+<survey [json]="json" (submitSurvey)="sendData($event)"></survey>
+
+<h1>Survey JS Creator</h1>
+<survey-creator
+  [json]="json"
+  (surveySaved)="onSurveySaved($event)"
+></survey-creator>
