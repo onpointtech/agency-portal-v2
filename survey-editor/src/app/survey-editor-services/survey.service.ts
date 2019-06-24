@@ -13,7 +13,12 @@ export class SurveyService {
   constructor(private httpClient: HttpClient) { }
 
   public createSurvey(survey: Survey): any {
-    const claimantUrl = `${this.url}/createSurvey`;
+    const claimantUrl = `${this.url}/addUpdateSurvey`;
     return this.httpClient.post(claimantUrl, survey);
+  }
+
+  public getAllSurveys(): Observable<Survey[]> {
+    const claimantUrl = `${this.url}/getAllSurveys`;
+    return this.httpClient.get<Survey[]>(claimantUrl);
   }
 }

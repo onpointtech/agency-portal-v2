@@ -75,10 +75,7 @@ import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-
     NgxMaskModule.forRoot(),
     ReactiveFormsModule,
     MatDatepickerModule,
-    NgbModule.forRoot({
-      confirmButtonClass: 'btn btn-primary',
-      cancelButtonClass: 'btn btn-info',
-    }),
+    NgbModule.forRoot(),
     SweetAlert2Module.forRoot({
       buttonsStyling: false,
       customClass: 'modal-content',

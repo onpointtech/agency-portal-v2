@@ -1,5 +1,7 @@
 package com.opt.optimum.ui.benefits.survey.business;
 
+import java.util.List;
+
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,21 +28,30 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 		this.surveyDomainService = surveyDomainService;
 	}
 
-	@Override
-	public long createSurvey(Survey survey) {
-		return surveyDomainService.createSurvey(survey);
-	}
-
-	@Override
-	public Survey updateSurvey(SurveySO surveySO, long surveyId) {
-		ModelMapper modelMapper = new ModelMapper();
-		Survey survey = modelMapper.map(surveySO, Survey.class);
-		return surveyDomainService.updateSurvey(survey, surveyId);
+	public long addUpdateSurvey(Survey survey) {
+		if(getSurveyByName(survey) != null) {
+			Survey oldSurvey = getSurveyByName(survey);
+			
+			if(survey.getSurveyDefinition() != null && survey.getSurveyDefinition() != "") {
+				oldSurvey.setSurveyDefinition(survey.getSurveyDefinition());
+			}
+			return surveyDomainService.addUpdateSurvey(oldSurvey);
+		} else {
+			return surveyDomainService.addUpdateSurvey(survey);
+		}
 	}
 
 	@Override
 	public Survey getSurveyById(long surveyId) {
 		return surveyDomainService.getSurveyById(surveyId);
+	}
+	
+	public Survey getSurveyByName(Survey survey) {
+		return surveyDomainService.getSurveyByName(survey);
+	}
+
+	public List<Survey> getAllSurveys() {
+		return surveyDomainService.getAllSurveys();
 	}
 
 }

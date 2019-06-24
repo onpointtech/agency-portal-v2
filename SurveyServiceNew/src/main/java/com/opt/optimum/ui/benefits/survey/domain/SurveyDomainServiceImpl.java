@@ -1,6 +1,8 @@
 package com.opt.optimum.ui.benefits.survey.domain;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,26 +21,25 @@ public class SurveyDomainServiceImpl implements SurveyDomainService{
 	}
 
 	@Override
-	public long createSurvey(Survey survey) {
+	public long addUpdateSurvey(Survey survey) {
 		survey.setLastInsertUpdateTS(OffsetDateTime.now());
 		return surveyRepository.save(survey).getSurveyId();
 	}
 
-	@Override
-	public Survey updateSurvey(Survey updatedSurvey, long surveyId) {
-		Survey oldSurvey = getSurveyById(surveyId);
-		
-		if(updatedSurvey.getSurveyDefinition() != null && updatedSurvey.getSurveyDefinition() != "") {
-			oldSurvey.setSurveyDefinition(updatedSurvey.getSurveyDefinition());
-		}
-		
-		return surveyRepository.save(oldSurvey);
+	public Survey getSurveyByName(Survey survey) {
+		Survey surveyCheck = surveyRepository.findFirstByName(survey.getName());
+		return surveyCheck;
 	}
 
 	@Override
 	public Survey getSurveyById(long surveyId) {
 		return surveyRepository.findById(surveyId).get();
 	}
-	
 
+	@Override
+	public List<Survey> getAllSurveys() {
+		List<Survey> allSurveys = new ArrayList<>();
+		surveyRepository.findAll().forEach(e -> allSurveys.add(e));
+		return allSurveys;
+	}
 }

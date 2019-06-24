@@ -63,6 +63,7 @@ export class SurveyCreatorComponent {
       lastInsertUpdateTS: null,
       lastInsertUpdateBy: ""
     }
+
     SurveyKo.JsonObject.metaData.addProperty(
       "questionbase",
       "popupdescription:text"
@@ -79,10 +80,11 @@ export class SurveyCreatorComponent {
   }
 
   saveMySurvey = () => {
-    this.survey.name = this.json.title;
-    this.survey.surveyDefinition = this.surveyCreator.text
+    var parsed = JSON.parse(this.surveyCreator.text)
+    this.survey.name = parsed.title
+    this.survey.surveyDefinition = JSON.stringify(parsed);
     this.surveyService
       .createSurvey(this.survey)
-      .subscribe(survey => this.survey = survey);
+      .subscribe(id => console.log(id));
   };
 }
