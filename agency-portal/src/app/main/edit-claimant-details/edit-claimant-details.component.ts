@@ -4,8 +4,10 @@ import { ClaimantService } from '../../portal-services/claimant.service';
 import { UpdateClaimantSO } from '../../service-objects/update-claimant-so';
 import { PortalService } from '../../portal-services/portal.service';
 import { ClaimantSO } from '../../service-objects/claimant-so'
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
+import { ValdemortModule } from 'ngx-valdemort';
+
 
 @Component({
   selector: 'app-edit-claimant-details',
@@ -50,11 +52,13 @@ export class EditClaimantDetailsComponent {
     this.profileForm = this.fb.group({
       ssn: [null],
       alternateClaimantId: [null],    
-      firstName: [null],
-      lastName: [null],      
-      middleInitial: [null],
-      homePhone: [null],
+      firstName: [null,Validators.minLength(1)],
+      lastName: [null,Validators.minLength(1)],      
+      middleInitial: [null,Validators.minLength(1)],
+      homePhone: [null,Validators.minLength(1)],
       mobilePhone: [null],
+
+      //There is no way they can choose null, so no validations are needed
       languagePreference: [null],
       gender: [null],
       educationLevel: [null],

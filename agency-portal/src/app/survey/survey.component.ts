@@ -1,25 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as SurveyEditor from 'surveyjs-editor';
 import * as Survey from 'survey-angular';
-import * as widgets from 'surveyjs-widgets';
-
-import 'inputmask/dist/inputmask/phone-codes/phone.js';
-
-widgets.icheck(Survey);
-widgets.select2(Survey);
-widgets.inputmask(Survey);
-widgets.jquerybarrating(Survey);
-widgets.jqueryuidatepicker(Survey);
-widgets.nouislider(Survey);
-widgets.select2tagbox(Survey);
-widgets.signaturepad(Survey);
-widgets.sortablejs(Survey);
-widgets.ckeditor(Survey);
-widgets.autocomplete(Survey);
-widgets.bootstrapslider(Survey);
-widgets.prettycheckbox(Survey);
-
-Survey.JsonObject.metaData.addProperty('questionbase', 'popupdescription:text');
-Survey.JsonObject.metaData.addProperty('page', 'popupdescription:text');
+import { SurveyService } from '../portal-services/survey.service';
+import { ToasterService } from '../portal-services/toaster.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { SurveySO } from '../service-objects/survey-so';
 
 @Component({
   selector: 'app-survey',
@@ -27,42 +12,62 @@ Survey.JsonObject.metaData.addProperty('page', 'popupdescription:text');
   styles: []
 })
 export class SurveyComponent implements OnInit {
-  @Output() submitSurvey = new EventEmitter<any>();
+  model: any;
+  surveySO: SurveySO;
+  surveyTitle: any;
 
-  @Input() json: object;
+  constructor(surveyService: SurveyService, private toasterService: ToasterService){
 
-
-  click(result) {
-    console.log(result);
   }
-  constructor() { }
 
+  editor: SurveyEditor.SurveyEditor;
+  
   ngOnInit() {
+    var json = {
+      questions: [
+        {
+          type: "radiogroup", name: "car", title: "What car are you driving?", isRequired: true,
+          colCount: 4, choices: ["None", "Ford", "Vauxhall", "Volkswagen", "Nissan", "Audi", "Mercedes-Benz", "BMW", "Peugeot", "Toyota", "Citroen"]
+        },
+        {
+          type: "radiogroup", name: "car2", title: "What car are you not driving?", isRequired: true,
+          colCount: 4, choices: ["None", "Ford", "Vauxhall", "Volkswagen", "Nissan", "Audi", "Mercedes-Benz", "BMW", "Peugeot", "Toyota", "Citroen"]
+        }
+      ]
+    };
 
-    const surveyModel = new Survey.Model(this.json);
-    surveyModel.onAfterRenderQuestion.add((survey, options) => {
-      if (!options.question.popupdescription) { return; }
 
-      // Add a button;
-      const btn = document.createElement('button');
-      btn.className = 'btn btn-info btn-xs';
-      btn.innerHTML = 'More Info';
-      const question = options.question;
-      btn.onclick = function () {
-      
-        // showDescription(question);
-        alert(options.question.popupdescription);
-      };
-      const header = options.htmlElement.querySelector('h5');
-      const span = document.createElement('span');
-      span.innerHTML = '  ';
-      header.appendChild(span);
-      header.appendChild(btn);
-    });
-    surveyModel.onComplete
-      .add(result =>
-        this.submitSurvey.emit(result.data)
-      );
-    Survey.SurveyNG.render('surveyElement', { model: surveyModel });
+    this.model = new Survey.ReactSurveyModel(json);
+    Survey.SurveyNG.render('surveyContainer', { model: this.model });
   }
+
+  getTitle(surveyData: any, questionNumber: number): string{
+    return surveyData.getPlainData()[questionNumber].title;
   }
+
+  getValue(surveyData: any, questionNumber: number): string{
+    return surveyData.getPlainData()[questionNumber].data[0].value;
+  }
+
+
+  showModel(surveyData: any){
+    console.log(this.getTitle(surveyData,0));
+    console.log(this.getValue(surveyData,0));
+
+    console.log(this.getTitle(surveyData,1));
+    console.log(this.getValue(surveyData,1));
+
+
+
+
+  }
+
+  // makeModel(surveyData: any){
+
+  // }
+
+  // postModel()
+  // {
+    
+  // }
+}

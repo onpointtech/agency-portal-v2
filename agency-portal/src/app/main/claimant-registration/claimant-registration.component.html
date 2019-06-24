@@ -1,8 +1,8 @@
-
-
 <h3>
   Claimant Registration
 </h3>
+
+
 
 <form [formGroup]="profileForm">
   <div class="form-group">
@@ -26,20 +26,30 @@
           <span *ngIf="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
+          <div class="text-danger">
+            <val-errors controlName="ssn" label="SSN">
 
-          <div *ngIf="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched" class="text-danger">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter an SSN.
+                </p>
+              </ng-template>
 
-            <!-- ERROR LIST -->
+              <ng-template valError="minlength">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Minimum length is 9 digits. Please enter a SSN that is 9-digits in length.
+                </p>
+              </ng-template>
 
-            <p *ngIf="profileForm.controls['ssn'].value.length < 9" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Minimum length is 9 digits. Please enter a SSN that is 9-digits in length.
-            </p>
-
-            <p *ngIf="profileForm.controls['ssn'].value.length > 9" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Maximum length is 9 digits. Please enter a SSN that is 9-digits in length.
-            </p>
+              <ng-template valError="maxlength">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Maximum length is 9 digits. Please enter a SSN that is 9-digits in length.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
 
@@ -74,24 +84,22 @@
           <span *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
+          <div class="text-danger">
+            <val-errors controlName="confirmSsn" label="Confirm SSN">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please confirm your SSN.
+                </p>
+              </ng-template>
+            </val-errors>
 
-          <div
-            *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched || profileForm.controls['ssn'].value != profileForm.controls['confirmSsn'].value"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-            <p *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
-              class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please confirm your SSN.
-            </p>
-
+            <!-- Not possible in ngx-valdemort -->
             <p *ngIf="profileForm.controls['ssn'].value != profileForm.controls['confirmSsn'].value && profileForm.controls['confirmSsn'].touched"
               class="ng-scope">
               <span class="glyphicon glyphicon-exclamation-sign"></span>
               Confirm SSN does not match SSN.
             </p>
-
           </div>
         </div>
 
@@ -124,22 +132,21 @@
           <input
             [class]="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched ? 'edit_field error': 'edit_field'"
             type="text" [placeholder]="profileForm.controls['firstName'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.firstName" formControlName="firstName">
+            [(ngModel)]="userProfileModel.firstName" formControlName="firstName" required>
 
-          <!-- ERROR   -->
+          <!-- ERROR -->
           <span *ngIf="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['firstName'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid first name.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="firstName" label="The first name">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid first name.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
 
@@ -170,21 +177,23 @@
             type="text" [placeholder]="profileForm.controls['lastName'].invalid? '(Required)' : '' "
             [(ngModel)]="userProfileModel.lastName" formControlName="lastName">
 
-          <!-- ERROR   -->
+
+          <!-- ERROR -->
           <span *ngIf="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
+          <div class="text-danger">
+            <val-errors controlName="lastName" label="The last name">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid last name.
+                </p>
+              </ng-template>
 
-          <div *ngIf="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['lastName'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Last Name.
-            </p>
+            </val-errors>
           </div>
+
         </div>
 
         <div *ngIf="debug==true">
@@ -214,6 +223,29 @@
           <!-- FORM INPUT -->
           <input class="edit_field" type="text" [(ngModel)]="userProfileModel.middleInitial"
             formControlName="middleInitial">
+
+          <!-- ERROR -->
+          <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+          <div class="text-danger">
+            <val-errors controlName="middleInitial">
+              <ng-template valError="maxlength">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Middle Initial can only have a maximum of 1 letter
+                </p>
+              </ng-template>
+
+              <ng-template valError="pattern">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Only a letter can be entered as a middle initial
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
+
         </div>
         <div *ngIf="debug==true">
           <br>
@@ -235,23 +267,28 @@
         <label for="dateOfBirth" class="col-xs-12 head control-label"><span class="text-danger">*</span>
           Date of Birth:
         </label>
-        <div 
-        [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-          <input 
-          type="text" 
-          [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'edit_field error': 'edit_field'"
-          [(ngModel)]="userProfileModel.dateOfBirth"
-          formControlName="dateOfBirth"
-          ngbDatepicker
-          #d="ngbDatepicker"
-          (click)="d.toggle()"
-          >
-          <span
-            *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback text-danger" aria-hidden="true"></span>
-          <p *ngIf="profileForm.controls['dateOfBirth'].invalid && (profileForm.controls['dateOfBirth'].dirty || profileForm.controls['dateOfBirth'].touched)"
-            class="ng-scope text-danger"><span class="glyphicon glyphicon-exclamation-sign"></span>
-            Please enter a date of birth.</p>
+        <div
+          [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <input type="text"
+            [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'edit_field error': 'edit_field'"
+            [(ngModel)]="userProfileModel.dateOfBirth" formControlName="dateOfBirth" ngbDatepicker #d="ngbDatepicker"
+            (click)="d.toggle()">
+
+
+          <!-- ERROR -->
+          <span *ngIf="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+          <div class="text-danger">
+            <val-errors controlName="dateOfBirth">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid first name.
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
         </div>
         <div *ngIf="debug==true">
           <br>
@@ -287,21 +324,22 @@
           <span *ngIf="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
+          <div class="text-danger">
+            <val-errors controlName="homePhone">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid home phone.
+                </p>
+              </ng-template>
 
-          <div *ngIf="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['homePhone'].value.length < 9" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Minimum length is 9 digits. Please enter a homePhone that is 9-digits in length.
-            </p>
-
-            <p *ngIf="profileForm.controls['homePhone'].value.length > 9" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Maximum length is 9 digits. Please enter a homePhone that is 9-digits in length.
-            </p>
+              <ng-template valError="pattern">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Only numbers are allowed to be inputted in this field.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
 
@@ -326,6 +364,17 @@
         <div class="col-xs-12 has-feedback">
           <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.mobilePhone"
             formControlName="mobilePhone" placeholder="(000) 000-000" mask="(000) 000-0000">
+          <!-- ERROR   -->
+          <div class="text-danger">
+            <val-errors controlName="mobilePhone">
+              <ng-template valError="pattern">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Only numbers are allowed to be inputted in this field.
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
         </div>
         <div *ngIf="debug==true">
           <br>
@@ -362,21 +411,18 @@
             *ngIf="profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div
-            *ngIf="profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['preferredOccupation'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Preferred Occupation.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="preferredOccupation">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid preferred occupation.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
-
       <div class="col-xs-12 col-md-6">
         <label class="col-xs-12 head control-label">
           <span class="text-danger">*</span> Language Preference:
@@ -396,17 +442,15 @@
             *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div
-            *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['languagePreference'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Language Preference.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="languagePreference">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid language preference.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -432,16 +476,15 @@
           <span *ngIf="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['gender'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Gender.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="gender">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid gender.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -463,17 +506,17 @@
           <span *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['educationLevel'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Education Level.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="educationLevel">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid Education Level.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
+
         </div>
       </div>
     </div>
@@ -498,15 +541,15 @@
           <span *ngIf="profileForm.controls['race'].invalid && profileForm.controls['race'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['race'].invalid && profileForm.controls['race'].touched" class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['race'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Race.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="race">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid Race.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -529,17 +572,17 @@
           <span *ngIf="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['ethnicity'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Ethnicity.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="ethnicity">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid Ethnicity.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
+
         </div>
       </div>
 
@@ -567,16 +610,15 @@
         <span *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
           class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-        <div *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
-          class="text-danger">
-
-          <!-- ERROR LIST -->
-
-          <p *ngIf="profileForm.controls['addressLine1'].invalid" class="ng-scope">
-            <span class="glyphicon glyphicon-exclamation-sign"></span>
-            Please enter a valid Address Line 1.
-          </p>
+        <div class="text-danger">
+          <val-errors controlName="addressLine1">
+            <ng-template valError="required">
+              <p class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Address Line 1.
+              </p>
+            </ng-template>
+          </val-errors>
         </div>
       </div>
     </div>
@@ -593,21 +635,19 @@
           [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
           type="text" [placeholder]="profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
           [(ngModel)]="userProfileModel.address[0].addressLine2" formControlName="addressLine2">
-
         <!-- ERROR   -->
         <span *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
           class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-        <div *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
-          class="text-danger">
-
-          <!-- ERROR LIST -->
-
-          <p *ngIf="profileForm.controls['addressLine2'].invalid" class="ng-scope">
-            <span class="glyphicon glyphicon-exclamation-sign"></span>
-            Please enter a valid Address Line 2.
-          </p>
+        <div class="text-danger">
+          <val-errors controlName="addressLine2">
+            <ng-template valError="required">
+              <p class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Address Line 2.
+              </p>
+            </ng-template>
+          </val-errors>
         </div>
       </div>
     </div>
@@ -630,15 +670,15 @@
           <span *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched" class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['city'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid City.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="city">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid City.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -661,16 +701,15 @@
           <span *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['state'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid State.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="state">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please choose a valid state.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -694,16 +733,15 @@
           <span *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['zipCode'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Zip Code.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="zipCode">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid Zip Code.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>
@@ -724,16 +762,15 @@
           <span *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
             class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-
-          <div *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
-            class="text-danger">
-
-            <!-- ERROR LIST -->
-
-            <p *ngIf="profileForm.controls['zipExt'].invalid" class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
-              Please enter a valid Zip Code Extension.
-            </p>
+          <div class="text-danger">
+            <val-errors controlName="zipExt">
+              <ng-template valError="required">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid Zip Code Extension.
+                </p>
+              </ng-template>
+            </val-errors>
           </div>
         </div>
       </div>

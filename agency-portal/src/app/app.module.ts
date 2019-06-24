@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
+import { ValdemortModule } from 'ngx-valdemort';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { NgxMaskModule, MaskPipe } from 'ngx-mask';
@@ -32,8 +33,8 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
 import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
-import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
 import { SurveyComponent } from './survey/survey.component';
+
 
 
 
@@ -57,10 +58,11 @@ import { SurveyComponent } from './survey/survey.component';
     OptDatePipe,
     EditClaimantAddressesComponent,
     EditClaimantDetailsComponent,
-    SurveyCreatorComponent,
-    SurveyComponent
+    SurveyComponent,
+
   ],
   imports: [
+    ValdemortModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,

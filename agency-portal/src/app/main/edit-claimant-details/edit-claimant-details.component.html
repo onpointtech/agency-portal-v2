@@ -74,8 +74,8 @@
           </label>
           <div class="col-xs-12 has-feedback">
             <!-- FORM INPUT -->
-            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.firstName"
-              formControlName="firstName" readonly="readonly" placeholder="{{claimantProfileCopy.firstName}}">
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.firstName" formControlName="firstName"
+              readonly="readonly" placeholder="{{claimantProfileCopy.firstName}}">
           </div>
           <div *ngIf="debug==true">
             <br>
@@ -130,6 +130,22 @@
             <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.middleInitial"
               formControlName="middleInitial" placeholder="{{claimantProfileCopy.middleInitial}}">
           </div>
+          
+          <!-- ERROR, THIS DOESNT SHOW UP FOR SOME REASON   -->
+          <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+
+          <div class="text-danger">
+            <val-errors controlName="middleInitial">
+              <ng-template valError="minlength">
+                <p class="ng-scope">
+                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid Middle Initial.
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
+
           <div *ngIf="debug==true">
             <br>
             DEBUG: model.middleInitial content: {{claimantProfileCopy.middleInitial}}
