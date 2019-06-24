@@ -32,6 +32,8 @@ import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
 import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
+import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
+import { SurveyComponent } from './survey/survey.component';
 
 
 
@@ -54,7 +56,9 @@ import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-
     OptAddressPipe,
     OptDatePipe,
     EditClaimantAddressesComponent,
-    EditClaimantDetailsComponent
+    EditClaimantDetailsComponent,
+    SurveyCreatorComponent,
+    SurveyComponent
   ],
   imports: [
     NgbModule,
