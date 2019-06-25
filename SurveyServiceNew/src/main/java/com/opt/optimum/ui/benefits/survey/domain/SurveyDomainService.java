@@ -6,10 +6,12 @@ import com.opt.optimum.ui.benefits.survey.entity.Survey;
 
 public interface SurveyDomainService {
 
-	long createSurvey(Survey survey);
-
-	Survey updateSurvey(Survey survey, long surveyId);
+	long addUpdateSurvey(Survey survey);
 
 	Survey getSurveyById(long surveyId);
+
+	Survey getSurveyByName(Survey survey);
+
+	List<Survey> getAllSurveys();
 	
 }

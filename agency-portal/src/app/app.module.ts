@@ -86,7 +86,7 @@ import { SurveyComponent } from './survey/survey.component';
       buttonsStyling: false,
       customClass: 'modal-content',
       confirmButtonClass: 'btn btn-primary',
-      cancelButtonClass: 'btn',
+      cancelButtonClass: 'btn btn-info',
     })
   ],
   entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressesComponent],

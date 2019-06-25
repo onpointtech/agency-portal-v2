@@ -1,5 +1,5 @@
 import { Injectable, Component, Input } from '@angular/core';
-import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Injectable({
   providedIn: 'root'
