@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, Router, ActivatedRoute} from '@angular/router';
-import { SurveyCreatorComponent } from './survey.creator.component';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule} from '@angular/router';
 import { SurveyListComponent } from './survey-list/survey-list.component';
+import { SurveyCreatorComponent } from './survey.creator.component';
+import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 
 const routes: Routes = [
   {
      path:'',
-     component:SurveyCreatorComponent
+     redirectTo:'survey-creator',
+     pathMatch:'full'
   },
   {
-    path:'survey-list',
-    component:SurveyListComponent
- },
+    path:'survey-creator',
+    component: SurveyCreatorComponent
+  },
+  {
+     path:'survey-list',
+     component: SurveyListComponent
+  },
+  {
+    path:'survey-edit/:surveyId',
+    component: SurveyEditComponent
+  },
   {
      path:'**',
-     redirectTo:'',
+     redirectTo:'survey-creator',
      pathMatch:'full'
   }
 ];
@@ -24,3 +35,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

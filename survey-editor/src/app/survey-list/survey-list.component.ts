@@ -15,7 +15,6 @@ export class SurveyListComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSurveys();
-
     this.columnsToDisplay = ['surveyId', 'name'];
   }
 
