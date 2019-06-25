@@ -89,9 +89,9 @@ In your terminal type
 
 ### 2. Create your components for your library
 In your terminal type
-`ng generatecomponent component-name --project==library-name`
+`ng generatecomponent component-name --project=library-name`
 * for a smaller component you can remove the css and spec.ts by using `-is --skipTests`
-* It will look like `ng generate component component-name --project==library-name -is --skipTests`
+* It will look like `ng generate component component-name --project=library-name -is --skipTests`
 
 ### 3. Export the components in the module of the library
 Navigate to `dist/library-name/lib/library-name.module.ts`
