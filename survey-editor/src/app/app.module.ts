@@ -10,6 +10,7 @@ import { SurveyCreatorComponent } from "./survey.creator.component";
 import { AppRoutingModule } from './app-routing.module';
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
+import { CommonModule } from '../../node_modules/@angular/common';
 
 @NgModule({
   declarations: [AppComponent,
@@ -18,7 +19,9 @@ import { SurveyEditComponent } from './survey-edit/survey-edit.component';
     SurveyListComponent,
     SurveyEditComponent,
   ],
-  imports: [BrowserModule,
+  imports: [
+    CommonModule,
+    BrowserModule,
     FormsModule,
     HttpClientModule,
     MatTableModule,

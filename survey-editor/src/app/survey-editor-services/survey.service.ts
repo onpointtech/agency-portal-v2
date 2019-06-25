@@ -24,6 +24,6 @@ export class SurveyService {
 
   public getSurveyById(surveyId: number): Observable<Survey> {
     const claimantUrl = `${this.url}/getSurveyById/${surveyId}`;
-    return this.httpClient.get<Survey>(claimantUrl).pipe();
+    return this.httpClient.get<Survey>(claimantUrl);
   }
 }

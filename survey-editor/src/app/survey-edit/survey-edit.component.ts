@@ -58,27 +58,32 @@ export class SurveyEditComponent implements OnInit {
 
   ngOnInit() {
     this.surveyId = Number(this.route.snapshot.paramMap.get('surveyId'));
+    console.log(this.surveyId)
     this.getSurvey(this.surveyId);
 
-    SurveyKo.JsonObject.metaData.addProperty(
-      "questionbase",
-      "popupdescription:text"
-    );
-    SurveyKo.JsonObject.metaData.addProperty("page", "popupdescription:text");
 
-    let options = { showEmbededSurveyTab: true, generateValidJSON: true };
-    this.surveyCreator = new SurveyCreator.SurveyCreator(
-      "surveyCreatorContainer1",
-      options
-    );
-    this.surveyCreator.text = JSON.stringify(this.json);
-    this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
   }
 
   getSurvey(surveyId: number) {
-    this.surveyService
-      .getSurveyById(surveyId)
-      .subscribe(survey => {this.survey = survey; return this.survey});
+    return this.surveyService
+    .getSurveyById(surveyId)
+    .subscribe(
+      survey => {
+        SurveyKo.JsonObject.metaData.addProperty(
+          "questionbase",
+          "popupdescription:text"
+        );
+        SurveyKo.JsonObject.metaData.addProperty("page", "popupdescription:text");
+
+        let options = { showEmbededSurveyTab: true, generateValidJSON: true };
+        this.surveyCreator = new SurveyCreator.SurveyCreator(
+          "surveyCreatorContainer1",
+          options
+        );
+        this.surveyCreator.text = survey.surveyDefinition;
+        this.surveyCreator.saveSurveyFunc = this.saveMySurvey;
+      }
+    );
   }
 
   saveMySurvey = () => {
