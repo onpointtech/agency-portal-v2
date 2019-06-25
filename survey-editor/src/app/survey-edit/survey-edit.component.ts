@@ -57,11 +57,17 @@ export class SurveyEditComponent implements OnInit {
   constructor(private route: ActivatedRoute, private surveyService: SurveyService) { }
 
   ngOnInit() {
+    this.survey = {
+      surveyId: 0,
+      name: "",
+      surveyDefinition: "",
+      lastInsertUpdateTS: null,
+      lastInsertUpdateBy: ""
+    }
+
     this.surveyId = Number(this.route.snapshot.paramMap.get('surveyId'));
     console.log(this.surveyId)
     this.getSurvey(this.surveyId);
-
-
   }
 
   getSurvey(surveyId: number) {
