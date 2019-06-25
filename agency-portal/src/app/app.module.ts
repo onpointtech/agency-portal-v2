@@ -31,9 +31,9 @@ import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
 import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
 import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
-import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
 import { SurveyComponent } from './survey/survey.component';
+import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
+import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
 
 
 
@@ -56,12 +56,12 @@ import { SurveyComponent } from './survey/survey.component';
     OptPhonePipe,
     OptAddressPipe,
     OptDatePipe,
-    EditClaimantAddressesComponent,
-    EditClaimantDetailsComponent,
     SurveyComponent,
-
+    EditClaimantDetailsComponent,
+    EditClaimantAddressComponent
   ],
   imports: [
+    // OptLibraryModule,
     ValdemortModule,
     NgbModule,
     BrowserModule,
@@ -89,7 +89,7 @@ import { SurveyComponent } from './survey/survey.component';
       cancelButtonClass: 'btn btn-info',
     })
   ],
-  entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressesComponent],
+  entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressComponent],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
 })

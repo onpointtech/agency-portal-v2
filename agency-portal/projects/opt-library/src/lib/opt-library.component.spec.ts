@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptimumComponentsComponent } from './optimum-components.component';
+import { OptLibraryComponent } from './opt-library.component';
 
-describe('OptimumComponentsComponent', () => {
-  let component: OptimumComponentsComponent;
-  let fixture: ComponentFixture<OptimumComponentsComponent>;
+describe('OptLibraryComponent', () => {
+  let component: OptLibraryComponent;
+  let fixture: ComponentFixture<OptLibraryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OptimumComponentsComponent ]
+      declarations: [ OptLibraryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OptimumComponentsComponent);
+    fixture = TestBed.createComponent(OptLibraryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

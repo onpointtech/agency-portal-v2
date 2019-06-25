@@ -1,21 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ClaimantService } from '../../portal-services/claimant.service';
-import { UpdateClaimantSO } from '../../service-objects/update-claimant-so';
-import { PortalService } from '../../portal-services/portal.service';
-import { ClaimantSO } from '../../service-objects/claimant-so'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
-import { ValdemortModule } from 'ngx-valdemort';
-
+import { UpdateClaimantSO } from 'src/app/service-objects/update-claimant-so';
+import { ClaimantSO } from 'src/app/service-objects/claimant-so';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from 'src/app/choices/choices';
+import { ClaimantService } from 'src/app/portal-services/claimant.service';
+import { PortalService } from 'src/app/portal-services/portal.service';
 
 @Component({
-  selector: 'app-edit-claimant-details',
+  selector: 'opt-edit-claimant-details',
   templateUrl: './edit-claimant-details.component.html',
-  styleUrls: ['./edit-claimant-details.component.css']
+  styles: []
 })
-export class EditClaimantDetailsComponent {
-
+export class EditClaimantDetailsComponent implements OnInit {
   @Input() input;
   id: number;
   updateClaimant = new UpdateClaimantSO();
@@ -67,9 +64,6 @@ export class EditClaimantDetailsComponent {
     });
   }
 
-
-
-
   close() {
     this.activeModal.close('Close click');
   }
@@ -102,7 +96,5 @@ export class EditClaimantDetailsComponent {
   compareFn(c1: any, c2: any): boolean {
     return c1 && c2 ? c1.id === c2.id : c1 === c2;
   }
-
-
-
+  
 }

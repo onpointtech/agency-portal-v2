@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'optimum-optimum-components',
+  selector: 'opt-opt-library',
   template: `
     <p>
-      optimum-components works!
+      opt-library works!
     </p>
   `,
   styles: []
 })
-export class OptimumComponentsComponent implements OnInit {
+export class OptLibraryComponent implements OnInit {
 
   constructor() { }
 

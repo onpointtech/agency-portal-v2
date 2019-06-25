@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ModalService } from '../../portal-services/modal.service';
-import { EditClaimantDetailsComponent } from '../edit-claimant-details/edit-claimant-details.component';
-import { EditClaimantAddressesComponent } from '../edit-claimant-addresses/edit-claimant-addresses.component';
 import { PortalService } from '../../portal-services/portal.service';
 import { FormBuilder } from '../../../../node_modules/@angular/forms';
+import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
+import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
 
 @Component({
   selector: 'app-claimant-profile',
@@ -52,7 +52,7 @@ export class ClaimantProfileComponent implements OnInit {
   }
 
   openEditClaimantAddresses(object: any){
-    this.modalService.open(EditClaimantAddressesComponent, object);
+    this.modalService.open(EditClaimantAddressComponent, object);
   }
 
 }
