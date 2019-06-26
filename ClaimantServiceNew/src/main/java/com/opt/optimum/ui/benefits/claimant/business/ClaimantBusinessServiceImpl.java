@@ -59,4 +59,9 @@ public class ClaimantBusinessServiceImpl implements ClaimantBusinessService{
 	public ClaimantProfile getClaimantBySsn(String ssn) {
 		return claimantDomainService.getClaimantBySsn(ssn);
 	}
+
+	@Override
+	public String submitClaim() {
+		return claimantDomainService.submitClaim();
+	}
 }

@@ -20,4 +20,6 @@ public interface ClaimantBusinessService {
 	List<ClaimantProfile> searchClaimant(String claimantInfo);
 
 	ClaimantProfile getClaimantBySsn(String ssn);
+
+	String submitClaim();
 }
