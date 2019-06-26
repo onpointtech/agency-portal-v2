@@ -4,48 +4,53 @@
 
 
 
-<form [formGroup]="profileForm">
-  <div class="form-group">
+<form [formGroup] = "profileForm">
+  <div class = "form-group">
 
     <!-- SSN and CONFIRM SSN div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span>SSN:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span>SSN:
         </label>
-        <div
-          [class]="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <input
-            [class]="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['ssn'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.ssn" formControlName="ssn" [hiddenInput]="true" mask="XXX-XX0-000"
-            [showMaskTyped]="true">
+            [class] = "profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['ssn'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.ssn"
+            formControlName = "ssn"
+            [hiddenInput] = "true"
+            mask = "XXX-XX0-000"
+            [showMaskTyped] = "true">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['ssn'].invalid && profileForm.controls['ssn'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="ssn" label="SSN">
+          <div class = "text-danger">
+            <val-errors controlName = "ssn"
+              label = "SSN">
 
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter an SSN.
                 </p>
               </ng-template>
 
-              <ng-template valError="minlength">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+              <ng-template valError = "minlength">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Minimum length is 9 digits. Please enter a SSN that is 9-digits in length.
                 </p>
               </ng-template>
 
-              <ng-template valError="maxlength">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+              <ng-template valError = "maxlength">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Maximum length is 9 digits. Please enter a SSN that is 9-digits in length.
                 </p>
               </ng-template>
@@ -53,7 +58,7 @@
           </div>
         </div>
 
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.ssn content: {{userProfileModel.ssn}}
           <br>
@@ -68,42 +73,47 @@
         </div>
 
       </div>
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span>Confirm SSN:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span>Confirm SSN:
         </label>
-        <div
-          [class]="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <input
-            [class]="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
-            formControlName="confirmSsn" [hiddenInput]="true" mask="XXX-XX0-000" [showMaskTyped]="true">
+            [class] = "profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['confirmSsn'].invalid? '(Required)' : '' "
+            formControlName = "confirmSsn"
+            [hiddenInput] = "true"
+            mask = "XXX-XX0-000"
+            [showMaskTyped] = "true">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['confirmSsn'].invalid && profileForm.controls['confirmSsn'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="confirmSsn" label="Confirm SSN">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "confirmSsn" label = "Confirm SSN">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please confirm your SSN.
                 </p>
               </ng-template>
             </val-errors>
 
             <!-- Not possible in ngx-valdemort -->
-            <p *ngIf="profileForm.controls['ssn'].value != profileForm.controls['confirmSsn'].value && profileForm.controls['confirmSsn'].touched"
-              class="ng-scope">
-              <span class="glyphicon glyphicon-exclamation-sign"></span>
+            <p *ngIf = "profileForm.controls['ssn'].value != profileForm.controls['confirmSsn'].value && profileForm.controls['confirmSsn'].touched"
+              class = "ng-scope">
+              <span class = "glyphicon glyphicon-exclamation-sign"></span>
               Confirm SSN does not match SSN.
             </p>
           </div>
         </div>
 
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.ssn content: {{userProfileModel.ssn}}
           <br>
@@ -121,28 +131,33 @@
     </div>
 
     <!-- First Name and Last Name div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> First Name:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> First Name:
         </label>
         <div
-          [class]="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          [class] = "profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <input
-            [class]="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['firstName'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.firstName" formControlName="firstName" required>
+            [class] = "profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['firstName'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.firstName"
+            formControlName = "firstName" 
+            required>
 
           <!-- ERROR -->
-          <span *ngIf="profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['firstName'].invalid && profileForm.controls['firstName'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback" 
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="firstName" label="The first name">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "firstName"
+              label = "The first name">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid first name.
                 </p>
               </ng-template>
@@ -150,7 +165,7 @@
           </div>
         </div>
 
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.firstName content: {{userProfileModel.firstName}}
           <br>
@@ -165,28 +180,31 @@
         </div>
 
       </div>
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Last Name:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Last Name:
         </label>
         <div
-          [class]="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          [class] = "profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['lastName'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.lastName" formControlName="lastName">
+          <input [class] = "profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['lastName'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.lastName"
+            formControlName = "lastName">
 
 
           <!-- ERROR -->
-          <span *ngIf="profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['lastName'].invalid && profileForm.controls['lastName'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="lastName" label="The last name">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "lastName"
+              label = "The last name">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid last name.
                 </p>
               </ng-template>
@@ -196,7 +214,7 @@
 
         </div>
 
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.lastName content: {{userProfileModel.lastName}}
           <br>
@@ -214,32 +232,35 @@
     </div>
 
     <!-- Middle Initial and Date of Birth div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
           Middle Initial:
         </label>
-        <div class="col-xs-12 has-feedback">
+        <div class = "col-xs-12 has-feedback">
           <!-- FORM INPUT -->
-          <input class="edit_field" type="text" [(ngModel)]="userProfileModel.middleInitial"
-            formControlName="middleInitial">
+          <input class = "edit_field"
+            type = "text"
+            [(ngModel)] = "userProfileModel.middleInitial"
+            formControlName = "middleInitial">
 
           <!-- ERROR -->
-          <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="middleInitial">
-              <ng-template valError="maxlength">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "middleInitial">
+              <ng-template valError = "maxlength">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Middle Initial can only have a maximum of 1 letter
                 </p>
               </ng-template>
 
-              <ng-template valError="pattern">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+              <ng-template valError = "pattern">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Only a letter can be entered as a middle initial
                 </p>
               </ng-template>
@@ -247,7 +268,7 @@
           </div>
 
         </div>
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.middleInitial content: {{userProfileModel.middleInitial}}
           <br>
@@ -263,34 +284,39 @@
 
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <label for="dateOfBirth" class="col-xs-12 head control-label"><span class="text-danger">*</span>
+      <div class = "col-xs-12 col-md-6">
+        <label for = "dateOfBirth"
+          class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span>
           Date of Birth:
         </label>
         <div
-          [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
-          <input type="text"
-            [class]="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'edit_field error': 'edit_field'"
-            [(ngModel)]="userProfileModel.dateOfBirth" formControlName="dateOfBirth" ngbDatepicker #d="ngbDatepicker"
-            (click)="d.toggle()">
+          [class] = "profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+          <input type = "text"
+            [class] = "profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched ? 'edit_field error': 'edit_field'"
+            [(ngModel)] = "userProfileModel.dateOfBirth"
+            formControlName = "dateOfBirth"
+            ngbDatepicker #d = "ngbDatepicker"
+            (click) = "d.toggle()">
 
 
           <!-- ERROR -->
-          <span *ngIf="profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['dateOfBirth'].invalid && profileForm.controls['dateOfBirth'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="dateOfBirth">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "dateOfBirth">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid first name.
                 </p>
               </ng-template>
             </val-errors>
           </div>
         </div>
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.dateOfBirth content: {{userProfileModel.dateOfBirth}}
           <br>
@@ -307,35 +333,38 @@
     </div>
 
     <!-- Home Phone and Mobile Phone div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span>Home Phone:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span>Home Phone:
         </label>
-        <div
-          [class]="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <input
-            [class]="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
-            [(ngModel)]="userProfileModel.homePhone" formControlName="homePhone" mask="(000) 000-0000">
+            [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
+            [(ngModel)] = "userProfileModel.homePhone"
+            formControlName = "homePhone"
+            mask = "(000) 000-0000">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="homePhone">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "homePhone">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid home phone.
                 </p>
               </ng-template>
 
-              <ng-template valError="pattern">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+              <ng-template valError = "pattern">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Only numbers are allowed to be inputted in this field.
                 </p>
               </ng-template>
@@ -343,7 +372,7 @@
           </div>
         </div>
 
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.homePhone content: {{userProfileModel.homePhone}}
           <br>
@@ -358,25 +387,30 @@
         </div>
 
       </div>
-      <div class="col-xs-12 col-md-6">
-        <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
+      <div class = "col-xs-12 col-md-6">
+        <label for = "mobilePhone"
+          class = "col-xs-12 head control-label">Mobile Phone:
         </label>
-        <div class="col-xs-12 has-feedback">
-          <input type="text" class="form-control edit_field" [(ngModel)]="userProfileModel.mobilePhone"
-            formControlName="mobilePhone" placeholder="(000) 000-000" mask="(000) 000-0000">
+        <div class = "col-xs-12 has-feedback">
+          <input type = "text"
+            class = "form-control edit_field"
+            [(ngModel)] = "userProfileModel.mobilePhone"
+            formControlName = "mobilePhone"
+            placeholder = "(000) 000-000"
+            mask = "(000) 000-0000">
           <!-- ERROR   -->
-          <div class="text-danger">
-            <val-errors controlName="mobilePhone">
-              <ng-template valError="pattern">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "mobilePhone">
+              <ng-template valError = "pattern">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Only numbers are allowed to be inputted in this field.
                 </p>
               </ng-template>
             </val-errors>
           </div>
         </div>
-        <div *ngIf="debug==true">
+        <div *ngIf = "debug==true">
           <br>
           DEBUG: model.mobilePhone content: {{userProfileModel.mobilePhone}}
           <br>
@@ -393,29 +427,30 @@
     </div>
 
     <!-- Preferred Occupation and Language Preference div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Preferred Occupation:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Preferred Occupation:
         </label>
-        <div
-          [class]="profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['preferredOccupation'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.preferredOccupation" formControlName="preferredOccupation">
+          <input [class] = "profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['preferredOccupation'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.preferredOccupation"
+            formControlName = "preferredOccupation">
 
           <!-- ERROR   -->
-          <span
-            *ngIf="profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['preferredOccupation'].invalid && profileForm.controls['preferredOccupation'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="preferredOccupation">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "preferredOccupation">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid preferred occupation.
                 </p>
               </ng-template>
@@ -423,30 +458,36 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Language Preference:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Language Preference:
         </label>
-        <div
-          [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select
-            [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="languagePreference" [compareWith]="compareFn">
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of languagePreferenceChoices">{{choice}}</option>
+          <select [class] = "profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "languagePreference"
+            [compareWith] = "compareFn">
+            <option value = ""
+              disabled=true>
+              (Required)
+            </option>
+            <option [value]="choice"
+              *ngFor="let choice of languagePreferenceChoices">
+              {{choice}}
+            </option>
           </select>
 
           <!-- ERROR   -->
-          <span
-            *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
+            class="glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden="true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="languagePreference">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "languagePreference">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid language preference.
                 </p>
               </ng-template>
@@ -457,30 +498,38 @@
     </div>
 
     <!-- Gender and education Level div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Gender:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Gender:
         </label>
-        <div
-          [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <select
-            [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="gender" [compareWith]="compareFn">
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of genderChoices">{{choice}}</option>
+            [class] = "profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "gender"
+            [compareWith] = "compareFn">
+            <option value = "" 
+              disabled = true>
+              (Required)
+            </option>
+            <option [value] = "choice"
+              *ngFor = "let choice of genderChoices">
+              {{choice}}
+            </option>
           </select>
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="gender">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "gender">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid gender.
                 </p>
               </ng-template>
@@ -489,28 +538,37 @@
         </div>
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Education Level:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Education Level:
         </label>
-        <div
-          [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <select
-            [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="educationLevel" [compareWith]="compareFn" required>
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of educationLevelChoices">{{choice}}</option>
+            [class] = "profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "educationLevel"
+            [compareWith] = "compareFn" 
+            required>
+            <option value = "" 
+              disabled = true>
+              (Required)
+            </option>
+            <option [value] = "choice"
+              *ngFor = "let choice of educationLevelChoices">
+              {{choice}}
+            </option>
           </select>
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="educationLevel">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "educationLevel">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid Education Level.
                 </p>
               </ng-template>
@@ -522,30 +580,38 @@
     </div>
 
     <!-- Race and Ethnicity div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Race:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Race:
         </label>
-        <div
-          [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
           <select
-            [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="race" [compareWith]="compareFn">
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of raceChoices">{{choice}}</option>
+            [class] = "profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "race"
+            [compareWith] = "compareFn">
+            <option value = ""
+              disabled = true>
+              (Required)
+            </option>
+            <option [value] = "choice"
+              *ngFor = "let choice of raceChoices">
+              {{choice}}
+            </option>
           </select>
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['race'].invalid && profileForm.controls['race'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['race'].invalid && profileForm.controls['race'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="race">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "race">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid Race.
                 </p>
               </ng-template>
@@ -554,29 +620,36 @@
         </div>
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Ethnicity:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Ethnicity:
         </label>
-        <div
-          [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select
-            [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="ethnicity" [compareWith]="compareFn">
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of ethnicityChoices">{{choice}}</option>
+          <select [class] = "profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "ethnicity"
+            [compareWith] = "compareFn">
+            <option value = ""
+              disabled = true>
+              (Required)
+            </option>
+            <option [value] = "choice"
+              *ngFor = "let choice of ethnicityChoices">
+              {{choice}}
+            </option>
           </select>
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="ethnicity">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "ethnicity">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid Ethnicity.
                 </p>
               </ng-template>
@@ -594,27 +667,30 @@
     </h4>
 
     <!-- Address Line 1 -->
-    <div class="col-xs-12 col-md-12">
-      <label class="col-xs-12 head control-label">
-        <span class="text-danger">*</span> Address Line 1:
+    <div class = "col-xs-12 col-md-12">
+      <label class = "col-xs-12 head control-label">
+        <span class = "text-danger">*</span> Address Line 1:
       </label>
-      <div
-        [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+      <div [class] = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
         <!-- FORM INPUT -->
         <input
-          [class]="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'edit_field error': 'edit_field'"
-          type="text" [placeholder]="profileForm.controls['addressLine1'].invalid? '(Required)' : '' "
-          [(ngModel)]="userProfileModel.address[0].addressLine1" formControlName="addressLine1">
+          [class] = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'edit_field error': 'edit_field'"
+          type = "text"
+          [placeholder] = "profileForm.controls['addressLine1'].invalid? '(Required)' : '' "
+          [(ngModel)] = "userProfileModel.address[0].addressLine1"
+          formControlName = "addressLine1">
 
         <!-- ERROR   -->
-        <span *ngIf="profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
-          class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+        <span *ngIf = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
+          class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+          aria-hidden = "true">
+        </span>
 
-        <div class="text-danger">
-          <val-errors controlName="addressLine1">
-            <ng-template valError="required">
-              <p class="ng-scope">
-                <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <div class = "text-danger">
+          <val-errors controlName = "addressLine1">
+            <ng-template valError = "required">
+              <p class = "ng-scope">
+                <span class = "glyphicon glyphicon-exclamation-sign"></span>
                 Please enter a valid Address Line 1.
               </p>
             </ng-template>
@@ -624,26 +700,28 @@
     </div>
 
     <!-- Address Line 2 -->
-    <div class="col-xs-12 col-md-12">
-      <label class="col-xs-12 head control-label">
-        <span class="text-danger">*</span> Address Line 2:
+    <div class = "col-xs-12 col-md-12">
+      <label class = "col-xs-12 head control-label">
+        <span class = "text-danger">*</span> Address Line 2:
       </label>
-      <div
-        [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+      <div [class] = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
         <!-- FORM INPUT -->
-        <input
-          [class]="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
-          type="text" [placeholder]="profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
-          [(ngModel)]="userProfileModel.address[0].addressLine2" formControlName="addressLine2">
+        <input [class] = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
+          type = "text"
+          [placeholder] = "profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
+          [(ngModel)] = "userProfileModel.address[0].addressLine2"
+          formControlName = "addressLine2">
         <!-- ERROR   -->
-        <span *ngIf="profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
-          class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+        <span *ngIf = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
+          class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+          aria-hidden = "true">
+        </span>
 
-        <div class="text-danger">
-          <val-errors controlName="addressLine2">
-            <ng-template valError="required">
-              <p class="ng-scope">
-                <span class="glyphicon glyphicon-exclamation-sign"></span>
+        <div class = "text-danger">
+          <val-errors controlName = "addressLine2">
+            <ng-template valError = "required">
+              <p class = "ng-scope">
+                <span class = "glyphicon glyphicon-exclamation-sign"></span>
                 Please enter a valid Address Line 2.
               </p>
             </ng-template>
@@ -653,28 +731,29 @@
     </div>
 
     <!-- City and State div -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> City:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> City:
         </label>
-        <div
-          [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['city'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.address[0].city" formControlName="city">
+          <input [class] = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['city'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.address[0].city" 
+            formControlName = "city">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="city">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "city">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid City.
                 </p>
               </ng-template>
@@ -683,29 +762,36 @@
         </div>
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> State:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> State:
         </label>
-        <div
-          [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <select
-            [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'edit_field error': 'edit_field'"
-            formControlName="state" [compareWith]="compareFn">
-            <option value="" disabled=true>(Required)</option>
-            <option [value]="choice" *ngFor="let choice of stateChoices">{{choice}}</option>
+          <select [class] = "profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'edit_field error': 'edit_field'"
+            formControlName = "state"
+            [compareWith] = "compareFn">
+            <option value = ""
+              disabled = true>
+              (Required)
+            </option>
+            <option [value] = "choice"
+              *ngFor = "let choice of stateChoices">
+              {{choice}}
+            </option>
           </select>
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="state">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "state">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please choose a valid state.
                 </p>
               </ng-template>
@@ -716,28 +802,29 @@
     </div>
 
     <!-- Zip code and Zip code extension -->
-    <div class="col-xs-12 no-padding">
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Zip Code:
+    <div class = "col-xs-12 no-padding">
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Zip Code:
         </label>
-        <div
-          [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['zipCode'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.address[0].zipCode" formControlName="zipCode">
+          <input [class] = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['zipCode'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.address[0].zipCode"
+            formControlName = "zipCode">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="zipCode">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "zipCode">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid Zip Code.
                 </p>
               </ng-template>
@@ -746,27 +833,29 @@
         </div>
       </div>
 
-      <div class="col-xs-12 col-md-6">
-        <label class="col-xs-12 head control-label">
-          <span class="text-danger">*</span> Zip Code Extension:
+      <div class = "col-xs-12 col-md-6">
+        <label class = "col-xs-12 head control-label">
+          <span class = "text-danger">*</span> Zip Code Extension:
         </label>
-        <div
-          [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+        <div [class] = "profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
           <!-- FORM INPUT -->
-          <input
-            [class]="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'edit_field error': 'edit_field'"
-            type="text" [placeholder]="profileForm.controls['zipExt'].invalid? '(Required)' : '' "
-            [(ngModel)]="userProfileModel.address[0].zipExt" formControlName="zipExt">
+          <input [class] = "profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['zipExt'].invalid? '(Required)' : '' "
+            [(ngModel)] = "userProfileModel.address[0].zipExt"
+            formControlName = "zipExt">
 
           <!-- ERROR   -->
-          <span *ngIf="profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+          <span *ngIf = "profileForm.controls['zipExt'].invalid && profileForm.controls['zipExt'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true">
+          </span>
 
-          <div class="text-danger">
-            <val-errors controlName="zipExt">
-              <ng-template valError="required">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <div class = "text-danger">
+            <val-errors controlName = "zipExt">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
                   Please enter a valid Zip Code Extension.
                 </p>
               </ng-template>
@@ -778,12 +867,15 @@
 
 
 
-    <div class="col-xs-12 col-md-12">
-      <button type="submit" class="btn btn-success" (click)="verifyBeforeSubmit()">
+    <div class = "col-xs-12 col-md-12">
+      <button type = "submit"
+        class = "btn btn-success"
+        (click) = "verifyBeforeSubmit()">
         Submit
       </button>
       <br>
-      <button class="btn btn-success" (click)="FillForm()">
+      <button class = "btn btn-success"
+        (click) = "FillForm()">
         Fill Up & Submit
       </button>
     </div>

@@ -18,13 +18,20 @@ export class ClaimantOverviewComponent implements OnInit {
     private claimantUsed: PortalService) { }
 
   ngOnInit() {
-    this.claimantId = Number(this.route.snapshot.paramMap.get('claimantId'));
+    this.claimantId = Number(this.route
+      .snapshot
+      .paramMap
+      .get('claimantId')
+    );
     this.claimantOverview(this.claimantId)
   }
 
   claimantOverview(claimantId: number){
     this.claimantService.
     getClaimantById(claimantId)
-    .subscribe(claimantSO => {this.claimantSO = claimantSO, this.claimantUsed.claimantSO = this.claimantSO});
+    .subscribe(claimantSO => { 
+      this.claimantSO = claimantSO; 
+      this.claimantUsed.claimantSO = this.claimantSO;
+     });
   }
 }

@@ -16,7 +16,11 @@ export class ClaimantProfileComponent implements OnInit {
   claimantSO: ClaimantSO;
   profileForm: any;
 
-  constructor(private route: ActivatedRoute, private modalService: ModalService, private claimantUsed: PortalService, private formBuilder: FormBuilder) { }
+  constructor(private route: ActivatedRoute,
+    private modalService: ModalService,
+    private claimantUsed: PortalService, 
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
     this.claimantSO = this.claimantUsed.claimantSO;
