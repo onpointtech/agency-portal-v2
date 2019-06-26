@@ -1,3 +1,7 @@
+# Welcome to our angular portal
+We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8.
+
+
 # Guide on how to use this project (and develop angular 8)
 
 ## How to download and install the portal (Windows)
@@ -19,7 +23,7 @@ Install the node modules
 `npm install`
 
 
-## How to run the frontend (angular)
+## How to run the angular project
 To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
 
 `ng serve`
@@ -30,13 +34,9 @@ Then open this link in your browser
 
 ## How to run the backend (angular)
 1. Open eclipse
-
 2. Choose ClaimantServiceNew
-
 3. Build the project as maven project
-
 3. Right click and run the application (ClaimantServiceNewApplication)
-
 4. Open this link in your browser
 `http://localhost:8080/swagger-ui.html`
 
@@ -70,15 +70,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Building your own module / library of components, services, etc
 Basic idea:
-1) create your own library
-+ may opt to put a prefix
-2) create your components
-3) export the components in the module of the library
-4) build the library, do an npm install
-5) import the module to the project you are using
-6) edit the components
-+ may opt to build continuously 
-+ if you choose the build continuously and you break it, you need to build it twice (first to unlink, second is to build again), also need to run ng serve again
+1. create your own library
+   + may opt to put a prefix
+2. create your components
+3. export the components in the module of the library
+4. build the library, do an npm install
+5. import the module to the project you are using
+6. edit the components
+   + may opt to build continuously 
+   + if you choose the build continuously and you break it, you need to build it twice (first to unlink, second is to build again), also need to run ng serve again
 
 ### 1. Create your own project
 In your terminal type
@@ -139,11 +139,12 @@ This next line should install the npm modules needed for the library
 `npm install dist/library-name`
 
 ### 5. Import the library to your project
+- [ ] (Unfinished) needs update and verification
 First navigate to your src/app-name/app-name.module.ts
 
 We need to do three things here
 1) import the library to your modules
-+ Add on top `import { LibraryNameModule } from 'library-name';`
+   + Add on top `import { LibraryNameModule } from 'library-name';`
 2) put the components you will use in the declarations
 ```
 ... 
@@ -182,21 +183,27 @@ You continue normal app development in angular. And use number 6 above, to see h
 
 # Coding Standards
 ## Architecture
-(Unfinished) To be taken and summarized from the angular style guide
+- [ ] (Unfinished) More info to be taken and summarized from the angular style guide
 
 https://angular.io/guide/styleguide
 
-Follow __LIFT__
-* __L__ocate code quickly
-* __I__dentify the code at a glance
-* keep the __F__lattest structure you can
-* and __T__ry to be DRY
--Each file should be less than 400 lines per code
--Each file should serve a single purpose
+* Follow __LIFT__
+  - __L__ ocate code quickly
+  - __I__ dentify the code at a glance
+  - keep the __F__ lattest structure you can
+  - and __T__ ry to be __DRY__
+
+* Be __DRY__
+  - __D__ on't
+  - __R__ epeat
+  - __Y__ ourself
+
+* Each file should be less than 400 lines per code
+* Each file should serve a single purpose
 
 
 ## Importing
-Importing will be as follows
+Importing should ideally have the following sequence
 1. Import angular modules
 2. Import external modules
 3. Import user modules
@@ -212,7 +219,8 @@ A basic code structure will be as follows
 2. Input, Outputs
 3. Variable Declaration
 4. Constructors
-5. NgOnInit to declare the variables initial value
+5. NgOnInit 
+   * to declare the variables' initial value
 6. Functions
 
 Here is a sample
@@ -277,7 +285,7 @@ export class SomeComponent {
 ## Components
 These are portions of the website that have code + html (+ css + tests)
 
-to make a component run
+to generate a component, type
 
 `ng generate component some`
 
@@ -301,9 +309,48 @@ then in the html, you can now use the component as
 ## Services
 These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
 
-to make a service run
+To generate a service, type
 
 `ng generate service some`
+
+## Modules
+These are collections of components, pipes, services 
+
+Declarations hold
+* Components
+* Pipes
+
+While Providers hold
+* Services
+
+To use a component outside the library, it must be inside the exports of the library.module
+
+To use a service outside the library, it must be inside the providers of the library.module
+
+***
+
+# Git Guide
+
+- [ ] (Unfinished)
+
+## Git Initialization
+
+
+## Git Pull
+
+## Git Push
+
+## Branches
+
+### Making a branch
+
+### Switching to a branch
+
+### Merging branches
+
+## Resetting a branch
+
+*** 
 
 ### Further help
 
