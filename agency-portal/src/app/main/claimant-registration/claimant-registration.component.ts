@@ -31,31 +31,110 @@ export class ClaimantRegistrationComponent  implements OnInit {
 
 
   profileForm = this.fb.group({
-    ssn: ['', Validators.compose([Validators.required, Validators.minLength(9), Validators.maxLength(9), Validators.pattern("[0-9]{9}")])],
-    confirmSsn: ['', Validators.compose([Validators.required])],
-    firstName: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
-    lastName: ['', Validators.required],
-    middleInitial: ['', Validators.compose([Validators.maxLength(1), Validators.pattern("[a-zA-z]*")])],
-    dateOfBirth: [new Date(2019, 1, 1), Validators.required],
-    homePhone: ['', Validators.compose([Validators.required, Validators.maxLength(10), Validators.pattern("[0-9]*")])],
-    mobilePhone: ['', Validators.compose([Validators.maxLength(10), Validators.pattern("[0-9]*")])],
-    preferredOccupation: ['',Validators.required],
-    languagePreference: ['', Validators.required],
-    gender: ['', Validators.required],
-    educationLevel: ['', Validators.required],
-    race: ['', Validators.required],
-    ethnicity: ['', Validators.required],
-    addressLine1: ['', Validators.required],
-    addressLine2: ['', Validators.required],
-    city: ['', Validators.required],
-    state: ['', Validators.required],
-    zipCode: ['', Validators.required],
-    zipExt: ['', Validators.required],
+    ssn: [
+      '', 
+      Validators.compose([
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(9),
+        Validators.pattern("[0-9]{9}")
+      ])
+    ],
+    confirmSsn: [
+      '',
+      Validators.compose([Validators.required])
+    ],
+    firstName: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.minLength(2)
+      ])
+    ],
+    lastName: [
+      '',
+      Validators.required
+    ],
+    middleInitial: [
+      '',
+      Validators.compose([
+        Validators.maxLength(1),
+        Validators.pattern("[a-zA-z]*")
+      ])
+    ],
+    dateOfBirth: [
+      new Date(2019, 1, 1),
+      Validators.required
+    ],
+    homePhone: [
+      '',
+      Validators.compose([
+        Validators.required,
+        Validators.maxLength(10),
+        Validators.pattern("[0-9]*")
+      ])
+    ],
+    mobilePhone: [
+      '',
+      Validators.compose([
+        Validators.maxLength(10),
+        Validators.pattern("[0-9]*")
+      ])
+    ],
+    preferredOccupation: [
+      '',
+      Validators.required
+    ],
+    languagePreference: [
+      '',
+      Validators.required
+    ],
+    gender: [
+      '',
+      Validators.required
+    ],
+    educationLevel: [
+      '',
+      Validators.required
+    ],
+    race: [
+      '',
+      Validators.required
+    ],
+    ethnicity: [
+      '',
+      Validators.required
+    ],
+    addressLine1: [
+      '',
+      Validators.required
+    ],
+    addressLine2: [
+      '',
+      Validators.required
+    ],
+    city: [
+      '',
+      Validators.required
+    ],
+    state: [
+      '',
+      Validators.required
+    ],
+    zipCode: [
+      '',
+      Validators.required
+    ],
+    zipExt: [
+      '',
+      Validators.required
+    ],
   });
 
-  constructor(private fb: FormBuilder, private claimantService: ClaimantService, private toasterService: ToasterService) {
-
-  }
+  constructor(private fb: FormBuilder,
+    private claimantService: ClaimantService,
+    private toasterService: ToasterService
+  ) { }
 
   ngOnInit() {
     this.addressInitial = {
@@ -108,10 +187,8 @@ export class ClaimantRegistrationComponent  implements OnInit {
       this.onSubmit();
     }
     else {
-      //this.profileForm.markAllAsTouched();
+      this.profileForm.markAllAsTouched();
       console.log(this.profileForm.value);
-      //remove mark all as touched
-      //make the profileform have a submit boolean
 
       console.log("Error in submitting form");
       this.toasterService.danger("Error", "Some forms are not yet filled");
@@ -140,8 +217,14 @@ export class ClaimantRegistrationComponent  implements OnInit {
       addressLine2: 'road',
       state: this.stateChoices[10],
       city: 'Owl',
-      zipCode: Math.random().toString(10).substr(2, 7),
-      zipExt: Math.random().toString(10).substr(2, 7),
+      zipCode: Math
+        .random()
+        .toString(10)
+        .substr(2, 7),
+      zipExt: Math
+        .random()
+        .toString(10)
+        .substr(2, 7),
       lastInsertUpdateTS: null,
       lastInsertUpdateBy: '',
     },

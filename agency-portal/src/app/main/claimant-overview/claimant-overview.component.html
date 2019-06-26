@@ -1,84 +1,101 @@
-<ng-container *ngIf="claimantSO">
-<div class="col-xs-12 no-padding">
-    <h4 class="p-2">Claimant Overview</h4>
-    <!-- <p>{{claimantSO | json}}</p> -->
+<ng-container *ngIf = "claimantSO">
+  <div class = "col-xs-12 no-padding">
+    <h4 class = "p-2">Claimant Overview</h4>
 
- </div>
- <div class="col-xs-12">
-    <div class="col-xs-12 col-lg-6 overview-text">
-                   <h2 class="m-5">{{claimantSO.firstName}} {{claimantSO.lastName}}</h2>
-                   <h4 class="no-margin"><strong class="">{{claimantSO.ssn | optSsnPipe}}</strong></h4>
-                   <ul class="list-unstyled">
-                                 <li>
-                                   <div style="white-space: pre-wrap">
-                                                 <p>{{claimantSO.address | optAddressPipe}}</p>
-                                    </div>
-                                 </li>
-                   </ul>
+  </div>
+
+  <div class = "col-xs-12">
+    <div class = "col-xs-12 col-lg-6 overview-text">
+      <h2 class = "m-5">{{claimantSO.firstName}} {{claimantSO.lastName}}</h2>
+      <h4 class = "no-margin">
+        <strong class = "">{{claimantSO.ssn | optSsnPipe}}</strong>
+      </h4>
+      <ul class = "list-unstyled">
+        <li>
+          <div style = "white-space: pre-wrap">
+            <p>{{claimantSO.address | optAddressPipe}}</p>
+          </div>
+        </li>
+      </ul>
     </div>
-    <div class="col-xs-12 col-lg-6 no-padding">
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Username:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                 <p>Placeholder username</p>
-                                 </div>
-                   </div>
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Email Address:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                 <p>{{claimantSO.email}}</p>
-                                 </div>
-                   </div>
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Date of Birth:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                 <p>{{claimantSO.dateOfBirth | optDatePipe}}</p>
-                                 </div>
-                   </div>
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Alternate Claimant ID:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                 <p>{{claimantSO.alternateClaimantId}}</p>
-                                 </div>
-                   </div>
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Mobile Phone:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                <p>{{claimantSO.mobilePhone | optPhonePipe}}</p>
-                                 </div>
-                   </div>
-                   <div class="col-xs-12 no-padding">
-                                 <div class="col-lg-6 overview-subheading">
-                                                 <p><strong>Preferred Payment:</strong></p>
-                                 </div>
-                                 <div class="col-lg-6 overview-text">
-                                                 <p class="capitalize">Placeholder preferred payment</p>
-                                 </div>
-                   </div>
+    <div class = "col-xs-12 col-lg-6 no-padding">
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Username:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p>Placeholder username</p>
+        </div>
+      </div>
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Email Address:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p>{{claimantSO.email}}</p>
+        </div>
+      </div>
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Date of Birth:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p>{{claimantSO.dateOfBirth | optDatePipe}}</p>
+        </div>
+      </div>
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Alternate Claimant ID:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p>{{claimantSO.alternateClaimantId}}</p>
+        </div>
+      </div>
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Mobile Phone:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p>{{claimantSO.mobilePhone | optPhonePipe}}</p>
+        </div>
+      </div>
+      <div class = "col-xs-12 no-padding">
+        <div class = "col-lg-6 overview-subheading">
+          <p>
+            <strong>Preferred Payment:</strong>
+          </p>
+        </div>
+        <div class = "col-lg-6 overview-text">
+          <p class = "capitalize">Placeholder preferred payment</p>
+        </div>
+      </div>
     </div>
- </div>
- <div class="col-xs-12 btn_margin">
-    <button type="button" class="btn btn-primary" [routerLink]="['/main/claimant-profile']">
-    <b>View Profile</b>
+  </div>
+  <div class = "col-xs-12 btn_margin">
+    <button type = "button"
+      class = "btn btn-primary"
+      [routerLink]="['/main/claimant-profile']">
+      <b>View Profile</b>
     </button>
- </div>
- <div class="col-xs-12 no-padding">
-    <h4 class="p-2">Claims</h4>
- </div>
- <div class="col-xs-12 btn_margin">
-                 <button type="button" class="btn btn-primary" routerLink="/main/claim">
-                   New Claim
-                 </button>
- </div>
- </ng-container>
-
+  </div>
+  <div class = "col-xs-12 no-padding">
+    <h4 class = "p-2">Claims</h4>
+  </div>
+  <div class = "col-xs-12 btn_margin">
+    <button type = "button"
+      class = "btn btn-primary"
+      routerLink = "/main/claim">
+      New Claim
+    </button>
+  </div>
+</ng-container>

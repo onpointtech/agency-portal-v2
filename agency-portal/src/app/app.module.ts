@@ -79,7 +79,10 @@ import { OptLibraryModule } from 'projects/opt-library/src/public-api';
     })
   ],
   entryComponents: [],
-  providers: [DatePipe, MaskPipe],
+  providers: [
+    DatePipe, 
+    MaskPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
