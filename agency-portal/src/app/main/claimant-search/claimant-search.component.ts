@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ClaimantService } from '../../portal-services/claimant.service';
-import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
-import { ToasterService } from '../../portal-services/toaster.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { AlertService } from '../../portal-services/alert.service';
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
+import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
 
 @Component({
   selector: 'app-claimant-search',

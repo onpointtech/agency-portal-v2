@@ -1,13 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ToastContainerDirective } from 'ngx-toastr';
-import { ToasterService } from '../../portal-services/toaster.service';
-
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styles: []
 })
+
+
+
 export class HomeComponent implements OnInit {
 
   @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
@@ -21,5 +23,11 @@ export class HomeComponent implements OnInit {
 
   success(){
     this.toasterService.success("Success!", "Welcome to Home");
+ 
   }
-}
+
+
+
+
+  }
+

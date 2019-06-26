@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ClaimantSO } from '../../service-objects/claimant-so';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ModalService } from '../../portal-services/modal.service';
-import { EditClaimantDetailsComponent } from '../edit-claimant-details/edit-claimant-details.component';
-import { EditClaimantAddressesComponent } from '../edit-claimant-addresses/edit-claimant-addresses.component';
-import { PortalService } from '../../portal-services/portal.service';
-import { FormBuilder } from '../../../../node_modules/@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { ModalService } from 'projects/opt-library/src/portal-services/modal.service';
+import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
+import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
+import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
 
 @Component({
   selector: 'app-claimant-profile',
@@ -52,7 +52,7 @@ export class ClaimantProfileComponent implements OnInit {
   }
 
   openEditClaimantAddresses(object: any){
-    this.modalService.open(EditClaimantAddressesComponent, object);
+    this.modalService.open(EditClaimantAddressComponent, object);
   }
 
 }

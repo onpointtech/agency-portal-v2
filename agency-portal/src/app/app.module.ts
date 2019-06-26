@@ -5,7 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
+import { ValdemortModule } from 'ngx-valdemort';
 
 import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { NgxMaskModule, MaskPipe } from 'ngx-mask';
@@ -25,13 +26,10 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-import { OptSsnPipe } from './custom-pipes/opt-ssn.pipe';
-import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
-import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
-import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { EditClaimantAddressesComponent } from './main/edit-claimant-addresses/edit-claimant-addresses.component';
-import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-claimant-details.component';
+import { SurveyComponent } from './survey/survey.component';
+import { OptLibraryModule } from 'projects/opt-library/src/public-api';
+
 
 
 
@@ -49,14 +47,11 @@ import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-
     ClaimantProfileComponent,
     ClaimantRegistrationComponent,
     ClaimComponent,
-    OptSsnPipe,
-    OptPhonePipe,
-    OptAddressPipe,
-    OptDatePipe,
-    EditClaimantAddressesComponent,
-    EditClaimantDetailsComponent
+    SurveyComponent,
   ],
   imports: [
+    OptLibraryModule,
+    ValdemortModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,
@@ -83,7 +78,7 @@ import { EditClaimantDetailsComponent } from './main/edit-claimant-details/edit-
       cancelButtonClass: 'btn btn-info',
     })
   ],
-  entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressesComponent],
+  entryComponents: [],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
 })

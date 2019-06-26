@@ -1,0 +1,21 @@
+{
+  "name": "opt-library",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.0.1",
+    "@angular/core": "^8.0.1"
+  },
+  "main": "bundles/opt-library.umd.js",
+  "module": "fesm5/opt-library.js",
+  "es2015": "fesm2015/opt-library.js",
+  "esm5": "esm5/opt-library.js",
+  "esm2015": "esm2015/opt-library.js",
+  "fesm5": "fesm5/opt-library.js",
+  "fesm2015": "fesm2015/opt-library.js",
+  "typings": "opt-library.d.ts",
+  "metadata": "opt-library.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

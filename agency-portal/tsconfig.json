@@ -24,6 +24,12 @@
       ],
       "optimum-components/*": [
         "dist/optimum-components/*"
+      ],
+      "opt-library": [
+        "dist/opt-library"
+      ],
+      "opt-library/*": [
+        "dist/opt-library/*"
       ]
     }
   }

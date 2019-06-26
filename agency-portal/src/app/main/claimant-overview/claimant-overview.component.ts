@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ClaimantSO } from '../../service-objects/claimant-so';
-import { ClaimantService } from '../../portal-services/claimant.service';
-import { PortalService } from '../../portal-services/portal.service';
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
+import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
 
 @Component({
   selector: 'app-claimant-overview',

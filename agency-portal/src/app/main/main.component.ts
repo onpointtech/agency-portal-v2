@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ToastContainerDirective } from 'ngx-toastr';
-import { ToasterService } from '../portal-services/toaster.service';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ModalService } from '../portal-services/modal.service';
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
+import { ModalService } from 'projects/opt-library/src/portal-services/modal.service';
 
 @Component({
   selector: 'app-main',
