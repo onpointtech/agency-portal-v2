@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { Address } from '../service-objects/address';
+import { Address } from 'projects/opt-library/src/service-objects/address';
 
 @Pipe({name: 'optAddressPipe'})
 export class OptAddressPipe implements PipeTransform {

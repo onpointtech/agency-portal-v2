@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ToastContainerDirective } from 'ngx-toastr';
-import { ToasterService } from '../../portal-services/toaster.service';
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

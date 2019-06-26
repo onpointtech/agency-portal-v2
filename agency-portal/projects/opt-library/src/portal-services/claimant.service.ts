@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, EMPTY, BehaviorSubject } from 'rxjs';
-import { ClaimantSO } from '../service-objects/claimant-so';
 import { ToasterService } from './toaster.service';
 import { catchError } from 'rxjs/operators'
-import { UpdateClaimantSO } from '../service-objects/update-claimant-so';
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { UpdateClaimantSO } from 'projects/opt-library/src/service-objects/update-claimant-so';
 
 
 @Injectable({

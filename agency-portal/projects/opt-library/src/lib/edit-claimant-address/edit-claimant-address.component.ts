@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UpdateClaimantSO } from 'src/app/service-objects/update-claimant-so';
-import { ClaimantSO } from 'src/app/service-objects/claimant-so';
-import { Address } from 'src/app/service-objects/address';
-import { STATECHOICES } from 'src/app/choices/choices';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ClaimantService } from 'src/app/portal-services/claimant.service';
-import { PortalService } from 'src/app/portal-services/portal.service';
+import { STATECHOICES } from '../../choices/choices';
+import { Address } from '../../service-objects/address';
+import { ClaimantSO } from '../../service-objects/claimant-so';
+import { UpdateClaimantSO } from '../../service-objects/update-claimant-so';
+import { ClaimantService } from '../../portal-services/claimant.service';
+import { PortalService } from '../../portal-services/portal.service';
 
 @Component({
   selector: 'opt-edit-claimant-address',

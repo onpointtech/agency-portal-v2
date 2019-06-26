@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as SurveyEditor from 'surveyjs-editor';
 import * as Survey from 'survey-angular';
-import { SurveyService } from '../portal-services/survey.service';
-import { ToasterService } from '../portal-services/toaster.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { SurveySO } from '../service-objects/survey-so';
+import { SurveySO } from 'projects/opt-library/src/service-objects/survey-so';
+import { SurveyService } from 'projects/opt-library/src/portal-services/survey.service';
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 
 @Component({
   selector: 'app-survey',

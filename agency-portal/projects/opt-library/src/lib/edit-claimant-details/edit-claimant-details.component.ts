@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { UpdateClaimantSO } from 'src/app/service-objects/update-claimant-so';
-import { ClaimantSO } from 'src/app/service-objects/claimant-so';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from 'src/app/choices/choices';
-import { ClaimantService } from 'src/app/portal-services/claimant.service';
-import { PortalService } from 'src/app/portal-services/portal.service';
+import { GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices';
+import { UpdateClaimantSO } from '../../service-objects/update-claimant-so';
+import { ClaimantSO } from '../../service-objects/claimant-so';
+import { ClaimantService } from '../../portal-services/claimant.service';
+import { PortalService } from '../../portal-services/portal.service';
 
 @Component({
   selector: 'opt-edit-claimant-details',

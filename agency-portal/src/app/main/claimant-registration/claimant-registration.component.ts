@@ -1,14 +1,13 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
-import { ClaimantSO } from '../../service-objects/claimant-so'
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { ClaimantService } from '../../portal-services/claimant.service';
-import { Address } from '../../service-objects/address';
 import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
-import { ToasterService } from 'src/app/portal-services/toaster.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material';
-import { ValdemortModule } from 'ngx-valdemort';
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { Address } from 'projects/opt-library/src/service-objects/address';
+import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
+import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 
 
 
