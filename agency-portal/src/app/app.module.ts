@@ -26,14 +26,9 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-import { OptSsnPipe } from './custom-pipes/opt-ssn.pipe';
-import { OptPhonePipe } from './custom-pipes/opt-phone.pipe';
-import { OptAddressPipe } from './custom-pipes/opt-address.pipe';
-import { OptDatePipe } from './custom-pipes/opt-date.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { SurveyComponent } from './survey/survey.component';
-import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
-import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
+import { OptLibraryModule } from 'projects/opt-library/src/public-api';
 
 
 
@@ -52,16 +47,10 @@ import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-
     ClaimantProfileComponent,
     ClaimantRegistrationComponent,
     ClaimComponent,
-    OptSsnPipe,
-    OptPhonePipe,
-    OptAddressPipe,
-    OptDatePipe,
     SurveyComponent,
-    EditClaimantDetailsComponent,
-    EditClaimantAddressComponent
   ],
   imports: [
-    // OptLibraryModule,
+    OptLibraryModule,
     ValdemortModule,
     NgbModule,
     BrowserModule,
@@ -89,7 +78,7 @@ import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-
       cancelButtonClass: 'btn btn-info',
     })
   ],
-  entryComponents: [EditClaimantDetailsComponent, EditClaimantAddressComponent],
+  entryComponents: [],
   providers: [DatePipe, MaskPipe],
   bootstrap: [AppComponent]
 })

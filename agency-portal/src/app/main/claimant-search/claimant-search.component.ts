@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';

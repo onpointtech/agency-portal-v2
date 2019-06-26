@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { FormBuilder } from '../../../../node_modules/@angular/forms';
-import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
-import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
+import { FormBuilder } from '@angular/forms';
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
 import { ModalService } from 'projects/opt-library/src/portal-services/modal.service';
 import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
+import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
+import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
 
 @Component({
   selector: 'app-claimant-profile',
