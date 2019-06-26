@@ -1,13 +1,13 @@
 # Guide on how to use this project (and develop angular 8)
 
-## How to install (Windows)
+## How to download and install the portal (Windows)
 Install git from
 
 `https://git-for-windows.github.io/`
 
-git clone the repository
+Git clone the repository by going to terminal and typing
 
-`https://github.com/onpointtech/agency-portal-v2.git`
+`git clone https://github.com/onpointtech/agency-portal-v2.git`
 
 Open the folder agency-portal
 
@@ -71,28 +71,28 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Building your own module / library of components, services, etc
 Basic idea:
 1) create your own library
-* may opt to put a prefix
++ may opt to put a prefix
 2) create your components
 3) export the components in the module of the library
 4) build the library, do an npm install
 5) import the module to the project you are using
 6) edit the components
-* may opt to build continuously 
-* if you choose the build continuously and you break it, you need to build it twice (first to unlink, second is to build again), also need to run ng serve again
++ may opt to build continuously 
++ if you choose the build continuously and you break it, you need to build it twice (first to unlink, second is to build again), also need to run ng serve again
 
 ### 1. Create your own project
 In your terminal type
 `ng generate library library-name`
-* You can add a prefix by putting `-p prefixWord`
-* All components made in this library will have the prefixWord before it (using it in selector)
-* In using a component, say we call it  _rain-maker_, the parent component will call it in the html by using _<prefixWord-rain-maker></prefixWord-rain-maker>_
-* Sample use will be `ng generate library library-name -p prefixWord`
++ You can add a prefix by putting `-p prefixWord`
++ All components made in this library will have the prefixWord before it (using it in selector)
++ In using a component, say we call it  _rain-maker_, the parent component will call it in the html by using _<prefixWord-rain-maker></prefixWord-rain-maker>_
++ Sample use will be `ng generate library library-name -p prefixWord`
 
 ### 2. Create your components for your library
 In your terminal type
 `ng generatecomponent component-name --project=library-name`
-* for a smaller component you can remove the css and spec.ts by using `-is --skipTests`
-* It will look like `ng generate component component-name --project=library-name -is --skipTests`
++ for a smaller component you can remove the css and spec.ts by using `-is --skipTests`
++ It will look like `ng generate component component-name --project=library-name -is --skipTests`
 
 ### 3. Export the components in the module of the library
 Navigate to `dist/library-name/lib/library-name.module.ts`
@@ -143,7 +143,7 @@ First navigate to your src/app-name/app-name.module.ts
 
 We need to do three things here
 1) import the library to your modules
-* Add on top `import { LibraryNameModule } from 'library-name';`
++ Add on top `import { LibraryNameModule } from 'library-name';`
 2) put the components you will use in the declarations
 ```
 ... 
@@ -168,11 +168,11 @@ Instead of our usual build library we will use the `--watch` to have the changes
 `ng build library-name --watch`
 
 #### Errors
-* if you make an edit to the components, and this edit doesnt compile to the library. You'll find the app that imports this library to not work. To fix this
-* Run `ng build library-name --watch` once to unlink the library to the main app
-* Run `ng build library-name --watch` a second time to finally build it
-* Run `ng serve` to your app. You're done. 
-* This error doesn't happen if you save code that works.
++ if you make an edit to the components, and this edit doesnt compile to the library. You'll find the app that imports this library to not work. To fix this
++ Run `ng build library-name --watch` once to unlink the library to the main app
++ Run `ng build library-name --watch` a second time to finally build it
++ Run `ng serve` to your app. You're done. 
++ This error doesn't happen if you save code that works.
 
 ## Building your own app in a library
 
@@ -180,47 +180,19 @@ Run `ng generate application app-name --prefix appn`
 
 You continue normal app development in angular. And use number 6 above, to see how to build components live.
 
-
-#Angular Basic Concepts
-
-## Components
-These are portions of the website that have code + html (+ css + tests)
-
-to make a component run
-
-`ng generate component some`
-
-the is shortcut for this:
-
-`ng g c some`
-
-there is a command to skip making css files and test files:
-
-`ng g c some -is --skipTests`
-
-to use the component in a parent html, import it first:
-
-`import { SomeComponent } from './some-place/some.component';`
-
-then in the html, you can now use the component as
-
-`<app-name-some></app-name-some>`
-
-
-## Services
-These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
-
-to make a service run
-
-`ng generate service some`
-
 # Coding Standards
 ## Architecture
 (Unfinished) To be taken and summarized from the angular style guide
 
 https://angular.io/guide/styleguide
 
+Follow __LIFT__
+* __L__ocate code quickly
+* __I__dentify the code at a glance
+* keep the __F__lattest structure you can
+* and __T__ry to be DRY
 -Each file should be less than 400 lines per code
+-Each file should serve a single purpose
 
 
 ## Importing
@@ -300,6 +272,38 @@ export class SomeComponent {
 } 
 ```
 
+#Angular Basic Concepts
+
+## Components
+These are portions of the website that have code + html (+ css + tests)
+
+to make a component run
+
+`ng generate component some`
+
+the is shortcut for this:
+
+`ng g c some`
+
+there is a command to skip making css files and test files:
+
+`ng g c some -is --skipTests`
+
+to use the component in a parent html, import it first:
+
+`import { SomeComponent } from './some-place/some.component';`
+
+then in the html, you can now use the component as
+
+`<app-name-some></app-name-some>`
+
+
+## Services
+These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
+
+to make a service run
+
+`ng generate service some`
 
 ### Further help
 
