@@ -26,7 +26,7 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { SurveyComponent } from './survey/survey.component';
 import { OptLibraryModule } from 'projects/opt-library/src/public-api';
 
