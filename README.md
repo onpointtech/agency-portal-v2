@@ -1,8 +1,6 @@
 # Welcome to our angular portal
-We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8.
+We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to use this project in the future
 
-
-# Guide on how to use this project (and develop angular 8)
 
 ## How to download and install the portal (Windows)
 Install git from
