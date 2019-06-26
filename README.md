@@ -1,7 +1,9 @@
 # Guide on how to use this project (and develop angular 8)
 
 ## How to install (Windows)
-install git
+Install git from
+
+`https://git-for-windows.github.io/`
 
 git clone the repository
 
@@ -17,8 +19,8 @@ Install the node modules
 `npm install`
 
 
-## how to run the frontend (angular)
-To run, open the directory, open terminal and type
+## How to run the frontend (angular)
+To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
 
 `ng serve`
 
@@ -26,19 +28,21 @@ Then open this link in your browser
 
 `localhost:4200`
 
-## how to run the backend (angular)
-1. open eclipse
+## How to run the backend (angular)
+1. Open eclipse
 
-2. build the project as maven project
+2. Choose ClaimantServiceNew
 
-3. run the application
+3. Build the project as maven project
 
-4. open this link in your browser
+3. Right click and run the application (ClaimantServiceNewApplication)
+
+4. Open this link in your browser
 `http://localhost:8080/swagger-ui.html`
 
 ## How to develop the agency portal
 
-### Code scaffolding
+### Component generation
 
 Run `ng generate component component-name` to generate a new component. 
 You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -61,9 +65,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ***
 
@@ -214,11 +215,57 @@ to make a service run
 `ng generate service some`
 
 # Coding Standards
+## Architecture
+(Unfinished) To be taken and summarized from the angular style guide
+
+https://angular.io/guide/styleguide
+
+-Each file should be less than 400 lines per code
+
+
+## Importing
+Importing will be as follows
+1. Import angular modules
+2. Import external modules
+3. Import user modules
+4. Import components
+5. Import services, pipes, etc
+6. Import models & constants
+
+
+## Code Structure
+
+A basic code structure will be as follows
+1. Importing
+2. Input, Outputs
+3. Variable Declaration
+4. Constructors
+5. NgOnInit to declare the variables initial value
+6. Functions
+
+Here is a sample
 ```
-import {ThisModule } from 'here';
+//import angular modules (@angular...)
+import { ThisModule } from 'here';
+
+//import external modules
+import { ExternalModule } from 'here';
+
+
+//import user-made modules & libraries
+import { ExternalModule } from 'here';
+
+
+//import components
 import { ThisComponent } from 'here as well';
-//may add a space
+
+//import services, pipes, etc
+import { ThisService } from 'here';
+
+
+ //import models or constants
 import { OTHERMODELS } from '../../this place';
+
 
 @Component({
 ...
@@ -252,3 +299,8 @@ export class SomeComponent {
 
 } 
 ```
+
+
+### Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
