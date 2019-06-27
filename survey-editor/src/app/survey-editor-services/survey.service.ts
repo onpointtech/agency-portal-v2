@@ -9,28 +9,27 @@ import { SurveyResponseSO } from 'app/service-objects/survey-response-so';
 })
 export class SurveyService {
 
-  url = "http://localhost:8081/api/survey";
-  urlResponse = "http://localhost:8081/api/surveyResponse";
+  url = "http://localhost:8081/api/";
 
   constructor(private httpClient: HttpClient) { }
 
   public createSurvey(survey: Survey): any {
-    const claimantUrl = `${this.url}/addUpdateSurvey`;
+    const claimantUrl = `${this.url}survey/addUpdateSurvey`;
     return this.httpClient.post(claimantUrl, survey);
   }
 
   public getAllSurveys(): Observable<Survey[]> {
-    const claimantUrl = `${this.url}/getAllSurveys`;
+    const claimantUrl = `${this.url}survey/getAllSurveys`;
     return this.httpClient.get<Survey[]>(claimantUrl);
   }
 
   public getSurveyById(surveyId: number): Observable<Survey> {
-    const claimantUrl = `${this.url}/getSurveyById/${surveyId}`;
+    const claimantUrl = `${this.url}survey/getSurveyById/${surveyId}`;
     return this.httpClient.get<Survey>(claimantUrl);
   }
 
   public createSurveyResponse(survey: SurveyResponseSO): any {
-    const claimantUrl = `${this.urlResponse}/addResponse`;
+    const claimantUrl = `${this.url}surveyResponse/addResponse`;
     return this.httpClient.post(claimantUrl, survey);
   }
 }
