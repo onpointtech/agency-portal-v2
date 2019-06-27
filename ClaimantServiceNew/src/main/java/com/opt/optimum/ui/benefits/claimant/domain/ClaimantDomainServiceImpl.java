@@ -133,9 +133,4 @@ public class ClaimantDomainServiceImpl implements ClaimantDomainService{
 	public ClaimantProfile getClaimantBySsn(String ssn) {
 		return claimantProfileRepository.findFirstBySsn(ssn);
 	}
-
-	@Override
-	public String submitClaim() {
-		return "success";
-	}
 }
