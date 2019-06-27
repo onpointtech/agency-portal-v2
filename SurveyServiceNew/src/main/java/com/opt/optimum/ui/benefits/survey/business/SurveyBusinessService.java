@@ -18,5 +18,7 @@ public interface SurveyBusinessService {
 	long addResponse(SurveyResponseSO surveyResponseSO);
 
 	String deleteResponse(long responseId);
+
+	SurveyResponseSO getSurvey(String surveyName, long claimantId);
 	
 }

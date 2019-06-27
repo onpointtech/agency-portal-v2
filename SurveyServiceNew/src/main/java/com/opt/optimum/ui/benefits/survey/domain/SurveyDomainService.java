@@ -11,14 +11,10 @@ public interface SurveyDomainService {
 
 	Survey getSurveyById(long surveyId);
 
-	Survey getSurveyByName(Survey survey);
+	Survey getSurveyByName(String surveyName);
 
 	List<Survey> getAllSurveys();
 
 	String submitClaim();
 
-	long addResponse(SurveyResponse surveyResponse);
-
-	String deleteResponse(long responseId);
-	
 }

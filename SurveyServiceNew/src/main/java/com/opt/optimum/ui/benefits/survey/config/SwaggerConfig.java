@@ -41,8 +41,8 @@ public class SwaggerConfig {
 
 	    private ApiInfo apiInfo() {
 	        return new ApiInfoBuilder()
-	            .title("Optimum Claimant Service")
-	            .description("Optimum Claimant Service")
+	            .title("Optimum Survey Service")
+	            .description("Optimum Survey Service")
 	            .version("VERSION")
 	            .termsOfServiceUrl("http://terms-of-services.url")
 	            .license("LICENSE")

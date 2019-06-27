@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.opt.optimum.ui.benefits.survey.business.SurveyBusinessService;
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
+import com.opt.optimum.ui.benefits.survey.so.SurveyResponseSO;
 import com.opt.optimum.ui.benefits.survey.so.SurveySO;
 
 @RestController
@@ -53,4 +54,14 @@ public class SurveyController {
 	public String submitClaim() {
 		return surveyBusinessService.submitClaim();
 	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value = "/getSurvey/{surveyName}/{claimantId}", method = RequestMethod.GET)
+	public SurveyResponseSO  getSurvey(@PathVariable String surveyName,@PathVariable long claimantId) {
+		SurveyResponseSO surveyResponseSO = surveyBusinessService.getSurvey(surveyName,claimantId);
+		
+		return surveyResponseSO;
+	}
+	
+	
 }

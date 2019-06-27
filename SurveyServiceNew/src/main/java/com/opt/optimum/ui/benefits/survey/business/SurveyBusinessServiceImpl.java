@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.survey.domain.SurveyDomainService;
+import com.opt.optimum.ui.benefits.survey.domain.SurveyResponseDomainService;
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
 import com.opt.optimum.ui.benefits.survey.entity.SurveyResponse;
 import com.opt.optimum.ui.benefits.survey.so.SurveyResponseSO;
@@ -19,19 +20,22 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 	private ModelMapper modelMapper;
 	
 	private SurveyDomainService surveyDomainService;
+	private SurveyResponseDomainService surveyResponseDomainService;
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(SurveyBusinessServiceImpl.class);
 	
 	@Autowired
 	public SurveyBusinessServiceImpl(ModelMapper modelMapper,
-			SurveyDomainService surveyDomainService) {
+			SurveyDomainService surveyDomainService, SurveyResponseDomainService surveyResponseDomainService ) {
 		this.modelMapper = modelMapper;
 		this.surveyDomainService = surveyDomainService;
+		this.surveyResponseDomainService = surveyResponseDomainService;
 	}
 
 	public long addUpdateSurvey(Survey survey) {
-		if(getSurveyByName(survey) != null) {
-			Survey oldSurvey = getSurveyByName(survey);
+		if(getSurveyByName(survey.getName()) != null) {
+			Survey oldSurvey = getSurveyByName(survey.getName());
 			
 			if(survey.getSurveyDefinition() != null && survey.getSurveyDefinition() != "") {
 				oldSurvey.setSurveyDefinition(survey.getSurveyDefinition());
@@ -47,8 +51,8 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 		return surveyDomainService.getSurveyById(surveyId);
 	}
 	
-	public Survey getSurveyByName(Survey survey) {
-		return surveyDomainService.getSurveyByName(survey);
+	public Survey getSurveyByName(String surveyName) {
+		return surveyDomainService.getSurveyByName(surveyName);
 	}
 
 	public List<Survey> getAllSurveys() {
@@ -64,12 +68,29 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 	public long addResponse(SurveyResponseSO surveyResponseSO) {
 		ModelMapper modelMapper = new ModelMapper();
 		SurveyResponse surveyResponse = modelMapper.map(surveyResponseSO, SurveyResponse.class);
-		return surveyDomainService.addResponse(surveyResponse);
+		return surveyResponseDomainService.addResponse(surveyResponse);
 	}
 
 	@Override
 	public String deleteResponse(long responseId) {
-		return surveyDomainService.deleteResponse(responseId);
+		return surveyResponseDomainService.deleteResponse(responseId);
+	}
+
+	@Override
+	public SurveyResponseSO getSurvey(String surveyName, long claimantId) {
+		// check if may survey response
+
+		SurveyResponseSO surveyResponseSO = new SurveyResponseSO();
+		SurveyResponse surveyResponse = surveyResponseDomainService.getResponse(claimantId);
+		
+		Survey survey = getSurveyByName(surveyName);
+		
+		if(surveyResponse != null) {
+			surveyResponseSO = modelMapper.map(surveyResponse, SurveyResponseSO.class);
+		}
+		surveyResponseSO.setSurveyDefinition(survey.getSurveyDefinition());
+		surveyResponseSO.setSurveyName(survey.getName());
+		return surveyResponseSO;
 	}
 
 }

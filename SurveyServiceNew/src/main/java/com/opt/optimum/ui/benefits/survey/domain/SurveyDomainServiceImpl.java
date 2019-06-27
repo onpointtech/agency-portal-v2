@@ -31,8 +31,8 @@ public class SurveyDomainServiceImpl implements SurveyDomainService{
 		return surveyRepository.save(survey).getSurveyId();
 	}
 
-	public Survey getSurveyByName(Survey survey) {
-		Survey surveyCheck = surveyRepository.findFirstByName(survey.getName());
+	public Survey getSurveyByName(String surveyName) {
+		Survey surveyCheck = surveyRepository.findFirstByName(surveyName);
 		return surveyCheck;
 	}
 
@@ -53,14 +53,4 @@ public class SurveyDomainServiceImpl implements SurveyDomainService{
 		return "success";
 	}
 
-	@Override
-	public long addResponse(SurveyResponse surveyResponse) {
-		return surveyResponseRepository.save(surveyResponse).getResponseId();
-	}
-
-	@Override
-	public String deleteResponse(long responseId) {
-		surveyResponseRepository.deleteById(responseId);
-		return "success";
-	}
 }
