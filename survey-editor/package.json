@@ -32,7 +32,9 @@
     "survey-angular": "latest",
     "survey-creator": "latest",
     "survey-knockout": "latest",
+    "surveyjs-editor": "^1.0.95",
     "surveyjs-widgets": "latest",
+    "toastr": "^2.1.4",
     "tslib": "^1.9.0",
     "zone.js": "^0.8.29"
   },

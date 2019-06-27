@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 import { CommonModule } from '../../node_modules/@angular/common';
+import { SurveyDisplayComponent } from './survey-display/survey-display.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -18,6 +19,7 @@ import { CommonModule } from '../../node_modules/@angular/common';
     SurveyCreatorComponent,
     SurveyListComponent,
     SurveyEditComponent,
+    SurveyDisplayComponent,
   ],
   imports: [
     CommonModule,

@@ -4,6 +4,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyCreatorComponent } from './survey.creator.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
+import { SurveyDisplayComponent } from './survey-display/survey-display.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path:'survey-edit/:surveyId',
     component: SurveyEditComponent
+  },
+  {
+    path:'survey-display',
+    component: SurveyDisplayComponent
   },
   {
      path:'**',
