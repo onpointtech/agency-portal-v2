@@ -67,9 +67,4 @@ public class ClaimantController {
 		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantBySsn(ssn);
 		return claimantProfile;
 	}
-	
-	@RequestMapping(value="/submitClaim", method = RequestMethod.POST)
-	public String submitClaim() {
-		return claimantBusinessService.submitClaim();
-	}
 }

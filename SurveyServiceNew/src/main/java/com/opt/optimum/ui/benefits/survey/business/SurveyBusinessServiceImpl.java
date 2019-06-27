@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.survey.domain.SurveyDomainService;
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
-import com.opt.optimum.ui.benefits.survey.so.SurveySO;
+import com.opt.optimum.ui.benefits.survey.entity.SurveyResponse;
+import com.opt.optimum.ui.benefits.survey.so.SurveyResponseSO;
 
 @Service
 public class SurveyBusinessServiceImpl implements SurveyBusinessService{
@@ -52,6 +53,23 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 
 	public List<Survey> getAllSurveys() {
 		return surveyDomainService.getAllSurveys();
+	}
+
+	@Override
+	public String submitClaim() {
+		return surveyDomainService.submitClaim();
+	}
+
+	@Override
+	public long addResponse(SurveyResponseSO surveyResponseSO) {
+		ModelMapper modelMapper = new ModelMapper();
+		SurveyResponse surveyResponse = modelMapper.map(surveyResponseSO, SurveyResponse.class);
+		return surveyDomainService.addResponse(surveyResponse);
+	}
+
+	@Override
+	public String deleteResponse(long responseId) {
+		return surveyDomainService.deleteResponse(responseId);
 	}
 
 }

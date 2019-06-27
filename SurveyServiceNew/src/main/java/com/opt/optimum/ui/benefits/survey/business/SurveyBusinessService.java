@@ -3,7 +3,7 @@ package com.opt.optimum.ui.benefits.survey.business;
 import java.util.List;
 
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
-import com.opt.optimum.ui.benefits.survey.so.SurveySO;
+import com.opt.optimum.ui.benefits.survey.so.SurveyResponseSO;
 
 public interface SurveyBusinessService {
 
@@ -12,5 +12,11 @@ public interface SurveyBusinessService {
 	Survey getSurveyById(long surveyId);
 
 	List<Survey> getAllSurveys();
+
+	String submitClaim();
+
+	long addResponse(SurveyResponseSO surveyResponseSO);
+
+	String deleteResponse(long responseId);
 	
 }

@@ -8,16 +8,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
+import com.opt.optimum.ui.benefits.survey.entity.SurveyResponse;
 import com.opt.optimum.ui.benefits.survey.repo.SurveyRepository;
+import com.opt.optimum.ui.benefits.survey.repo.SurveyResponseRepository;
+import com.opt.optimum.ui.benefits.survey.so.SurveyResponseSO;
 
 @Service("SurveyDomainServiceImpl")
 public class SurveyDomainServiceImpl implements SurveyDomainService{
 
 	private SurveyRepository surveyRepository;
+	private SurveyResponseRepository surveyResponseRepository;
 	
 	@Autowired
-	public SurveyDomainServiceImpl(SurveyRepository surveyRepository) {
+	public SurveyDomainServiceImpl(SurveyRepository surveyRepository, SurveyResponseRepository surveyResponseRepository) {
 		this.surveyRepository = surveyRepository;
+		this.surveyResponseRepository = surveyResponseRepository;
 	}
 
 	@Override
@@ -41,5 +46,21 @@ public class SurveyDomainServiceImpl implements SurveyDomainService{
 		List<Survey> allSurveys = new ArrayList<>();
 		surveyRepository.findAll().forEach(e -> allSurveys.add(e));
 		return allSurveys;
+	}
+
+	@Override
+	public String submitClaim() {
+		return "success";
+	}
+
+	@Override
+	public long addResponse(SurveyResponse surveyResponse) {
+		return surveyResponseRepository.save(surveyResponse).getResponseId();
+	}
+
+	@Override
+	public String deleteResponse(long responseId) {
+		surveyResponseRepository.deleteById(responseId);
+		return "success";
 	}
 }

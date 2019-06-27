@@ -19,6 +19,4 @@ public interface ClaimantDomainService {
 	List<ClaimantProfile> searchClaimant(String claimantInfo);
 
 	ClaimantProfile getClaimantBySsn(String ssn);
-
-	String submitClaim();
 }

@@ -48,4 +48,9 @@ public class SurveyController {
 		List<Survey> allSurveys = surveyBusinessService.getAllSurveys();
 		return allSurveys;
 	}
+	
+	@RequestMapping(value="/submitClaim", method = RequestMethod.POST)
+	public String submitClaim() {
+		return surveyBusinessService.submitClaim();
+	}
 }
