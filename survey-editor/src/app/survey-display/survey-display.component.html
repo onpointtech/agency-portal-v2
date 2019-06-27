@@ -1,14 +1,16 @@
-<p>
-  survey-display works!
-</p>
 <div id="surveyContainer"></div>
 <button (click)="storeSurveyResponsesLocally(this.model)"> Press this to save responses locally</button>
-<button (click)="showSurveyWithResponses(this.jsonFromDB)"> Press this to show a survey with previously filled up data</button>
+<button (click)="showSurveyWithResponses(this.surveyDefinition)"> Press this to show a survey with previously filled up data</button>
+<button (click)="sendResponses()"> Press this to post the survey to the backend</button>
 
 
-<h5>Survey Definition</h5>
-<p>{{ this.jsonFromDB | json }}</p>
+<h5>Survey Definition Title</h5>
+<p>{{ this.surveyDefinition | json }}</p>
 
 <h5>Survey Responses</h5>
 <p>{{ jsonResponses | json }}</p>
+
+
+<h5>Survey Response SO</h5>
+<p>{{ this.surveyResponseSO | json }}</p>
 

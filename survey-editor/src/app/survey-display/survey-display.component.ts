@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import * as SurveyEditor from 'surveyjs-editor';
 import * as Survey from 'survey-angular';
-import * as SurveyKo from "survey-knockout";
-import * as SurveyCreator from "survey-creator";
 
 
-import { SurveyData } from 'app/service-objects/survey';
 import { SurveyService } from 'app/survey-editor-services/survey.service';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { delay } from 'q';
+import { SurveyResponseSO } from 'app/service-objects/survey-response-so';
+import { ToasterService } from 'app/toaster.service';
 
 @Component({
   selector: 'app-survey-display',
@@ -17,12 +14,12 @@ import { delay } from 'q';
 })
 export class SurveyDisplayComponent implements OnInit {
   model: any;
-  public survey: SurveyData;
   public surveyResponses: any;
   public jsonResponses: any;
-  surveyCreator: SurveyCreator.SurveyCreator;
-  public jsonFromDB: any;
-
+  public surveyDefinition: any;
+  public claimantId: number;
+  public surveyResponseSO: SurveyResponseSO;
+  public surveyTitle: string;
 
   constructor(private surveyService: SurveyService) {
 
@@ -31,7 +28,8 @@ export class SurveyDisplayComponent implements OnInit {
   editor: SurveyEditor.SurveyEditor;
 
   ngOnInit() {
-    this.getSurvey(6);
+    this.getSurvey(3);
+    this.claimantId = 1;
   }
 
   getSurvey(surveyId: number) {
@@ -40,22 +38,30 @@ export class SurveyDisplayComponent implements OnInit {
       //subscribe waits for the get of the database
       .subscribe(
         survey => {
-          //jsonFromDB saves the surveyDefinition from the survey
-          this.jsonFromDB = survey.surveyDefinition;
+          console.log(survey);
 
-          //now the jsonFromDB is loaded, we can now show the survey
-          this.showSurvey(this.jsonFromDB);
+          //Saves the title of the survey
+          this.surveyTitle = survey.name;
+
+          //surveyDefinition saves the surveyDefinition from the survey
+          this.surveyDefinition = survey.surveyDefinition;
+
+          //now the surveyDefinition is loaded, we can now show the survey
+          this.showSurvey(this.surveyDefinition);
 
         }
       );
 
   }
 
+  sendResponses() {
+    this.saveSurveyToSO(1);
+    this.postSurvey(this.surveyResponseSO);
+  }
 
   storeSurveyResponsesLocally(surveyData: any) {
     this.surveyResponses = surveyData.data;
-    this.jsonResponses = surveyData.getPlainData()
-
+    this.jsonResponses = surveyData.getPlainData();
   }
 
   showResponses(surveyData: any): any {
@@ -63,14 +69,28 @@ export class SurveyDisplayComponent implements OnInit {
   }
 
 
-  showSurvey(jsonFromDB: any) {
-    this.model = new Survey.ReactSurveyModel(jsonFromDB);
+  showSurvey(surveyDefinition: any) {
+    this.model = new Survey.ReactSurveyModel(surveyDefinition);
     Survey.SurveyNG.render('surveyContainer', { model: this.model });
   }
 
-  showSurveyWithResponses(jsonFromDB: any, model: any) {
-    model = new Survey.ReactSurveyModel(jsonFromDB);
+  showSurveyWithResponses(surveyDefinition: any, model: any) {
+    model = new Survey.ReactSurveyModel(surveyDefinition);
     model.data = this.surveyResponses; Survey.SurveyNG.render('surveyContainer', { model: model });
+  }
+
+  saveSurveyToSO(claimantId: number) {
+    this.surveyResponseSO = {
+      claimantId: claimantId,
+      responseId: null,
+      surveyName: this.surveyTitle,
+      surveyDefinition: JSON.stringify(this.surveyDefinition),
+      surveyResponse: JSON.stringify(this.jsonResponses),
+    }
+  }
+
+  postSurvey(surveyResponseSO: SurveyResponseSO) {
+    this.surveyService.createSurveyResponse(surveyResponseSO).subscribe();
   }
 
 }
