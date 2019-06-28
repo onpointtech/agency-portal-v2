@@ -4,7 +4,6 @@ import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
 import { ClaimComponent } from '../claim/claim.component';
-import { ModalService } from 'projects/opt-library/src/portal-services/modal.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
