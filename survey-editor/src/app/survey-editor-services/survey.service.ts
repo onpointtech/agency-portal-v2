@@ -32,4 +32,10 @@ export class SurveyService {
     const claimantUrl = `${this.url}surveyResponse/addResponse`;
     return this.httpClient.post(claimantUrl, survey);
   }
+
+  public getSurvey(surveyName: string, claimantId: number): Observable<SurveyResponseSO> {
+    const claimantUrl = `${this.url}survey/getSurvey/${surveyName}/${claimantId}/`;
+    return this.httpClient.get<SurveyResponseSO>(claimantUrl);
+  }
+
 }

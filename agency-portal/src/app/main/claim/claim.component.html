@@ -1,3 +1,25 @@
-<p>
-  claim works!
-</p>
+<div class="modal-header">
+  <h4 class="modal-title">Claimant Questionnaire</h4>
+</div>
+<div class="modal-body">
+  <div id="surveyContainer"></div>
+  <button (click)="storeResponseAndSend(this.model)"> </button>
+
+<div *ngIf="debug==true">
+  <h5>Survey Definition Title</h5>
+  <p>{{ this.surveyDefinition | json }}</p>
+
+  <h5>Survey Responses</h5>
+  <p>{{ this.surveyResponses | json }}</p>
+
+
+  <h5>Survey Response SO</h5>
+  <p>{{ this.surveyResponseSO | json }}</p>
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="storeResponseAndSend(this.model)">Save and Exit</button>
+  <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+
+  <button type="button" class="btn btn-info" (click)="close()">Close</button>
+</div>

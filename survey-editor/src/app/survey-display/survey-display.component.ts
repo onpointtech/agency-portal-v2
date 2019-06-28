@@ -5,7 +5,6 @@ import * as Survey from 'survey-angular';
 
 import { SurveyService } from 'app/survey-editor-services/survey.service';
 import { SurveyResponseSO } from 'app/service-objects/survey-response-so';
-import { ToasterService } from 'app/toaster.service';
 
 @Component({
   selector: 'app-survey-display',
@@ -29,7 +28,7 @@ export class SurveyDisplayComponent implements OnInit {
 
   ngOnInit() {
     this.getSurvey(3);
-    this.claimantId = 1;
+    this.claimantId = Math.floor(Math.random()*10);
   }
 
   getSurvey(surveyId: number) {
@@ -55,7 +54,7 @@ export class SurveyDisplayComponent implements OnInit {
   }
 
   sendResponses() {
-    this.saveSurveyToSO(1);
+    this.saveSurveyToSO(this.claimantId);
     this.postSurvey(this.surveyResponseSO);
   }
 

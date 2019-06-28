@@ -28,10 +28,6 @@ const routes: Routes = [
            component:HomeComponent
         },
         {
-          path:'claim',
-          component: ClaimComponent
-        },
-        {
           path:'claimant-overview/:claimantId',
           component:ClaimantOverviewComponent
         },
@@ -46,6 +42,10 @@ const routes: Routes = [
         {
           path:'claimant-search/:claimantInfo',
           component:ClaimantSearchComponent
+        },
+        {
+          path:'claim/:claimantId',
+          component: ClaimComponent
         },
         {  
            path:'**',

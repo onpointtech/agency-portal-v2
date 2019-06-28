@@ -6,6 +6,7 @@ import { ModalService } from 'projects/opt-library/src/portal-services/modal.ser
 import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
 import { EditClaimantDetailsComponent } from 'projects/opt-library/src/lib/edit-claimant-details/edit-claimant-details.component';
 import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component';
+import { ClaimComponent } from '../claim/claim.component';
 
 @Component({
   selector: 'app-claimant-profile',
@@ -58,5 +59,6 @@ export class ClaimantProfileComponent implements OnInit {
   openEditClaimantAddresses(object: any){
     this.modalService.open(EditClaimantAddressComponent, object);
   }
+
 
 }

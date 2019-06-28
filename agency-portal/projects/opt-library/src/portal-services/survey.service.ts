@@ -1,54 +1,42 @@
 import { Injectable } from '@angular/core';
-import { ClaimantSO } from '../service-objects/claimant-so';
-import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs/internal/operators/catchError';
-import { EMPTY } from 'rxjs/internal/observable/empty';
 import { HttpClient } from '@angular/common/http';
-import { ToasterService } from './toaster.service';
-import { SurveySO } from '../service-objects/survey-so';
+import { Observable } from 'rxjs';
+import { Survey } from '../service-objects/survey';
+import { SurveyResponseSO } from '../service-objects/survey-response-so';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyService {
 
-  url = "http://localhost:8080/api/survey";
+  url = "http://localhost:8081/api/";
 
-  constructor(private http: HttpClient, private toasterService: ToasterService) { }
+  constructor(private httpClient: HttpClient) { }
 
-  public createSurvey(surveySO: SurveySO): any{
-    const surveyUrl = `${this.url}/createSurvey/`;
-    return this.http.post(surveyUrl, surveySO).pipe(catchError((err: any) => {
-      this.toasterService.danger("ERROR", "Error in posting the survey");
-      return EMPTY;
-    }))
-      .toPromise()
-      .then(this.extractData);
+  public createSurvey(survey: Survey): any {
+    const claimantUrl = `${this.url}survey/addUpdateSurvey`;
+    return this.httpClient.post(claimantUrl, survey);
   }
 
-  public getSurveyById(surveyId: number): Observable<SurveySO>{
-    const surveyUrl = `${this.url}/getSurveyById/`;
-    return this.http.get<SurveySO>(surveyUrl)
-
+  public getAllSurveys(): Observable<Survey[]> {
+    const claimantUrl = `${this.url}survey/getAllSurveys`;
+    return this.httpClient.get<Survey[]>(claimantUrl);
   }
 
-  public updateSurvey(surveyId: number, updateSurveySO: SurveySO): any{
-    const surveyUrl = `${this.url}/updateSurvey/`;
-    return this.http.put<SurveySO>(surveyUrl, updateSurveySO).pipe(catchError((err: any) => {
-      this.toasterService.danger("ERROR", "Cannot update survey.");
-      return EMPTY;
-    }));
+  public getSurveyById(surveyId: number): Observable<Survey> {
+    const claimantUrl = `${this.url}survey/getSurveyById/${surveyId}`;
+    return this.httpClient.get<Survey>(claimantUrl);
   }
 
-  public extractData(res: Response) {
-    this.toasterService.success("Success!", "Survey has been registered");
-    console.log(res);
+  public createSurveyResponse(survey: SurveyResponseSO): any {
+    console.log("POSTING", survey);
+    const claimantUrl = `${this.url}surveyResponse/addResponse`;
+    return this.httpClient.post(claimantUrl, survey);
   }
 
-  public handleErrorPromise(error: Response | any) {
-    // this.toasterService.danger("ERROR", error);
-    console.error(error.message || error);
-    return Promise.reject(error.message || error);
+  public getSurvey(surveyName: string, claimantId: number): Observable<SurveyResponseSO> {
+    const claimantUrl = `${this.url}survey/getSurvey/${surveyName}/${claimantId}/`;
+    return this.httpClient.get<SurveyResponseSO>(claimantUrl);
   }
 
 }
