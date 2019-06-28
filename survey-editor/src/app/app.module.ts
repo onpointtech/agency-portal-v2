@@ -12,6 +12,8 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 import { CommonModule } from '../../node_modules/@angular/common';
 import { SurveyDisplayComponent } from './survey-display/survey-display.component';
+import { SampleWidgetComponent } from './sample/sample-widget/sample-widget.component';
+import { OptLibraryModule } from '../../projects/opt-library/src/public-api';
 
 @NgModule({
   declarations: [AppComponent,
@@ -20,6 +22,7 @@ import { SurveyDisplayComponent } from './survey-display/survey-display.componen
     SurveyListComponent,
     SurveyEditComponent,
     SurveyDisplayComponent,
+    SampleWidgetComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { SurveyDisplayComponent } from './survey-display/survey-display.componen
     HttpClientModule,
     MatTableModule,
     AppRoutingModule,
+    OptLibraryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

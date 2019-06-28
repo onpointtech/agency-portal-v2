@@ -6,6 +6,7 @@ import * as widgets from "surveyjs-widgets";
 import "inputmask/dist/inputmask/phone-codes/phone.js";
 import { SurveyService } from './survey-editor-services/survey.service';
 import { Survey } from './service-objects/survey';
+import { SampleWidgetComponent } from './sample/sample-widget/sample-widget.component';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -36,6 +37,24 @@ var CkEditor_ModalEditor = {
     }
   }
 };
+
+// var sampleWidget = {
+//   afterRender: function(widget, htmlElement) {
+//     var sample = window["radiogroup"].replace(htmlElement);
+//     sample.on("change", function() {
+//       widget.editingValue = sample.getData();
+//     });
+//     sample.setData(widget.editingValue)
+//   },
+//   destroy: function(widget, htmlElement) {
+//     var instance = window["radiogroup"].instances[htmlElement.id];
+//     if (instance) {
+//       instance.removeAllListeners();
+//       window["radiogroup"].remove(instance);
+//     }
+//   }
+// }
+
 SurveyCreator.SurveyPropertyModalEditor.registerCustomWidget(
   "html",
   CkEditor_ModalEditor
