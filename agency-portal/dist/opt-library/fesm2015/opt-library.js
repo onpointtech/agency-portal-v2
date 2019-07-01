@@ -12028,7 +12028,7 @@ class ClaimantService {
      * @return {?}
      */
     registerClaimant(claimantSO) {
-        console.log("inside register claimant");
+        console.log("Inside register claimant api");
         /** @type {?} */
         const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
         return this.http.post(claimantUrl, claimantSO).pipe(catchError((/**

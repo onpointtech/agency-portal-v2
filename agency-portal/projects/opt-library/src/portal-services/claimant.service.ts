@@ -39,8 +39,9 @@ export class ClaimantService {
 
   //to do, change return type from promise to long
   //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
-  public registerClaimant(claimantSO: ClaimantSO){
-    console.log("inside register claimant");
+  public registerClaimant(claimantSO: ClaimantSO) {
+    console.log("Inside register claimant api");
+    var claimantId;
     const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
     return this.http.post(claimantUrl, claimantSO).pipe(catchError((err: any) => {
       this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");

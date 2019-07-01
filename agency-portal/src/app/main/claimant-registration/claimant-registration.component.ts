@@ -9,6 +9,7 @@ import { Address } from 'projects/opt-library/src/service-objects/address';
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { Router } from '@angular/router';
+import { delay } from 'rxjs/internal/operators/delay';
 
 
 
@@ -183,17 +184,17 @@ export class ClaimantRegistrationComponent implements OnInit {
   debug = true;
   submitted = false;
 
-  convertDateType(){
+  convertDateType() {
     //date in form type is different from JSON's date
     let ngbDate = this.profileForm.controls['dateOfBirth'].value;
-    let myDate = new Date(ngbDate.year, ngbDate.month-1, ngbDate.day);
+    let myDate = new Date(ngbDate.year, ngbDate.month - 1, ngbDate.day);
     this.userProfileModel.dateOfBirth = myDate;
 
   }
 
 
   verifyBeforeSubmit() {
- 
+
 
 
     if (this.profileForm.valid) {
@@ -201,9 +202,9 @@ export class ClaimantRegistrationComponent implements OnInit {
       //TODO onsubmit should return a long
       // use the value of onSubmit to update the claimantId
       // this.claimantId = this.onSubmit() // if this returns a long
-    this.convertDateType();
-    this.claimantService
-      .registerClaimant(this.userProfileModel);
+      this.convertDateType();
+      this.claimantService
+        .registerClaimant(this.userProfileModel);
       console.log("Submitted form");
       this.toasterService.success("Success", "Form was submitted");
       //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
@@ -257,17 +258,17 @@ export class ClaimantRegistrationComponent implements OnInit {
       this.userProfileModel = {
         claimantId: null,
         ssn: Math.random().toString(10).substr(2, 9),
-        dateOfBirth: new Date(this.day(), this.month(), this.year()),
+        dateOfBirth: new Date(this.year(), this.month(), this.day()),
         firstName: 'J' + this.vowel() + 'y' + this.vowel() + 'm',
         middleInitial: this.vowel().toUpperCase(),
         lastName: this.vowel().toUpperCase() + 'b' + this.vowel() + 'rd' + this.vowel() + 'l' + this.vowel() + 'z' + this.vowel(),
         homePhone: Math.random().toString(10).substr(2, 10),
         mobilePhone: Math.random().toString(10).substr(2, 10),
         languagePreference: this.languagePreferenceChoices[1],
-        educationLevel: this.educationLevelChoices[5],
+        educationLevel: this.educationLevelChoices[4],
         gender: this.genderChoices[0],
-        race: this.raceChoices[2],
-        ethnicity: this.ethnicityChoices[1],
+        race: this.raceChoices[1],
+        ethnicity: this.ethnicityChoices[2],
         lastInsertUpdateTS: null,
         lastInsertUpdateBy: '',
         ivrPin: '',
@@ -279,8 +280,13 @@ export class ClaimantRegistrationComponent implements OnInit {
       };
     this.claimantService
       .registerClaimant(this.userProfileModel);
-      console.log("Submitted form");
-      this.toasterService.success("Success", "Form was submitted");
+    console.log("claimant id in registration is now", this.claimantId);
+    console.log("Submitted form");
+    this.toasterService.success("Success", "Form was submitted");
+
+    //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
+    // this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+
   }
 
   vowel(): string {

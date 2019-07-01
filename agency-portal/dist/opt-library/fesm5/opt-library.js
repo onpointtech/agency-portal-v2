@@ -12077,7 +12077,7 @@ var ClaimantService = /** @class */ (function () {
      */
     function (claimantSO) {
         var _this = this;
-        console.log("inside register claimant");
+        console.log("Inside register claimant api");
         /** @type {?} */
         var claimantUrl = "http://localhost:8080/api/claimant/registerClaimant";
         return this.http.post(claimantUrl, claimantSO).pipe(catchError((/**
