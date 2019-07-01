@@ -17,6 +17,7 @@ import { AlertService } from 'projects/opt-library/src/portal-services/alert.ser
 import { SURVEY_TITLE, SURVEY_DEFINITION } from '../../choices/surveyQuestions';
 import { SurveyService } from 'projects/opt-library/src/portal-services/survey.service';
 import { SurveyResponseSO } from 'projects/opt-library/src/service-objects/survey-response-so';
+import { delay } from 'rxjs/internal/operators/delay';
 
 
 @Component({
@@ -137,6 +138,8 @@ export class ClaimComponent implements OnInit {
     this.surveyObject = new Survey.ReactSurveyModel(surveyDefinition);
     this.surveyObject.data = this.surveyResponses;
     Survey.SurveyNG.render('surveyContainer', { model: this.surveyObject });
+    //updates backend and restes all values there
+    this.surveyService.deleteResponse(this.claimantId);
   }
 
 
@@ -168,7 +171,7 @@ export class ClaimComponent implements OnInit {
   }
 
   //delete survey responses, isn't used
-  deleteAllSurveyResponses(){
+  deleteAllSurveyResponses() {
     this.surveyService.deleteResponse(this.claimantId);
   }
 
@@ -223,10 +226,6 @@ export class ClaimComponent implements OnInit {
   }
 
   completeButton() {
-    //will do this first if it is in a separate function
-    this.surveyService.deleteResponse(this.claimantId);
-
-
     //inside a subscribe because it has to wait for delete to happen before posting
     this.surveyObject.completeText = "Complete Page"
     this.surveyObject.render();
@@ -236,14 +235,20 @@ export class ClaimComponent implements OnInit {
 
     //redirect on survey submission
     this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
-    
+
     //show toaster on success
     this.toasterService.success("Success", "Survey has been submitted to the server");
+
+    //Delete the responses
+    this.surveyService.deleteResponse(this.claimantId);
 
   }
 
   saveAndExitButton() {
+
     this.storeResponseAndSend(this.surveyObject);
+
+
   }
 
 }

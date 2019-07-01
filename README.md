@@ -2,7 +2,6 @@
 We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to use this project in the future
 
 
-
 ## How to run the angular project
 To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
 
@@ -328,6 +327,12 @@ To use a component outside the library, it must be inside the exports of the lib
 To use a service outside the library, it must be inside the providers of the library.module
 
 ***
+# AngularJS to Angular v8 Guide
+
+## ngMigration Assistant
+it can be found here in this website
+https://github.com/ellamaolson/ngMigration-Assistant
+
 
 # Git Guide
 

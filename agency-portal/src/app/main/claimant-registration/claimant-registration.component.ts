@@ -234,14 +234,14 @@ export class ClaimantRegistrationComponent implements OnInit {
 
   //once register claimant service is modified, can use this to return a claimantId and reroute
   onSubmit() {
-    this.claimantService
+    this.claimantId = this.claimantService
       .registerClaimant(this.userProfileModel);
     console.log("claimant id in registration is now", this.claimantId);
     console.log("Submitted form");
     this.toasterService.success("Success", "Form was submitted");
 
     //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
-    // this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+    this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
   }
 
 
