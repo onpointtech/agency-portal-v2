@@ -2,6 +2,25 @@
 We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to use this project in the future
 
 
+
+## How to run the angular project
+To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
+
+`ng serve`
+
+Then open this link in your browser
+
+`localhost:4200`
+
+## How to run the backend (angular)
+1. Open eclipse
+2. Choose ClaimantServiceNew
+3. Build the project as maven project
+3. Right click and run the application (ClaimantServiceNewApplication)
+4. Open this link in your browser
+`http://localhost:8080/swagger-ui.html`
+
+
 ## How to download and install the portal (Windows)
 Install git from
 
@@ -20,23 +39,6 @@ Install the node modules
 
 `npm install`
 
-
-## How to run the angular project
-To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
-
-`ng serve`
-
-Then open this link in your browser
-
-`localhost:4200`
-
-## How to run the backend (angular)
-1. Open eclipse
-2. Choose ClaimantServiceNew
-3. Build the project as maven project
-3. Right click and run the application (ClaimantServiceNewApplication)
-4. Open this link in your browser
-`http://localhost:8080/swagger-ui.html`
 
 ## How to develop the agency portal
 
@@ -224,10 +226,10 @@ A basic code structure will be as follows
 Here is a sample
 ```
 //import angular modules (@angular...)
-import { ThisModule } from 'here';
+import { ThisModule } from '@angular..';
 
 //import external modules
-import { ExternalModule } from 'here';
+import { ExternalModule } from 'ngx-...';
 
 
 //import user-made modules & libraries
