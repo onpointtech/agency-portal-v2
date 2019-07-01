@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SurveyService } from '../survey-editor-services/survey.service';
 import { Survey } from '../service-objects/survey-so';
+import { MatSort } from '../../../node_modules/@angular/material';
 
 @Component({
   selector: 'app-survey-list',
@@ -11,16 +12,20 @@ export class SurveyListComponent implements OnInit {
   survey: Survey[];
   columnsToDisplay: string[];
 
-  constructor(private surveyService: SurveyService) { }
+  @ViewChild(MatSort, null) sort: MatSort;
+
+  constructor( private surveyService: SurveyService) { }
 
   ngOnInit() {
     this.getAllSurveys();
-    this.columnsToDisplay = ['surveyId', 'name'];
+    this.columnsToDisplay = ['surveyId', 'name']
   }
 
   getAllSurveys() {
     this.surveyService.getAllSurveys()
-      .subscribe(survey => this.survey = survey);
+      .subscribe(survey => {
+        this.survey = survey;
+      });
   }
 
 }

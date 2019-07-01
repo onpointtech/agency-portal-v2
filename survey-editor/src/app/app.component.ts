@@ -57,12 +57,13 @@ export class AppComponent {
             choices: ["family", "work", "pets", "travels", "games"]
           },
           {
-            name: "date",
-            type: "datepicker",
-            inputType: "date",
-            title: "Your favorite date:",
-            dateFormat: "mm/dd/yy",
-            isRequired: true
+            type: "dropdown",
+            renderAs: "sampleWidget",
+            choicesByUrl: {
+              url: "https://restcountries.eu/rest/v1/all"
+            },
+            name: "countries",
+            title: "Please select the country you have arrived from:"
           }
         ]
       },
@@ -195,7 +196,7 @@ export class AppComponent {
   }
 
   sendData(result) {
-    //TODO update with your own behavior    
+    //TODO update with your own behavior
     console.log(result);
   }
 }

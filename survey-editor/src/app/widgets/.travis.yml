@@ -1,0 +1,45 @@
+language: node_js
+node_js:
+- '8'
+
+before_install:
+  - stty cols 80
+
+env:
+  global:
+    secure: jx34zGaqOAi0fej4CAGaFZmC7mXhugGk368XOuMkRwdGTzFIT1AtyT8hIT5lCAz5lSPogJY364BJ5IKHQsbtiYKfmHE6MB5D8wz3+Lg06pbZmRxuDFQgblJISaSpg1ZFtJatHscOT1ZfUmqEMHFWdrcMvMbmsuFEGxv6Yks2g/wmwIWYtfRfvOrcyCL2XWmYc9gctqv1HbpLJb5xfugTgmKnYOSuwYb5CuRIM2imky8vb4pkmveo7QpA48lAlMn2WrgtO5Zk5Vhn06R7YbC8AzACWe4F1TDr6x0h27f8M3nEYtib6/rovRYkh4lz816GjZEqG8nA1N9a/RCGgRHUG5LBO1KFZ0RbECUfBzGdYiJwcG6FUleTeGqJOo5RjxLhIsuk8OLbJ+8bAhNt4D/gAGmnGH+KQHJld+MCqIraKtdvydaO5U1L2El1S7GUD972GNj4bnisk99oqaqxOzvDT0W9HihhgbAh7vjGqVVOmNlio8voEWDZu4ru9HHxPkQ4DNu8fNRaQqIuIGWeFypHBWG3Bt38RzZpxVmxIDhdUkGu1dJdSPZeHuvheDkSJy62eIjAJnnxFGqTn7cTveUozh5Lky2iTjQuiifk5hFcLNroWcZJNHNgJQd915Q0iVYE3VOxVoPlh01urfeyvCKYiXOsFhgLGTfL8rzqk+JvDvs=
+sudo: required
+addons:
+  firefox: latest
+  chrome: stable
+
+before_script:
+- "export DISPLAY=:99.0"
+- "sh -e /etc/init.d/xvfb start"
+- sleep 3
+- npm install -g concurrently@3.1.0
+
+script:
+- npm run build
+
+before_deploy: tar -zcvf surveyjs-widgets.tar.gz package
+
+deploy:
+- provider: releases
+  api_key:
+    secure: E3d7Q7uG+cwel2sGfm4vpmVk3s5BY04EC2wkMO/tzMqk8uhAqeESZuYsFauQUf+6MOJxW5bAgy2RYotXMU9JN2zppNi5yS33SyjwWksJ3//nDMXSpYrbImSHFEavqC0Z/zRuYTiDoQMghktZznWORrBorFNVo/MigV7FIcRk5rqSCccWXuC3Me9R6nKP+mUiVXQwP4ZOMLbFxCDa4ibx/hz2z9pUSLa5B+2pgoS3OLkoCP284/fi2nTIIlkQz8m1Hk14abcqVnRYivsIBA6kwBERZN6QZo6YkEKV297H5Xo/v8ZrtYVaW4hnQH1dP25RB7cFpPblsImdmkWTYhTYgj0z4oDfSuM6Ozg9S9CgB60GzZ7KoY79Ou7waZqehLPmaVyA1aLD+wTbTBSLxQPSxRExEL1Ibfw+nxzwpv6QifrEuNPPoQsxr4syVY4lbC/jsI1DJ3IXUhJnkojJmN/YOAFiBxKAD1omeIEcXp9sAAVsE0aqTS5kPmcoFNw9rcfRzyUcvHLg5Ft+NYmAE0OAvt59nz8nRLMH+F2OR89N14hTGJuPU16TKOSWdPRyFhCBCSXCfh5vKdNRwL3LvgjWrD2N8ZR7AyiHvIYfNRd1wZXTydFQN1D4g4DKEHW9ajDIPl2SVkwsEy8HYcf4VdnEVWjm3v6+fWOEF0vLpzH0Vig=
+  file:
+  - surveyjs-widgets.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
+- provider: script
+  script: chmod +x ./deploy_npm.sh && ./deploy_npm.sh
+  skip_cleanup: true
+  on:
+    tags: true
+
+notifications:
+  email:
+    recipients:
+    - andrew.telnov@gmail.com

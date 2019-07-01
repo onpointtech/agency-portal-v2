@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from "./app.component";
 import { SurveyComponent } from "./survey.component";
@@ -12,17 +13,16 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 import { CommonModule } from '../../node_modules/@angular/common';
 import { SurveyDisplayComponent } from './survey-display/survey-display.component';
-import { SampleWidgetComponent } from './sample/sample-widget/sample-widget.component';
-import { OptLibraryModule } from '../../projects/opt-library/src/public-api';
+import { ToastrModule } from '../../node_modules/ngx-toastr';
 
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     SurveyComponent,
     SurveyCreatorComponent,
     SurveyListComponent,
     SurveyEditComponent,
-    SurveyDisplayComponent,
-    SampleWidgetComponent,
+    SurveyDisplayComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +31,14 @@ import { OptLibraryModule } from '../../projects/opt-library/src/public-api';
     HttpClientModule,
     MatTableModule,
     AppRoutingModule,
-    OptLibraryModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-top-full-width",
+      closeButton: true,
+      disableTimeOut: true,
+      maxOpened: 1,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

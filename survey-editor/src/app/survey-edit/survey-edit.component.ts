@@ -4,9 +4,10 @@ import * as SurveyCreator from "survey-creator";
 import * as widgets from "surveyjs-widgets";
 
 import "inputmask/dist/inputmask/phone-codes/phone.js";
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
 import { SurveyService } from '../survey-editor-services/survey.service';
 import { Survey } from '../service-objects/survey';
+import { ToasterService } from '../toaster.service';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -54,7 +55,11 @@ export class SurveyEditComponent implements OnInit {
   @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
   surveyId: number;
 
-  constructor(private route: ActivatedRoute, private surveyService: SurveyService) { }
+  constructor( private route: ActivatedRoute,
+    private surveyService: SurveyService,
+    private router: Router,
+    private toasterService: ToasterService
+  ) { }
 
   ngOnInit() {
     this.survey = {
@@ -99,6 +104,7 @@ export class SurveyEditComponent implements OnInit {
     this.surveyService
       .createSurvey(this.survey)
       .subscribe(id => console.log(id));
+    this.router.navigateByUrl("survey-list").then(result => this.toasterService.success("Success","You have successfully edited the survey"));
   };
 
 }
