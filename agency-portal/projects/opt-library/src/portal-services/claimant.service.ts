@@ -36,6 +36,9 @@ export class ClaimantService {
     }));
   }
 
+
+  //to do, change return type from promise to long
+  //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
   public registerClaimant(claimantSO: ClaimantSO){
     console.log("inside register claimant");
     const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;

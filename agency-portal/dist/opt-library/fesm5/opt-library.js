@@ -12060,11 +12060,18 @@ var ClaimantService = /** @class */ (function () {
             return EMPTY;
         })));
     };
+    //to do, change return type from promise to long
+    //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
+    //to do, change return type from promise to long
+    //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
     /**
      * @param {?} claimantSO
      * @return {?}
      */
-    ClaimantService.prototype.registerClaimant = /**
+    ClaimantService.prototype.registerClaimant = 
+    //to do, change return type from promise to long
+    //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
+    /**
      * @param {?} claimantSO
      * @return {?}
      */

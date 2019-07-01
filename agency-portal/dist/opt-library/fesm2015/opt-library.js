@@ -12021,6 +12021,8 @@ class ClaimantService {
             return EMPTY;
         })));
     }
+    //to do, change return type from promise to long
+    //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
     /**
      * @param {?} claimantSO
      * @return {?}

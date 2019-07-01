@@ -8,6 +8,7 @@ import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so
 import { Address } from 'projects/opt-library/src/service-objects/address';
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
+import { Router } from '@angular/router';
 
 
 
@@ -17,10 +18,10 @@ import { ToasterService } from 'projects/opt-library/src/portal-services/toaster
   templateUrl: './claimant-registration.component.html',
   styleUrls: ['./claimant-registration.component.css']
 })
-export class ClaimantRegistrationComponent  implements OnInit {
+export class ClaimantRegistrationComponent implements OnInit {
   userProfileModel = new ClaimantSO();
   addressInitial = new Address();
-
+  claimantId: number;
   stateChoices = STATECHOICES;
   genderChoices = GENDERCHOICES;
   raceChoices = RACECHOICES;
@@ -32,7 +33,7 @@ export class ClaimantRegistrationComponent  implements OnInit {
 
   profileForm = this.fb.group({
     ssn: [
-      '', 
+      '',
       Validators.compose([
         Validators.required,
         Validators.minLength(9),
@@ -133,10 +134,12 @@ export class ClaimantRegistrationComponent  implements OnInit {
 
   constructor(private fb: FormBuilder,
     private claimantService: ClaimantService,
-    private toasterService: ToasterService
+    private toasterService: ToasterService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    this.claimantId = 0;
     this.addressInitial = {
       id: null,
       addressLine1: '',
@@ -177,14 +180,34 @@ export class ClaimantRegistrationComponent  implements OnInit {
 
 
 
-  debug = false;
+  debug = true;
   submitted = false;
 
+  convertDateType(){
+    //date in form type is different from JSON's date
+    let ngbDate = this.profileForm.controls['dateOfBirth'].value;
+    let myDate = new Date(ngbDate.year, ngbDate.month-1, ngbDate.day);
+    this.userProfileModel.dateOfBirth = myDate;
+
+  }
+
+
   verifyBeforeSubmit() {
+ 
+
+
     if (this.profileForm.valid) {
+
+      //TODO onsubmit should return a long
+      // use the value of onSubmit to update the claimantId
+      // this.claimantId = this.onSubmit() // if this returns a long
+    this.convertDateType();
+    this.claimantService
+      .registerClaimant(this.userProfileModel);
       console.log("Submitted form");
       this.toasterService.success("Success", "Form was submitted");
-      this.onSubmit();
+      //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
+      // this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
     }
     else {
       this.profileForm.markAllAsTouched();
@@ -196,6 +219,8 @@ export class ClaimantRegistrationComponent  implements OnInit {
     }
   }
 
+
+  //once register claimant service is modified, can use this to return a claimantId and reroute
   onSubmit() {
     this.claimantService
       .registerClaimant(this.userProfileModel);
@@ -206,7 +231,7 @@ export class ClaimantRegistrationComponent  implements OnInit {
     return c1 && c2 ? c1.id === c2.id : c1 === c2;
   }
 
-  //FILLER FUNCTIONS
+  //FILLER FUNCTIONS PLEASE MOVE THIS TO A SEPARATE SERVICE IN THE FUTURE
 
   FillForm() {
     console.log(this.vowel())
@@ -254,6 +279,8 @@ export class ClaimantRegistrationComponent  implements OnInit {
       };
     this.claimantService
       .registerClaimant(this.userProfileModel);
+      console.log("Submitted form");
+      this.toasterService.success("Success", "Form was submitted");
   }
 
   vowel(): string {

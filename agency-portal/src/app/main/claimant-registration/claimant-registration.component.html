@@ -310,7 +310,7 @@
               <ng-template valError = "required">
                 <p class = "ng-scope">
                   <span class = "glyphicon glyphicon-exclamation-sign"></span>
-                  Please enter a valid first name.
+                  Please enter a valid date of birth.
                 </p>
               </ng-template>
             </val-errors>
@@ -318,7 +318,7 @@
         </div>
         <div *ngIf = "debug==true">
           <br>
-          DEBUG: model.dateOfBirth content: {{userProfileModel.dateOfBirth}}
+          DEBUG: model.dateOfBirth content: {{userProfileModel.dateOfBirth | json}}
           <br>
           DEBUG: profileForm status: {{profileForm.status}}
           <br>
