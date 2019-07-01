@@ -70,8 +70,8 @@ export class ClaimComponent implements OnInit {
     this.surveyDefinition = SURVEY_DEFINITION,
 
 
-    //Set the completeLastPage to false
-    this.completeLastPage = false;
+      //Set the completeLastPage to false
+      this.completeLastPage = false;
 
 
     //gets the survey from the database
@@ -114,7 +114,7 @@ export class ClaimComponent implements OnInit {
           this.showSurveyWithResponses(this.surveyDefinition);
 
           //we now can try to hide the original buttons
-          this.hideButton();
+          this.hideOriginalButtons();
 
         }
       );
@@ -129,18 +129,20 @@ export class ClaimComponent implements OnInit {
   }
 
 
- //SEND RESPONSES TO BACKEND
+  //SEND RESPONSES TO BACKEND
   sendResponses() {
     this.saveSurveyToSO(this.claimantId);
     this.postSurvey(this.surveyResponseSO);
     console.log("here in send responses");
   }
 
+
   //STORE RESPONSES AND CALL SEND
   storeResponseAndSend(surveyData: any) {
     this.surveyResponses = surveyData.data;
     this.sendResponses();
-    this.toasterService.success("Success", "Survey has been saved!" );
+    console.log("RESPONSES", this.surveyResponses);
+    this.toasterService.success("Success", "Survey has been saved!");
   }
 
   //PUT THE VALUES TO A SERVICE-OBJECT
@@ -154,33 +156,52 @@ export class ClaimComponent implements OnInit {
     }
   }
 
+  //delete survey responses, isn't used
+  deleteAllSurveyResponses(){
+    this.surveyService.deleteResponse(this.claimantId);
+  }
+
   postSurvey(surveyResponseSO: SurveyResponseSO) {
     this.surveyService.createSurveyResponse(surveyResponseSO).subscribe();
   }
 
+
+  hideOriginalButtons() {
+    this.surveyObject.showNavigationButtons = false;
+    this.surveyObject.render();
+  }
+
   // BUTTON FUNCTIONS
 
-  confirmToReset() {
+  resetSurveyValues() {
+    //this only resets local survey values, doesnt update backend
     this.surveyResponses = null;
     this.surveyObject.clear();
-    this.toasterService.danger("Warning","Your answers have been reset");
-    // this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+
+    //updates backend and restes all values there
+    this.surveyService.deleteResponse(this.claimantId);
+
+  }
+
+  confirmToReset() {
+    this.resetSurveyValues();
+    this.toasterService.danger("Warning", "Your answers have been reset");
+    this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
   }
 
   resetButton() {
-    // this.confirmToReset();
     this.alert
-    .custom(this.confirmReset)
-    .then((result) => {
-      if(result.value) {
-        this.confirmToReset();
-      }
-    })
+      .custom(this.confirmReset)
+      .then((result) => {
+        if (result.value) {
+          this.confirmToReset();
+        }
+      })
   }
 
 
   nextButton() {
-    console.log("current page is", this.surveyObject.currentPageNo);
+    // console.log("current page is", this.surveyObject.currentPageNo);
     this.surveyObject.nextPage();
     this.surveyObject.render();
   }
@@ -191,15 +212,27 @@ export class ClaimComponent implements OnInit {
   }
 
   completeButton() {
+    //will do this first if it is in a separate function
+    this.surveyService.deleteResponse(this.claimantId);
+
+
+    //inside a subscribe because it has to wait for delete to happen before posting
     this.surveyObject.completeText = "Complete Page"
     this.surveyObject.render();
+
     this.storeResponseAndSend(this.surveyObject);
     this.completeLastPage = this.surveyObject.completeLastPage();
+
+    //redirect on survey submission
+    this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+    
+    //show toaster on success
+    this.toasterService.success("Success", "Survey has been submitted to the server");
+
   }
 
-  hideButton() {
-    this.surveyObject.showNavigationButtons = false;
-    this.surveyObject.render();
+  saveAndExitButton() {
+    this.storeResponseAndSend(this.surveyObject);
   }
 
 }

@@ -36,9 +36,9 @@ public class SurveyResponseController {
 	}
 	
 	@CrossOrigin(origins = "http://localhost:4200")
-	@RequestMapping(value = "/deleteResponse/{responseId}", method = RequestMethod.DELETE)
-	public String  deleteResponse(@PathVariable long responseId) {
-		return surveyBusinessService.deleteResponse(responseId);
+	@RequestMapping(value = "/deleteResponse/{claimantId}", method = RequestMethod.DELETE)
+	public List<SurveyResponse>  deleteResponse(@PathVariable long claimantId) {
+		return surveyBusinessService.deleteResponse(claimantId);
 	}
 
 }

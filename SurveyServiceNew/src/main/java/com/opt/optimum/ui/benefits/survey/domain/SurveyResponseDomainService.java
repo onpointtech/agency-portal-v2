@@ -9,7 +9,7 @@ public interface SurveyResponseDomainService {
 
 	long addResponse(SurveyResponse surveyResponse);
 
-	String deleteResponse(long responseId);
+	List<SurveyResponse> deleteResponse(long claimantId);
 
 	SurveyResponse getResponse(long claimantId);
 	

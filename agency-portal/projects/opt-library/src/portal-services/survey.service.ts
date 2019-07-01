@@ -39,4 +39,9 @@ export class SurveyService {
     return this.httpClient.get<SurveyResponseSO>(claimantUrl);
   }
 
+  public deleteResponse(claimantId : number): any {
+    const claimantUrl = `${this.url}surveyResponse/deleteResponse/${claimantId}`;
+    return this.httpClient.delete<SurveyResponseSO[]>(claimantUrl).subscribe(() => console.log("Old responses deleted"));
+  }
+
 }

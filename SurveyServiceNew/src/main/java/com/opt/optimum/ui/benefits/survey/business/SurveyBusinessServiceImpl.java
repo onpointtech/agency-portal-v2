@@ -72,8 +72,8 @@ public class SurveyBusinessServiceImpl implements SurveyBusinessService{
 	}
 
 	@Override
-	public String deleteResponse(long responseId) {
-		return surveyResponseDomainService.deleteResponse(responseId);
+	public List <SurveyResponse> deleteResponse(long claimantId) {
+		return surveyResponseDomainService.deleteResponse(claimantId);
 	}
 
 	@Override

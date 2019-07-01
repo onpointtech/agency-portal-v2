@@ -29,9 +29,8 @@ public class SurveyResponseDomainServiceImpl implements SurveyResponseDomainServ
 	}
 
 	@Override
-	public String deleteResponse(long responseId) {
-		surveyResponseRepository.deleteById(responseId);
-		return "success";
+	public List <SurveyResponse> deleteResponse(long claimantId) {
+		return surveyResponseRepository.deleteByClaimantId(claimantId);
 	}
 	
 	@Override
