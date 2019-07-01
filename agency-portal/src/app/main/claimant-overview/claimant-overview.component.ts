@@ -1,10 +1,20 @@
+//import angular modules
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+
+//import external modules
+//import user made modules
+
+//import components
+import { ClaimComponent } from '../claim/claim.component';
+
+//import services
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
-import { ClaimComponent } from '../claim/claim.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+//import models or constants
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+
 
 @Component({
   selector: 'app-claimant-overview',
@@ -12,13 +22,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./claimant-overview.component.css']
 })
 export class ClaimantOverviewComponent implements OnInit {
-  claimantSO: ClaimantSO
   @Input() claimantId: number
+
+  claimantSO: ClaimantSO
 
   constructor(private route: ActivatedRoute, 
     private claimantService: ClaimantService,
-    private claimantUsed: PortalService,
-    private modalService: NgbModal) { }
+    private claimantUsed: PortalService) { }
 
   ngOnInit() {
     this.claimantId = Number(this.route
@@ -36,12 +46,6 @@ export class ClaimantOverviewComponent implements OnInit {
       this.claimantSO = claimantSO; 
       this.claimantUsed.claimantSO = this.claimantSO;
      });
-  }
-
-
-  openNewClaim(object: any){
-    const modalRef = this.modalService.open(ClaimComponent, object);
-    modalRef.componentInstance.claimantId = this.claimantId;
   }
 
 }

@@ -1,15 +1,26 @@
+//import angular modules
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
+import { Router } from '@angular/router';
+
+//import external modules
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material';
-import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
-import { Address } from 'projects/opt-library/src/service-objects/address';
+import { delay } from 'rxjs/internal/operators/delay';
+
+//import user made modules
+//import components
+//import services
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
-import { Router } from '@angular/router';
-import { delay } from 'rxjs/internal/operators/delay';
+
+//import models or constants
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { Address } from 'projects/opt-library/src/service-objects/address';
+import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
+
+
 
 
 
@@ -241,8 +252,6 @@ export class ClaimantRegistrationComponent implements OnInit {
   //FILLER FUNCTIONS should be moved to a separate ts file
 
   FillForm() {
-    console.log(this.vowel())
-
     this.addressInitial = {
       id: null,
       addressLine1: 'Old town',

@@ -1,10 +1,20 @@
+//import angular modules
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+//import external modules
 import { Subscription } from 'rxjs';
-import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+
+//import user made modules
+//import components
+
+//import services
 import { ClaimantService } from 'projects/opt-library/src/portal-services/claimant.service';
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
+//import models or constants
+import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+
 
 @Component({
   selector: 'app-claimant-search',
@@ -31,9 +41,9 @@ export class ClaimantSearchComponent implements OnInit {
   ngOnInit() {
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo);
-
     this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
 
+    //for the sweet alert
     this.noSearchResultObject = {
       type: 'info',
       title: "Info",

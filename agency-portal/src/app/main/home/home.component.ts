@@ -1,7 +1,18 @@
+
+//import angular modules
 import { Component, OnInit, ViewChild } from '@angular/core';
 
+//import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
+
+//import user made modules
+//import components
+
+//import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
+
+//import models or constants
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

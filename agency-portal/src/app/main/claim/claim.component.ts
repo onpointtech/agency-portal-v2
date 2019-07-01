@@ -1,12 +1,23 @@
+//import angular modules
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+//import external modules
 import * as SurveyEditor from 'surveyjs-editor';
 import * as Survey from 'survey-angular';
-import { SurveyService } from 'projects/opt-library/src/portal-services/survey.service';
-import { SurveyResponseSO } from 'projects/opt-library/src/service-objects/survey-response-so';
-import { ActivatedRoute, Router } from '@angular/router';
-import { SURVEY_TITLE, SURVEY_DEFINITION } from '../../choices/surveyQuestions';
+
+//import user made modules
+//import components
+
+//import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
+
+//import models or constants
+import { SURVEY_TITLE, SURVEY_DEFINITION } from '../../choices/surveyQuestions';
+import { SurveyService } from 'projects/opt-library/src/portal-services/survey.service';
+import { SurveyResponseSO } from 'projects/opt-library/src/service-objects/survey-response-so';
+
 
 @Component({
   selector: 'app-claim',
@@ -17,7 +28,7 @@ export class ClaimComponent implements OnInit {
 
   @Input() claimantId: number;
 
-
+  //variables initialization
   surveyObject: any;
   surveyResponses: any;
   surveyDefinition: any;
