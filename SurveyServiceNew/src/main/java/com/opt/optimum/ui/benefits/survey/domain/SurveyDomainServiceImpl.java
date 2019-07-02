@@ -2,9 +2,11 @@ package com.opt.optimum.ui.benefits.survey.domain;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.opt.optimum.ui.benefits.survey.entity.Survey;
@@ -45,6 +47,7 @@ public class SurveyDomainServiceImpl implements SurveyDomainService{
 	public List<Survey> getAllSurveys() {
 		List<Survey> allSurveys = new ArrayList<>();
 		surveyRepository.findAll().forEach(e -> allSurveys.add(e));
+		Collections.sort(allSurveys);
 		return allSurveys;
 	}
 
