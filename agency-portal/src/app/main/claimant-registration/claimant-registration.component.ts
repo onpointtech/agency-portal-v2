@@ -288,7 +288,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       };
 
     //after filling it up, it calls submit
-    //this.onSubmit();
+    this.onSubmit();
 
   }
 
