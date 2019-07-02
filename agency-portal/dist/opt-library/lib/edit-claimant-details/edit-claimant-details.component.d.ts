@@ -14,6 +14,7 @@ export declare class EditClaimantDetailsComponent implements OnInit {
     id: number;
     updateClaimant: UpdateClaimantSO;
     claimantProfileCopy: ClaimantSO;
+    claimantProfileEdit: ClaimantSO;
     profileForm: FormGroup;
     genderChoices: string[];
     raceChoices: string[];

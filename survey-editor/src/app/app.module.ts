@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ValdemortModule } from 'ngx-valdemort';
 
 import { AppComponent } from "./app.component";
 import { SurveyComponent } from "./survey.component";
@@ -39,6 +40,7 @@ import { ToastrModule } from '../../node_modules/ngx-toastr';
       disableTimeOut: true,
       maxOpened: 1,
     }),
+    ValdemortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -76,9 +76,30 @@ export class EditClaimantDetailsComponent implements OnInit {
         alternateClaimantId: [null],    
         firstName: [null,Validators.minLength(1)],
         lastName: [null,Validators.minLength(1)],      
-        middleInitial: [null,Validators.minLength(1)],
-        homePhone: [null,Validators.minLength(1)],
-        mobilePhone: [null],
+        middleInitial: [
+          null,
+          Validators.compose([
+            Validators.minLength(1),
+            Validators.maxLength(1),
+            Validators.required,
+            Validators.pattern("[a-zA-z]*")
+          ])
+        ],
+        homePhone: [
+          null,
+          Validators.compose([
+            Validators.required,
+            Validators.maxLength(10),
+            Validators.pattern("[0-9]*")
+          ])
+        ],
+        mobilePhone: [
+          null,
+          Validators.compose([
+            Validators.maxLength(10),
+            Validators.pattern("[0-9]*")
+          ])
+        ],
 
         //There is no way they can choose null, so no validations are needed
         languagePreference: [null],
