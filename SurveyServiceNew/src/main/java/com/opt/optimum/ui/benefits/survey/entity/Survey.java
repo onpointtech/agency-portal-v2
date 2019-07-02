@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Survey {
+public class Survey implements Comparable<Survey>{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,5 +51,9 @@ public class Survey {
 	}
 	public void setLastInsertUpdateBy(String lastInsertUpdateBy) {
 		this.lastInsertUpdateBy = lastInsertUpdateBy;
+	}
+	@Override
+	public int compareTo(Survey o) {
+		return (int)this.surveyId - (int)o.surveyId;
 	}
 }
