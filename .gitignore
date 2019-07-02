@@ -2,6 +2,5 @@
 ClaimantServiceNew/.project
 ClaimantServiceNew/.settings/org.eclipse.m2e.core.prefs
 ClaimantServiceNew/target/
-agency-portal/dist/optimum-components/
-agency-portal/dist/optimum-components/bundles/
 node_modules/
+agency-portal/dist/
