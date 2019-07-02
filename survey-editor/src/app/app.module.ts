@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ValdemortModule } from 'ngx-valdemort';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from "./app.component";
 import { SurveyComponent } from "./survey.component";
@@ -14,7 +15,6 @@ import { SurveyListComponent } from './survey-list/survey-list.component';
 import { SurveyEditComponent } from './survey-edit/survey-edit.component';
 import { CommonModule } from '../../node_modules/@angular/common';
 import { SurveyDisplayComponent } from './survey-display/survey-display.component';
-import { ToastrModule } from '../../node_modules/ngx-toastr';
 
 @NgModule({
   declarations: [
