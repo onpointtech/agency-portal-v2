@@ -55,7 +55,7 @@ public class SurveyController {
 		return surveyBusinessService.submitClaim();
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4100")
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping(value = "/getSurvey/{surveyName}/{claimantId}", method = RequestMethod.GET)
 	public SurveyResponseSO  getSurvey(@PathVariable String surveyName,@PathVariable long claimantId) {
 		SurveyResponseSO surveyResponseSO = surveyBusinessService.getSurvey(surveyName,claimantId);
