@@ -17,6 +17,7 @@ export class EditClaimantDetailsComponent implements OnInit {
   id: number;
   updateClaimant = new UpdateClaimantSO();
   claimantProfileCopy =  new ClaimantSO();
+  claimantProfileEdit =  new ClaimantSO();
   profileForm: FormGroup;
   genderChoices = GENDERCHOICES;
   raceChoices = RACECHOICES;
@@ -24,11 +25,35 @@ export class EditClaimantDetailsComponent implements OnInit {
   educationLevelChoices = EDUCATIONLEVELCHOICES;
   languagePreferenceChoices = LANGUAGEPREFERENCECHOICES;
   debug = false;
+  newProfileForm: FormGroup;
 
   constructor(public activeModal: NgbActiveModal, private claimantService: ClaimantService, private portalService: PortalService, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.claimantProfileCopy = this.portalService.claimantSO;
+    this.claimantProfileCopy = {
+      claimantId: this.portalService.claimantSO.claimantId,
+      ssn: this.portalService.claimantSO.ssn,
+      dateOfBirth: this.portalService.claimantSO.dateOfBirth,
+      firstName: this.portalService.claimantSO.firstName,
+      middleInitial: this.portalService.claimantSO.middleInitial,
+      lastName: this.portalService.claimantSO.lastName,
+      homePhone: this.portalService.claimantSO.homePhone,
+      mobilePhone: this.portalService.claimantSO.mobilePhone,
+      languagePreference: this.portalService.claimantSO.languagePreference,
+      educationLevel: this.portalService.claimantSO.educationLevel,
+      gender: this.portalService.claimantSO.gender,
+      race: this.portalService.claimantSO.race,
+      ethnicity: this.portalService.claimantSO.ethnicity,
+      lastInsertUpdateTS: this.portalService.claimantSO.lastInsertUpdateTS,
+      lastInsertUpdateBy: this.portalService.claimantSO.lastInsertUpdateBy,
+      ivrPin: this.portalService.claimantSO.ivrPin,
+      documentDeliveryPreference: this.portalService.claimantSO.documentDeliveryPreference,
+      address: this.portalService.claimantSO.address,
+      email: this.portalService.claimantSO.email,
+      preferredOccupation: this.portalService.claimantSO.preferredOccupation,
+      alternateClaimantId: this.portalService.claimantSO.alternateClaimantId
+    }
+
 
     this.updateClaimant = {
       middleInitial: null,
@@ -47,21 +72,22 @@ export class EditClaimantDetailsComponent implements OnInit {
     };
 
     this.profileForm = this.fb.group({
-      ssn: [null],
-      alternateClaimantId: [null],    
-      firstName: [null,Validators.minLength(1)],
-      lastName: [null,Validators.minLength(1)],      
-      middleInitial: [null,Validators.minLength(1)],
-      homePhone: [null,Validators.minLength(1)],
-      mobilePhone: [null],
+        ssn: [null],
+        alternateClaimantId: [null],    
+        firstName: [null,Validators.minLength(1)],
+        lastName: [null,Validators.minLength(1)],      
+        middleInitial: [null,Validators.minLength(1)],
+        homePhone: [null,Validators.minLength(1)],
+        mobilePhone: [null],
 
-      //There is no way they can choose null, so no validations are needed
-      languagePreference: [null],
-      gender: [null],
-      educationLevel: [null],
-      race: [null],
-      ethnicity: [null],
-    });
+        //There is no way they can choose null, so no validations are needed
+        languagePreference: [null],
+        gender: [null],
+        educationLevel: [null],
+        race: [null],
+        ethnicity: [null],
+      }
+    );
   }
 
   close() {
@@ -89,7 +115,7 @@ export class EditClaimantDetailsComponent implements OnInit {
 
     this.id = this.portalService.claimantSO.claimantId;
     this.claimantService.updateClaimant(this.id, this.updateClaimant)
-      .subscribe(updateClaimant => { this.updateClaimant = updateClaimant });
+      .subscribe(updateClaimant => { this.updateClaimant = updateClaimant; console.log("reached this") });
     this.close();
   }
 

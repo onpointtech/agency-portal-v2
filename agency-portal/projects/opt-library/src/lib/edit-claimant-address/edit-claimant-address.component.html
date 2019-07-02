@@ -16,12 +16,12 @@
           <label for="addressLine1" class="col-xs-12 head control-label">Address Line 1:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.address[0].addressLine1"
-              formControlName="addressLine1" placeholder="{{claimantProfileCopy.address[0].addressLine1}}">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.addressLine1"
+              formControlName="addressLine1" placeholder="{{updateClaimantAddress.addressLine1}}">
           </div>
           <div *ngIf="debug==true">
             <br>
-            DEBUG: model.addressLine1 content: {{claimantProfileCopy.address[0].addressLine1}}
+            DEBUG: model.addressLine1 content: {{updateClaimantAddress.addressLine1}}
             <br>
             DEBUG: profileForm status: {{profileForm.status}}
             <br>
@@ -41,12 +41,12 @@
           <label for="addressLine2" class="col-xs-12 head control-label">Address Line 2:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.address[0].addressLine2"
-              formControlName="addressLine2" placeholder="{{claimantProfileCopy.address[0].addressLine2}}">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.addressLine2"
+              formControlName="addressLine2" placeholder="{{updateClaimantAddress.addressLine2}}">
           </div>
           <div *ngIf="debug==true">
             <br>
-            DEBUG: model.addressLine2 content: {{claimantProfileCopy.address[0].addressLine2}}
+            DEBUG: model.addressLine2 content: {{updateClaimantAddress.addressLine2}}
             <br>
             DEBUG: profileForm status: {{profileForm.status}}
             <br>
@@ -66,12 +66,12 @@
           <label for="city" class="col-xs-12 head control-label">City:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.address[0].city"
-              formControlName="city" placeholder="{{claimantProfileCopy.address[0].city}}">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.city"
+              formControlName="city" placeholder="{{updateClaimantAddress.city}}">
           </div>
           <div *ngIf="debug==true">
             <br>
-            DEBUG: model.city content: {{claimantProfileCopy.address[0].city}}
+            DEBUG: model.city content: {{updateClaimantAddress.city}}
             <br>
             DEBUG: profileForm status: {{profileForm.status}}
             <br>
@@ -92,8 +92,8 @@
             <!-- FORM INPUT -->
             <select
               [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'edit_field error': 'edit_field'"
-              formControlName="state" [compareWith]="compareFn" [(ngModel)]="claimantProfileCopy.address[0].state">
-              <option value="" disabled=true>{{claimantProfileCopy.address[0].state}}</option>
+              formControlName="state" [compareWith]="compareFn" [(ngModel)]="updateClaimantAddress.state">
+              <option value="" disabled=true>{{updateClaimantAddress.state}}</option>
               <option [value]="choice" *ngFor="let choice of stateChoices">{{choice}}</option>
             </select>
 
@@ -120,12 +120,12 @@
           <label for="zipCode" class="col-xs-12 head control-label">Zip Code:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.address[0].zipCode"
-              formControlName="zipCode" placeholder="{{claimantProfileCopy.address[0].zipCode}}">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.zipCode"
+              formControlName="zipCode" placeholder="{{updateClaimantAddress.zipCode}}">
           </div>
           <div *ngIf="debug==true">
             <br>
-            DEBUG: model.zipCode content: {{claimantProfileCopy.address[0].zipCode}}
+            DEBUG: model.zipCode content: {{updateClaimantAddress.zipCode}}
             <br>
             DEBUG: profileForm status: {{profileForm.status}}
             <br>
@@ -141,12 +141,12 @@
           <label for="zipExt" class="col-xs-12 head control-label">Zip Code Extension:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.address[0].zipExt"
-              formControlName="zipExt" placeholder="{{claimantProfileCopy.address[0].zipExt}}">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.zipExt"
+              formControlName="zipExt" placeholder="{{updateClaimantAddress.zipExt}}">
           </div>
           <div *ngIf="debug==true">
             <br>
-            DEBUG: model.zipExt content: {{claimantProfileCopy.address[0].zipExt}}
+            DEBUG: model.zipExt content: {{updateClaimantAddress.zipExt}}
             <br>
             DEBUG: profileForm status: {{profileForm.status}}
             <br>

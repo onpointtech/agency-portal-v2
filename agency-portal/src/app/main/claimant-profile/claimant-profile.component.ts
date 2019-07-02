@@ -15,6 +15,7 @@ import { EditClaimantAddressComponent } from 'projects/opt-library/src/lib/edit-
 export class ClaimantProfileComponent implements OnInit {
   claimantSO: ClaimantSO;
   profileForm: any;
+  claimantSOCopy: ClaimantSO;
 
   constructor(private route: ActivatedRoute,
     private modalService: ModalService,

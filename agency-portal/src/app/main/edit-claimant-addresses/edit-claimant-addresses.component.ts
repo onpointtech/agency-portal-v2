@@ -26,7 +26,11 @@ export class EditClaimantAddressesComponent {
   profileForm: FormGroup;
   debug = false;
 
-  constructor(private activeModal: NgbActiveModal, private claimantService: ClaimantService, private portalService: PortalService, private fb: FormBuilder) { }
+  constructor(private activeModal: NgbActiveModal,
+    private claimantService: ClaimantService,
+    private portalService: PortalService,
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
     this.claimantProfileCopy = this.portalService.claimantSO;
@@ -66,7 +70,8 @@ export class EditClaimantAddressesComponent {
       state: [null],
       zipCode: [null],
       zipExt: [null],
-    });
+    }
+  );
 
   }
 

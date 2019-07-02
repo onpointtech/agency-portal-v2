@@ -28,18 +28,40 @@ export class EditClaimantAddressComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal, private claimantService: ClaimantService, private portalService: PortalService, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.claimantProfileCopy = this.portalService.claimantSO;
+    // this.claimantProfileCopy = {
+    //   claimantId: this.portalService.claimantSO.claimantId,
+    //   ssn: this.portalService.claimantSO.ssn,
+    //   dateOfBirth: this.portalService.claimantSO.dateOfBirth,
+    //   firstName: this.portalService.claimantSO.firstName,
+    //   middleInitial: this.portalService.claimantSO.middleInitial,
+    //   lastName: this.portalService.claimantSO.lastName,
+    //   homePhone: this.portalService.claimantSO.homePhone,
+    //   mobilePhone: this.portalService.claimantSO.mobilePhone,
+    //   languagePreference: this.portalService.claimantSO.languagePreference,
+    //   educationLevel: this.portalService.claimantSO.educationLevel,
+    //   gender: this.portalService.claimantSO.gender,
+    //   race: this.portalService.claimantSO.race,
+    //   ethnicity: this.portalService.claimantSO.ethnicity,
+    //   lastInsertUpdateTS: this.portalService.claimantSO.lastInsertUpdateTS,
+    //   lastInsertUpdateBy: this.portalService.claimantSO.lastInsertUpdateBy,
+    //   ivrPin: this.portalService.claimantSO.ivrPin,
+    //   documentDeliveryPreference: this.portalService.claimantSO.documentDeliveryPreference,
+    //   address: this.portalService.claimantSO.address,
+    //   email: this.portalService.claimantSO.email,
+    //   preferredOccupation: this.portalService.claimantSO.preferredOccupation,
+    //   alternateClaimantId: this.portalService.claimantSO.alternateClaimantId
+    // }
 
     this.updateClaimantAddress = {
-      addressLine1: null,
-      addressLine2: null,
-      city: null,
-      state: null,
-      zipCode: null,
-      zipExt: null,
-      id: null,
-      lastInsertUpdateBy: null,
-      lastInsertUpdateTS: null
+      addressLine1: this.portalService.claimantSO.address[0].addressLine1,
+      addressLine2: this.portalService.claimantSO.address[0].addressLine2,
+      city: this.portalService.claimantSO.address[0].city,
+      state: this.portalService.claimantSO.address[0].state,
+      zipCode: this.portalService.claimantSO.address[0].zipCode,
+      zipExt: this.portalService.claimantSO.address[0].zipExt,
+      id: this.portalService.claimantSO.address[0].id,
+      lastInsertUpdateBy: this.portalService.claimantSO.address[0].lastInsertUpdateBy,
+      lastInsertUpdateTS: this.portalService.claimantSO.address[0].lastInsertUpdateTS
     };
 
     this.updateClaimant = {
@@ -59,13 +81,14 @@ export class EditClaimantAddressComponent implements OnInit {
     };
 
     this.profileForm = this.fb.group({
-      addressLine1: [null],
-      addressLine2: [null],
-      city: [null],
-      state: [null],
-      zipCode: [null],
-      zipExt: [null],
-    });
+        addressLine1: [null],
+        addressLine2: [null],
+        city: [null],
+        state: [null],
+        zipCode: [null],
+        zipExt: [null],
+      }
+    );
   }
 
   close() {
@@ -75,6 +98,22 @@ export class EditClaimantAddressComponent implements OnInit {
   updateClaimantDetails() {
     console.log(this.updateClaimant);
     console.log(this.updateClaimantAddress);
+
+    this.updateClaimant = {
+      middleInitial: null,
+      homePhone: null,
+      mobilePhone: null,
+      languagePreference: null,
+      educationLevel: null,
+      gender: null,
+      race: null,
+      ethnicity: null,
+      ivrPin: null,
+      documentDeliveryPreference: null,
+      lastInsertUpdateTS: null,
+      lastInsertUpdateBy: null,
+      address: [this.updateClaimantAddress],
+    };
 
     this.id = this.portalService.claimantSO.claimantId;
     this.claimantService.updateClaimant(this.id, this.updateClaimant)

@@ -21,6 +21,7 @@ export declare class EditClaimantDetailsComponent implements OnInit {
     educationLevelChoices: string[];
     languagePreferenceChoices: string[];
     debug: boolean;
+    newProfileForm: FormGroup;
     constructor(activeModal: NgbActiveModal, claimantService: ClaimantService, portalService: PortalService, fb: FormBuilder);
     ngOnInit(): void;
     close(): void;

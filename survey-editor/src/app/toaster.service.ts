@@ -7,7 +7,7 @@ import { ToastrService, ToastContainerDirective } from 'ngx-toastr';
 export class ToasterService {
   overlayContainer: ToastContainerDirective;
 
-  constructor(private toastr: ToastrService) { 
+  constructor(private toastr: ToastrService) {
     this.toastr = toastr;
   }
 

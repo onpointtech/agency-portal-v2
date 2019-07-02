@@ -124,21 +124,24 @@
             <!-- FORM INPUT -->
             <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.middleInitial"
               formControlName="middleInitial" placeholder="{{claimantProfileCopy.middleInitial}}">
-          </div>
-          
-          <!-- ERROR, THIS DOESNT SHOW UP FOR SOME REASON   -->
-          <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
 
-          <div class="text-danger">
-            <val-errors controlName="middleInitial">
-              <ng-template valError="minlength">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                  Please enter a valid Middle Initial.
-                </p>
-              </ng-template>
-            </val-errors>
+              <div class = "text-danger">
+                  <val-errors controlName = "middleInitial">
+                    <ng-template valError = "maxlength">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Middle Initial can only have a maximum of 1 letter
+                      </p>
+                    </ng-template>
+      
+                    <ng-template valError = "pattern">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Only a letter can be entered as a middle initial
+                      </p>
+                    </ng-template>
+                  </val-errors>
+                </div>
           </div>
 
           <div *ngIf="debug==true">
@@ -163,6 +166,18 @@
             <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.homePhone"
               formControlName="homePhone" placeholder="{{claimantProfileCopy.homePhone}}" mask="(000) 000-0000">
           </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "homePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
+
           <div *ngIf="debug==true">
             <br>
             DEBUG: model.homePhone content: {{claimantProfileCopy.homePhone}}
@@ -189,6 +204,18 @@
             <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.mobilePhone"
               formControlName="mobilePhone" placeholder="{{claimantProfileCopy.mobilePhone}}" mask="(000) 000-0000">
           </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "mobilePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
+            
           <div *ngIf="debug==true">
             <br>
             DEBUG: model.mobilePhone content: {{claimantProfileCopy.mobilePhone}}
@@ -378,6 +405,6 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="updateClaimantDetails()">Submit</button>
+  <button type = "submit" class="btn btn-primary"  (click)="updateClaimantDetails()">Submit</button>
   <button type="button" class="btn btn-info" (click)="close()">Cancel</button>
 </div>
