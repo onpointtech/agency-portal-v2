@@ -7,6 +7,7 @@ import "inputmask/dist/inputmask/phone-codes/phone.js";
 import { SurveyService } from './survey-editor-services/survey.service';
 import { Survey } from './service-objects/survey';
 import { Router } from '../../node_modules/@angular/router';
+import { ToasterService } from './toaster.service';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -56,7 +57,8 @@ export class SurveyCreatorComponent {
   survey: Survey;
 
   constructor( private surveyService: SurveyService,
-    private router: Router
+    private router: Router,
+    private toasterService: ToasterService
   ) {}
 
   ngOnInit() {
@@ -89,7 +91,9 @@ export class SurveyCreatorComponent {
     this.survey.surveyDefinition = JSON.stringify(parsed);
     this.surveyService
       .createSurvey(this.survey)
-      .subscribe(id => console.log(id));
-    this.router.navigateByUrl("survey-list");
+      .subscribe(id => {
+        console.log(id);
+        this.router.navigateByUrl("survey-list").then(result => this.toasterService.success("Success","You have successfully created the survey"))
+      });
   };
 }
