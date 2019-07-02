@@ -1,3 +1,9 @@
+//-------------------- BIG FILE LAYOUT HAS THESE --------------------------
+// a suggestion for coding standards
+// if the team is advanced, you can make a parser to automate documentation
+
+//---------------------------- IMPORT -------------------------------------
+
 //import angular modules
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,6 +25,7 @@ import { SurveyService } from 'projects/opt-library/src/portal-services/survey.s
 import { SurveyResponseSO } from 'projects/opt-library/src/service-objects/survey-response-so';
 import { delay } from 'rxjs/internal/operators/delay';
 
+  //---------------------------- COMPONENT -------------------------------------
 
 @Component({
   selector: 'app-claim',
@@ -27,9 +34,11 @@ import { delay } from 'rxjs/internal/operators/delay';
 })
 export class ClaimComponent implements OnInit {
 
+  //------------------- INPUT OUTPUT VARIABLES INITIALIZATION --------------------
+
   @Input() claimantId: number;
 
-  //variables initialization
+  //------------------------ VARIABLES INITIALIZATION ---------------------------
   surveyObject: any;
   surveyResponses: any;
   surveyDefinition: any;
@@ -41,6 +50,7 @@ export class ClaimComponent implements OnInit {
   completeLastPage: boolean;
   editor: SurveyEditor.SurveyEditor;
 
+//-------------------------------- CONSTRUCTOR ---------------------------------
   constructor(
     private route: ActivatedRoute,
     private surveyService: SurveyService,
@@ -50,6 +60,7 @@ export class ClaimComponent implements OnInit {
 
   }
 
+//--------------------------------- NG ON INIT ----------------------------------
 
   ngOnInit() {
     //set sweetAlert
@@ -90,6 +101,7 @@ export class ClaimComponent implements OnInit {
     this.getSurvey(SURVEY_TITLE, this.claimantId);
   }
 
+//-------------------------------- SURVEY FUNCTIONS  ---------------------------------
 
 
   getSurvey(surveyName: string, claimantId: number) {
@@ -184,37 +196,46 @@ export class ClaimComponent implements OnInit {
 
   }
 
-  //delete survey responses, isn't used
+  //DELETE SURVEY RESPONSES
+  //used to keep the database only have one response per claimant
   deleteAllSurveyResponses() {
     this.surveyService.deleteResponse(this.claimantId);
   }
 
+  //SENDS THE RESPONSES AS AN HTTP POST
   postSurvey(surveyResponseSO: SurveyResponseSO) {
     this.surveyService.createSurveyResponse(surveyResponseSO).subscribe();
   }
 
 
-  hideOriginalButtons() {
-    this.surveyObject.showNavigationButtons = false;
-    this.surveyObject.render();
-  }
 
-  // BUTTON FUNCTIONS
-
+//RESETS SURVEY VALUES LOCALLY AND TO THE DB
   resetSurveyValues() {
     //this only resets local survey values, doesnt update backend
     this.surveyResponses = null;
     this.surveyObject.clear();
 
-    //updates backend and restes all values there
+    //updates backend and resets all values there
     this.surveyService.deleteResponse(this.claimantId);
 
   }
 
+
+
+  //-------------------------------- BUTTON FUNCTIONS ---------------------------------
+
+  //ALERT MODULE FUNCTION
   confirmToReset() {
     this.resetSurveyValues();
     this.toasterService.danger("Warning", "Your answers have been reset");
     this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+  }
+
+
+  // A SPECIAL FUNCTION NEEDS TO BE CALLED TO SET THE ORIGINAL NAV BUTTONS TO HIDE
+  hideOriginalButtons() {
+    this.surveyObject.showNavigationButtons = false;
+    this.surveyObject.render();
   }
 
   resetButton() {
@@ -229,7 +250,6 @@ export class ClaimComponent implements OnInit {
 
 
   nextButton() {
-    // console.log("current page is", this.surveyObject.currentPageNo);
     this.surveyObject.nextPage();
     this.surveyObject.render();
   }
@@ -244,6 +264,7 @@ export class ClaimComponent implements OnInit {
     this.surveyObject.completeText = "Complete Page"
     this.surveyObject.render();
 
+    //
     this.storeResponseAndSend(this.surveyObject);
     this.completeLastPage = this.surveyObject.completeLastPage();
 
@@ -259,10 +280,7 @@ export class ClaimComponent implements OnInit {
   }
 
   saveAndExitButton() {
-
     this.storeResponseAndSend(this.surveyObject);
-
-
   }
 
 }

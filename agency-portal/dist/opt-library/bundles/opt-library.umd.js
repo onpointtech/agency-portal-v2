@@ -12136,9 +12136,6 @@
             var claimantUrl = "http://localhost:8080/api/claimant/registerClaimant";
             return this.http.post(claimantUrl, claimantSO);
         };
-        //   // this.toasterService.danger("ERROR", error);
-        //   console.error(error.message || error);
-        //   return Promise.reject(error.message || error);
         /**
          * @param {?} id
          * @param {?} updateClaimantSO
