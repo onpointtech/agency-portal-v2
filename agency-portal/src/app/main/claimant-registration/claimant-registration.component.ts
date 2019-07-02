@@ -19,6 +19,7 @@ import { ToasterService } from 'projects/opt-library/src/portal-services/toaster
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
 import { Address } from 'projects/opt-library/src/service-objects/address';
 import { STATECHOICES, GENDERCHOICES, RACECHOICES, ETHNICITYCHOICES, EDUCATIONLEVELCHOICES, LANGUAGEPREFERENCECHOICES } from '../../choices/choices'
+import { Observable } from 'rxjs/internal/Observable';
 
 
 
@@ -34,6 +35,7 @@ export class ClaimantRegistrationComponent implements OnInit {
   userProfileModel = new ClaimantSO();
   addressInitial = new Address();
   claimantId: number;
+  claimantIdObservable$: Observable<number>;
   stateChoices = STATECHOICES;
   genderChoices = GENDERCHOICES;
   raceChoices = RACECHOICES;
@@ -189,10 +191,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       };
   }
 
-
-
-
-  debug = true;
+  debug = false;
   submitted = false;
 
   convertDateType() {
@@ -205,21 +204,10 @@ export class ClaimantRegistrationComponent implements OnInit {
 
 
   verifyBeforeSubmit() {
-
-
-
     if (this.profileForm.valid) {
 
-      //TODO onsubmit should return a long
-      // use the value of onSubmit to update the claimantId
-      // this.claimantId = this.onSubmit() // if this returns a long
       this.convertDateType();
-      this.claimantService
-        .registerClaimant(this.userProfileModel);
-      console.log("Submitted form");
-      this.toasterService.success("Success", "Form was submitted");
-      //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
-      // this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+      this.onSubmit();
     }
     else {
       this.profileForm.markAllAsTouched();
@@ -232,16 +220,21 @@ export class ClaimantRegistrationComponent implements OnInit {
   }
 
 
+
   //once register claimant service is modified, can use this to return a claimantId and reroute
   onSubmit() {
-    this.claimantId = this.claimantService
-      .registerClaimant(this.userProfileModel);
-    console.log("claimant id in registration is now", this.claimantId);
-    console.log("Submitted form");
-    this.toasterService.success("Success", "Form was submitted");
+    this.claimantService
+      .registerClaimant(this.userProfileModel).subscribe(
+        data => {
+          this.claimantId = data;
+          console.log("claimant id in registration is now", this.claimantId);
+          console.log("Submitted form");
+          this.toasterService.success("Success", "Form was submitted");
 
-    //redirect on survey submission, only if you update your claimantId to what is returned by onSubmit
-    this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+          // redirect after
+          this.router.navigate([`/main/claimant-overview/${this.claimantId}`]);
+        }
+      );
   }
 
 
@@ -256,7 +249,7 @@ export class ClaimantRegistrationComponent implements OnInit {
       id: null,
       addressLine1: 'Old town',
       addressLine2: 'road',
-      state: this.stateChoices[this.randomInteger(this.stateChoices.length-1)],
+      state: this.stateChoices[this.randomInteger(this.stateChoices.length - 1)],
       city: 'Owl',
       zipCode: Math
         .random()
@@ -279,11 +272,11 @@ export class ClaimantRegistrationComponent implements OnInit {
         lastName: this.vowel().toUpperCase() + 'b' + this.vowel() + 'rd' + this.vowel() + 'l' + this.vowel() + 'z' + this.vowel(),
         homePhone: Math.random().toString(10).substr(2, 10),
         mobilePhone: Math.random().toString(10).substr(2, 10),
-        languagePreference: this.languagePreferenceChoices[this.randomInteger(this.languagePreferenceChoices.length-1)],
-        educationLevel: this.educationLevelChoices[this.randomInteger(this.educationLevelChoices.length-1)],
-        gender: this.genderChoices[this.randomInteger(this.genderChoices.length-1)],
-        race: this.raceChoices[this.randomInteger(this.raceChoices.length-1)],
-        ethnicity: this.ethnicityChoices[this.randomInteger(this.ethnicityChoices.length-1)],
+        languagePreference: this.languagePreferenceChoices[this.randomInteger(this.languagePreferenceChoices.length - 1)],
+        educationLevel: this.educationLevelChoices[this.randomInteger(this.educationLevelChoices.length - 1)],
+        gender: this.genderChoices[this.randomInteger(this.genderChoices.length - 1)],
+        race: this.raceChoices[this.randomInteger(this.raceChoices.length - 1)],
+        ethnicity: this.ethnicityChoices[this.randomInteger(this.ethnicityChoices.length - 1)],
         lastInsertUpdateTS: null,
         lastInsertUpdateBy: '',
         ivrPin: '',
@@ -294,10 +287,13 @@ export class ClaimantRegistrationComponent implements OnInit {
         alternateClaimantId: '',
       };
 
-    //submit the info to the server
-      this.onSubmit();
+    //after filling it up, it calls submit
+    //this.onSubmit();
 
   }
+
+
+
 
   vowel(): string {
     return Math.random().toString(5).replace('0.', '').substr(0, 1).replace('1', 'a').replace('0', 'e').replace('2', 'i').replace('3', 'o').replace('4', 'u')
@@ -315,7 +311,7 @@ export class ClaimantRegistrationComponent implements OnInit {
     return 1990 + Math.floor(Math.random() * 29)
   }
 
-  randomInteger(max : number): number {
+  randomInteger(max: number): number {
     return Math.floor(Math.random() * max)
   }
 

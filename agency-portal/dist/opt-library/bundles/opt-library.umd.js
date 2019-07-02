@@ -12136,79 +12136,15 @@
             var claimantUrl = "http://localhost:8080/api/claimant/registerClaimant";
             return this.http.post(claimantUrl, claimantSO);
         };
-        // //to do, change return type from promise to long
-        // //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
-        // public registerClaimant(claimantSO: ClaimantSO) {
-        //   console.log("Inside register claimant api");
-        //   var claimantId;
-        //   const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
-        //   return this.http.post(claimantUrl, claimantSO).pipe(catchError((err: any) => {
-        //     this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
-        //     return EMPTY;
-        //   }))
-        //     .toPromise()
-        //     .then(this.extractData);
-        // }
-        // public extractData(res: Response) {
-        //   this.toasterService.success("Success!", "Profile has been registered");
-        //   console.log(res);
-        // }
-        // public handleErrorPromise(error: Response | any) {
         //   // this.toasterService.danger("ERROR", error);
         //   console.error(error.message || error);
         //   return Promise.reject(error.message || error);
-        // }
-        // //to do, change return type from promise to long
-        // //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
-        // public registerClaimant(claimantSO: ClaimantSO) {
-        //   console.log("Inside register claimant api");
-        //   var claimantId;
-        //   const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
-        //   return this.http.post(claimantUrl, claimantSO).pipe(catchError((err: any) => {
-        //     this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
-        //     return EMPTY;
-        //   }))
-        //     .toPromise()
-        //     .then(this.extractData);
-        // }
-        // public extractData(res: Response) {
-        //   this.toasterService.success("Success!", "Profile has been registered");
-        //   console.log(res);
-        // }
-        // public handleErrorPromise(error: Response | any) {
-        //   // this.toasterService.danger("ERROR", error);
-        //   console.error(error.message || error);
-        //   return Promise.reject(error.message || error);
-        // }
         /**
          * @param {?} id
          * @param {?} updateClaimantSO
          * @return {?}
          */
-        ClaimantService.prototype.updateClaimant = 
-        // //to do, change return type from promise to long
-        // //in claimant-registration.ts, take in the response(claimant id) and use it as a router link
-        // public registerClaimant(claimantSO: ClaimantSO) {
-        //   console.log("Inside register claimant api");
-        //   var claimantId;
-        //   const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
-        //   return this.http.post(claimantUrl, claimantSO).pipe(catchError((err: any) => {
-        //     this.toasterService.danger("ERROR", "The port you are trying to access cannot be reached.");
-        //     return EMPTY;
-        //   }))
-        //     .toPromise()
-        //     .then(this.extractData);
-        // }
-        // public extractData(res: Response) {
-        //   this.toasterService.success("Success!", "Profile has been registered");
-        //   console.log(res);
-        // }
-        // public handleErrorPromise(error: Response | any) {
-        //   // this.toasterService.danger("ERROR", error);
-        //   console.error(error.message || error);
-        //   return Promise.reject(error.message || error);
-        // }
-        /**
+        ClaimantService.prototype.updateClaimant = /**
          * @param {?} id
          * @param {?} updateClaimantSO
          * @return {?}

@@ -105,21 +105,22 @@ export class ClaimComponent implements OnInit {
           //Saves the title of the survey
           this.surveyTitle = survey.surveyName;
 
-
+          // ERROR CHECKING AND VALIDATION
           if (survey.surveyResponse != null) {
             //if doesnt return anything saves the responses and parse
             this.surveyResponses = JSON.parse(survey.surveyResponse);
           }
           else {
-            console.log("User has no previous survey response");
+            console.log("Survey Error","no previous survey response");
           }
 
+        //surveyDefinition saves the surveyDefinition from the survey
+
           if (survey.surveyDefinition != null) {
-            //surveyDefinition saves the surveyDefinition from the survey
             this.surveyDefinition = JSON.parse(survey.surveyDefinition);
           }
           else {
-            console.log("User has no previous survey definition");
+            console.log("Survey Error","No previous survey definition");
           }
 
           //now the surveyDefinition is loaded, we can now show the survey
@@ -135,9 +136,16 @@ export class ClaimComponent implements OnInit {
 
   //RENDER A SURVEY
   showSurveyWithResponses(surveyDefinition: any) {
-    this.surveyObject = new Survey.ReactSurveyModel(surveyDefinition);
-    this.surveyObject.data = this.surveyResponses;
-    Survey.SurveyNG.render('surveyContainer', { model: this.surveyObject });
+    this.surveyObject = new Survey.ReactSurveyModel(surveyDefinition);  
+    //ERROR CHECKING
+    if(this.surveyObject != null){
+      this.surveyObject.data = this.surveyResponses;
+      Survey.SurveyNG.render('surveyContainer', { model: this.surveyObject });
+    }
+    else{
+      console.log("Survey Error", "survey cannot be rendered");
+    }
+
     //updates backend and restes all values there
     this.surveyService.deleteResponse(this.claimantId);
   }
@@ -168,6 +176,12 @@ export class ClaimComponent implements OnInit {
       surveyDefinition: JSON.stringify(this.surveyDefinition),
       surveyResponse: JSON.stringify(this.surveyResponses),
     }
+
+    if(this.surveyResponseSO == null){
+      console.log("Survey Error","Survey cannot be saved to a service object");
+
+    }
+
   }
 
   //delete survey responses, isn't used

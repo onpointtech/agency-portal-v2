@@ -12,34 +12,34 @@
   <p>{{ this.surveyResponseSO | json }}</p>
 </div>
 
-<div class="col-xs-12 col-md-12 padding-12 padding-top">
-    <button *ngIf="(this.surveyObject.currentPageNo > 0) && (this.completeLastPage == false)" 
-      type="button" class="btn btn-primary" (click)="prevButton()">
+<div *ngIf="this.surveyObject!=null">
+  <div class="col-xs-12 col-md-12 padding-12 padding-top">
+    <button *ngIf="(this.surveyObject.currentPageNo > 0) && (this.completeLastPage == false)" type="button"
+      class="btn btn-primary" (click)="prevButton()">
       Previous
     </button>
-    <button  *ngIf= "this.surveyObject.currentPageNo < this.surveyObject.visiblePageCount - 1" 
-      type="button" class="btn btn-primary" (click)="nextButton()">
+    <button *ngIf="this.surveyObject.currentPageNo < this.surveyObject.visiblePageCount - 1" type="button"
+      class="btn btn-primary" (click)="nextButton()">
       Next
     </button>
-    <button 
+    <button
       *ngIf="(this.surveyObject.currentPageNo == this.surveyObject.visiblePageCount - 1) && (this.completeLastPage == false)"
       type="button" class="btn btn-primary" (click)="completeButton()">
       Complete
     </button>
+  </div>
 </div>
 
 <div class="col-xs-12 col-md-12 padding-top text-right">
 
-  <button 
-  *ngIf="this.completeLastPage == false"
-  type="button" class="btn btn-info margin-right" (click)="resetButton()" >
-      <!-- routerLink="/main/claimant-overview/{{claimantId}}" -->
-      Reset
+  <button *ngIf="this.completeLastPage == false" type="button" class="btn btn-info margin-right"
+    (click)="resetButton()">
+    <!-- routerLink="/main/claimant-overview/{{claimantId}}" -->
+    Reset
   </button>
 
-  <button
-  *ngIf="this.completeLastPage == false"
-  type="button" class="btn btn-primary" (click)="saveAndExitButton()" routerLink="/main/claimant-overview/{{claimantId}}" >
+  <button *ngIf="this.completeLastPage == false" type="button" class="btn btn-primary" (click)="saveAndExitButton()"
+    routerLink="/main/claimant-overview/{{claimantId}}">
     Save and Exit
   </button>
 

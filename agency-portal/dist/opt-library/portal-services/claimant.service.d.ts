@@ -11,6 +11,6 @@ export declare class ClaimantService {
     getClaimantById(claimantId: number): Observable<ClaimantSO>;
     getAllClaimants(): Observable<ClaimantSO[]>;
     searchClaimant(claimantInfo: string): Observable<ClaimantSO[]>;
-    registerClaimant(claimantSO: ClaimantSO): any;
+    registerClaimant(claimantSO: ClaimantSO): Observable<number>;
     updateClaimant(id: number, updateClaimantSO: UpdateClaimantSO): Observable<UpdateClaimantSO>;
 }
