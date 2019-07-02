@@ -4,3 +4,4 @@ ClaimantServiceNew/.settings/org.eclipse.m2e.core.prefs
 ClaimantServiceNew/target/
 node_modules/
 agency-portal/dist/
+agency-portal/dist/opt-library/

@@ -14,6 +14,7 @@ export declare class EditClaimantDetailsComponent implements OnInit {
     id: number;
     updateClaimant: UpdateClaimantSO;
     claimantProfileCopy: ClaimantSO;
+    claimantProfileEdit: ClaimantSO;
     profileForm: FormGroup;
     genderChoices: string[];
     raceChoices: string[];
@@ -21,6 +22,7 @@ export declare class EditClaimantDetailsComponent implements OnInit {
     educationLevelChoices: string[];
     languagePreferenceChoices: string[];
     debug: boolean;
+    newProfileForm: FormGroup;
     constructor(activeModal: NgbActiveModal, claimantService: ClaimantService, portalService: PortalService, fb: FormBuilder);
     ngOnInit(): void;
     close(): void;

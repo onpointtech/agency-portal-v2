@@ -3,6 +3,9 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ValdemortModule } from 'ngx-valdemort';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from "./app.component";
 import { SurveyComponent } from "./survey.component";
@@ -14,12 +17,13 @@ import { CommonModule } from '../../node_modules/@angular/common';
 import { SurveyDisplayComponent } from './survey-display/survey-display.component';
 
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     SurveyComponent,
     SurveyCreatorComponent,
     SurveyListComponent,
     SurveyEditComponent,
-    SurveyDisplayComponent,
+    SurveyDisplayComponent
   ],
   imports: [
     CommonModule,
@@ -28,6 +32,15 @@ import { SurveyDisplayComponent } from './survey-display/survey-display.componen
     HttpClientModule,
     MatTableModule,
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-top-full-width",
+      closeButton: true,
+      disableTimeOut: true,
+      maxOpened: 1,
+    }),
+    ValdemortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

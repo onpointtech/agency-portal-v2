@@ -6,6 +6,7 @@ import * as widgets from "surveyjs-widgets";
 import "inputmask/dist/inputmask/phone-codes/phone.js";
 import { SurveyService } from './survey-editor-services/survey.service';
 import { Survey } from './service-objects/survey';
+import { Router } from '../../node_modules/@angular/router';
 
 widgets.icheck(SurveyKo);
 widgets.select2(SurveyKo);
@@ -36,6 +37,7 @@ var CkEditor_ModalEditor = {
     }
   }
 };
+
 SurveyCreator.SurveyPropertyModalEditor.registerCustomWidget(
   "html",
   CkEditor_ModalEditor
@@ -53,7 +55,9 @@ export class SurveyCreatorComponent {
   @Output() surveySaved: EventEmitter<Object> = new EventEmitter();
   survey: Survey;
 
-  constructor(private surveyService: SurveyService) {}
+  constructor( private surveyService: SurveyService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.survey = {
@@ -86,5 +90,6 @@ export class SurveyCreatorComponent {
     this.surveyService
       .createSurvey(this.survey)
       .subscribe(id => console.log(id));
+    this.router.navigateByUrl("survey-list");
   };
 }

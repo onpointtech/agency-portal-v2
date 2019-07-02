@@ -3,9 +3,9 @@
       <h1>No Surveys</h1>
   </ng-container>
   <ng-template #showTable>
-    <mat-table [dataSource]="survey">
+    <mat-table [dataSource]="survey" matSort>
         <ng-container matColumnDef="surveyId">
-          <th mat-header-cell *matHeaderCellDef>surveyId</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>surveyId</th>
           <td mat-cell *matCellDef="let Survey" >
             <a class="parent" style="display: block; color:blue;" routerLink="/survey-edit/{{Survey.surveyId}}">
             {{Survey.surveyId}}

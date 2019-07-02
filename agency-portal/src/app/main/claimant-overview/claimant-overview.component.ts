@@ -45,6 +45,7 @@ export class ClaimantOverviewComponent implements OnInit {
     .subscribe(claimantSO => { 
       this.claimantSO = claimantSO; 
       this.claimantUsed.claimantSO = this.claimantSO;
+      this.claimantUsed.claimantSOCopy = this.claimantSO;
      });
   }
 

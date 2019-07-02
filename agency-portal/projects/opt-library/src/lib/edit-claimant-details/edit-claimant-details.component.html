@@ -118,64 +118,61 @@
       <div class="col-xs-12 no-padding">
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Middle Initial:
+              <span class = "text-danger">*</span>Middle Initial:
           </label>
-          <div class="col-xs-12 has-feedback">
+          <div [class]="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
             <!-- FORM INPUT -->
-            <input class="edit_field" type="text" [(ngModel)]="claimantProfileCopy.middleInitial"
-              formControlName="middleInitial" placeholder="{{claimantProfileCopy.middleInitial}}">
-          </div>
-          
-          <!-- ERROR, THIS DOESNT SHOW UP FOR SOME REASON   -->
-          <span *ngIf="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
-            class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <input [class]="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched ? 'edit_field error': 'edit_field'" type="text" [(ngModel)]="claimantProfileCopy.middleInitial"
+              formControlName="middleInitial" [placeholder] = "profileForm.controls['middleInitial'].invalid? '(Required)' : '' ">
 
-          <div class="text-danger">
-            <val-errors controlName="middleInitial">
-              <ng-template valError="minlength">
-                <p class="ng-scope">
-                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                  Please enter a valid Middle Initial.
-                </p>
-              </ng-template>
-            </val-errors>
-          </div>
+            <span *ngIf = "profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
+              class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+              aria-hidden = "true">
+            </span>
 
-          <div *ngIf="debug==true">
-            <br>
-            DEBUG: model.middleInitial content: {{claimantProfileCopy.middleInitial}}
-            <br>
-            DEBUG: profileForm status: {{profileForm.status}}
-            <br>
-            DEBUG: profileForm dirty: {{profileForm.dirty}}
-            <br>
-            DEBUG: profileForm touched: {{profileForm.touched}}
-            <br>
-            DEBUG: model content: {{ claimantProfileCopy | json }}
-            <br>
+              <div class = "text-danger">
+                  <val-errors controlName = "middleInitial">
+                    <ng-template valError = "maxlength">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Middle Initial can only have a maximum of 1 letter
+                      </p>
+                    </ng-template>
+      
+                    <ng-template valError = "pattern">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Only a letter can be entered as a middle initial
+                      </p>
+                    </ng-template>
+                  </val-errors>
+                </div>
           </div>
 
         </div>
         <div class="col-xs-12 col-md-6">
-          <label for="homePhone" class="col-xs-12 head control-label">Home Phone:
+          <label for="homePhone" class="col-xs-12 head control-label">
+            <span class = "text-danger">*</span>Home Phone:
           </label>
-          <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.homePhone"
-              formControlName="homePhone" placeholder="{{claimantProfileCopy.homePhone}}" mask="(000) 000-0000">
+          <div [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
+            [(ngModel)] = "claimantProfileCopy.homePhone"
+            formControlName = "homePhone"
+            mask = "(000) 000-0000">
           </div>
-          <div *ngIf="debug==true">
-            <br>
-            DEBUG: model.homePhone content: {{claimantProfileCopy.homePhone}}
-            <br>
-            DEBUG: profileForm status: {{profileForm.status}}
-            <br>
-            DEBUG: profileForm dirty: {{profileForm.dirty}}
-            <br>
-            DEBUG: profileForm touched: {{profileForm.touched}}
-            <br>
-            DEBUG: model content: {{ claimantProfileCopy | json }}
-            <br>
-          </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "homePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
         </div>
       </div>
 
@@ -186,28 +183,30 @@
           <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
           </label>
           <div class="col-xs-12 has-feedback">
-            <input type="text" class="form-control edit_field" [(ngModel)]="claimantProfileCopy.mobilePhone"
-              formControlName="mobilePhone" placeholder="{{claimantProfileCopy.mobilePhone}}" mask="(000) 000-0000">
+            <input type = "text"
+            class = "form-control edit_field"
+            [(ngModel)] = "claimantProfileCopy.mobilePhone"
+            formControlName = "mobilePhone"
+            placeholder = "(000) 000-000"
+            mask = "(000) 000-0000">
           </div>
-          <div *ngIf="debug==true">
-            <br>
-            DEBUG: model.mobilePhone content: {{claimantProfileCopy.mobilePhone}}
-            <br>
-            DEBUG: profileForm status: {{profileForm.status}}
-            <br>
-            DEBUG: profileForm dirty: {{profileForm.dirty}}
-            <br>
-            DEBUG: profileForm touched: {{profileForm.touched}}
-            <br>
-            DEBUG: model content: {{ claimantProfileCopy | json }}
-            <br>
-          </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "mobilePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
         </div>
 
 
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Language Preference:
+              <span class = "text-danger">*</span>Language Preference:
           </label>
           <div
             [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
@@ -245,7 +244,7 @@
       <div class="col-xs-12 no-padding">
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Education Level:
+              <span class = "text-danger">*</span>Education Level:
           </label>
           <div
             [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
@@ -278,7 +277,7 @@
 
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Gender:
+              <span class = "text-danger">*</span>Gender:
           </label>
           <div
             [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
@@ -312,7 +311,7 @@
       <div class="col-xs-12 no-padding">
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Race:
+              <span class = "text-danger">*</span>Race:
           </label>
           <div
             [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
@@ -342,7 +341,7 @@
 
         <div class="col-xs-12 col-md-6">
           <label class="col-xs-12 head control-label">
-            Ethnicity:
+              <span class = "text-danger">*</span>Ethnicity:
           </label>
           <div
             [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
@@ -378,6 +377,6 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="updateClaimantDetails()">Submit</button>
+  <button type = "submit" class="btn btn-primary"  (click)="updateClaimantDetails()">Submit</button>
   <button type="button" class="btn btn-info" (click)="close()">Cancel</button>
 </div>
