@@ -1,5 +1,5 @@
 # Welcome to our angular portal
-We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to use this project in the future
+We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to be able to use this project in the future
 
 
 ## How to run the angular project
@@ -224,6 +224,8 @@ A basic code structure will be as follows
 
 Here is a sample
 ```
+//---------------------------------------- IMPORT --------------------------------------
+
 //import angular modules (@angular...)
 import { ThisModule } from '@angular..';
 
@@ -245,22 +247,33 @@ import { ThisService } from 'here';
  //import models or constants
 import { OTHERMODELS } from '../../this place';
 
+//----------------------------------- COMPONENT --------------------------------------
+
 
 @Component({
 ...
 })
 export class SomeComponent {
+//------------------------- INPUT OUTPUT VARIABLES INITIALIZATION --------------------
+
 //Input && Output goes first
   @Input() input;
   @Output() output; // this is usually an event emitter
+
+//------------------------------ VARIABLES INITIALIZATION ----------------------------
 
 //Variable declarations goes next
   variable1: number;
   variablesAreCamelCase: any;
   variablesCanGetFrom = OTHERMODELS;
 
+//------------------------------------ CONSTRUCTOR ----------------------------------
+
 //Constructor goes next
   constructor(public variable) { }
+
+//------------------------------------- NG ON INIT ----------------------------------
+
 
 //NgOnInit goes next
   ngOnInit() {
@@ -268,10 +281,15 @@ export class SomeComponent {
     //instantiate the variables here
   }
 
+//------------------------------------ FUNCTIONS  SET 1 ----------------------------
+
 
 //Next set of functions goes next
   function1() {
   }
+
+//------------------------------------ FUNCTIONS  SET 2 ----------------------------
+
 
   function2() {
   }
