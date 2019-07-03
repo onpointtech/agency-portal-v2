@@ -1,6 +1,6 @@
 //import angular modules
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router, NavigationEnd } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 
 //import external modules

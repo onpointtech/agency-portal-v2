@@ -135,9 +135,14 @@ export class EditClaimantDetailsComponent implements OnInit {
 
 
     this.id = this.portalService.claimantSO.claimantId;
-    this.claimantService.updateClaimant(this.id, this.updateClaimant)
-      .subscribe(updateClaimant => { this.updateClaimant = updateClaimant; console.log("reached this") });
     this.close();
+    return this.claimantService.updateClaimant(this.id, this.updateClaimant)
+    .subscribe(updateClaimant => {
+      this.updateClaimant = updateClaimant;
+      console.log(this.claimantProfileCopy);
+      this.portalService.claimantSO = this.claimantProfileCopy;
+      console.log(this.portalService.claimantSO);
+    });
   }
 
   compareFn(c1: any, c2: any): boolean {

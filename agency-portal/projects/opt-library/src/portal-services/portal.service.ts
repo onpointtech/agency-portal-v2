@@ -6,7 +6,6 @@ import { ClaimantSO } from '../service-objects/claimant-so';
 })
 export class PortalService {
   claimantSO: ClaimantSO;
-  claimantSOCopy: ClaimantSO;
   
   constructor() { }
 }
