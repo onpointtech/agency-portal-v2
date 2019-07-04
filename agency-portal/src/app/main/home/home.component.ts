@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
     let userDetails = this.keycloakService.getKeycloakInstance();
+    console.log(userDetails);
     console.log(userDetails.realmAccess["roles"]);
     console.log(userDetails.profile["email"]);
   }

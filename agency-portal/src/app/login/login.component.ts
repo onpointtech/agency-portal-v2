@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,12 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private keycloakService: KeycloakService, private router: Router) { }
 
   ngOnInit() {
+    if(this.keycloakService.isLoggedIn()){
+      this.router.navigate([`/main`]);
+    }
   }
 
 }
