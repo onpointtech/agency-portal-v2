@@ -7,6 +7,9 @@ let keycloakConfig: KeycloakConfig = {
   url: 'https://auth.opt-dev.optimumui.com/auth',
   realm: 'externalusers',
   clientId: 'claimant'
+  // url: 'http://localhost:8080/auth',
+  // realm: 'Master',
+  // clientId: 'agency-portal'
 };
 
 export const environment = {

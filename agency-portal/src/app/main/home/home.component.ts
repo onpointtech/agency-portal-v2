@@ -1,6 +1,6 @@
 
 //import angular modules
-import { Component, OnInit, ViewChild, APP_INITIALIZER } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 //import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { ToastContainerDirective } from 'ngx-toastr';
 
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
-import { KeycloakService } from 'keycloak-angular';
+import { KeycloakService } from '../../../../node_modules/keycloak-angular';
 
 //import models or constants
 
@@ -24,11 +24,14 @@ export class HomeComponent implements OnInit {
 
   @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
 
-  constructor(private toasterService: ToasterService) { }
+  constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService) { }
 
 
   ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
+    let userDetails = this.keycloakService.getKeycloakInstance();
+    console.log(userDetails.realmAccess["roles"]);
+    console.log(userDetails.profile["email"]);
   }
 
   success(){
