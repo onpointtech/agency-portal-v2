@@ -24,11 +24,8 @@ export class MainComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
   }
-
-  ngOnDestroy(): void {
-
-  }
 }
+

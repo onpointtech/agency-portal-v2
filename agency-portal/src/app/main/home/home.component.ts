@@ -1,6 +1,6 @@
 
 //import angular modules
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, APP_INITIALIZER } from '@angular/core';
 
 //import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
@@ -10,6 +10,7 @@ import { ToastContainerDirective } from 'ngx-toastr';
 
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
+import { KeycloakService } from 'keycloak-angular';
 
 //import models or constants
 
@@ -18,8 +19,6 @@ import { ToasterService } from 'projects/opt-library/src/portal-services/toaster
   templateUrl: './home.component.html',
   styles: []
 })
-
-
 
 export class HomeComponent implements OnInit {
 
@@ -36,9 +35,5 @@ export class HomeComponent implements OnInit {
     this.toasterService.success("Success!", "Welcome to Home");
  
   }
-
-
-
-
-  }
+}
 

@@ -1,6 +1,6 @@
 //import angular modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
@@ -33,19 +33,8 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
-
-//import services
-//import models or constants
-
-
-
-
-
-
-
-
-
-
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from './app-init';
 
 @NgModule({
   declarations: [
@@ -78,6 +67,7 @@ import { ClaimComponent } from './main/claim/claim.component';
     }),
     ToastContainerModule,
     HttpClientModule,
+    KeycloakAngularModule,
     MatTableModule,
     FormsModule,
     NgxMaskModule.forRoot(),
@@ -93,6 +83,12 @@ import { ClaimComponent } from './main/claim/claim.component';
   ],
   entryComponents: [],
   providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
+    },
     DatePipe, 
     MaskPipe
   ],
