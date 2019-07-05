@@ -19,6 +19,10 @@ export class AppComponent {
     if (await this.keycloakService.isLoggedIn()) {
       this.userDetails = await this.keycloakService.loadUserProfile();
     }
+
+    if(await this.keycloakService.isTokenExpired()) {
+      this.doLogout();
+    }
   }
 
   async doLogout() {

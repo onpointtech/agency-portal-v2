@@ -26,6 +26,6 @@ export declare class EditClaimantDetailsComponent implements OnInit {
     constructor(activeModal: NgbActiveModal, claimantService: ClaimantService, portalService: PortalService, fb: FormBuilder);
     ngOnInit(): void;
     close(): void;
-    updateClaimantDetails(): void;
+    updateClaimantDetails(): import("rxjs").Subscription;
     compareFn(c1: any, c2: any): boolean;
 }

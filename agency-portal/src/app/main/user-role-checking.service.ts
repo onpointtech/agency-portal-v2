@@ -8,7 +8,7 @@ export class UserRoleCheckingService {
   constructor() { }
 
   userCanAccess(allowedUsers: string[], userRoles: string[]): boolean {
-    var accessPermission: boolean = true;
+    var accessPermission: boolean = false;
 
     for(var i = 0; i < userRoles.length; i++){
       if(allowedUsers.some(x => x === userRoles[i])) {

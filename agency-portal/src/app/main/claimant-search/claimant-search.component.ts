@@ -24,7 +24,7 @@ import { UserRoleCheckingService } from '../user-role-checking.service';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  allowedRoles = ["hello", "hello1"];
+  allowedRoles = ["asdfgh", "hello1"];
   public claimantInfo: string;
   claimantSO: ClaimantSO[];
   previousUrl: any;
@@ -47,23 +47,24 @@ export class ClaimantSearchComponent implements OnInit {
     let userDetails = this.keycloakService.getKeycloakInstance();
     console.log(userDetails.realmAccess["roles"]);
     if(!(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"]))){
-      console.log(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"]));
       this.router.navigate(['/main/home']);
-    }
-    this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-    this.searchClaimant(this.claimantInfo);
-    this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+      this.alert.error("Error","You are not allowed to visit this page");
+    } else {
+      this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
+      this.searchClaimant(this.claimantInfo);
+      this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
 
-    //for the sweet alert
-    this.noSearchResultObject = {
-      type: 'info',
-      title: "Info",
-      text: "Sorry, there are no results for the given string",
-      showCancelButton: true,
-      confirmButtonText: 'Go to Claimant Registration',
-      cancelButtonText: 'Cancel',
-      confirmButtonClass: 'btn btn-primary',
-      cancelButtonClass: 'btn btn-info',
+      //for the sweet alert
+      this.noSearchResultObject = {
+        type: 'info',
+        title: "Info",
+        text: "Sorry, there are no results for the given string",
+        showCancelButton: true,
+        confirmButtonText: 'Go to Claimant Registration',
+        cancelButtonText: 'Cancel',
+        confirmButtonClass: 'btn btn-primary',
+        cancelButtonClass: 'btn btn-info',
+      }
     }
   }
 

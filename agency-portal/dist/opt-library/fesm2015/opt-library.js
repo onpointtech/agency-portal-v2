@@ -11978,7 +11978,7 @@ class ClaimantService {
     constructor(http, toasterService) {
         this.http = http;
         this.toasterService = toasterService;
-        this.url = "http://localhost:8080/api/claimant";
+        this.url = "http://localhost:8082/api/claimant";
     }
     /**
      * @param {?} claimantId
@@ -12028,7 +12028,7 @@ class ClaimantService {
     registerClaimant(claimantSO) {
         console.log("Inside register claimant api");
         /** @type {?} */
-        const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
+        const claimantUrl = `${this.url}/registerClaimant`;
         return this.http.post(claimantUrl, claimantSO);
     }
     /**
@@ -12331,13 +12331,18 @@ class EditClaimantDetailsComponent {
             address: null,
         };
         this.id = this.portalService.claimantSO.claimantId;
-        this.claimantService.updateClaimant(this.id, this.updateClaimant)
+        this.close();
+        return this.claimantService.updateClaimant(this.id, this.updateClaimant)
             .subscribe((/**
          * @param {?} updateClaimant
          * @return {?}
          */
-        updateClaimant => { this.updateClaimant = updateClaimant; console.log("reached this"); }));
-        this.close();
+        updateClaimant => {
+            this.updateClaimant = updateClaimant;
+            console.log(this.claimantProfileCopy);
+            this.portalService.claimantSO = this.claimantProfileCopy;
+            console.log(this.portalService.claimantSO);
+        }));
     }
     /**
      * @param {?} c1
