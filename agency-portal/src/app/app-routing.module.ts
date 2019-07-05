@@ -27,7 +27,7 @@ const routes: Routes = [
      children:[
         {  
            path:'home',
-           component:HomeComponent,
+           component:HomeComponent
         },
         {
           path:'claimant-overview/:claimantId',

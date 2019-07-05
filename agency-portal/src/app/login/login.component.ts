@@ -10,8 +10,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private keycloakService: KeycloakService, private router: Router) { }
 
-  ngOnInit() {
-    if(this.keycloakService.isLoggedIn()){
+  async ngOnInit() {
+    console.log(this.keycloakService);
+    if(await this.keycloakService.isLoggedIn()){
       this.router.navigate([`/main`]);
     }
   }

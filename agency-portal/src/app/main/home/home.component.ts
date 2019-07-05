@@ -10,7 +10,9 @@ import { ToastContainerDirective } from 'ngx-toastr';
 
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
-import { KeycloakService } from '../../../../node_modules/keycloak-angular';
+import { KeycloakService } from 'keycloak-angular';
+import { UserRoleCheckingService } from '../user-role-checking.service';
+import { Router } from '@angular/router';
 
 //import models or constants
 

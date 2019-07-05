@@ -14,6 +14,8 @@ import { ToasterService } from 'projects/opt-library/src/portal-services/toaster
 import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
 //import models or constants
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { KeycloakService } from 'keycloak-angular';
+import { UserRoleCheckingService } from '../user-role-checking.service';
 
 
 @Component({
@@ -22,7 +24,7 @@ import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-
+  allowedRoles = ["hello", "hello1"];
   public claimantInfo: string;
   claimantSO: ClaimantSO[];
   previousUrl: any;
@@ -34,11 +36,20 @@ export class ClaimantSearchComponent implements OnInit {
     private route: ActivatedRoute, 
     private toasterService: ToasterService, 
     private alert: AlertService, 
-    private router: Router) { 
+    private router: Router,
+    protected keycloakService: KeycloakService,
+    private userRoleChecking: UserRoleCheckingService
+  ) { 
 
   }
 
   ngOnInit() {
+    let userDetails = this.keycloakService.getKeycloakInstance();
+    console.log(userDetails.realmAccess["roles"]);
+    if(!(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"]))){
+      console.log(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"]));
+      this.router.navigate(['/main/home']);
+    }
     this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
     this.searchClaimant(this.claimantInfo);
     this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
