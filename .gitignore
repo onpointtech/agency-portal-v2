@@ -5,3 +5,4 @@ ClaimantServiceNew/target/
 node_modules/
 agency-portal/dist/
 agency-portal/dist/opt-library/
+agency-portal/package-lock.json

@@ -12,7 +12,7 @@ import { UpdateClaimantSO } from 'projects/opt-library/src/service-objects/updat
 })
 export class ClaimantService {
 
-  url = "http://localhost:8080/api/claimant";
+  url = "http://localhost:8082/api/claimant";
 
   constructor(private http: HttpClient, private toasterService: ToasterService) { }
   public getClaimantById(claimantId: number): Observable<ClaimantSO> {
@@ -40,7 +40,7 @@ export class ClaimantService {
 
   public registerClaimant(claimantSO: ClaimantSO): Observable<number>   {
     console.log("Inside register claimant api");
-    const claimantUrl = `http://localhost:8080/api/claimant/registerClaimant`;
+    const claimantUrl = `${this.url}/registerClaimant`;
     return this.http.post<number>(claimantUrl, claimantSO);
   }
 

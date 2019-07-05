@@ -347,31 +347,62 @@ To use a service outside the library, it must be inside the providers of the lib
 ***
 # AngularJS to Angular v8 Guide
 
+## Using Elements
+https://blog.nrwl.io/upgrading-angularjs-to-angular-using-elements-f2960a98bc0e
+
 ## ngMigration Assistant
 it can be found here in this website
 https://github.com/ellamaolson/ngMigration-Assistant
 
 
-# Git Guide
+# How to build an external library and send it through html
+- Move to its own readme
+1. make an app to be external
+   - run `ng new appname`
+2. make a component
+   - run `ng g c new-component`
+3. add the angular elements npm by running
+   - ` ng add @angular/elements `
+4. inside the app-module.ts
+   - add the `import { createCustomElement } from '@angular/elements' ;`
+   - inside the ngModules add `  entryComponents: [SimpleClaimantProfileComponent],`
+   - insert a constructor with the following and add an ngDoBootstrap function
+```
+  constructor(injector:Injector) {
+    //turn a component into a custom element
+    const custom = createCustomElement(YourComponent, {injector: injector});
 
-- [ ] (Unfinished)
+    //sets the selector for the new custom component
+    customElements.define('app-your', custom);
+  }
 
-## Git Initialization
+  ngDoBootstrap() {}
+```  
+5. Create a folder called preview (store the test html and to store the .js that is going to be created)
+6. Inside app-module.ts of the web component
+   - remove the AppComponent inside the declarations
+   - remove the bootstrap[]...
+7. Remove the following files inside the web component
+   - app.component (.ts, css, html, spec.ts)
+8. run `npm run build`
+9. create a script called `custombuild.sh` inside the root folder with the following
 
+``` 
+#!/bin/sh
+ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js 
+```
+10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
+11. Open the root folder and run `http-server "path of the made js file" -p 9000`
+12. Inside the app-module.ts where you'll import the web component add the following 
+``` 
+import { NgModule, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+...
 
-## Git Pull
+schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
-## Git Push
-
-## Branches
-
-### Making a branch
-
-### Switching to a branch
-
-### Merging branches
-
-## Resetting a branch
+```
+13. Inside index.html of the app that will import the web component add
+`<script src="link made by the http-server"></script>`
 
 *** 
 

@@ -1,6 +1,6 @@
 
 //import angular modules
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, APP_INITIALIZER,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 //import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
@@ -20,6 +20,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styles: []
+
 })
 
 export class HomeComponent implements OnInit {
