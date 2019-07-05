@@ -356,8 +356,7 @@ https://github.com/ellamaolson/ngMigration-Assistant
 
 
 # How to build an external library and send it through html
-
-- [ ] (Unfinished)
+- Move to its own readme
 1. make an app to be external
    - run `ng new appname`
 2. make a component
@@ -368,7 +367,7 @@ https://github.com/ellamaolson/ngMigration-Assistant
    - add the `import { createCustomElement } from '@angular/elements' ;`
    - inside the ngModules add `  entryComponents: [SimpleClaimantProfileComponent],`
    - insert a constructor with the following and add an ngDoBootstrap function
-   ```
+```
   constructor(injector:Injector) {
     //turn a component into a custom element
     const custom = createCustomElement(YourComponent, {injector: injector});
@@ -378,7 +377,7 @@ https://github.com/ellamaolson/ngMigration-Assistant
   }
 
   ngDoBootstrap() {}
-   ```  
+```  
 5. Create a folder called preview (store the test html and to store the .js that is going to be created)
 6. Inside app-module.ts of the web component
    - remove the AppComponent inside the declarations
@@ -386,15 +385,17 @@ https://github.com/ellamaolson/ngMigration-Assistant
 7. Remove the following files inside the web component
    - app.component (.ts, css, html, spec.ts)
 8. run `npm run build`
-9. create a script called `custombuild.sh` inside the root folder with the following 
-``` #!/bin/sh
-ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js ```
+9. create a script called `custombuild.sh` inside the root folder with the following
+
+``` 
+#!/bin/sh
+ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js 
+```
 10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
 11. Open the root folder and run `http-server "path of the made js file" -p 9000`
 12. Inside the app-module.ts where you'll import the web component add the following 
-```
+``` 
 import { NgModule, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
 ...
 
 schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
