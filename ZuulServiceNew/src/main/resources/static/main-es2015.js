@@ -67,6 +67,17 @@ module.exports = "<!--Footer Section (grey column container)-->\r\n<div class=\"
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/jsquery-test/jsquery-test.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/jsquery-test/jsquery-test.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  jsquery-test works!\n</p>\n\n<p class=\"test\">\n  jsquery-test works but should be hidden!\n</p>\n\n<button>This will hide the text</button>\n\n<table class=\"table\">\n\t<thead>\n\t\t<tr>\n\t\t\t<th data-breakpoints=\"xs\">ID</th>\n\t\t\t<th>First Name</th>\n\t\t\t<th>Last Name</th>\n\t\t\t<th data-breakpoints=\"xs\">Job Title</th>\n\t\t\t<th data-breakpoints=\"xs sm\">Started On</th>\n\t\t\t<th data-breakpoints=\"xs sm md\" data-title=\"DOB\">Date of Birth</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr data-expanded=\"true\">\n\t\t\t<td>1</td>\n\t\t\t<td>Dennise</td>\n\t\t\t<td>Fuhrman</td>\n\t\t\t<td>High School History Teacher</td>\n\t\t\t<td>November 8th 2011</td>\n\t\t\t<td>July 25th 1960</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>2</td>\n\t\t\t<td>Elodia</td>\n\t\t\t<td>Weisz</td>\n\t\t\t<td>Wallpaperer Helper</td>\n\t\t\t<td>October 15th 2010</td>\n\t\t\t<td>March 30th 1982</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>3</td>\n\t\t\t<td>Raeann</td>\n\t\t\t<td>Haner</td>\n\t\t\t<td>Internal Medicine Nurse Practitioner</td>\n\t\t\t<td>November 28th 2013</td>\n\t\t\t<td>February 26th 1966</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>4</td>\n\t\t\t<td>Junie</td>\n\t\t\t<td>Landa</td>\n\t\t\t<td>Offbearer</td>\n\t\t\t<td>October 31st 2010</td>\n\t\t\t<td>March 29th 1966</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>5</td>\n\t\t\t<td>Solomon</td>\n\t\t\t<td>Bittinger</td>\n\t\t\t<td>Roller Skater</td>\n\t\t\t<td>December 29th 2011</td>\n\t\t\t<td>September 22nd 1964</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>6</td>\n\t\t\t<td>Bar</td>\n\t\t\t<td>Lewis</td>\n\t\t\t<td>Clown</td>\n\t\t\t<td>November 12th 2012</td>\n\t\t\t<td>August 4th 1991</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>7</td>\n\t\t\t<td>Usha</td>\n\t\t\t<td>Leak</td>\n\t\t\t<td>Ships Electronic Warfare Officer</td>\n\t\t\t<td>August 14th 2012</td>\n\t\t\t<td>November 20th 1979</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>8</td>\n\t\t\t<td>Lorriane</td>\n\t\t\t<td>Cooke</td>\n\t\t\t<td>Technical Services Librarian</td>\n\t\t\t<td>September 21st 2010</td>\n\t\t\t<td>April 7th 1969</td>\n\t\t</tr>\n\t</tbody>\n</table>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html":
 /*!**********************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/login/login.component.html ***!
@@ -74,7 +85,7 @@ module.exports = "<!--Footer Section (grey column container)-->\r\n<div class=\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"text-center loginscreen animated fadeInDown\">\r\n  <div class=\"ibox-content\">\r\n\r\n    <div class=\"text-center loginscreen animated fadeInDown\">\r\n        <h2><em><b>Please click on the sign in button below to access the agency portal</b></em></h2>\r\n\r\n        <button class=\"btn btn-primary\">\r\n          <b>Sign In</b>\r\n        </button>\r\n\r\n        <button class=\"btn btn-primary\">\r\n            <a [routerLink]=\"['/main']\"><b>Bypass Login</b> </a>\r\n          </button>\r\n      <p class=\"m-t\">\r\n        <strong>© On Point Technology, LLC.</strong>\r\n      </p>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"text-center loginscreen animated fadeInDown\">\r\n  <div class=\"ibox-content\">\r\n\r\n    <div class=\"text-center loginscreen animated fadeInDown\">\r\n        <h2><em><b>Please click on the sign in button below to access the agency portal</b></em></h2>\r\n\r\n        <button class=\"btn btn-primary\">\r\n            <a [routerLink]=\"['/main']\"><b>Sign In</b></a>\r\n        </button>\r\n\r\n        <!-- <button class=\"btn btn-primary\">\r\n            <a [routerLink]=\"['/main']\"><b>Bypass Login</b> </a>\r\n          </button> -->\r\n      <p class=\"m-t\">\r\n        <strong>© On Point Technology, LLC.</strong>\r\n      </p>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -129,7 +140,7 @@ module.exports = "<h4 class = \"p-2\">\r\n  Claimant Registration\r\n</h4>\r\n\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"address\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.address | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n  </ng-template>\r\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"address\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.address | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n  </ng-template>\r\n</ng-container>\r\n<button (click)=\"refreshToken()\">Refresh</button>"
 
 /***/ }),
 
@@ -140,7 +151,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works ey!\r\n</p>\r\n\r\n<app-simple-claimant-profile\r\nfirstName=\"JM\" \r\nlastName=\"Oberdeloza\" \r\nphone=\"2018888888\"\r\naddress=\"Someplace in QC\"\r\n>\r\n</app-simple-claimant-profile>"
+module.exports = "\r\n<p>\r\n  home works eyo!\r\n</p>\r\n\r\n<app-jsquery-test></app-jsquery-test>"
 
 /***/ }),
 
@@ -173,7 +184,7 @@ module.exports = "<!--Side Nav Bar Section-->\r\n<div class=\"bg-primary\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User</span>\r\n            </span>\r\n            <a [routerLink] = \"['']\" class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
+module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -981,10 +992,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ClaimantService = class ClaimantService {
+    // oldUrl = "http://localhost:8082/api/claimant";
     constructor(http, toasterService) {
         this.http = http;
         this.toasterService = toasterService;
-        this.url = "http://localhost:8082/api/claimant";
+        this.url = "http://localhost:8080/claimantService/api/claimant";
     }
     getClaimantById(claimantId) {
         const claimantUrl = `${this.url}/getClaimantById/${claimantId}`;
@@ -1114,9 +1126,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SurveyService = class SurveyService {
+    // oldUrl = "http://localhost:8081/api/";
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.url = "http://localhost:8081/api/";
+        this.url = "http://localhost:8080/surveyService/api/";
     }
     createSurvey(survey) {
         const claimantUrl = `${this.url}survey/addUpdateSurvey`;
@@ -1297,14 +1310,17 @@ function initializer(keycloak) {
                 yield keycloak.init({
                     config: _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].keycloak,
                     initOptions: {
-                        onLoad: 'login-required',
+                        onLoad: 'check-sso',
                         checkLoginIframe: false
-                    }
+                    },
+                    enableBearerInterceptor: true,
+                    bearerExcludedUrls: ['/login']
                 });
                 resolve();
             }
             catch (error) {
                 reject(error);
+                keycloak.clearToken();
             }
         }));
     };
@@ -1334,6 +1350,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main/claimant-profile/claimant-profile.component */ "./src/app/main/claimant-profile/claimant-profile.component.ts");
 /* harmony import */ var _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/claimant-registration/claimant-registration.component */ "./src/app/main/claimant-registration/claimant-registration.component.ts");
 /* harmony import */ var _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/claim/claim.component */ "./src/app/main/claim/claim.component.ts");
+/* harmony import */ var _app_authguard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.authguard */ "./src/app/app.authguard.ts");
+
 
 
 
@@ -1358,6 +1376,7 @@ const routes = [
     {
         path: 'main',
         component: _main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"],
+        canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
         children: [
             {
                 path: 'home',
@@ -1386,9 +1405,9 @@ const routes = [
             {
                 path: '**',
                 redirectTo: 'home'
-            },
+            }
         ],
-        runGuardsAndResolvers: 'always',
+        runGuardsAndResolvers: 'always'
     },
     {
         path: '**',
@@ -1401,9 +1420,69 @@ let AppRoutingModule = class AppRoutingModule {
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { onSameUrlNavigation: 'reload' })],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+        providers: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]]
     })
 ], AppRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.authguard.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.authguard.ts ***!
+  \**********************************/
+/*! exports provided: AppAuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppAuthGuard", function() { return AppAuthGuard; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+
+
+
+
+let AppAuthGuard = class AppAuthGuard extends keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakAuthGuard"] {
+    constructor(router, keycloakAngular) {
+        super(router, keycloakAngular);
+        this.router = router;
+        this.keycloakAngular = keycloakAngular;
+    }
+    isAccessAllowed(route, state) {
+        return new Promise((resolve, reject) => {
+            if (!this.authenticated) {
+                this.keycloakAngular.login();
+                return;
+            }
+            const requiredRoles = route.data.roles;
+            if (!requiredRoles || requiredRoles.length === 0) {
+                return resolve(true);
+            }
+            else {
+                if (!this.roles || this.roles.length === 0) {
+                    resolve(false);
+                }
+                let granted = false;
+                for (const requiredRole of requiredRoles) {
+                    if (this.roles.indexOf(requiredRole) > -1) {
+                        granted = true;
+                        break;
+                    }
+                }
+                resolve(granted);
+            }
+        });
+    }
+};
+AppAuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"]])
+], AppAuthGuard);
 
 
 
@@ -1423,13 +1502,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm2015/ng-bootstrap.js");
 /* harmony import */ var _src_app_parser_ngb_date_fr_parser_formatter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../src/app/parser/ngb-date-fr-parser-formatter */ "./src/app/parser/ngb-date-fr-parser-formatter.ts");
+/* harmony import */ var _node_modules_keycloak_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../node_modules/keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor() {
+    constructor(keycloakService) {
+        this.keycloakService = keycloakService;
         this.title = 'Agency Portal';
+    }
+    ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (yield this.keycloakService.isLoggedIn()) {
+                this.userDetails = yield this.keycloakService.loadUserProfile();
+            }
+            if (yield this.keycloakService.isTokenExpired()) {
+                this.keycloakService.clearToken();
+                this.keycloakService.logout();
+            }
+        });
+    }
+    doLogout() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield this.keycloakService.logout();
+        });
     }
 };
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1437,7 +1535,8 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-root',
         template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
         providers: [{ provide: _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbDateParserFormatter"], useClass: _src_app_parser_ngb_date_fr_parser_formatter__WEBPACK_IMPORTED_MODULE_3__["NgbDateFRParserFormatter"] }]
-    })
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_node_modules_keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"]])
 ], AppComponent);
 
 
@@ -1484,6 +1583,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./main/claim/claim.component */ "./src/app/main/claim/claim.component.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
 /* harmony import */ var _app_init__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./app-init */ "./src/app/app-init.ts");
+/* harmony import */ var _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./jsquery-test/jsquery-test.component */ "./src/app/jsquery-test/jsquery-test.component.ts");
 
 //import angular modules
 
@@ -1518,6 +1618,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1535,6 +1636,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_25__["ClaimantProfileComponent"],
             _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_26__["ClaimantRegistrationComponent"],
             _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_27__["ClaimComponent"],
+            _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__["JsqueryTestComponent"],
         ],
         imports: [
             projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_15__["OptLibraryModule"],
@@ -1743,6 +1845,42 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/jsquery-test/jsquery-test.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/jsquery-test/jsquery-test.component.ts ***!
+  \********************************************************/
+/*! exports provided: JsqueryTestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsqueryTestComponent", function() { return JsqueryTestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let JsqueryTestComponent = class JsqueryTestComponent {
+    constructor() { }
+    ngOnInit() {
+        $('.table').footable();
+        $("button").click(function () {
+            $(".test").hide();
+            alert("hello werld");
+        });
+    }
+};
+JsqueryTestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-jsquery-test',
+        template: __webpack_require__(/*! raw-loader!./jsquery-test.component.html */ "./node_modules/raw-loader/index.js!./src/app/jsquery-test/jsquery-test.component.html")
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], JsqueryTestComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/login/login.component.ts":
 /*!******************************************!*\
   !*** ./src/app/login/login.component.ts ***!
@@ -1755,11 +1893,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let LoginComponent = class LoginComponent {
-    constructor() { }
+    constructor(keycloakService, router) {
+        this.keycloakService = keycloakService;
+        this.router = router;
+    }
     ngOnInit() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            console.log(this.keycloakService);
+            if (yield this.keycloakService.isLoggedIn()) {
+                this.router.navigate([`/main`]);
+            }
+        });
     }
 };
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1767,7 +1918,7 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-login',
         template: __webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/index.js!./src/app/login/login.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [keycloak_angular__WEBPACK_IMPORTED_MODULE_2__["KeycloakService"], _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
 ], LoginComponent);
 
 
@@ -2525,6 +2676,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var projects_opt_library_src_portal_services_claimant_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/claimant.service */ "./projects/opt-library/src/portal-services/claimant.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+/* harmony import */ var _user_role_checking_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../user-role-checking.service */ "./src/app/main/user-role-checking.service.ts");
 
 //import angular modules
 
@@ -2535,29 +2688,38 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 let ClaimantSearchComponent = class ClaimantSearchComponent {
-    constructor(claimantService, route, toasterService, alert, router) {
+    constructor(claimantService, route, toasterService, alert, router, keycloakService, userRoleChecking) {
         this.claimantService = claimantService;
         this.route = route;
         this.toasterService = toasterService;
         this.alert = alert;
         this.router = router;
+        this.keycloakService = keycloakService;
+        this.userRoleChecking = userRoleChecking;
+        this.allowedRoles = ["dsadsadsa", "hello1"];
     }
     ngOnInit() {
-        this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-        this.searchClaimant(this.claimantInfo);
-        this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
-        //for the sweet alert
-        this.noSearchResultObject = {
-            type: 'info',
-            title: "Info",
-            text: "Sorry, there are no results for the given string",
-            showCancelButton: true,
-            confirmButtonText: 'Go to Claimant Registration',
-            cancelButtonText: 'Cancel',
-            confirmButtonClass: 'btn btn-primary',
-            cancelButtonClass: 'btn btn-info',
-        };
+        let userDetails = this.keycloakService.getKeycloakInstance();
+        console.log(userDetails.realmAccess["roles"]);
+        if (this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])) {
+            this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
+            this.searchClaimant(this.claimantInfo);
+            this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+            //for the sweet alert
+            this.noSearchResultObject = {
+                type: 'info',
+                title: "Info",
+                text: "Sorry, there are no results for the given string",
+                showCancelButton: true,
+                confirmButtonText: 'Go to Claimant Registration',
+                cancelButtonText: 'Cancel',
+                confirmButtonClass: 'btn btn-primary',
+                cancelButtonClass: 'btn btn-info',
+            };
+        }
     }
     getClaimantSO() {
         this.claimantService
@@ -2589,6 +2751,10 @@ let ClaimantSearchComponent = class ClaimantSearchComponent {
     noSearchResult() {
         this.router.navigate([`main/claimant-registration`]);
     }
+    refreshToken() {
+        this.keycloakService.clearToken();
+        console.log(this.keycloakService);
+    }
 };
 ClaimantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2600,7 +2766,9 @@ ClaimantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
         projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__["ToasterService"],
         projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AlertService"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        keycloak_angular__WEBPACK_IMPORTED_MODULE_6__["KeycloakService"],
+        _user_role_checking_service__WEBPACK_IMPORTED_MODULE_7__["UserRoleCheckingService"]])
 ], ClaimantSearchComponent);
 
 
@@ -2621,22 +2789,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
 
 //import angular modules
 
 //import external modules
 
-//import user made modules
-//import components
 //import services
+
 
 //import models or constants
 let HomeComponent = class HomeComponent {
-    constructor(toasterService) {
+    constructor(toasterService, keycloakService) {
         this.toasterService = toasterService;
+        this.keycloakService = keycloakService;
     }
     ngOnInit() {
         this.toasterService.overlayContainer = this.toastContainer;
+        let userDetails = this.keycloakService.getKeycloakInstance();
+        console.log(userDetails);
+        console.log(userDetails.realmAccess["roles"]);
+        console.log(userDetails.profile["email"]);
     }
     success() {
         this.toasterService.success("Success!", "Welcome to Home");
@@ -2651,7 +2824,7 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-home',
         template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/main/home/home.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"]])
 ], HomeComponent);
 
 
@@ -2708,6 +2881,56 @@ MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__["ToasterService"], projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
 ], MainComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/main/user-role-checking.service.ts":
+/*!****************************************************!*\
+  !*** ./src/app/main/user-role-checking.service.ts ***!
+  \****************************************************/
+/*! exports provided: UserRoleCheckingService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRoleCheckingService", function() { return UserRoleCheckingService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+
+
+
+
+let UserRoleCheckingService = class UserRoleCheckingService {
+    constructor(router, alert) {
+        this.router = router;
+        this.alert = alert;
+    }
+    userCanAccess(allowedUsers, userRoles) {
+        var accessPermission = false;
+        for (var i = 0; i < userRoles.length; i++) {
+            if (allowedUsers.some(x => x === userRoles[i])) {
+                accessPermission = true;
+                break;
+            }
+        }
+        if (!accessPermission) {
+            this.router.navigate(['/main/home']);
+            this.alert.error("Error", "You are not allowed to visit this page");
+        }
+        return accessPermission;
+    }
+};
+UserRoleCheckingService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
+], UserRoleCheckingService);
 
 
 
@@ -2821,12 +3044,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+
 
 
 
 let TopNavBarComponent = class TopNavBarComponent {
-    constructor(router) {
+    constructor(router, keycloakService) {
         this.router = router;
+        this.keycloakService = keycloakService;
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         };
@@ -2843,13 +3069,18 @@ let TopNavBarComponent = class TopNavBarComponent {
         var claimantInfo = document.getElementById('searchText').value;
         this.router.navigate([`main/claimant-search/${claimantInfo}`]);
     }
+    doLogout() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            yield this.keycloakService.logout();
+        });
+    }
 };
 TopNavBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-top-nav-bar',
         template: __webpack_require__(/*! raw-loader!./top-nav-bar.component.html */ "./node_modules/raw-loader/index.js!./src/app/top-nav-bar/top-nav-bar.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"]])
 ], TopNavBarComponent);
 
 
@@ -2868,8 +3099,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
 let keycloakConfig = {
     url: 'https://auth.opt-dev.optimumui.com/auth',
-    realm: 'externalusers',
-    clientId: 'claimant'
+    realm: 'agencyusers',
+    clientId: 'agency'
+    // url: 'http://localhost:8080/auth',
+    // realm: 'Master',
+    // clientId: 'agency-portal'
 };
 const environment = {
     production: false,

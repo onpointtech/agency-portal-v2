@@ -7,6 +7,7 @@ import { ToastContainerDirective } from 'ngx-toastr';
 
 //import user made modules
 //import components
+import {JsqueryTestComponent} from './../../jsquery-test/jsquery-test.component'
 
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
 
   constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService) { }
+
 
 
   ngOnInit() {

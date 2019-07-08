@@ -29,21 +29,21 @@ public class SurveyController {
 		this.surveyBusinessService = surveyBusinessService;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4100")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/getSurveyById/{surveyId}", method = RequestMethod.GET)
 	public Survey  getSurveyById(@PathVariable long surveyId) {
 		Survey survey = surveyBusinessService.getSurveyById(surveyId);
 		return survey;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4100")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/addUpdateSurvey", method = RequestMethod.POST)
 	public long addUpdateSurvey(@RequestBody Survey survey) {
 		logger.info("Create Survey Request Received ", survey.toString());
 		return surveyBusinessService.addUpdateSurvey(survey);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4100")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/getAllSurveys", method = RequestMethod.GET)
 	public List<Survey> getAllSurveys() {
 		List<Survey> allSurveys = surveyBusinessService.getAllSurveys();
@@ -55,7 +55,7 @@ public class SurveyController {
 		return surveyBusinessService.submitClaim();
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/getSurvey/{surveyName}/{claimantId}", method = RequestMethod.GET)
 	public SurveyResponseSO  getSurvey(@PathVariable String surveyName,@PathVariable long claimantId) {
 		SurveyResponseSO surveyResponseSO = surveyBusinessService.getSurvey(surveyName,claimantId);
