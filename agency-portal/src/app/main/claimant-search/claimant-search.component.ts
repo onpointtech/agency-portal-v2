@@ -24,7 +24,7 @@ import { UserRoleCheckingService } from '../user-role-checking.service';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  allowedRoles = ["asdfgh", "hello1"];
+  allowedRoles = ["dsadsadsa", "hello1"];
   public claimantInfo: string;
   claimantSO: ClaimantSO[];
   previousUrl: any;
@@ -46,10 +46,7 @@ export class ClaimantSearchComponent implements OnInit {
   ngOnInit() {
     let userDetails = this.keycloakService.getKeycloakInstance();
     console.log(userDetails.realmAccess["roles"]);
-    if(!(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"]))){
-      this.router.navigate(['/main/home']);
-      this.alert.error("Error","You are not allowed to visit this page");
-    } else {
+    if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
       this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
       this.searchClaimant(this.claimantInfo);
       this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
@@ -101,5 +98,10 @@ export class ClaimantSearchComponent implements OnInit {
 
   noSearchResult() {
     this.router.navigate([`main/claimant-registration`]);
+  }
+
+  refreshToken() {
+    this.keycloakService.clearToken();
+    console.log(this.keycloakService);
   }
 }

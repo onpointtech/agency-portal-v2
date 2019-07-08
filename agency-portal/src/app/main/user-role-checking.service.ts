@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Router } from '../../../node_modules/@angular/router';
+import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserRoleCheckingService {
 
-  constructor() { }
+  constructor(private router: Router,
+    private alert: AlertService
+  ) { }
 
   userCanAccess(allowedUsers: string[], userRoles: string[]): boolean {
     var accessPermission: boolean = false;
@@ -16,6 +20,12 @@ export class UserRoleCheckingService {
         break;
       }
     }
+
+    if(!accessPermission){
+      this.router.navigate(['/main/home']);
+      this.alert.error("Error","You are not allowed to visit this page");
+    }
+
     return accessPermission;
   }
 }
