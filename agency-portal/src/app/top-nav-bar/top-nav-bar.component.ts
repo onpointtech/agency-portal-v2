@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router"
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -8,7 +9,7 @@ import { Router, NavigationEnd } from "@angular/router"
 })
 export class TopNavBarComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private keycloakService: KeycloakService) {
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
    }
@@ -28,6 +29,10 @@ export class TopNavBarComponent implements OnInit {
   searchClaimant(){
     var claimantInfo = (<HTMLInputElement>document.getElementById('searchText')).value;
     this.router.navigate([`main/claimant-search/${claimantInfo}`])
+  }
+
+  async doLogout() {
+    await this.keycloakService.logout();
   }
 
 }

@@ -12066,7 +12066,7 @@
         function ClaimantService(http, toasterService) {
             this.http = http;
             this.toasterService = toasterService;
-            this.url = "http://localhost:8080/api/claimant";
+            this.url = "http://localhost:8082/api/claimant";
         }
         /**
          * @param {?} claimantId
@@ -12133,7 +12133,7 @@
         function (claimantSO) {
             console.log("Inside register claimant api");
             /** @type {?} */
-            var claimantUrl = "http://localhost:8080/api/claimant/registerClaimant";
+            var claimantUrl = this.url + "/registerClaimant";
             return this.http.post(claimantUrl, claimantSO);
         };
         /**
@@ -12459,13 +12459,18 @@
                 address: null,
             };
             this.id = this.portalService.claimantSO.claimantId;
-            this.claimantService.updateClaimant(this.id, this.updateClaimant)
+            this.close();
+            return this.claimantService.updateClaimant(this.id, this.updateClaimant)
                 .subscribe((/**
              * @param {?} updateClaimant
              * @return {?}
              */
-            function (updateClaimant) { _this.updateClaimant = updateClaimant; console.log("reached this"); }));
-            this.close();
+            function (updateClaimant) {
+                _this.updateClaimant = updateClaimant;
+                console.log(_this.claimantProfileCopy);
+                _this.portalService.claimantSO = _this.claimantProfileCopy;
+                console.log(_this.portalService.claimantSO);
+            }));
         };
         /**
          * @param {?} c1

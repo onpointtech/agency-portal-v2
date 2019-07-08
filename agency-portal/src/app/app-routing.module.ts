@@ -8,6 +8,7 @@ import { ClaimantOverviewComponent } from './main/claimant-overview/claimant-ove
 import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profile.component';
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
+import { AppAuthGuard } from './app.authguard';
 
 const routes: Routes = [  
   {  
@@ -22,6 +23,7 @@ const routes: Routes = [
   {  
      path:'main',
      component:MainComponent,
+     canActivate: [AppAuthGuard],
      children:[
         {  
            path:'home',
@@ -50,10 +52,9 @@ const routes: Routes = [
         {  
            path:'**',
            redirectTo:'home'
-        },
-
+        }
      ],
-     runGuardsAndResolvers: 'always',
+     runGuardsAndResolvers: 'always'
   },
   {  
      path:'**',
@@ -64,6 +65,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AppAuthGuard]
 })
 export class AppRoutingModule { }

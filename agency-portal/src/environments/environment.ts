@@ -5,8 +5,11 @@ import { KeycloakConfig } from 'keycloak-angular';
 
 let keycloakConfig: KeycloakConfig = {
   url: 'https://auth.opt-dev.optimumui.com/auth',
-  realm: 'externalusers',
-  clientId: 'claimant'
+  realm: 'agencyusers',
+  clientId: 'agency'
+  // url: 'http://localhost:8080/auth',
+  // realm: 'Master',
+  // clientId: 'agency-portal'
 };
 
 export const environment = {
