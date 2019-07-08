@@ -15,7 +15,7 @@ public class ZuulServiceNewApplication {
 
 	  @RequestMapping(value = "/available")
 	  public String available() {
-	    return "PAGE: Available";
+	    return "<h1>PAGE: Available</h1>";
 	  }
 
 	  @RequestMapping(value = "/checked-out")
