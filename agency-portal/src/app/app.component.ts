@@ -22,7 +22,6 @@ export class AppComponent {
 
     if(await this.keycloakService.isTokenExpired()) {
       this.keycloakService.clearToken();
-      this.keycloakService.logout();
     }
   }
 

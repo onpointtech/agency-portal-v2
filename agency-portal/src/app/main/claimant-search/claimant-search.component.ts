@@ -45,8 +45,8 @@ export class ClaimantSearchComponent implements OnInit {
 
   ngOnInit() {
     let userDetails = this.keycloakService.getKeycloakInstance();
-    console.log(userDetails.realmAccess["roles"]);
-    if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
+    // console.log(userDetails.realmAccess["roles"]);
+    // if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
       this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
       this.searchClaimant(this.claimantInfo);
       this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
@@ -62,7 +62,7 @@ export class ClaimantSearchComponent implements OnInit {
         confirmButtonClass: 'btn btn-primary',
         cancelButtonClass: 'btn btn-info',
       }
-    }
+    // }
   }
 
   getClaimantSO(): void {
