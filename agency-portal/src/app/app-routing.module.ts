@@ -9,6 +9,7 @@ import { ClaimantProfileComponent } from './main/claimant-profile/claimant-profi
 import { ClaimantRegistrationComponent } from './main/claimant-registration/claimant-registration.component';
 import { ClaimComponent } from './main/claim/claim.component';
 import { AppAuthGuard } from './app.authguard';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 const routes: Routes = [  
   {  
@@ -23,11 +24,10 @@ const routes: Routes = [
   {  
      path:'main',
      component:MainComponent,
-     canActivate: [AppAuthGuard],
      children:[
-        {  
-           path:'home',
-           component:HomeComponent
+        {
+          path:'home',
+          component:HomeComponent
         },
         {
           path:'claimant-overview/:claimantId',
@@ -39,11 +39,15 @@ const routes: Routes = [
         },
         {
           path:'claimant-registration',
-          component:ClaimantRegistrationComponent
+          component:ClaimantRegistrationComponent,
+          canActivate: [AppAuthGuard],
+          data: {roles: ['asdasdas', 'asdasda']}
         },
         {
           path:'claimant-search/:claimantInfo',
-          component:ClaimantSearchComponent
+          component:ClaimantSearchComponent,
+          canActivate: [AppAuthGuard],
+          data: {roles: ['ClaimsTaker', 'asdasda']}
         },
         {
           path:'claim/:claimantId',
@@ -55,6 +59,10 @@ const routes: Routes = [
         }
      ],
      runGuardsAndResolvers: 'always'
+  },
+  {
+    path:'not-authorized',
+    component:NotAuthorizedComponent,
   },
   {  
      path:'**',
