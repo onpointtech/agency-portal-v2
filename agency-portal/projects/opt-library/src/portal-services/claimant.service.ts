@@ -12,7 +12,10 @@ import { UpdateClaimantSO } from 'projects/opt-library/src/service-objects/updat
 })
 export class ClaimantService {
 
-  url = "http://localhost:8082/api/claimant";
+  url = "http://localhost:8080/claimantService/api/claimant";
+  // oldUrl = "http://localhost:8082/api/claimant";
+
+
 
   constructor(private http: HttpClient, private toasterService: ToasterService) { }
   public getClaimantById(claimantId: number): Observable<ClaimantSO> {

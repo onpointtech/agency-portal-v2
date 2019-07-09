@@ -37,6 +37,7 @@ import { ClaimantRegistrationComponent } from './main/claimant-registration/clai
 import { ClaimComponent } from './main/claim/claim.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './app-init';
+import { JsqueryTestComponent } from './jsquery-test/jsquery-test.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 @NgModule({
@@ -53,6 +54,7 @@ import { NotAuthorizedComponent } from './not-authorized/not-authorized.componen
     ClaimantProfileComponent,
     ClaimantRegistrationComponent,
     ClaimComponent,
+    JsqueryTestComponent,
     NotAuthorizedComponent,
   ],
   imports: [

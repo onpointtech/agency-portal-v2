@@ -29,13 +29,13 @@ public class SurveyResponseController {
 		this.surveyBusinessService = surveyBusinessService;
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/addResponse", method = RequestMethod.POST)
 	public long  addResponse(@RequestBody SurveyResponseSO surveyResponseSO) {
 		return surveyBusinessService.addResponse(surveyResponseSO);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
+//	@CrossOrigin(origins = "http://localhost:8083")
 	@RequestMapping(value = "/deleteResponse/{claimantId}", method = RequestMethod.DELETE)
 	public List<SurveyResponse>  deleteResponse(@PathVariable long claimantId) {
 		return surveyBusinessService.deleteResponse(claimantId);
