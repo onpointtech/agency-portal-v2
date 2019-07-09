@@ -14,6 +14,7 @@ let keycloakConfig: KeycloakConfig = {
 
 export const environment = {
   production: false,
+  apis: {claimantSearch: 'https://api.opt-dev.optimumui.com/search-service/api/search/claimant'},
   keycloak: keycloakConfig
 };
 

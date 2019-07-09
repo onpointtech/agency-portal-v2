@@ -16,6 +16,8 @@ import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
 import { NgxMaskModule, MaskPipe } from 'ngx-mask';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgIdleKeepaliveModule } from '@ng-idle/keepalive';
+import { MomentModule } from 'angular2-moment';
 
 //import user made modules
 import { OptLibraryModule } from 'projects/opt-library/src/public-api';
@@ -81,7 +83,9 @@ import { NotAuthorizedComponent } from './not-authorized/not-authorized.componen
       customClass: 'modal-content',
       confirmButtonClass: 'btn btn-primary',
       cancelButtonClass: 'btn btn-info',
-    })
+    }),
+    NgIdleKeepaliveModule.forRoot(),
+    MomentModule
   ],
   entryComponents: [],
   providers: [

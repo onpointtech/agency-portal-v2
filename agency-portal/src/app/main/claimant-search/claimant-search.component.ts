@@ -15,7 +15,7 @@ import { AlertService } from 'projects/opt-library/src/portal-services/alert.ser
 //import models or constants
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
 import { KeycloakService } from 'keycloak-angular';
-import { UserRoleCheckingService } from '../user-role-checking.service';
+import { ClaimantSearchService } from '../claimant-search-service/claimant-search.service';
 
 
 @Component({
@@ -24,7 +24,6 @@ import { UserRoleCheckingService } from '../user-role-checking.service';
   styleUrls: ['./claimant-search.component.css']
 })
 export class ClaimantSearchComponent implements OnInit {
-  allowedRoles = ["dsadsadsa", "hello1"];
   public claimantInfo: string;
   claimantSO: ClaimantSO[];
   previousUrl: any;
@@ -38,15 +37,12 @@ export class ClaimantSearchComponent implements OnInit {
     private alert: AlertService, 
     private router: Router,
     protected keycloakService: KeycloakService,
-    private userRoleChecking: UserRoleCheckingService
+    private searchService: ClaimantSearchService
   ) { 
 
   }
 
   ngOnInit() {
-    let userDetails = this.keycloakService.getKeycloakInstance();
-    // console.log(userDetails.realmAccess["roles"]);
-    // if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
       this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
       this.searchClaimant(this.claimantInfo);
       this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
@@ -62,7 +58,6 @@ export class ClaimantSearchComponent implements OnInit {
         confirmButtonClass: 'btn btn-primary',
         cancelButtonClass: 'btn btn-info',
       }
-    // }
   }
 
   getClaimantSO(): void {
@@ -72,28 +67,30 @@ export class ClaimantSearchComponent implements OnInit {
   }
 
   searchClaimant(claimantInfo: string) {
-    this.claimantService
-    .searchClaimant(claimantInfo)
-    .subscribe(claimantSO => {this.claimantSO = claimantSO;
-      if(claimantSO.length > 1) {
-        this.toasterService.success(
-          "Success", 
-          "There are " + String(claimantSO.length) + " results for your query."
-        );
-      } else if(claimantSO.length == 1) {
-        this.toasterService.success(
-          "Success", 
-          "There is " + String(claimantSO.length) + " result for your query.");
-      } else if(claimantSO.length == 0) {
-        this.alert
-        .custom(this.noSearchResultObject)
-        .then((result) => {
-          if(result.value) {
-            this.noSearchResult();
-          }
-        })
-      }
-    });
+    // this.claimantService
+    // .searchClaimant(claimantInfo)
+    // .subscribe(claimantSO => {this.claimantSO = claimantSO;
+    //   if(claimantSO.length > 1) {
+    //     this.toasterService.success(
+    //       "Success", 
+    //       "There are " + String(claimantSO.length) + " results for your query."
+    //     );
+    //   } else if(claimantSO.length == 1) {
+    //     this.toasterService.success(
+    //       "Success", 
+    //       "There is " + String(claimantSO.length) + " result for your query.");
+    //   } else if(claimantSO.length == 0) {
+    //     this.alert
+    //     .custom(this.noSearchResultObject)
+    //     .then((result) => {
+    //       if(result.value) {
+    //         this.noSearchResult();
+    //       }
+    //     })
+    //   }
+    // });
+
+    this.searchService.searchClaimant(claimantInfo).subscribe(claimantSO => {console.log(claimantSO)});
   }
 
   noSearchResult() {
@@ -101,7 +98,8 @@ export class ClaimantSearchComponent implements OnInit {
   }
 
   refreshToken() {
-    this.keycloakService.clearToken();
-    console.log(this.keycloakService);
+    console.log(this.keycloakService.getKeycloakInstance());
+    this.keycloakService.getKeycloakInstance().updateToken(10).success(event => console.log(event));
+    console.log(this.keycloakService.getKeycloakInstance());
   }
 }
