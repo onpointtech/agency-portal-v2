@@ -1303,11 +1303,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ClaimantService = class ClaimantService {
+    // url = "http://localhost:8082/api/claimant";
     constructor(http, toasterService) {
         this.http = http;
         this.toasterService = toasterService;
-        // url = "http://localhost:8080/claimantService/api/claimant";
-        this.url = "http://localhost:8082/api/claimant";
+        this.url = "http://localhost:8080/claimantService/api/claimant";
     }
     getClaimantById(claimantId) {
         const claimantUrl = `${this.url}/getClaimantById/${claimantId}`;
@@ -3354,9 +3354,9 @@ let MainComponent = class MainComponent {
             }
         });
         // sets an idle timeout of 5 seconds, for testing purposes.
-        idle.setIdle(5000);
+        idle.setIdle(5);
         // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-        idle.setTimeout(1000);
+        idle.setTimeout(30);
         // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
         idle.setInterrupts(_ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_INTERRUPTSOURCES"]);
         idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
