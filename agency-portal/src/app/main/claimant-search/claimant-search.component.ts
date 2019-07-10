@@ -30,6 +30,7 @@ export class ClaimantSearchComponent implements OnInit {
   subscription: Subscription;
   columnsToDisplay: string[];
   noSearchResultObject: object;
+  status: number;
   
   constructor(private claimantService: ClaimantService, 
     private route: ActivatedRoute, 
@@ -44,9 +45,8 @@ export class ClaimantSearchComponent implements OnInit {
 
   ngOnInit() {
       this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-      this.searchClaimant(this.claimantInfo);
+      this.searchClaimant2(this.claimantInfo);
       // this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
-      this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'claimantAddresses'];
 
       //for the sweet alert
       this.noSearchResultObject = {
@@ -68,35 +68,41 @@ export class ClaimantSearchComponent implements OnInit {
   }
 
   searchClaimant(claimantInfo: string) {
-    // this.claimantService
-    // .searchClaimant(claimantInfo)
-    // .subscribe(claimantSO => {this.claimantSO = claimantSO;
-    //   if(claimantSO.length > 1) {
-    //     this.toasterService.success(
-    //       "Success", 
-    //       "There are " + String(claimantSO.length) + " results for your query."
-    //     );
-    //   } else if(claimantSO.length == 1) {
-    //     this.toasterService.success(
-    //       "Success", 
-    //       "There is " + String(claimantSO.length) + " result for your query.");
-    //   } else if(claimantSO.length == 0) {
-    //     this.alert
-    //     .custom(this.noSearchResultObject)
-    //     .then((result) => {
-    //       if(result.value) {
-    //         this.noSearchResult();
-    //       }
-    //     })
-    //   }
-    // });
-
+    this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'claimantAddresses'];
+    this.status = 0;
     this.searchService
     .searchClaimant(claimantInfo)
     .subscribe(claimantSO => {
       console.log(claimantSO);
       console.log(123);
       this.claimantSO = claimantSO;
+      if(claimantSO.length > 1) {
+        this.toasterService.success(
+          "Success", 
+          "There are " + String(claimantSO.length) + " results for your query."
+        );
+      } else if(claimantSO.length == 1) {
+        this.toasterService.success(
+          "Success", 
+          "There is " + String(claimantSO.length) + " result for your query.");
+      } else if(claimantSO.length == 0) {
+        this.alert
+        .custom(this.noSearchResultObject)
+        .then((result) => {
+          if(result.value) {
+            this.noSearchResult();
+          }
+        })
+      }
+    });
+  }
+
+  searchClaimant2(claimantInfo: string){
+    this.status = 1;
+    this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'address'];
+    this.claimantService
+    .searchClaimant(claimantInfo)
+    .subscribe(claimantSO => {this.claimantSO = claimantSO;
       if(claimantSO.length > 1) {
         this.toasterService.success(
           "Success", 

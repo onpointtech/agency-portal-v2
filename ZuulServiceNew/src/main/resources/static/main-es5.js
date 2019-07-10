@@ -426,7 +426,7 @@ module.exports = "<h4 class = \"p-2\">\r\n  Claimant Registration\r\n</h4>\r\n\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <!-- <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container> -->\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"claimantAddresses\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.claimantAddresses | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n  </ng-template>\r\n</ng-container>\r\n<button (click)=\"refreshToken()\">Refresh</button>"
+module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <ng-container *ngIf=\"status == 0; else oldTable\">\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <!-- <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container> -->\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"claimantAddresses\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.claimantAddresses | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n    </ng-container>\r\n  </ng-template>\r\n\r\n  <ng-template #oldTable>\r\n      <mat-table [dataSource]=\"claimantSO\">\r\n          <ng-container matColumnDef=\"ssn\">\r\n            <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n            <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n              <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n              {{ClaimantSO.ssn | optSsnPipe}}\r\n              </a>\r\n            </td>\r\n          </ng-container>\r\n        \r\n          <ng-container matColumnDef=\"name\">\r\n            <th mat-header-cell *matHeaderCellDef>Name</th>\r\n            <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n          </ng-container>\r\n        \r\n          <!-- <ng-container matColumnDef=\"dateOfBirth\">\r\n            <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n            <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n          </ng-container> -->\r\n        \r\n          <ng-container matColumnDef=\"homePhone\">\r\n            <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n            <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone | optPhonePipe}}</td>\r\n          </ng-container>\r\n        \r\n          <ng-container matColumnDef=\"mobilePhone\">\r\n            <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n            <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n          </ng-container>\r\n        \r\n          <ng-container matColumnDef=\"address\">\r\n            <th mat-header-cell *matHeaderCellDef>Address</th>\r\n            <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.address | optAddressPipe}}</td>\r\n          </ng-container>\r\n        <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n        <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n      </mat-table>\r\n    </ng-template>\r\n</ng-container>\r\n<button (click)=\"this.searchClaimant(this.claimantInfo)\">OPT API</button>"
 
 /***/ }),
 
@@ -613,18 +613,22 @@ var OptAddressPipe = /** @class */ (function () {
     }
     OptAddressPipe.prototype.transform = function (address) {
         var newAddress = "";
-        if (address[0] != null) {
-            newAddress += address[0].addressLine1;
-            if (address[0].addressLine2 != null) {
-                newAddress += ", ";
-                newAddress += address[0].addressLine2;
+        if (address != null) {
+            if (address[0] != null) {
+                if (address[0].addressLine1 != null) {
+                    newAddress += address[0].addressLine1;
+                }
+                if (address[0].addressLine2 != null) {
+                    newAddress += ", ";
+                    newAddress += address[0].addressLine2;
+                }
+                newAddress = newAddress + ", " + "\n" + address[0].city + ", " + address[0].state + ", " + address[0].zipCode;
+                if (address[0].zipExt != null) {
+                    newAddress += "-";
+                    newAddress += address[0].zipExt;
+                }
+                return newAddress;
             }
-            newAddress = newAddress + ", " + "\n" + address[0].city + ", " + address[0].state + ", " + address[0].zipCode;
-            if (address[0].zipExt != null) {
-                newAddress += "-";
-                newAddress += address[0].zipExt;
-            }
-            return newAddress;
         }
         else {
             return null;
@@ -1823,7 +1827,7 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { onSameUrlNavigation: 'reload' })],
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, { onSameUrlNavigation: 'reload', useHash: true })],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
             providers: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]]
         })
@@ -3206,9 +3210,8 @@ var ClaimantSearchComponent = /** @class */ (function () {
     }
     ClaimantSearchComponent.prototype.ngOnInit = function () {
         this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-        this.searchClaimant(this.claimantInfo);
+        this.searchClaimant2(this.claimantInfo);
         // this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
-        this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'claimantAddresses'];
         //for the sweet alert
         this.noSearchResultObject = {
             type: 'info',
@@ -3228,34 +3231,39 @@ var ClaimantSearchComponent = /** @class */ (function () {
             .subscribe(function (claimantSO) { return _this.claimantSO = claimantSO; });
     };
     ClaimantSearchComponent.prototype.searchClaimant = function (claimantInfo) {
-        // this.claimantService
-        // .searchClaimant(claimantInfo)
-        // .subscribe(claimantSO => {this.claimantSO = claimantSO;
-        //   if(claimantSO.length > 1) {
-        //     this.toasterService.success(
-        //       "Success", 
-        //       "There are " + String(claimantSO.length) + " results for your query."
-        //     );
-        //   } else if(claimantSO.length == 1) {
-        //     this.toasterService.success(
-        //       "Success", 
-        //       "There is " + String(claimantSO.length) + " result for your query.");
-        //   } else if(claimantSO.length == 0) {
-        //     this.alert
-        //     .custom(this.noSearchResultObject)
-        //     .then((result) => {
-        //       if(result.value) {
-        //         this.noSearchResult();
-        //       }
-        //     })
-        //   }
-        // });
         var _this = this;
+        this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'claimantAddresses'];
+        this.status = 0;
         this.searchService
             .searchClaimant(claimantInfo)
             .subscribe(function (claimantSO) {
             console.log(claimantSO);
             console.log(123);
+            _this.claimantSO = claimantSO;
+            if (claimantSO.length > 1) {
+                _this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
+            }
+            else if (claimantSO.length == 1) {
+                _this.toasterService.success("Success", "There is " + String(claimantSO.length) + " result for your query.");
+            }
+            else if (claimantSO.length == 0) {
+                _this.alert
+                    .custom(_this.noSearchResultObject)
+                    .then(function (result) {
+                    if (result.value) {
+                        _this.noSearchResult();
+                    }
+                });
+            }
+        });
+    };
+    ClaimantSearchComponent.prototype.searchClaimant2 = function (claimantInfo) {
+        var _this = this;
+        this.status = 1;
+        this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'address'];
+        this.claimantService
+            .searchClaimant(claimantInfo)
+            .subscribe(function (claimantSO) {
             _this.claimantSO = claimantSO;
             if (claimantSO.length > 1) {
                 _this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
