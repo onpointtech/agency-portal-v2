@@ -12,9 +12,7 @@ import { JsqueryTestComponent } from './../../jsquery-test/jsquery-test.componen
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { KeycloakService } from 'keycloak-angular';
-// import { KeycloakService } from '../../keycloak.service';
 
-import { UserRoleCheckingService } from '../user-role-checking.service';
 import { Router } from '@angular/router';
 import { AgencyServiceService } from 'src/app/agency-service.service';
 
@@ -39,7 +37,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
     let userDetails = this.keycloakService.getKeycloakInstance();
-    // console.log(userDetails);
+    console.log(userDetails);
+    console.log(userDetails.tokenParsed["exp"]);
     // console.log(userDetails.realmAccess["roles"]);
     // console.log(userDetails.profile["email"]);
   }

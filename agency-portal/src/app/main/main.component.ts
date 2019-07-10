@@ -7,12 +7,17 @@ import { ToasterService } from 'projects/opt-library/src/portal-services/toaster
 import { ModalService } from 'projects/opt-library/src/portal-services/modal.service';
 import { KeycloakService } from 'keycloak-angular';
 import { AlertService } from 'projects/opt-library/src/portal-services/alert.service';
+import {Idle, DEFAULT_INTERRUPTSOURCES} from '@ng-idle/core';
+import {Keepalive} from '@ng-idle/keepalive';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html'
 })
 export class MainComponent implements OnInit {
+  idleState = 'Not started.';
+  timedOut = false;
+  lastPing?: Date = null;
   subscriptionStart: Subscription
   subscriptionEnd: Subscription
   previousUrl: any
@@ -23,35 +28,52 @@ export class MainComponent implements OnInit {
   constructor(private toasterService: ToasterService,
     private modalService: ModalService,
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private keycloakService: KeycloakService,
-    private alert: AlertService
+    private idle: Idle,
+    private keepalive: Keepalive
   ) {
     router.events.forEach(event => {
       if(event instanceof NavigationEnd) {
         modalService.close();
-
-        // const requiredRoles = activatedRoute.snapshot.routeConfig.children[0].data.roles1;
-        // const requiredRoles = activatedRoute.snapshot.data.roles1;
-        // const userRoles = keycloakService.getKeycloakInstance().realmAccess['roles'];
-        // console.log(requiredRoles);
-        // for(var i = 0; i < userRoles.length; i++){
-        //   if(requiredRoles.some(x => x === userRoles[i])) {
-        //     this.accessPermission = true;
-        //     break;
-        //   }
-        // }
-
-        // if(!this.accessPermission){
-        //   this.router.navigate(['/claimant-overview/56']);
-        //   this.alert.error("Error","You are not allowed to visit this page");
-        // }
       }
     });
+
+    // sets an idle timeout of 5 seconds, for testing purposes.
+    idle.setIdle(5000);
+    // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
+    idle.setTimeout(1000);
+    // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
+    idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
+    
+    idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
+    idle.onTimeout.subscribe(() => {
+      this.idleState = 'Timed out!';
+      this.timedOut = true;
+      this.doLogout();
+    });
+    idle.onIdleStart.subscribe(() => this.idleState = 'You\'ve gone idle!');
+    idle.onTimeoutWarning.subscribe((countdown) => this.idleState = 'You will time out in ' + countdown + ' seconds!');
+    
+    // sets the ping interval to 15 seconds
+    keepalive.interval(15);
+    
+    keepalive.onPing.subscribe(() => this.lastPing = new Date());
+    
+    this.reset();
   }
 
   async ngOnInit() {
     this.toasterService.overlayContainer = this.toastContainer;
+  }
+
+  async doLogout() {
+    await this.keycloakService.logout();
+  }
+
+  reset() {
+    this.idle.watch();
+    this.idleState = 'Started.';
+    this.timedOut = false;
   }
 }
 

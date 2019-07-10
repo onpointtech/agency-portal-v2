@@ -27,7 +27,8 @@ const routes: Routes = [
      children:[
         {
           path:'home',
-          component:HomeComponent
+          component:HomeComponent,
+          canActivate: [AppAuthGuard]
         },
         {
           path:'claimant-overview/:claimantId',

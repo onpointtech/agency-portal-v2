@@ -23,6 +23,292 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-SG": "./node_modules/moment/locale/en-SG.js",
+	"./en-SG.js": "./node_modules/moment/locale/en-SG.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component.html":
 /*!***************************************************************************************************************************!*\
   !*** ./node_modules/raw-loader!./projects/opt-library/src/lib/edit-claimant-address/edit-claimant-address.component.html ***!
@@ -52,7 +338,7 @@ module.exports = "<div class=\"modal-header\">\r\n  <h4 class=\"modal-title\">Ed
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>"
+module.exports = "<!-- <p><strong>{{idleState}}</strong></p>\r\n<p *ngIf=\"lastPing\"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>\r\n<button (click)=\"reset()\" *ngIf=\"timedOut\">Restart</button> -->\r\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -118,7 +404,7 @@ module.exports = "<ng-container *ngIf = \"claimantSO\">\r\n  <div class = \"col-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\r\n    <h4 class = \"p-2\">\r\n        Claimant Profile\r\n    </h4>\r\n\r\n    <form [formGroup] = \"profileForm\">\r\n        <div class = \"form-group\">\r\n\r\n            <!-- SSN and CONFIRM SSN div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.ssn}}\r\n                            [(ngModel)] = \"claimantSO.ssn\" \r\n                            formControlName = \"ssn\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Alternate SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.alternateClaimantId}} \r\n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \r\n                            formControlName = \"alternateClaimantId\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- First Name and Last Name div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        First Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.firstName}} \r\n                            [(ngModel)] = \"claimantSO.firstName\" \r\n                            formControlName = \"firstName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.lastName}} \r\n                            [(ngModel)] = \"claimantSO.lastName\" \r\n                            formControlName = \"lastName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Middle Initial and Date of Birth div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Middle Initial:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.middleInitial}} \r\n                            [(ngModel)] = \"claimantSO.middleInitial\" \r\n                            formControlName = \"middleInitial\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Date of Birth:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.dateOfBirth}} \r\n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \r\n                            formControlName = \"dateOfBirth\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Home Phone and Mobile Phone div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class=\"col-xs-12 col-md-6\">\r\n                    <label class=\"col-xs-12 head control-label\">\r\n                        Home Phone:\r\n                    </label>\r\n                    <div class=\"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class=\"field\"\r\n                            type=\"text\" \r\n                            placeholder= {{claimantSO.homePhone}}\r\n                            [(ngModel)]=\"claimantSO.homePhone\" \r\n                            formControlName=\"homePhone\" \r\n                            mask=\"(000) 000-0000\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.mobilePhone}} \r\n                            [(ngModel)] = \"claimantSO.mobilePhone\" \r\n                            formControlName = \"mobilePhone\"\r\n                            mask = \"(000) 000-0000\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Preferred Occupation and Language Preference div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.preferredOccupation}} \r\n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \r\n                            formControlName = \"preferredOccupation\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Language Preference:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.languagePreference}} \r\n                            [(ngModel)] = \"claimantSO.languagePreference\" \r\n                            formControlName = \"languagePreference\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Gender and education Level div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Gender:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.gender}} \r\n                            [(ngModel)] = \"claimantSO.gender\" \r\n                            formControlName = \"gender\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Educational Level:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.educationLevel}} \r\n                            [(ngModel)] = \"claimantSO.educationLevel\" \r\n                            formControlName = \"educationLevel\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Race and Ethnicity div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Race:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                                class = \"field\" \r\n                                placeholder = {{claimantSO.race}} \r\n                                [(ngModel)] = \"claimantSO.race\" \r\n                                formControlName = \"race\"\r\n                                readonly = \"readonly\"\r\n                                disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Ethnicity:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.ethnicity}} \r\n                            [(ngModel)] = \"claimantSO.ethnicity\" \r\n                            formControlName = \"ethnicity\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Details Button -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantDetails(claimantSO)\">\r\n                            <b>Edit Claimant Details</b>\r\n                    </button>\r\n                </div>\r\n                <br>\r\n                <br>\r\n            </div>\r\n\r\n            <!-- Address fields -->\r\n            <h4 class = \"p-2\">\r\n                Claimant Address\r\n            </h4>\r\n\r\n            <!-- Address Line 1 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 1:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine1}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine1\" \r\n                            formControlName = \"addressLine1\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Address Line 2 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 2:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine2}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine2\" \r\n                            formControlName = \"addressLine2\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- City and State div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        City:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].city}} \r\n                            [(ngModel)] = \"claimantSO.address[0].city\" \r\n                            formControlName = \"city\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        State:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].state}} \r\n                            [(ngModel)] = \"claimantSO.address[0].state\" \r\n                            formControlName = \"state\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Zip code and Zip code extension -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipCode}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipCode\" \r\n                            formControlName = \"zipCode\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code Extension:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipExt}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipExt\" \r\n                            formControlName = \"zipExt\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Address Button -->\r\n            <div class =\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantAddresses(claimantSO.address)\">\r\n                        <b>Edit Claimant Address</b>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </form>\r\n</ng-container>"
+module.exports = "<ng-container>\n    <h4 class = \"p-2\">\n        Claimant Profile\n    </h4>\n\n    <form [formGroup] = \"profileForm\">\n        <div class = \"form-group\">\n\n            <!-- SSN and CONFIRM SSN div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.ssn}}\n                            [(ngModel)] = \"claimantSO.ssn\" \n                            formControlName = \"ssn\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Alternate SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.alternateClaimantId}} \n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \n                            formControlName = \"alternateClaimantId\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- First Name and Last Name div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        First Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.firstName}} \n                            [(ngModel)] = \"claimantSO.firstName\" \n                            formControlName = \"firstName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.lastName}} \n                            [(ngModel)] = \"claimantSO.lastName\" \n                            formControlName = \"lastName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Middle Initial and Date of Birth div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Middle Initial:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.middleInitial}} \n                            [(ngModel)] = \"claimantSO.middleInitial\" \n                            formControlName = \"middleInitial\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Date of Birth:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.dateOfBirth}} \n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \n                            formControlName = \"dateOfBirth\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Home Phone and Mobile Phone div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class=\"col-xs-12 col-md-6\">\n                    <label class=\"col-xs-12 head control-label\">\n                        Home Phone:\n                    </label>\n                    <div class=\"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class=\"field\"\n                            type=\"text\" \n                            placeholder= {{claimantSO.homePhone}}\n                            [(ngModel)]=\"claimantSO.homePhone\" \n                            formControlName=\"homePhone\" \n                            mask=\"(000) 000-0000\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.mobilePhone}} \n                            [(ngModel)] = \"claimantSO.mobilePhone\" \n                            formControlName = \"mobilePhone\"\n                            mask = \"(000) 000-0000\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Preferred Occupation and Language Preference div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.preferredOccupation}} \n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \n                            formControlName = \"preferredOccupation\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Language Preference:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.languagePreference}} \n                            [(ngModel)] = \"claimantSO.languagePreference\" \n                            formControlName = \"languagePreference\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Gender and education Level div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Gender:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.gender}} \n                            [(ngModel)] = \"claimantSO.gender\" \n                            formControlName = \"gender\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Educational Level:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.educationLevel}} \n                            [(ngModel)] = \"claimantSO.educationLevel\" \n                            formControlName = \"educationLevel\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Race and Ethnicity div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Race:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                                class = \"field\" \n                                placeholder = {{claimantSO.race}} \n                                [(ngModel)] = \"claimantSO.race\" \n                                formControlName = \"race\"\n                                readonly = \"readonly\"\n                                disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Ethnicity:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.ethnicity}} \n                            [(ngModel)] = \"claimantSO.ethnicity\" \n                            formControlName = \"ethnicity\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Details Button -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantDetails(claimantSO)\">\n                            <b>Edit Claimant Details</b>\n                    </button>\n                </div>\n                <br>\n                <br>\n            </div>\n\n            <!-- Address fields -->\n            <h4 class = \"p-2\">\n                Claimant Address\n            </h4>\n\n            <!-- Address Line 1 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 1:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].addressLine1}} \n                            [(ngModel)] = \"claimantSO.address[0].addressLine1\" \n                            formControlName = \"addressLine1\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Address Line 2 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 2:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].addressLine2}} \n                            [(ngModel)] = \"claimantSO.address[0].addressLine2\" \n                            formControlName = \"addressLine2\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- City and State div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        City:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].city}} \n                            [(ngModel)] = \"claimantSO.address[0].city\" \n                            formControlName = \"city\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        State:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].state}} \n                            [(ngModel)] = \"claimantSO.address[0].state\" \n                            formControlName = \"state\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Zip code and Zip code extension -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].zipCode}} \n                            [(ngModel)] = \"claimantSO.address[0].zipCode\" \n                            formControlName = \"zipCode\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code Extension:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].zipExt}} \n                            [(ngModel)] = \"claimantSO.address[0].zipExt\" \n                            formControlName = \"zipExt\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Address Button -->\n            <div class =\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantAddresses(claimantSO.address)\">\n                        <b>Edit Claimant Address</b>\n                    </button>\n                </div>\n            </div>\n\n        </div>\n    </form>\n</ng-container>"
 
 /***/ }),
 
@@ -140,7 +426,7 @@ module.exports = "<h4 class = \"p-2\">\r\n  Claimant Registration\r\n</h4>\r\n\r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"address\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.address | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n  </ng-template>\r\n</ng-container>\r\n<button (click)=\"refreshToken()\">Refresh</button>"
+module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\"claimantSO.length == 0; else showTable\">\r\n  </ng-container>\r\n  <ng-template #showTable>\r\n    <mat-table [dataSource]=\"claimantSO\">\r\n        <ng-container matColumnDef=\"ssn\">\r\n          <th mat-header-cell *matHeaderCellDef>SSN</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\" >\r\n            <a class=\"parent\" style=\"display: block; color:blue;\" routerLink=\"/main/claimant-overview/{{ClaimantSO.claimantId}}\">\r\n            {{ClaimantSO.ssn | optSsnPipe}}\r\n            </a>\r\n          </td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"name\">\r\n          <th mat-header-cell *matHeaderCellDef>Name</th>\r\n          <td class=\"\"mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.firstName}} {{ClaimantSO.lastName}}</td>\r\n        </ng-container>\r\n      \r\n        <!-- <ng-container matColumnDef=\"dateOfBirth\">\r\n          <th mat-header-cell *matHeaderCellDef>Date of Birth</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.dateOfBirth | optDatePipe}}</td>\r\n        </ng-container> -->\r\n      \r\n        <ng-container matColumnDef=\"homePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Home Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.homePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"mobilePhone\">\r\n          <th mat-header-cell *matHeaderCellDef>Mobile Phone</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.mobilePhone | optPhonePipe}}</td>\r\n        </ng-container>\r\n      \r\n        <ng-container matColumnDef=\"claimantAddresses\">\r\n          <th mat-header-cell *matHeaderCellDef>Address</th>\r\n          <td mat-cell *matCellDef=\"let ClaimantSO\">{{ClaimantSO.claimantAddresses | optAddressPipe}}</td>\r\n        </ng-container>\r\n      <tr mat-header-row *matHeaderRowDef=\"columnsToDisplay\"></tr>\r\n      <tr mat-row *matRowDef=\"let myRowData; columns: columnsToDisplay\"></tr>\r\n    </mat-table>\r\n  </ng-template>\r\n</ng-container>\r\n<button (click)=\"refreshToken()\">Refresh</button>"
 
 /***/ }),
 
@@ -327,17 +613,22 @@ var OptAddressPipe = /** @class */ (function () {
     }
     OptAddressPipe.prototype.transform = function (address) {
         var newAddress = "";
-        newAddress += address[0].addressLine1;
-        if (address[0].addressLine2 != null) {
-            newAddress += ", ";
-            newAddress += address[0].addressLine2;
+        if (address[0] != null) {
+            newAddress += address[0].addressLine1;
+            if (address[0].addressLine2 != null) {
+                newAddress += ", ";
+                newAddress += address[0].addressLine2;
+            }
+            newAddress = newAddress + ", " + "\n" + address[0].city + ", " + address[0].state + ", " + address[0].zipCode;
+            if (address[0].zipExt != null) {
+                newAddress += "-";
+                newAddress += address[0].zipExt;
+            }
+            return newAddress;
         }
-        newAddress = newAddress + ", " + "\n" + address[0].city + ", " + address[0].state + ", " + address[0].zipCode;
-        if (address[0].zipExt != null) {
-            newAddress += "-";
-            newAddress += address[0].zipExt;
+        else {
+            return null;
         }
-        return newAddress;
     };
     OptAddressPipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({ name: 'optAddressPipe' })
@@ -407,16 +698,21 @@ var OptPhonePipe = /** @class */ (function () {
     }
     OptPhonePipe.prototype.transform = function (mobilePhone) {
         var newMobilePhone = "";
-        if (mobilePhone.length == 10) {
+        if (mobilePhone == null || mobilePhone == "") {
+            return null;
+        }
+        else if (mobilePhone.length == 10) {
             newMobilePhone = this.maskPipe.transform(mobilePhone, '(000) 000-0000');
+            return newMobilePhone;
         }
         else if (mobilePhone.length == 11) {
             newMobilePhone = this.maskPipe.transform(mobilePhone, '+0 (000) 000-0000');
+            return newMobilePhone;
         }
         else {
             newMobilePhone = mobilePhone;
+            return newMobilePhone;
         }
-        return newMobilePhone;
     };
     OptPhonePipe = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({ name: 'optPhonePipe' }),
@@ -1482,7 +1778,8 @@ var routes = [
         children: [
             {
                 path: 'home',
-                component: _main_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]
+                component: _main_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"],
+                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]]
             },
             {
                 path: 'claimant-overview/:claimantId',
@@ -1494,11 +1791,15 @@ var routes = [
             },
             {
                 path: 'claimant-registration',
-                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"]
+                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"],
+                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
+                data: { roles: ['asdasdas', 'asdasda'] }
             },
             {
                 path: 'claimant-search/:claimantInfo',
-                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"]
+                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"],
+                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
+                data: { roles: ['ClaimsTaker', 'asdasda'] }
             },
             {
                 path: 'claim/:claimantId',
@@ -1748,6 +2049,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 //import user made modules
 
 //import components
@@ -1789,7 +2092,7 @@ var AppModule = /** @class */ (function () {
                 _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_31__["NotAuthorizedComponent"],
             ],
             imports: [
-                projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_15__["OptLibraryModule"],
+                projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_17__["OptLibraryModule"],
                 ngx_valdemort__WEBPACK_IMPORTED_MODULE_10__["ValdemortModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_9__["NgbModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1804,7 +2107,7 @@ var AppModule = /** @class */ (function () {
                 }),
                 ngx_toastr__WEBPACK_IMPORTED_MODULE_11__["ToastContainerModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
-                keycloak_angular__WEBPACK_IMPORTED_MODULE_28__["KeycloakAngularModule"],
+                keycloak_angular__WEBPACK_IMPORTED_MODULE_30__["KeycloakAngularModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatTableModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
                 ngx_mask__WEBPACK_IMPORTED_MODULE_12__["NgxMaskModule"].forRoot(),
@@ -1816,20 +2119,22 @@ var AppModule = /** @class */ (function () {
                     customClass: 'modal-content',
                     confirmButtonClass: 'btn btn-primary',
                     cancelButtonClass: 'btn btn-info',
-                })
+                }),
+                _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_15__["NgIdleKeepaliveModule"].forRoot(),
+                angular2_moment__WEBPACK_IMPORTED_MODULE_16__["MomentModule"]
             ],
             entryComponents: [],
             providers: [
                 {
                     provide: _angular_core__WEBPACK_IMPORTED_MODULE_2__["APP_INITIALIZER"],
-                    useFactory: _app_init__WEBPACK_IMPORTED_MODULE_29__["initializer"],
+                    useFactory: _app_init__WEBPACK_IMPORTED_MODULE_31__["initializer"],
                     multi: true,
-                    deps: [keycloak_angular__WEBPACK_IMPORTED_MODULE_28__["KeycloakService"]]
+                    deps: [keycloak_angular__WEBPACK_IMPORTED_MODULE_30__["KeycloakService"]]
                 },
                 _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"],
                 ngx_mask__WEBPACK_IMPORTED_MODULE_12__["MaskPipe"]
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_16__["AppComponent"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_18__["AppComponent"]],
             schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["CUSTOM_ELEMENTS_SCHEMA"]]
         })
     ], AppModule);
@@ -2824,6 +3129,48 @@ var ClaimantRegistrationComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/main/claimant-search-service/claimant-search.service.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/main/claimant-search-service/claimant-search.service.ts ***!
+  \*************************************************************************/
+/*! exports provided: ClaimantSearchService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClaimantSearchService", function() { return ClaimantSearchService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
+var ClaimantSearchService = /** @class */ (function () {
+    function ClaimantSearchService(http) {
+        this.http = http;
+        // url = environment.apis.claimantSearch;
+        this.url = 'http://localhost:8080/claimant-search';
+    }
+    ClaimantSearchService.prototype.searchClaimant = function (claimantInfo) {
+        var claimant = {
+            "maximumResultCount": 100,
+            "searchString": claimantInfo
+        };
+        return this.http.post(this.url, claimant);
+    };
+    ClaimantSearchService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], ClaimantSearchService);
+    return ClaimantSearchService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/main/claimant-search/claimant-search.component.css":
 /*!********************************************************************!*\
   !*** ./src/app/main/claimant-search/claimant-search.component.css ***!
@@ -2852,7 +3199,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
-/* harmony import */ var _user_role_checking_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../user-role-checking.service */ "./src/app/main/user-role-checking.service.ts");
+/* harmony import */ var _claimant_search_service_claimant_search_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../claimant-search-service/claimant-search.service */ "./src/app/main/claimant-search-service/claimant-search.service.ts");
 
 //import angular modules
 
@@ -2866,15 +3213,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ClaimantSearchComponent = /** @class */ (function () {
-    function ClaimantSearchComponent(claimantService, route, toasterService, alert, router, keycloakService, userRoleChecking) {
+    function ClaimantSearchComponent(claimantService, route, toasterService, alert, router, keycloakService, searchService) {
         this.claimantService = claimantService;
         this.route = route;
         this.toasterService = toasterService;
         this.alert = alert;
         this.router = router;
         this.keycloakService = keycloakService;
-        this.userRoleChecking = userRoleChecking;
-        this.allowedRoles = ["dsadsadsa", "hello1"];
+        this.searchService = searchService;
     }
     ClaimantSearchComponent.prototype.ngOnInit = function () {
         var userDetails = this.keycloakService.getKeycloakInstance();
@@ -2903,10 +3249,34 @@ var ClaimantSearchComponent = /** @class */ (function () {
             .subscribe(function (claimantSO) { return _this.claimantSO = claimantSO; });
     };
     ClaimantSearchComponent.prototype.searchClaimant = function (claimantInfo) {
+        // this.claimantService
+        // .searchClaimant(claimantInfo)
+        // .subscribe(claimantSO => {this.claimantSO = claimantSO;
+        //   if(claimantSO.length > 1) {
+        //     this.toasterService.success(
+        //       "Success", 
+        //       "There are " + String(claimantSO.length) + " results for your query."
+        //     );
+        //   } else if(claimantSO.length == 1) {
+        //     this.toasterService.success(
+        //       "Success", 
+        //       "There is " + String(claimantSO.length) + " result for your query.");
+        //   } else if(claimantSO.length == 0) {
+        //     this.alert
+        //     .custom(this.noSearchResultObject)
+        //     .then((result) => {
+        //       if(result.value) {
+        //         this.noSearchResult();
+        //       }
+        //     })
+        //   }
+        // });
         var _this = this;
-        this.claimantService
+        this.searchService
             .searchClaimant(claimantInfo)
             .subscribe(function (claimantSO) {
+            console.log(claimantSO);
+            console.log(123);
             _this.claimantSO = claimantSO;
             if (claimantSO.length > 1) {
                 _this.toasterService.success("Success", "There are " + String(claimantSO.length) + " results for your query.");
@@ -2929,8 +3299,9 @@ var ClaimantSearchComponent = /** @class */ (function () {
         this.router.navigate(["main/claimant-registration"]);
     };
     ClaimantSearchComponent.prototype.refreshToken = function () {
-        this.keycloakService.clearToken();
-        console.log(this.keycloakService);
+        console.log(this.keycloakService.getKeycloakInstance());
+        this.keycloakService.getKeycloakInstance().updateToken(10).success(function (event) { return console.log(event); });
+        console.log(this.keycloakService.getKeycloakInstance());
     };
     ClaimantSearchComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2944,7 +3315,7 @@ var ClaimantSearchComponent = /** @class */ (function () {
             projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_5__["AlertService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             keycloak_angular__WEBPACK_IMPORTED_MODULE_6__["KeycloakService"],
-            _user_role_checking_service__WEBPACK_IMPORTED_MODULE_7__["UserRoleCheckingService"]])
+            _claimant_search_service_claimant_search_service__WEBPACK_IMPORTED_MODULE_7__["ClaimantSearchService"]])
     ], ClaimantSearchComponent);
     return ClaimantSearchComponent;
 }());
@@ -3087,6 +3458,24 @@ var MainComponent = /** @class */ (function () {
                 // }
             }
         });
+        // sets an idle timeout of 5 seconds, for testing purposes.
+        idle.setIdle(5000);
+        // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
+        idle.setTimeout(1000);
+        // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
+        idle.setInterrupts(_ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_INTERRUPTSOURCES"]);
+        idle.onIdleEnd.subscribe(function () { return _this.idleState = 'No longer idle.'; });
+        idle.onTimeout.subscribe(function () {
+            _this.idleState = 'Timed out!';
+            _this.timedOut = true;
+            _this.doLogout();
+        });
+        idle.onIdleStart.subscribe(function () { return _this.idleState = 'You\'ve gone idle!'; });
+        idle.onTimeoutWarning.subscribe(function (countdown) { return _this.idleState = 'You will time out in ' + countdown + ' seconds!'; });
+        // sets the ping interval to 15 seconds
+        keepalive.interval(15);
+        keepalive.onPing.subscribe(function () { return _this.lastPing = new Date(); });
+        this.reset();
     }
     MainComponent.prototype.ngOnInit = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
@@ -3095,6 +3484,23 @@ var MainComponent = /** @class */ (function () {
                 return [2 /*return*/];
             });
         });
+    };
+    MainComponent.prototype.doLogout = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.keycloakService.logout()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MainComponent.prototype.reset = function () {
+        this.idle.watch();
+        this.idleState = 'Started.';
+        this.timedOut = false;
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastContainerDirective"], { static: false }),
@@ -3119,51 +3525,45 @@ var MainComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/main/user-role-checking.service.ts":
-/*!****************************************************!*\
-  !*** ./src/app/main/user-role-checking.service.ts ***!
-  \****************************************************/
-/*! exports provided: UserRoleCheckingService */
+/***/ "./src/app/not-authorized/not-authorized.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/not-authorized/not-authorized.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25vdC1hdXRob3JpemVkL25vdC1hdXRob3JpemVkLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/not-authorized/not-authorized.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/not-authorized/not-authorized.component.ts ***!
+  \************************************************************/
+/*! exports provided: NotAuthorizedComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRoleCheckingService", function() { return UserRoleCheckingService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotAuthorizedComponent", function() { return NotAuthorizedComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/@angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
 
 
-
-
-var UserRoleCheckingService = /** @class */ (function () {
-    function UserRoleCheckingService(router, alert) {
-        this.router = router;
-        this.alert = alert;
+var NotAuthorizedComponent = /** @class */ (function () {
+    function NotAuthorizedComponent() {
     }
-    UserRoleCheckingService.prototype.userCanAccess = function (allowedUsers, userRoles) {
-        var accessPermission = false;
-        for (var i = 0; i < userRoles.length; i++) {
-            if (allowedUsers.some(function (x) { return x === userRoles[i]; })) {
-                accessPermission = true;
-                break;
-            }
-        }
-        if (!accessPermission) {
-            this.router.navigate(['/main/home']);
-            this.alert.error("Error", "You are not allowed to visit this page");
-        }
-        return accessPermission;
+    NotAuthorizedComponent.prototype.ngOnInit = function () {
     };
-    UserRoleCheckingService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
+    NotAuthorizedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-not-authorized',
+            template: __webpack_require__(/*! raw-loader!./not-authorized.component.html */ "./node_modules/raw-loader/index.js!./src/app/not-authorized/not-authorized.component.html"),
+            styles: [__webpack_require__(/*! ./not-authorized.component.css */ "./src/app/not-authorized/not-authorized.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_node_modules_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
-    ], UserRoleCheckingService);
-    return UserRoleCheckingService;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], NotAuthorizedComponent);
+    return NotAuthorizedComponent;
 }());
 
 
@@ -3402,6 +3802,7 @@ var keycloakConfig = {
 };
 var environment = {
     production: false,
+    apis: { claimantSearch: 'https://api.opt-dev.optimumui.com/search-service/api/search/claimant' },
     keycloak: keycloakConfig
 };
 /*
@@ -3449,7 +3850,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\internship v3\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Users\jose.ibardaloza\Documents\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
 
 
 /***/ })
