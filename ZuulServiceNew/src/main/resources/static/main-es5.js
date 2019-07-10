@@ -1727,13 +1727,12 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [
     {
         path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-    },
-    {
-        path: 'login',
         component: _login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"]
     },
+    // {  
+    //    path:'login',
+    //    component:LoginComponent
+    // },
     {
         path: 'main',
         component: _main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"],
@@ -1780,7 +1779,7 @@ var routes = [
     },
     {
         path: '**',
-        redirectTo: 'login',
+        redirectTo: '',
         pathMatch: 'full'
     }
 ];
