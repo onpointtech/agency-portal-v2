@@ -404,7 +404,7 @@ module.exports = "<ng-container *ngIf = \"claimantSO\">\r\n  <div class = \"col-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n    <h4 class = \"p-2\">\n        Claimant Profile\n    </h4>\n\n    <form [formGroup] = \"profileForm\">\n        <div class = \"form-group\">\n\n            <!-- SSN and CONFIRM SSN div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.ssn}}\n                            [(ngModel)] = \"claimantSO.ssn\" \n                            formControlName = \"ssn\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Alternate SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.alternateClaimantId}} \n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \n                            formControlName = \"alternateClaimantId\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- First Name and Last Name div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        First Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.firstName}} \n                            [(ngModel)] = \"claimantSO.firstName\" \n                            formControlName = \"firstName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.lastName}} \n                            [(ngModel)] = \"claimantSO.lastName\" \n                            formControlName = \"lastName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Middle Initial and Date of Birth div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Middle Initial:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.middleInitial}} \n                            [(ngModel)] = \"claimantSO.middleInitial\" \n                            formControlName = \"middleInitial\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Date of Birth:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.dateOfBirth}} \n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \n                            formControlName = \"dateOfBirth\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Home Phone and Mobile Phone div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class=\"col-xs-12 col-md-6\">\n                    <label class=\"col-xs-12 head control-label\">\n                        Home Phone:\n                    </label>\n                    <div class=\"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class=\"field\"\n                            type=\"text\" \n                            placeholder= {{claimantSO.homePhone}}\n                            [(ngModel)]=\"claimantSO.homePhone\" \n                            formControlName=\"homePhone\" \n                            mask=\"(000) 000-0000\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.mobilePhone}} \n                            [(ngModel)] = \"claimantSO.mobilePhone\" \n                            formControlName = \"mobilePhone\"\n                            mask = \"(000) 000-0000\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Preferred Occupation and Language Preference div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.preferredOccupation}} \n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \n                            formControlName = \"preferredOccupation\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Language Preference:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.languagePreference}} \n                            [(ngModel)] = \"claimantSO.languagePreference\" \n                            formControlName = \"languagePreference\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Gender and education Level div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Gender:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.gender}} \n                            [(ngModel)] = \"claimantSO.gender\" \n                            formControlName = \"gender\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Educational Level:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.educationLevel}} \n                            [(ngModel)] = \"claimantSO.educationLevel\" \n                            formControlName = \"educationLevel\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Race and Ethnicity div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Race:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                                class = \"field\" \n                                placeholder = {{claimantSO.race}} \n                                [(ngModel)] = \"claimantSO.race\" \n                                formControlName = \"race\"\n                                readonly = \"readonly\"\n                                disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Ethnicity:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.ethnicity}} \n                            [(ngModel)] = \"claimantSO.ethnicity\" \n                            formControlName = \"ethnicity\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Details Button -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantDetails(claimantSO)\">\n                            <b>Edit Claimant Details</b>\n                    </button>\n                </div>\n                <br>\n                <br>\n            </div>\n\n            <!-- Address fields -->\n            <h4 class = \"p-2\">\n                Claimant Address\n            </h4>\n\n            <!-- Address Line 1 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 1:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].addressLine1}} \n                            [(ngModel)] = \"claimantSO.address[0].addressLine1\" \n                            formControlName = \"addressLine1\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Address Line 2 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 2:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].addressLine2}} \n                            [(ngModel)] = \"claimantSO.address[0].addressLine2\" \n                            formControlName = \"addressLine2\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- City and State div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        City:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].city}} \n                            [(ngModel)] = \"claimantSO.address[0].city\" \n                            formControlName = \"city\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        State:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].state}} \n                            [(ngModel)] = \"claimantSO.address[0].state\" \n                            formControlName = \"state\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Zip code and Zip code extension -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].zipCode}} \n                            [(ngModel)] = \"claimantSO.address[0].zipCode\" \n                            formControlName = \"zipCode\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code Extension:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.address[0].zipExt}} \n                            [(ngModel)] = \"claimantSO.address[0].zipExt\" \n                            formControlName = \"zipExt\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Address Button -->\n            <div class =\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantAddresses(claimantSO.address)\">\n                        <b>Edit Claimant Address</b>\n                    </button>\n                </div>\n            </div>\n\n        </div>\n    </form>\n</ng-container>"
+module.exports = "<ng-container>\r\n    <h4 class = \"p-2\">\r\n        Claimant Profile\r\n    </h4>\r\n\r\n    <form [formGroup] = \"profileForm\">\r\n        <div class = \"form-group\">\r\n\r\n            <!-- SSN and CONFIRM SSN div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.ssn}}\r\n                            [(ngModel)] = \"claimantSO.ssn\" \r\n                            formControlName = \"ssn\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Alternate SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.alternateClaimantId}} \r\n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \r\n                            formControlName = \"alternateClaimantId\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- First Name and Last Name div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        First Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.firstName}} \r\n                            [(ngModel)] = \"claimantSO.firstName\" \r\n                            formControlName = \"firstName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.lastName}} \r\n                            [(ngModel)] = \"claimantSO.lastName\" \r\n                            formControlName = \"lastName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Middle Initial and Date of Birth div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Middle Initial:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.middleInitial}} \r\n                            [(ngModel)] = \"claimantSO.middleInitial\" \r\n                            formControlName = \"middleInitial\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Date of Birth:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.dateOfBirth}} \r\n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \r\n                            formControlName = \"dateOfBirth\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Home Phone and Mobile Phone div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class=\"col-xs-12 col-md-6\">\r\n                    <label class=\"col-xs-12 head control-label\">\r\n                        Home Phone:\r\n                    </label>\r\n                    <div class=\"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class=\"field\"\r\n                            type=\"text\" \r\n                            placeholder= {{claimantSO.homePhone}}\r\n                            [(ngModel)]=\"claimantSO.homePhone\" \r\n                            formControlName=\"homePhone\" \r\n                            mask=\"(000) 000-0000\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.mobilePhone}} \r\n                            [(ngModel)] = \"claimantSO.mobilePhone\" \r\n                            formControlName = \"mobilePhone\"\r\n                            mask = \"(000) 000-0000\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Preferred Occupation and Language Preference div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.preferredOccupation}} \r\n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \r\n                            formControlName = \"preferredOccupation\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Language Preference:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.languagePreference}} \r\n                            [(ngModel)] = \"claimantSO.languagePreference\" \r\n                            formControlName = \"languagePreference\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Gender and education Level div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Gender:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.gender}} \r\n                            [(ngModel)] = \"claimantSO.gender\" \r\n                            formControlName = \"gender\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Educational Level:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.educationLevel}} \r\n                            [(ngModel)] = \"claimantSO.educationLevel\" \r\n                            formControlName = \"educationLevel\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Race and Ethnicity div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Race:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                                class = \"field\" \r\n                                placeholder = {{claimantSO.race}} \r\n                                [(ngModel)] = \"claimantSO.race\" \r\n                                formControlName = \"race\"\r\n                                readonly = \"readonly\"\r\n                                disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Ethnicity:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.ethnicity}} \r\n                            [(ngModel)] = \"claimantSO.ethnicity\" \r\n                            formControlName = \"ethnicity\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Details Button -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantDetails(claimantSO)\">\r\n                            <b>Edit Claimant Details</b>\r\n                    </button>\r\n                </div>\r\n                <br>\r\n                <br>\r\n            </div>\r\n\r\n            <!-- Address fields -->\r\n            <h4 class = \"p-2\">\r\n                Claimant Address\r\n            </h4>\r\n\r\n            <!-- Address Line 1 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 1:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine1}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine1\" \r\n                            formControlName = \"addressLine1\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Address Line 2 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 2:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine2}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine2\" \r\n                            formControlName = \"addressLine2\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- City and State div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        City:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].city}} \r\n                            [(ngModel)] = \"claimantSO.address[0].city\" \r\n                            formControlName = \"city\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        State:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].state}} \r\n                            [(ngModel)] = \"claimantSO.address[0].state\" \r\n                            formControlName = \"state\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Zip code and Zip code extension -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipCode}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipCode\" \r\n                            formControlName = \"zipCode\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code Extension:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipExt}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipExt\" \r\n                            formControlName = \"zipExt\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Address Button -->\r\n            <div class =\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantAddresses(claimantSO.address)\">\r\n                        <b>Edit Claimant Address</b>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </form>\r\n</ng-container>"
 
 /***/ }),
 
@@ -437,7 +437,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 9:42 pm version\r\n</p>\r\n<button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
+module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 10:49 pm version\r\n</p>\r\n<button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
 
 /***/ }),
 
@@ -481,7 +481,7 @@ module.exports = "<!--Side Nav Bar Section-->\r\n<div class=\"bg-primary\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
+module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User {{this.firstName}}</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -1791,15 +1791,11 @@ var routes = [
             },
             {
                 path: 'claimant-registration',
-                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"],
-                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
-                data: { roles: ['asdasdas', 'asdasda'] }
+                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"]
             },
             {
                 path: 'claimant-search/:claimantInfo',
-                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"],
-                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
-                data: { roles: ['ClaimsTaker', 'asdasda'] }
+                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"]
             },
             {
                 path: 'claim/:claimantId',
@@ -1953,24 +1949,7 @@ var AppComponent = /** @class */ (function () {
                     case 2:
                         _a.userDetails = _b.sent();
                         _b.label = 3;
-                    case 3: return [4 /*yield*/, this.keycloakService.isTokenExpired()];
-                    case 4:
-                        if (_b.sent()) {
-                            this.keycloakService.clearToken();
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    AppComponent.prototype.doLogout = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.keycloakService.logout()];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
+                    case 3: return [2 /*return*/];
                 }
             });
         });
@@ -2015,23 +1994,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_mask__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-mask */ "./node_modules/ngx-mask/fesm5/ngx-mask.js");
 /* harmony import */ var _sweetalert2_ngx_sweetalert2__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @sweetalert2/ngx-sweetalert2 */ "./node_modules/@sweetalert2/ngx-sweetalert2/fesm5/sweetalert2-ngx-sweetalert2.js");
 /* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
-/* harmony import */ var projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! projects/opt-library/src/public-api */ "./projects/opt-library/src/public-api.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
-/* harmony import */ var _side_nav_bar_side_nav_bar_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./side-nav-bar/side-nav-bar.component */ "./src/app/side-nav-bar/side-nav-bar.component.ts");
-/* harmony import */ var _top_nav_bar_top_nav_bar_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./top-nav-bar/top-nav-bar.component */ "./src/app/top-nav-bar/top-nav-bar.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _main_home_home_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/home/home.component */ "./src/app/main/home/home.component.ts");
-/* harmony import */ var _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./main/claimant-search/claimant-search.component */ "./src/app/main/claimant-search/claimant-search.component.ts");
-/* harmony import */ var _main_claimant_overview_claimant_overview_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./main/claimant-overview/claimant-overview.component */ "./src/app/main/claimant-overview/claimant-overview.component.ts");
-/* harmony import */ var _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./main/claimant-profile/claimant-profile.component */ "./src/app/main/claimant-profile/claimant-profile.component.ts");
-/* harmony import */ var _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./main/claimant-registration/claimant-registration.component */ "./src/app/main/claimant-registration/claimant-registration.component.ts");
-/* harmony import */ var _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./main/claim/claim.component */ "./src/app/main/claim/claim.component.ts");
-/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
-/* harmony import */ var _app_init__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./app-init */ "./src/app/app-init.ts");
-/* harmony import */ var _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./jsquery-test/jsquery-test.component */ "./src/app/jsquery-test/jsquery-test.component.ts");
-/* harmony import */ var _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./not-authorized/not-authorized.component */ "./src/app/not-authorized/not-authorized.component.ts");
+/* harmony import */ var _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ng-idle/keepalive */ "./node_modules/@ng-idle/keepalive/index.js");
+/* harmony import */ var angular2_moment__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! angular2-moment */ "./node_modules/angular2-moment/index.js");
+/* harmony import */ var angular2_moment__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(angular2_moment__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! projects/opt-library/src/public-api */ "./projects/opt-library/src/public-api.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _main_main_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/main.component */ "./src/app/main/main.component.ts");
+/* harmony import */ var _side_nav_bar_side_nav_bar_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./side-nav-bar/side-nav-bar.component */ "./src/app/side-nav-bar/side-nav-bar.component.ts");
+/* harmony import */ var _top_nav_bar_top_nav_bar_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./top-nav-bar/top-nav-bar.component */ "./src/app/top-nav-bar/top-nav-bar.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _main_home_home_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./main/home/home.component */ "./src/app/main/home/home.component.ts");
+/* harmony import */ var _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./main/claimant-search/claimant-search.component */ "./src/app/main/claimant-search/claimant-search.component.ts");
+/* harmony import */ var _main_claimant_overview_claimant_overview_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./main/claimant-overview/claimant-overview.component */ "./src/app/main/claimant-overview/claimant-overview.component.ts");
+/* harmony import */ var _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./main/claimant-profile/claimant-profile.component */ "./src/app/main/claimant-profile/claimant-profile.component.ts");
+/* harmony import */ var _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./main/claimant-registration/claimant-registration.component */ "./src/app/main/claimant-registration/claimant-registration.component.ts");
+/* harmony import */ var _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./main/claim/claim.component */ "./src/app/main/claim/claim.component.ts");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
+/* harmony import */ var _app_init__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./app-init */ "./src/app/app-init.ts");
+/* harmony import */ var _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./jsquery-test/jsquery-test.component */ "./src/app/jsquery-test/jsquery-test.component.ts");
+/* harmony import */ var _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./not-authorized/not-authorized.component */ "./src/app/not-authorized/not-authorized.component.ts");
 
 //import angular modules
 
@@ -2076,20 +2058,20 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_16__["AppComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_17__["LoginComponent"],
-                _main_main_component__WEBPACK_IMPORTED_MODULE_18__["MainComponent"],
-                _side_nav_bar_side_nav_bar_component__WEBPACK_IMPORTED_MODULE_19__["SideNavBarComponent"],
-                _top_nav_bar_top_nav_bar_component__WEBPACK_IMPORTED_MODULE_20__["TopNavBarComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_21__["FooterComponent"],
-                _main_home_home_component__WEBPACK_IMPORTED_MODULE_22__["HomeComponent"],
-                _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_23__["ClaimantSearchComponent"],
-                _main_claimant_overview_claimant_overview_component__WEBPACK_IMPORTED_MODULE_24__["ClaimantOverviewComponent"],
-                _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_25__["ClaimantProfileComponent"],
-                _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_26__["ClaimantRegistrationComponent"],
-                _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_27__["ClaimComponent"],
-                _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__["JsqueryTestComponent"],
-                _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_31__["NotAuthorizedComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_18__["AppComponent"],
+                _login_login_component__WEBPACK_IMPORTED_MODULE_19__["LoginComponent"],
+                _main_main_component__WEBPACK_IMPORTED_MODULE_20__["MainComponent"],
+                _side_nav_bar_side_nav_bar_component__WEBPACK_IMPORTED_MODULE_21__["SideNavBarComponent"],
+                _top_nav_bar_top_nav_bar_component__WEBPACK_IMPORTED_MODULE_22__["TopNavBarComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_23__["FooterComponent"],
+                _main_home_home_component__WEBPACK_IMPORTED_MODULE_24__["HomeComponent"],
+                _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_25__["ClaimantSearchComponent"],
+                _main_claimant_overview_claimant_overview_component__WEBPACK_IMPORTED_MODULE_26__["ClaimantOverviewComponent"],
+                _main_claimant_profile_claimant_profile_component__WEBPACK_IMPORTED_MODULE_27__["ClaimantProfileComponent"],
+                _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_28__["ClaimantRegistrationComponent"],
+                _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_29__["ClaimComponent"],
+                _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_32__["JsqueryTestComponent"],
+                _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_33__["NotAuthorizedComponent"],
             ],
             imports: [
                 projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_17__["OptLibraryModule"],
@@ -3223,12 +3205,10 @@ var ClaimantSearchComponent = /** @class */ (function () {
         this.searchService = searchService;
     }
     ClaimantSearchComponent.prototype.ngOnInit = function () {
-        var userDetails = this.keycloakService.getKeycloakInstance();
-        // console.log(userDetails.realmAccess["roles"]);
-        // if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
         this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
         this.searchClaimant(this.claimantInfo);
-        this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+        // this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+        this.columnsToDisplay = ['ssn', 'name', 'homePhone', 'mobilePhone', 'claimantAddresses'];
         //for the sweet alert
         this.noSearchResultObject = {
             type: 'info',
@@ -3240,7 +3220,6 @@ var ClaimantSearchComponent = /** @class */ (function () {
             confirmButtonClass: 'btn btn-primary',
             cancelButtonClass: 'btn btn-info',
         };
-        // }
     };
     ClaimantSearchComponent.prototype.getClaimantSO = function () {
         var _this = this;
@@ -3340,6 +3319,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
 /* harmony import */ var src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/agency-service.service */ "./src/app/agency-service.service.ts");
+/* harmony import */ var projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! projects/opt-library/src/portal-services/portal.service */ "./projects/opt-library/src/portal-services/portal.service.ts");
 
 //import angular modules
 
@@ -3349,19 +3329,32 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 //import models or constants
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(toasterService, keycloakService, agencyService) {
+    function HomeComponent(toasterService, keycloakService, agencyService, portalService) {
         this.toasterService = toasterService;
         this.keycloakService = keycloakService;
         this.agencyService = agencyService;
+        this.portalService = portalService;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.toasterService.overlayContainer = this.toastContainer;
         var userDetails = this.keycloakService.getKeycloakInstance();
-        // console.log(userDetails);
+        console.log(userDetails);
+        console.log(userDetails.tokenParsed["exp"]);
         // console.log(userDetails.realmAccess["roles"]);
         // console.log(userDetails.profile["email"]);
+        this.keycloakService.getToken().then(function (data) {
+            // console.log("getting the token");
+            // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("inside the getToken()");
+            _this.agencyService.getAgencyStaff(_this.userid).subscribe(function (dataNew) {
+                console.log("inside the getAgencyService", dataNew);
+                _this.portalService.firstName = "jane eyre";
+            });
+        });
     };
     HomeComponent.prototype.success = function () {
         this.toasterService.success("Success!", "Welcome to Home");
@@ -3378,11 +3371,12 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.getAgencyButton = function () {
         var _this = this;
         this.keycloakService.getToken().then(function (data) {
-            console.log("getting the token");
-            _this.userid = _this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            // console.log("getting the token");
+            // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
             console.log("inside the getToken()");
             _this.agencyService.getAgencyStaff(_this.userid).subscribe(function (dataNew) {
                 console.log("inside the getAgencyService", dataNew);
+                _this.portalService.firstName = "jane eyre";
             });
         });
     };
@@ -3395,7 +3389,7 @@ var HomeComponent = /** @class */ (function () {
             selector: 'app-home',
             template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/main/home/home.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"], src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__["AgencyServiceService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"], src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__["AgencyServiceService"], projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_6__["PortalService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -3421,7 +3415,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/opt-library/src/portal-services/modal.service */ "./projects/opt-library/src/portal-services/modal.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
-/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+/* harmony import */ var _ng_idle_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ng-idle/core */ "./node_modules/@ng-idle/core/index.js");
+/* harmony import */ var _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ng-idle/keepalive */ "./node_modules/@ng-idle/keepalive/index.js");
+
 
 
 
@@ -3431,31 +3427,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var MainComponent = /** @class */ (function () {
-    function MainComponent(toasterService, modalService, router, activatedRoute, keycloakService, alert) {
+    function MainComponent(toasterService, modalService, router, keycloakService, idle, keepalive) {
+        var _this = this;
         this.toasterService = toasterService;
         this.modalService = modalService;
         this.router = router;
-        this.activatedRoute = activatedRoute;
         this.keycloakService = keycloakService;
-        this.alert = alert;
+        this.idle = idle;
+        this.keepalive = keepalive;
+        this.idleState = 'Not started.';
+        this.timedOut = false;
+        this.lastPing = null;
         this.accessPermission = false;
         router.events.forEach(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_3__["NavigationEnd"]) {
                 modalService.close();
-                // const requiredRoles = activatedRoute.snapshot.routeConfig.children[0].data.roles1;
-                // const requiredRoles = activatedRoute.snapshot.data.roles1;
-                // const userRoles = keycloakService.getKeycloakInstance().realmAccess['roles'];
-                // console.log(requiredRoles);
-                // for(var i = 0; i < userRoles.length; i++){
-                //   if(requiredRoles.some(x => x === userRoles[i])) {
-                //     this.accessPermission = true;
-                //     break;
-                //   }
-                // }
-                // if(!this.accessPermission){
-                //   this.router.navigate(['/claimant-overview/56']);
-                //   this.alert.error("Error","You are not allowed to visit this page");
-                // }
             }
         });
         // sets an idle timeout of 5 seconds, for testing purposes.
@@ -3514,56 +3500,11 @@ var MainComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__["ToasterService"],
             projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
             keycloak_angular__WEBPACK_IMPORTED_MODULE_6__["KeycloakService"],
-            projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__["AlertService"]])
+            _ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["Idle"],
+            _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_8__["Keepalive"]])
     ], MainComponent);
     return MainComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/not-authorized/not-authorized.component.css":
-/*!*************************************************************!*\
-  !*** ./src/app/not-authorized/not-authorized.component.css ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25vdC1hdXRob3JpemVkL25vdC1hdXRob3JpemVkLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/not-authorized/not-authorized.component.ts":
-/*!************************************************************!*\
-  !*** ./src/app/not-authorized/not-authorized.component.ts ***!
-  \************************************************************/
-/*! exports provided: NotAuthorizedComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotAuthorizedComponent", function() { return NotAuthorizedComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var NotAuthorizedComponent = /** @class */ (function () {
-    function NotAuthorizedComponent() {
-    }
-    NotAuthorizedComponent.prototype.ngOnInit = function () {
-    };
-    NotAuthorizedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-not-authorized',
-            template: __webpack_require__(/*! raw-loader!./not-authorized.component.html */ "./node_modules/raw-loader/index.js!./src/app/not-authorized/not-authorized.component.html"),
-            styles: [__webpack_require__(/*! ./not-authorized.component.css */ "./src/app/not-authorized/not-authorized.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], NotAuthorizedComponent);
-    return NotAuthorizedComponent;
 }());
 
 
@@ -3731,15 +3672,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
+/* harmony import */ var projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/portal.service */ "./projects/opt-library/src/portal-services/portal.service.ts");
+
 
 
 
 
 var TopNavBarComponent = /** @class */ (function () {
-    function TopNavBarComponent(router, keycloakService) {
+    function TopNavBarComponent(router, keycloakService, portalService) {
         var _this = this;
         this.router = router;
         this.keycloakService = keycloakService;
+        this.portalService = portalService;
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         };
@@ -3751,6 +3695,7 @@ var TopNavBarComponent = /** @class */ (function () {
         });
     }
     TopNavBarComponent.prototype.ngOnInit = function () {
+        this.firstName = this.portalService.firstName;
     };
     TopNavBarComponent.prototype.searchClaimant = function () {
         var claimantInfo = document.getElementById('searchText').value;
@@ -3773,7 +3718,7 @@ var TopNavBarComponent = /** @class */ (function () {
             selector: 'app-top-nav-bar',
             template: __webpack_require__(/*! raw-loader!./top-nav-bar.component.html */ "./node_modules/raw-loader/index.js!./src/app/top-nav-bar/top-nav-bar.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"], projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_4__["PortalService"]])
     ], TopNavBarComponent);
     return TopNavBarComponent;
 }());
@@ -3850,7 +3795,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\jose.ibardaloza\Documents\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\internship v3\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
 
 
 /***/ })

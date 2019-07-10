@@ -15,6 +15,7 @@ import { KeycloakService } from 'keycloak-angular';
 
 import { Router } from '@angular/router';
 import { AgencyServiceService } from 'src/app/agency-service.service';
+import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
 
 //import models or constants
 
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
   userid: any;
   @ViewChild(ToastContainerDirective, { static: false }) toastContainer: ToastContainerDirective;
 
-  constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService, private agencyService: AgencyServiceService) { }
+  constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService, private agencyService: AgencyServiceService, private portalService: PortalService) { }
 
 
 
@@ -41,6 +42,24 @@ export class HomeComponent implements OnInit {
     console.log(userDetails.tokenParsed["exp"]);
     // console.log(userDetails.realmAccess["roles"]);
     // console.log(userDetails.profile["email"]);
+
+    this.keycloakService.getToken().then(
+      data => {
+        // console.log("getting the token");
+        // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        console.log("inside the getToken()");
+        this.agencyService.getAgencyStaff(this.userid).subscribe(
+          dataNew => {
+            console.log("inside the getAgencyService", dataNew);
+            this.portalService.firstName="jane eyre";
+
+          }
+
+        )
+      }
+
+    );
+
   }
 
   success() {
@@ -61,12 +80,14 @@ export class HomeComponent implements OnInit {
   getAgencyButton() {
     this.keycloakService.getToken().then(
       data => {
-        console.log("getting the token");
-        this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        // console.log("getting the token");
+        // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
         console.log("inside the getToken()");
         this.agencyService.getAgencyStaff(this.userid).subscribe(
           dataNew => {
             console.log("inside the getAgencyService", dataNew);
+            this.portalService.firstName="jane eyre";
+
           }
 
         )
