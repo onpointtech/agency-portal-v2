@@ -151,7 +151,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 4:45pm version\r\n</p>\r\n\r\n<button (click)=\"this.getToken()\">Press this to see token</button>\r\n<br>\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
+module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 4:55pm version\r\n</p>\r\n\r\n<button (click)=\"this.getToken()\">Press this to see token</button>\r\n<br>\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
 
 /***/ }),
 
@@ -1362,8 +1362,8 @@ var AgencyServiceService = /** @class */ (function () {
         this.url = "http://localhost:8080/agencyService";
     }
     AgencyServiceService.prototype.getAgencyStaff = function (agencyStaffId) {
-        var agencyUrl = this.url + "/api/agency/" + agencyStaffId;
-        // const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
+        // const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
+        var agencyUrl = this.url + "/api/agency/getAgencyByUserId/" + agencyStaffId;
         return this.http.get(agencyUrl);
     };
     AgencyServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
