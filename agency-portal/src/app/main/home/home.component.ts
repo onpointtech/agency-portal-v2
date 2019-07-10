@@ -48,6 +48,16 @@ export class HomeComponent implements OnInit {
     this.toasterService.success("Success!", "Welcome to Home");
   }
 
+  getToken() {
+    this.keycloakService.getToken().then(
+      data => {
+        console.log("we are inside the get token function");
+        console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+        console.log("this is the idTokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+        console.log("this might be the token ", this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+      }
+    );
+  }
 
   getAgencyButton() {
     this.keycloakService.getToken().then(
