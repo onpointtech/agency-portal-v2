@@ -45,7 +45,7 @@ export class ClaimantSearchComponent implements OnInit {
 
   ngOnInit() {
       this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-      this.searchClaimant(this.claimantInfo);
+      this.searchClaimant2(this.claimantInfo);
       // this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
 
       //for the sweet alert
