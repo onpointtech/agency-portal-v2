@@ -1,19 +1,22 @@
 
 //import angular modules
-import { Component, OnInit, ViewChild, APP_INITIALIZER,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit, ViewChild, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 //import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
 
 //import user made modules
 //import components
-import {JsqueryTestComponent} from './../../jsquery-test/jsquery-test.component'
+import { JsqueryTestComponent } from './../../jsquery-test/jsquery-test.component'
 
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { KeycloakService } from 'keycloak-angular';
+// import { KeycloakService } from '../../keycloak.service';
+
 import { UserRoleCheckingService } from '../user-role-checking.service';
 import { Router } from '@angular/router';
+import { AgencyServiceService } from 'src/app/agency-service.service';
 
 //import models or constants
 
@@ -26,9 +29,10 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-  @ViewChild(ToastContainerDirective, {static: false}) toastContainer: ToastContainerDirective;
+  userid: any;
+  @ViewChild(ToastContainerDirective, { static: false }) toastContainer: ToastContainerDirective;
 
-  constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService) { }
+  constructor(private toasterService: ToasterService, protected keycloakService: KeycloakService, private agencyService: AgencyServiceService) { }
 
 
 
@@ -40,9 +44,31 @@ export class HomeComponent implements OnInit {
     // console.log(userDetails.profile["email"]);
   }
 
-  success(){
+  success() {
     this.toasterService.success("Success!", "Welcome to Home");
- 
   }
+
+  getToken() {
+    console.log("we are inside the get token function");
+    console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+    console.log("this should be the token ", this.keycloakService.getKeycloakInstance().idTokenParsed.nonce);
+    this.userid = this.keycloakService.getKeycloakInstance().idTokenParsed.nonce;
+  }
+
+  getAgencyButton() {
+    this.keycloakService.getToken().then(
+      data => {
+        console.log("inside the getToken()");
+        this.agencyService.getAgencyStaff(this.userid).subscribe(
+          dataNew => {
+            console.log("inside the getAgencyService", dataNew);
+          }
+
+        )
+      }
+
+    );
+  }
+
 }
 

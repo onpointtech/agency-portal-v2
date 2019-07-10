@@ -39,15 +39,11 @@ const routes: Routes = [
         },
         {
           path:'claimant-registration',
-          component:ClaimantRegistrationComponent,
-          canActivate: [AppAuthGuard],
-          data: {roles: ['asdasdas', 'asdasda']}
+          component:ClaimantRegistrationComponent
         },
         {
           path:'claimant-search/:claimantInfo',
-          component:ClaimantSearchComponent,
-          canActivate: [AppAuthGuard],
-          data: {roles: ['ClaimsTaker', 'asdasda']}
+          component:ClaimantSearchComponent
         },
         {
           path:'claim/:claimantId',

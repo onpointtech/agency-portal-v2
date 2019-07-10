@@ -9,8 +9,8 @@ import { SurveyResponseSO } from '../service-objects/survey-response-so';
 })
 export class SurveyService {
 
-  url = "http://localhost:8080/surveyService/api/";
-  // oldUrl = "http://localhost:8081/api/";
+  // url = "http://localhost:8080/surveyService/api/";
+  url = "http://localhost:8081/api/";
 
   constructor(private httpClient: HttpClient) { }
 

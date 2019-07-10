@@ -151,7 +151,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n</p>\r\n\r\n<app-jsquery-test></app-jsquery-test>"
+module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 4:00pm version\r\n</p>\r\n\r\n<button (click)=\"this.getToken()\">Press this to see token</button>\r\n<br>\r\n<input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
 
 /***/ }),
 
@@ -163,6 +163,17 @@ module.exports = "\r\n<p>\r\n  home works eyo!\r\n</p>\r\n\r\n<app-jsquery-test>
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"nav-wrapper\">\r\n    <app-side-nav-bar></app-side-nav-bar>\r\n    <div id = \"main-toastr\" toastContainer></div>\r\n  <div id=\"content\" class=\"container\">\r\n    <app-top-nav-bar></app-top-nav-bar>\r\n   <router-outlet>\r\n   </router-outlet>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/not-authorized/not-authorized.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/not-authorized/not-authorized.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  not-authorized works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1008,11 +1019,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ClaimantService = /** @class */ (function () {
-    // oldUrl = "http://localhost:8082/api/claimant";
     function ClaimantService(http, toasterService) {
         this.http = http;
         this.toasterService = toasterService;
-        this.url = "http://localhost:8080/claimantService/api/claimant";
+        // url = "http://localhost:8080/claimantService/api/claimant";
+        this.url = "http://localhost:8082/api/claimant";
     }
     ClaimantService.prototype.getClaimantById = function (claimantId) {
         var claimantUrl = this.url + "/getClaimantById/" + claimantId;
@@ -1149,10 +1160,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SurveyService = /** @class */ (function () {
-    // oldUrl = "http://localhost:8081/api/";
     function SurveyService(httpClient) {
         this.httpClient = httpClient;
-        this.url = "http://localhost:8080/surveyService/api/";
+        // url = "http://localhost:8080/surveyService/api/";
+        this.url = "http://localhost:8081/api/";
     }
     SurveyService.prototype.createSurvey = function (survey) {
         var claimantUrl = this.url + "survey/addUpdateSurvey";
@@ -1326,6 +1337,48 @@ var UpdateClaimantSO = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/agency-service.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/agency-service.service.ts ***!
+  \*******************************************/
+/*! exports provided: AgencyServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgencyServiceService", function() { return AgencyServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
+
+
+
+
+var AgencyServiceService = /** @class */ (function () {
+    function AgencyServiceService(http, toasterService) {
+        this.http = http;
+        this.toasterService = toasterService;
+        this.url = "http://localhost:8080/agencyService";
+    }
+    AgencyServiceService.prototype.getAgencyStaff = function (agencyStaffId) {
+        // const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
+        var agencyUrl = this.url + "/api/agency/getAgencyByUserId/" + agencyStaffId;
+        return this.http.get(agencyUrl);
+    };
+    AgencyServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"]])
+    ], AgencyServiceService);
+    return AgencyServiceService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-init.ts":
 /*!*****************************!*\
   !*** ./src/app/app-init.ts ***!
@@ -1399,6 +1452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/claimant-registration/claimant-registration.component */ "./src/app/main/claimant-registration/claimant-registration.component.ts");
 /* harmony import */ var _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/claim/claim.component */ "./src/app/main/claim/claim.component.ts");
 /* harmony import */ var _app_authguard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app.authguard */ "./src/app/app.authguard.ts");
+/* harmony import */ var _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./not-authorized/not-authorized.component */ "./src/app/not-authorized/not-authorized.component.ts");
+
 
 
 
@@ -1424,7 +1479,6 @@ var routes = [
     {
         path: 'main',
         component: _main_main_component__WEBPACK_IMPORTED_MODULE_4__["MainComponent"],
-        canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
         children: [
             {
                 path: 'home',
@@ -1456,6 +1510,10 @@ var routes = [
             }
         ],
         runGuardsAndResolvers: 'always'
+    },
+    {
+        path: 'not-authorized',
+        component: _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_12__["NotAuthorizedComponent"],
     },
     {
         path: '**',
@@ -1494,16 +1552,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
+/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+
 
 
 
 
 var AppAuthGuard = /** @class */ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](AppAuthGuard, _super);
-    function AppAuthGuard(router, keycloakAngular) {
+    function AppAuthGuard(router, keycloakAngular, alert, activatedRoute) {
         var _this = _super.call(this, router, keycloakAngular) || this;
         _this.router = router;
         _this.keycloakAngular = keycloakAngular;
+        _this.alert = alert;
+        _this.activatedRoute = activatedRoute;
         return _this;
     }
     AppAuthGuard.prototype.isAccessAllowed = function (route, state) {
@@ -1514,28 +1576,36 @@ var AppAuthGuard = /** @class */ (function (_super) {
                 return;
             }
             var requiredRoles = route.data.roles;
+            var sample = _this.activatedRoute.data;
+            console.log(sample);
             if (!requiredRoles || requiredRoles.length === 0) {
                 return resolve(true);
             }
             else {
                 if (!_this.roles || _this.roles.length === 0) {
-                    resolve(false);
+                    _this.router.navigate(['/not-authorized']);
+                    _this.alert.error("Error", "You are not allowed to visit this page");
+                    return resolve(true);
                 }
                 var granted = false;
                 for (var _i = 0, requiredRoles_1 = requiredRoles; _i < requiredRoles_1.length; _i++) {
                     var requiredRole = requiredRoles_1[_i];
                     if (_this.roles.indexOf(requiredRole) > -1) {
                         granted = true;
-                        break;
+                        return resolve(true);
                     }
                 }
-                resolve(granted);
+                if (granted == false) {
+                    _this.router.navigate(['/not-authorized']);
+                    _this.alert.error("Error", "You are not allowed to visit this page");
+                    return resolve(true);
+                }
             }
         });
     };
     AppAuthGuard = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"], projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_4__["AlertService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
     ], AppAuthGuard);
     return AppAuthGuard;
 }(keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakAuthGuard"]));
@@ -1586,7 +1656,6 @@ var AppComponent = /** @class */ (function () {
                     case 4:
                         if (_b.sent()) {
                             this.keycloakService.clearToken();
-                            this.keycloakService.logout();
                         }
                         return [2 /*return*/];
                 }
@@ -1661,6 +1730,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
 /* harmony import */ var _app_init__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./app-init */ "./src/app/app-init.ts");
 /* harmony import */ var _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./jsquery-test/jsquery-test.component */ "./src/app/jsquery-test/jsquery-test.component.ts");
+/* harmony import */ var _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./not-authorized/not-authorized.component */ "./src/app/not-authorized/not-authorized.component.ts");
 
 //import angular modules
 
@@ -1696,6 +1766,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1715,6 +1786,7 @@ var AppModule = /** @class */ (function () {
                 _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_26__["ClaimantRegistrationComponent"],
                 _main_claim_claim_component__WEBPACK_IMPORTED_MODULE_27__["ClaimComponent"],
                 _jsquery_test_jsquery_test_component__WEBPACK_IMPORTED_MODULE_30__["JsqueryTestComponent"],
+                _not_authorized_not_authorized_component__WEBPACK_IMPORTED_MODULE_31__["NotAuthorizedComponent"],
             ],
             imports: [
                 projects_opt_library_src_public_api__WEBPACK_IMPORTED_MODULE_15__["OptLibraryModule"],
@@ -1945,11 +2017,13 @@ var JsqueryTestComponent = /** @class */ (function () {
     function JsqueryTestComponent() {
     }
     JsqueryTestComponent.prototype.ngOnInit = function () {
-        $('.table').footable();
-        $("button").click(function () {
-            $(".test").hide();
-            alert("hello werld");
-        });
+        // (<any>('.table')).footable();
+        // $("button").click(
+        //   function() {
+        //     $(".test").hide();
+        //     alert("hello werld");
+        //   }
+        // );
     };
     JsqueryTestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2804,23 +2878,23 @@ var ClaimantSearchComponent = /** @class */ (function () {
     }
     ClaimantSearchComponent.prototype.ngOnInit = function () {
         var userDetails = this.keycloakService.getKeycloakInstance();
-        console.log(userDetails.realmAccess["roles"]);
-        if (this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])) {
-            this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
-            this.searchClaimant(this.claimantInfo);
-            this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
-            //for the sweet alert
-            this.noSearchResultObject = {
-                type: 'info',
-                title: "Info",
-                text: "Sorry, there are no results for the given string",
-                showCancelButton: true,
-                confirmButtonText: 'Go to Claimant Registration',
-                cancelButtonText: 'Cancel',
-                confirmButtonClass: 'btn btn-primary',
-                cancelButtonClass: 'btn btn-info',
-            };
-        }
+        // console.log(userDetails.realmAccess["roles"]);
+        // if(this.userRoleChecking.userCanAccess(this.allowedRoles, userDetails.realmAccess["roles"])){
+        this.claimantInfo = this.route.snapshot.paramMap.get('claimantInfo');
+        this.searchClaimant(this.claimantInfo);
+        this.columnsToDisplay = ['ssn', 'name', 'dateOfBirth', 'homePhone', 'mobilePhone', 'address'];
+        //for the sweet alert
+        this.noSearchResultObject = {
+            type: 'info',
+            title: "Info",
+            text: "Sorry, there are no results for the given string",
+            showCancelButton: true,
+            confirmButtonText: 'Go to Claimant Registration',
+            cancelButtonText: 'Cancel',
+            confirmButtonClass: 'btn btn-primary',
+            cancelButtonClass: 'btn btn-info',
+        };
+        // }
     };
     ClaimantSearchComponent.prototype.getClaimantSO = function () {
         var _this = this;
@@ -2894,6 +2968,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
+/* harmony import */ var src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/agency-service.service */ "./src/app/agency-service.service.ts");
 
 //import angular modules
 
@@ -2902,21 +2977,38 @@ __webpack_require__.r(__webpack_exports__);
 //import services
 
 
+
 //import models or constants
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(toasterService, keycloakService) {
+    function HomeComponent(toasterService, keycloakService, agencyService) {
         this.toasterService = toasterService;
         this.keycloakService = keycloakService;
+        this.agencyService = agencyService;
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.toasterService.overlayContainer = this.toastContainer;
         var userDetails = this.keycloakService.getKeycloakInstance();
-        console.log(userDetails);
-        console.log(userDetails.realmAccess["roles"]);
-        console.log(userDetails.profile["email"]);
+        // console.log(userDetails);
+        // console.log(userDetails.realmAccess["roles"]);
+        // console.log(userDetails.profile["email"]);
     };
     HomeComponent.prototype.success = function () {
         this.toasterService.success("Success!", "Welcome to Home");
+    };
+    HomeComponent.prototype.getToken = function () {
+        console.log("we are inside the get token function");
+        console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+        console.log("this should be the token ", this.keycloakService.getKeycloakInstance().idTokenParsed.nonce);
+        this.userid = this.keycloakService.getKeycloakInstance().idTokenParsed.nonce;
+    };
+    HomeComponent.prototype.getAgencyButton = function () {
+        var _this = this;
+        this.keycloakService.getToken().then(function (data) {
+            console.log("inside the getToken()");
+            _this.agencyService.getAgencyStaff(_this.userid).subscribe(function (dataNew) {
+                console.log("inside the getAgencyService", dataNew);
+            });
+        });
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastContainerDirective"], { static: false }),
@@ -2927,7 +3019,7 @@ var HomeComponent = /** @class */ (function () {
             selector: 'app-home',
             template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/main/home/home.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"], src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__["AgencyServiceService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -2952,6 +3044,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/opt-library/src/portal-services/modal.service */ "./projects/opt-library/src/portal-services/modal.service.ts");
+/* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm5/keycloak-angular.js");
+/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+
+
 
 
 
@@ -2959,13 +3055,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var MainComponent = /** @class */ (function () {
-    function MainComponent(toasterService, modalService, router) {
+    function MainComponent(toasterService, modalService, router, activatedRoute, keycloakService, alert) {
         this.toasterService = toasterService;
         this.modalService = modalService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.keycloakService = keycloakService;
+        this.alert = alert;
+        this.accessPermission = false;
         router.events.forEach(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_3__["NavigationEnd"]) {
                 modalService.close();
+                // const requiredRoles = activatedRoute.snapshot.routeConfig.children[0].data.roles1;
+                // const requiredRoles = activatedRoute.snapshot.data.roles1;
+                // const userRoles = keycloakService.getKeycloakInstance().realmAccess['roles'];
+                // console.log(requiredRoles);
+                // for(var i = 0; i < userRoles.length; i++){
+                //   if(requiredRoles.some(x => x === userRoles[i])) {
+                //     this.accessPermission = true;
+                //     break;
+                //   }
+                // }
+                // if(!this.accessPermission){
+                //   this.router.navigate(['/claimant-overview/56']);
+                //   this.alert.error("Error","You are not allowed to visit this page");
+                // }
             }
         });
     }
@@ -2986,7 +3100,12 @@ var MainComponent = /** @class */ (function () {
             selector: 'app-main',
             template: __webpack_require__(/*! raw-loader!./main.component.html */ "./node_modules/raw-loader/index.js!./src/app/main/main.component.html")
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__["ToasterService"], projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__["ToasterService"],
+            projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            keycloak_angular__WEBPACK_IMPORTED_MODULE_6__["KeycloakService"],
+            projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__["AlertService"]])
     ], MainComponent);
     return MainComponent;
 }());
@@ -3040,6 +3159,51 @@ var UserRoleCheckingService = /** @class */ (function () {
             projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_3__["AlertService"]])
     ], UserRoleCheckingService);
     return UserRoleCheckingService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/not-authorized/not-authorized.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/not-authorized/not-authorized.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25vdC1hdXRob3JpemVkL25vdC1hdXRob3JpemVkLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/not-authorized/not-authorized.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/not-authorized/not-authorized.component.ts ***!
+  \************************************************************/
+/*! exports provided: NotAuthorizedComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotAuthorizedComponent", function() { return NotAuthorizedComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var NotAuthorizedComponent = /** @class */ (function () {
+    function NotAuthorizedComponent() {
+    }
+    NotAuthorizedComponent.prototype.ngOnInit = function () {
+    };
+    NotAuthorizedComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-not-authorized',
+            template: __webpack_require__(/*! raw-loader!./not-authorized.component.html */ "./node_modules/raw-loader/index.js!./src/app/not-authorized/not-authorized.component.html"),
+            styles: [__webpack_require__(/*! ./not-authorized.component.css */ "./src/app/not-authorized/not-authorized.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], NotAuthorizedComponent);
+    return NotAuthorizedComponent;
 }());
 
 

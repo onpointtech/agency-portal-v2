@@ -63,11 +63,13 @@ getToken(): Promise<any> {
 }
 
 static getUsername(): string {
-  return KeycloakService.auth.authz.tokenParsed.preferred_username;
+   return KeycloakService.auth.authz.tokenParsed;
+   //return KeycloakService.auth.authz.tokenParsed.preferred_username;
 }
 
 static getFullName(): string {
   return KeycloakService.auth.authz.tokenParsed.name;
 }
+
 
 }
