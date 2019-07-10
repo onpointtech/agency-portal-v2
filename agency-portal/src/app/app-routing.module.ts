@@ -14,8 +14,8 @@ import { NotAuthorizedComponent } from './not-authorized/not-authorized.componen
 const routes: Routes = [  
   {  
      path:'',
-     redirectTo:'login',
-     pathMatch:'full'
+    redirectTo:'login',
+    pathMatch:'full'
   },
   {  
      path:'login',
@@ -73,7 +73,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload', useHash: true})],
   exports: [RouterModule],
   providers: [AppAuthGuard]
 })
