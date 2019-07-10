@@ -437,7 +437,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 10:49 pm version\r\n</p>\r\n<button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
+module.exports = "\r\n<!-- <p>\r\n  this is the 11:33 pm version\r\n</p> -->\r\n<!-- <button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button> -->\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
 
 /***/ }),
 
@@ -481,7 +481,7 @@ module.exports = "<!--Side Nav Bar Section-->\r\n<div class=\"bg-primary\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User {{this.firstName}}</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
+module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User {{this.portalService.firstName}}</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -1456,10 +1456,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var SurveyService = /** @class */ (function () {
+    // url = "http://localhost:8081/api/";
     function SurveyService(httpClient) {
         this.httpClient = httpClient;
-        // url = "http://localhost:8080/surveyService/api/";
-        this.url = "http://localhost:8081/api/";
+        this.url = "http://localhost:8080/surveyService/api/";
     }
     SurveyService.prototype.createSurvey = function (survey) {
         var claimantUrl = this.url + "survey/addUpdateSurvey";
@@ -3347,12 +3347,15 @@ var HomeComponent = /** @class */ (function () {
         // console.log(userDetails.realmAccess["roles"]);
         // console.log(userDetails.profile["email"]);
         this.keycloakService.getToken().then(function (data) {
-            // console.log("getting the token");
-            // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("this is the tokenParsed", _this.keycloakService.getKeycloakInstance().tokenParsed);
+            console.log("getting the token");
+            _this.userid = _this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("token is", _this.userid);
             console.log("inside the getToken()");
             _this.agencyService.getAgencyStaff(_this.userid).subscribe(function (dataNew) {
                 console.log("inside the getAgencyService", dataNew);
-                _this.portalService.firstName = "jane eyre";
+                console.log("setting the first name to", dataNew.firstName);
+                _this.portalService.firstName = dataNew.firstName;
             });
         });
     };
@@ -3366,13 +3369,14 @@ var HomeComponent = /** @class */ (function () {
             console.log("this is the tokenParsed", _this.keycloakService.getKeycloakInstance().tokenParsed);
             console.log("this is the idTokenParsed", _this.keycloakService.getKeycloakInstance().idTokenParsed);
             console.log("this might be the token ", _this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+            _this.userid = _this.keycloakService.getKeycloakInstance().tokenParsed.sub;
         });
     };
     HomeComponent.prototype.getAgencyButton = function () {
         var _this = this;
         this.keycloakService.getToken().then(function (data) {
-            // console.log("getting the token");
-            // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("getting the token");
+            _this.userid = _this.keycloakService.getKeycloakInstance().tokenParsed.sub;
             console.log("inside the getToken()");
             _this.agencyService.getAgencyStaff(_this.userid).subscribe(function (dataNew) {
                 console.log("inside the getAgencyService", dataNew);
@@ -3693,6 +3697,7 @@ var TopNavBarComponent = /** @class */ (function () {
                 window.scrollTo(0, 0);
             }
         });
+        this.portalService = portalService;
     }
     TopNavBarComponent.prototype.ngOnInit = function () {
         this.firstName = this.portalService.firstName;

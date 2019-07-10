@@ -10,7 +10,7 @@ import { PortalService } from 'projects/opt-library/src/portal-services/portal.s
 })
 export class TopNavBarComponent implements OnInit {
   firstName: string;
-  constructor(private router: Router, private keycloakService: KeycloakService, private portalService: PortalService) {
+  constructor(private router: Router, private keycloakService: KeycloakService, public portalService: PortalService) {
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
    }
@@ -22,6 +22,8 @@ export class TopNavBarComponent implements OnInit {
       }
     });
 
+
+    this.portalService = portalService;
   }
 
   ngOnInit() {

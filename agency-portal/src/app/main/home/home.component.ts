@@ -45,13 +45,16 @@ export class HomeComponent implements OnInit {
 
     this.keycloakService.getToken().then(
       data => {
-        // console.log("getting the token");
-        // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+        console.log("getting the token");
+        this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        console.log("token is", this.userid);
         console.log("inside the getToken()");
         this.agencyService.getAgencyStaff(this.userid).subscribe(
           dataNew => {
             console.log("inside the getAgencyService", dataNew);
-            this.portalService.firstName="jane eyre";
+            console.log("setting the first name to",dataNew.firstName)
+            this.portalService.firstName=dataNew.firstName;
 
           }
 
@@ -73,6 +76,7 @@ export class HomeComponent implements OnInit {
         console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
         console.log("this is the idTokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
         console.log("this might be the token ", this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+        this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
       }
     );
   }
@@ -80,8 +84,8 @@ export class HomeComponent implements OnInit {
   getAgencyButton() {
     this.keycloakService.getToken().then(
       data => {
-        // console.log("getting the token");
-        // this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        console.log("getting the token");
+        this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
         console.log("inside the getToken()");
         this.agencyService.getAgencyStaff(this.userid).subscribe(
           dataNew => {
