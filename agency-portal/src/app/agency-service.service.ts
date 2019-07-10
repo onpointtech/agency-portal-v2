@@ -12,8 +12,8 @@ export class AgencyServiceService {
 
   constructor(private http: HttpClient, private toasterService: ToasterService) {  }
     public getAgencyStaff(agencyStaffId:string): Observable<any> {
-      const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
-      // const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
+      // const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
+      const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
 
       return this.http.get<any>(agencyUrl)
     }

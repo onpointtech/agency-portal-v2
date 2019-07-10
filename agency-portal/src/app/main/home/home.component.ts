@@ -49,10 +49,15 @@ export class HomeComponent implements OnInit {
   }
 
   getToken() {
-    console.log("we are inside the get token function");
-    console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
-    console.log("this should be the token ", this.keycloakService.getKeycloakInstance().idTokenParsed.nonce);
-    this.userid = this.keycloakService.getKeycloakInstance().idTokenParsed.nonce;
+    this.keycloakService.getToken().then(
+      data => {
+        console.log("we are inside the get token function");
+        console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+        console.log("this is the idTokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+        console.log("this might be the token ", this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+        this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+      }
+    );
   }
 
   getAgencyButton() {

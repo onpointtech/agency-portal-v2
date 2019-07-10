@@ -151,7 +151,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 4:00pm version\r\n</p>\r\n\r\n<button (click)=\"this.getToken()\">Press this to see token</button>\r\n<br>\r\n<input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
+module.exports = "\r\n<p>\r\n  home works eyo!\r\n  this is the 4:45pm version\r\n</p>\r\n\r\n<button (click)=\"this.getToken()\">Press this to see token</button>\r\n<br>\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button>\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->"
 
 /***/ }),
 
@@ -1325,8 +1325,8 @@ let AgencyServiceService = class AgencyServiceService {
         this.url = "http://localhost:8080/agencyService";
     }
     getAgencyStaff(agencyStaffId) {
-        // const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
-        const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
+        const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
+        // const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
         return this.http.get(agencyUrl);
     }
 };
@@ -2891,10 +2891,13 @@ let HomeComponent = class HomeComponent {
         this.toasterService.success("Success!", "Welcome to Home");
     }
     getToken() {
-        console.log("we are inside the get token function");
-        console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
-        console.log("this should be the token ", this.keycloakService.getKeycloakInstance().idTokenParsed.nonce);
-        this.userid = this.keycloakService.getKeycloakInstance().idTokenParsed.nonce;
+        this.keycloakService.getToken().then(data => {
+            console.log("we are inside the get token function");
+            console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+            console.log("this is the idTokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+            console.log("this might be the token ", this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+            this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        });
     }
     getAgencyButton() {
         this.keycloakService.getToken().then(data => {
