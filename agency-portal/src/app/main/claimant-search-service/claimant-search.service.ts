@@ -12,7 +12,7 @@ export class ClaimantSearchService {
   constructor(private http: HttpClient) { }
 
   // url = environment.apis.claimantSearch;
-  url = 'https://api.opt-dev.optimumui.com/search-service/api/search/claimant';
+  url = 'http://localhost:8080/claimant-search';
 
   public searchClaimant(claimantInfo: string): Observable<any> {
     var claimant: any = {

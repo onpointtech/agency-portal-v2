@@ -5,10 +5,6 @@ import { Component, OnInit, ViewChild, APP_INITIALIZER,CUSTOM_ELEMENTS_SCHEMA } 
 //import external modules
 import { ToastContainerDirective } from 'ngx-toastr';
 
-//import user made modules
-//import components
-import {JsqueryTestComponent} from './../../jsquery-test/jsquery-test.component'
-
 //import services
 import { ToasterService } from 'projects/opt-library/src/portal-services/toaster.service';
 import { KeycloakService } from 'keycloak-angular';

@@ -6,6 +6,7 @@ export class OptAddressPipe implements PipeTransform {
     transform(address: Address[]): string {
         let newAddress: string = "";
 
+        if(address[0] != null){
             newAddress += address[0].addressLine1;
 
             if(address[0].addressLine2 != null) {
@@ -20,6 +21,9 @@ export class OptAddressPipe implements PipeTransform {
                 newAddress += address[0].zipExt;
             }
 
-        return newAddress;
+            return newAddress;
+        } else {
+            return null;
+        }
     }
 }
