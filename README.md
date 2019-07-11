@@ -1,15 +1,15 @@
-# Welcome to our angular portal
+# Welcome to our Angular Portal Proof of Concept
 
-We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to be able to use this project in the future
+We made this portal to recreate the original agency portal, to go about upgrading from angular 1 to angular 8. This is our guide to be able to use this project in the future
 
 ## Running Guide
-1. build angular project
-2. start running the 3 backend applications
-3. open `localhost:8080` in your browser
+1. Build the angular project
+2. Start running the 3 backend applications
+3. Open `localhost:8080` in your browser
 4. Develop the angular app while having it live on your browser
 
 ### How to build the angular project
-To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
+To run, open the directory `agency-portal-v2/agency-portal`, open a terminal and type
 
 `ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
 
@@ -17,21 +17,21 @@ The `--watch` automatically builds the angular app everytime there are changes t
 
 
 ### How to start to run the 3 backend applications
-1. Open 
+1. Open eclipse
 2. Import the 3 maven projects (ClaimantServiceNew, SurveyServiceNew, ZuulServiceNew)
-3. To run the claimant service app
+3. To run the __claimant service app__
    1. Choose ClaimantServiceNew
    2. Right click, press build as a maven project
    3. Right click, press run as Java application (ClaimantServiceNewApplication)
    4. You may view the apis for this at `localhost:8082/swagger-ui.html`
    5. Note that this app runs at `localhost:8082`
-4. To run the survey service app
+4. To run the __survey service app__
    1. Choose SurveyServiceNew
    2. Right click, press build as a maven project
    3. Right click, press run as Java application (SurveyServiceNewApplication)
    4. You may view the apis for this at `localhost:8081/swagger-ui.html`
    5. Note that this app runs at `localhost:8081`
-5. To run the zuul service app !! important to build angular first
+5. To run the __zuul service app__ !! important to build angular first
    1. Choose ZuulServiceNew
    2. Right click, press build as a maven project
    3. Right click, press run as Java application (ZuulServiceNewApplication)
@@ -45,8 +45,8 @@ The `--watch` automatically builds the angular app everytime there are changes t
 5. Refresh the URL in the browser
 
 
-## How to start
-First, download and install the portal (Windows)
+## How to get started to use the intern's proof of concept
+First, to download and install the portal on Windows
 
 Install git from
 
@@ -65,6 +65,12 @@ Install the node modules
 
 `npm install`
 
+Once done, you can try out the angular app by doing
+
+`ng serve --port 8080`
+
+And then opening your browser on `localhost:8080`
+
 
 ## How to develop the agency portal angular app
 
@@ -81,11 +87,11 @@ Sample code:
 `ng generate component readme-window -is --skipTests` creates only two files
 * app.readme-window.component.ts
 * app.readme-window.component.html
-* may also use a shortcut `ng g c readme-window -is --skipTests`
+* may also use the shortcut `ng g c readme-window -is --skipTests`
 
 ### Running tests
 
-This isn't implemented yet.
+- [ ] This isn't implemented yet.
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
@@ -206,6 +212,56 @@ Instead of our usual build library we will use the `--watch` to have the changes
 Run `ng generate application app-name --prefix appn`
 
 You continue normal app development in angular. And use number 6 above, to see how to build components live.
+
+### How to build an external library and send it through html
+- Move to its own readme
+1. make an app to be external
+   - run `ng new appname`
+2. make a component
+   - run `ng g c new-component`
+3. add the angular elements npm by running
+   - ` ng add @angular/elements `
+4. inside the app-module.ts
+   - add the `import { createCustomElement } from '@angular/elements' ;`
+   - inside the ngModules add `  entryComponents: [SimpleClaimantProfileComponent],`
+   - insert a constructor with the following and add an ngDoBootstrap function
+```
+  constructor(injector:Injector) {
+    //turn a component into a custom element
+    const custom = createCustomElement(YourComponent, {injector: injector});
+
+    //sets the selector for the new custom component
+    customElements.define('app-your', custom);
+  }
+
+  ngDoBootstrap() {}
+```  
+5. Create a folder called preview (store the test html and to store the .js that is going to be created)
+6. Inside app-module.ts of the web component
+   - remove the AppComponent inside the declarations
+   - remove the bootstrap[]...
+7. Remove the following files inside the web component
+   - app.component (.ts, css, html, spec.ts)
+8. run `npm run build`
+9. create a script called `custombuild.sh` inside the root folder with the following
+
+``` 
+#!/bin/sh
+ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js 
+```
+10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
+11. Open the root folder and run `http-server "path of the made js file" -p 9000`
+12. Inside the app-module.ts where you'll import the web component add the following 
+``` 
+import { NgModule, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+...
+
+schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
+```
+13. Inside index.html of the app that will import the web component add
+`<script src="link made by the http-server"></script>`
+
 
 ## Coding Standards
 ### Architecture
@@ -349,6 +405,7 @@ then in the html, you can now use the component as
 
 `<app-name-some></app-name-some>`
 
+Components can have inputs and outputs (we call these event emitters)
 
 ### Services
 These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
@@ -371,10 +428,24 @@ To use a component outside the library, it must be inside the exports of the lib
 
 To use a service outside the library, it must be inside the providers of the library.module
 
+### Routing Module
+This is used to have a component be replaced by different components by utilizing URLs
+
+### Zuul + Angular + Maven
+There is very little documentation on Zuul + Maven + Angular so this section will be a benefit to many others
+Zuul makes all the routes pass through it, and is able to redirect and "proxy" routes on different ports to make them all on "the same port" by using modified routes. 
+
+Current routes used:
+- 8080 : keycloak, angular app, zuul service
+- 8081: survey service
+- 8082: claimant service
+- 8083: not used, maybe can be used to deploy external libraries
+
 ***
 ## AngularJS to Angular v8 Guide
 
 ### Using Elements
+Elements allow angular components to be exported as js files, and theoretically making Angular v8 components usable in older versions of angular (such as angular JS), and even front end frameworks such as vue,react, or even plain html. This may aid some transition issues in migrating into angular 8.
 https://blog.nrwl.io/upgrading-angularjs-to-angular-using-elements-f2960a98bc0e
 
 ### ngMigration Assistant
@@ -382,54 +453,6 @@ it can be found here in this website
 https://github.com/ellamaolson/ngMigration-Assistant
 
 
-## How to build an external library and send it through html
-- Move to its own readme
-1. make an app to be external
-   - run `ng new appname`
-2. make a component
-   - run `ng g c new-component`
-3. add the angular elements npm by running
-   - ` ng add @angular/elements `
-4. inside the app-module.ts
-   - add the `import { createCustomElement } from '@angular/elements' ;`
-   - inside the ngModules add `  entryComponents: [SimpleClaimantProfileComponent],`
-   - insert a constructor with the following and add an ngDoBootstrap function
-```
-  constructor(injector:Injector) {
-    //turn a component into a custom element
-    const custom = createCustomElement(YourComponent, {injector: injector});
-
-    //sets the selector for the new custom component
-    customElements.define('app-your', custom);
-  }
-
-  ngDoBootstrap() {}
-```  
-5. Create a folder called preview (store the test html and to store the .js that is going to be created)
-6. Inside app-module.ts of the web component
-   - remove the AppComponent inside the declarations
-   - remove the bootstrap[]...
-7. Remove the following files inside the web component
-   - app.component (.ts, css, html, spec.ts)
-8. run `npm run build`
-9. create a script called `custombuild.sh` inside the root folder with the following
-
-``` 
-#!/bin/sh
-ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js 
-```
-10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
-11. Open the root folder and run `http-server "path of the made js file" -p 9000`
-12. Inside the app-module.ts where you'll import the web component add the following 
-``` 
-import { NgModule, APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-...
-
-schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
-
-```
-13. Inside index.html of the app that will import the web component add
-`<script src="link made by the http-server"></script>`
 
 *** 
 
