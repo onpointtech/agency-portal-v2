@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
+
+declare global {
+  interface JQuery {
+    footable(): JQuery;
+  }
+}
 
 @Component({
   selector: 'app-jsquery-test',
@@ -10,16 +18,14 @@ export class JsqueryTestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-    (<any>$('.table')).footable();
-    $("button").click(
-      function() {
-        $(".test").hide();
-        alert("hello werld");
-      }
-
-    );
-
+    
+    // (<any>('.table')).footable();
+    // $("button").click(
+    //   function() {
+    //     $(".test").hide();
+    //     alert("hello werld");
+    //   }
+    // );
   }
 
 }

@@ -404,7 +404,7 @@ module.exports = "<ng-container *ngIf = \"claimantSO\">\r\n  <div class = \"col-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container>\n    <h4 class = \"p-2\">\n        Claimant Profile\n    </h4>\n\n    <form [formGroup] = \"profileForm\">\n        <div class = \"form-group\">\n\n            <!-- SSN and CONFIRM SSN div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.ssn}}\n                            [(ngModel)] = \"claimantSO.ssn\" \n                            formControlName = \"ssn\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Alternate SSN:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.alternateClaimantId}} \n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \n                            formControlName = \"alternateClaimantId\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- First Name and Last Name div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        First Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.firstName}} \n                            [(ngModel)] = \"claimantSO.firstName\" \n                            formControlName = \"firstName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Name:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.lastName}} \n                            [(ngModel)] = \"claimantSO.lastName\" \n                            formControlName = \"lastName\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Middle Initial and Date of Birth div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Middle Initial:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.middleInitial}} \n                            [(ngModel)] = \"claimantSO.middleInitial\" \n                            formControlName = \"middleInitial\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Date of Birth:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input class = \"field\"\n                            type = \"text\" \n                            placeholder = {{claimantSO.dateOfBirth}} \n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \n                            formControlName = \"dateOfBirth\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Home Phone and Mobile Phone div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class=\"col-xs-12 col-md-6\">\n                    <label class=\"col-xs-12 head control-label\">\n                        Home Phone:\n                    </label>\n                    <div class=\"col-xs-12 has-feedback\">\n                        <!-- FORM INPUT -->\n                        <input class=\"field\"\n                            type=\"text\" \n                            placeholder= {{claimantSO.homePhone}}\n                            [(ngModel)]=\"claimantSO.homePhone\" \n                            formControlName=\"homePhone\" \n                            mask=\"(000) 000-0000\" \n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.mobilePhone}} \n                            [(ngModel)] = \"claimantSO.mobilePhone\" \n                            formControlName = \"mobilePhone\"\n                            mask = \"(000) 000-0000\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Preferred Occupation and Language Preference div -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.preferredOccupation}} \n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \n                            formControlName = \"preferredOccupation\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Language Preference:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.languagePreference}} \n                            [(ngModel)] = \"claimantSO.languagePreference\" \n                            formControlName = \"languagePreference\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Gender and education Level div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Gender:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.gender}} \n                            [(ngModel)] = \"claimantSO.gender\" \n                            formControlName = \"gender\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Educational Level:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.educationLevel}} \n                            [(ngModel)] = \"claimantSO.educationLevel\" \n                            formControlName = \"educationLevel\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Race and Ethnicity div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Race:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                                class = \"field\" \n                                placeholder = {{claimantSO.race}} \n                                [(ngModel)] = \"claimantSO.race\" \n                                formControlName = \"race\"\n                                readonly = \"readonly\"\n                                disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Ethnicity:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.ethnicity}} \n                            [(ngModel)] = \"claimantSO.ethnicity\" \n                            formControlName = \"ethnicity\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Details Button -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantDetails(claimantSO)\">\n                            <b>Edit Claimant Details</b>\n                    </button>\n                </div>\n                <br>\n                <br>\n            </div>\n\n            <!-- Address fields -->\n            <h4 class = \"p-2\">\n                Claimant Address\n            </h4>\n\n            <!-- Address Line 1 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 1:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].addressLine1}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].addressLine1\" \n                            formControlName = \"addressLine1\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Address Line 2 -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Address Line 2:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].addressLine2}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].addressLine2\" \n                            formControlName = \"addressLine2\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- City and State div -->\n            <div class = \"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        City:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].city}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].city\" \n                            formControlName = \"city\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        State:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].state}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].state\" \n                            formControlName = \"state\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Zip code and Zip code extension -->\n            <div class=\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].zipCode}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].zipCode\" \n                            formControlName = \"zipCode\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n\n                <div class = \"col-xs-12 col-md-6\">\n                    <label class = \"col-xs-12 head control-label\">\n                        Zip Code Extension:\n                    </label>\n                    <div class = \"col-xs-12 has-feedback\">\n                        <input type = \"text\" \n                            class = \"field\" \n                            placeholder = {{claimantSO.claimantAddresses[0].zipExt}} \n                            [(ngModel)] = \"claimantSO.claimantAddresses[0].zipExt\" \n                            formControlName = \"zipExt\"\n                            readonly = \"readonly\"\n                            disabled>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Edit Claimant Address Button -->\n            <div class =\"col-xs-12 no-padding\">\n                <div class = \"col-xs-12 col-md-6\">\n                    <button type = \"button\" \n                        class = \"btn btn-primary\" \n                        (click) = \"openEditClaimantAddresses(claimantSO.claimantAddresses)\">\n                        <b>Edit Claimant Address</b>\n                    </button>\n                </div>\n            </div>\n\n        </div>\n    </form>\n</ng-container>"
+module.exports = "<ng-container>\r\n    <h4 class = \"p-2\">\r\n        Claimant Profile\r\n    </h4>\r\n\r\n    <form [formGroup] = \"profileForm\">\r\n        <div class = \"form-group\">\r\n\r\n            <!-- SSN and CONFIRM SSN div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.ssn}}\r\n                            [(ngModel)] = \"claimantSO.ssn\" \r\n                            formControlName = \"ssn\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Alternate SSN:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.alternateClaimantId}} \r\n                            [(ngModel)] = \"claimantSO.alternateClaimantId\" \r\n                            formControlName = \"alternateClaimantId\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- First Name and Last Name div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        First Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.firstName}} \r\n                            [(ngModel)] = \"claimantSO.firstName\" \r\n                            formControlName = \"firstName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Name:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.lastName}} \r\n                            [(ngModel)] = \"claimantSO.lastName\" \r\n                            formControlName = \"lastName\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Middle Initial and Date of Birth div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Middle Initial:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.middleInitial}} \r\n                            [(ngModel)] = \"claimantSO.middleInitial\" \r\n                            formControlName = \"middleInitial\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Date of Birth:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input class = \"field\"\r\n                            type = \"text\" \r\n                            placeholder = {{claimantSO.dateOfBirth}} \r\n                            [(ngModel)] = \"claimantSO.dateOfBirth\" \r\n                            formControlName = \"dateOfBirth\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Home Phone and Mobile Phone div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class=\"col-xs-12 col-md-6\">\r\n                    <label class=\"col-xs-12 head control-label\">\r\n                        Home Phone:\r\n                    </label>\r\n                    <div class=\"col-xs-12 has-feedback\">\r\n                        <!-- FORM INPUT -->\r\n                        <input class=\"field\"\r\n                            type=\"text\" \r\n                            placeholder= {{claimantSO.homePhone}}\r\n                            [(ngModel)]=\"claimantSO.homePhone\" \r\n                            formControlName=\"homePhone\" \r\n                            mask=\"(000) 000-0000\" \r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Mobile Phone:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.mobilePhone}} \r\n                            [(ngModel)] = \"claimantSO.mobilePhone\" \r\n                            formControlName = \"mobilePhone\"\r\n                            mask = \"(000) 000-0000\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Preferred Occupation and Language Preference div -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">Preferred Occupation:</label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.preferredOccupation}} \r\n                            [(ngModel)] = \"claimantSO.preferredOccupation\" \r\n                            formControlName = \"preferredOccupation\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Language Preference:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.languagePreference}} \r\n                            [(ngModel)] = \"claimantSO.languagePreference\" \r\n                            formControlName = \"languagePreference\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Gender and education Level div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Gender:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.gender}} \r\n                            [(ngModel)] = \"claimantSO.gender\" \r\n                            formControlName = \"gender\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Educational Level:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.educationLevel}} \r\n                            [(ngModel)] = \"claimantSO.educationLevel\" \r\n                            formControlName = \"educationLevel\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Race and Ethnicity div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Race:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                                class = \"field\" \r\n                                placeholder = {{claimantSO.race}} \r\n                                [(ngModel)] = \"claimantSO.race\" \r\n                                formControlName = \"race\"\r\n                                readonly = \"readonly\"\r\n                                disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Ethnicity:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.ethnicity}} \r\n                            [(ngModel)] = \"claimantSO.ethnicity\" \r\n                            formControlName = \"ethnicity\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Details Button -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantDetails(claimantSO)\">\r\n                            <b>Edit Claimant Details</b>\r\n                    </button>\r\n                </div>\r\n                <br>\r\n                <br>\r\n            </div>\r\n\r\n            <!-- Address fields -->\r\n            <h4 class = \"p-2\">\r\n                Claimant Address\r\n            </h4>\r\n\r\n            <!-- Address Line 1 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 1:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine1}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine1\" \r\n                            formControlName = \"addressLine1\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Address Line 2 -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Address Line 2:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].addressLine2}} \r\n                            [(ngModel)] = \"claimantSO.address[0].addressLine2\" \r\n                            formControlName = \"addressLine2\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- City and State div -->\r\n            <div class = \"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        City:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].city}} \r\n                            [(ngModel)] = \"claimantSO.address[0].city\" \r\n                            formControlName = \"city\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        State:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].state}} \r\n                            [(ngModel)] = \"claimantSO.address[0].state\" \r\n                            formControlName = \"state\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Zip code and Zip code extension -->\r\n            <div class=\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipCode}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipCode\" \r\n                            formControlName = \"zipCode\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <label class = \"col-xs-12 head control-label\">\r\n                        Zip Code Extension:\r\n                    </label>\r\n                    <div class = \"col-xs-12 has-feedback\">\r\n                        <input type = \"text\" \r\n                            class = \"field\" \r\n                            placeholder = {{claimantSO.address[0].zipExt}} \r\n                            [(ngModel)] = \"claimantSO.address[0].zipExt\" \r\n                            formControlName = \"zipExt\"\r\n                            readonly = \"readonly\"\r\n                            disabled>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <!-- Edit Claimant Address Button -->\r\n            <div class =\"col-xs-12 no-padding\">\r\n                <div class = \"col-xs-12 col-md-6\">\r\n                    <button type = \"button\" \r\n                        class = \"btn btn-primary\" \r\n                        (click) = \"openEditClaimantAddresses(claimantSO.address)\">\r\n                        <b>Edit Claimant Address</b>\r\n                    </button>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </form>\r\n</ng-container>"
 
 /***/ }),
 
@@ -437,7 +437,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  home works eyo!\r\n</p>"
+module.exports = "\r\n<p>\r\n  this is the 12:00 nn version\r\n</p>\r\n<!-- <button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button> -->\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
 
 /***/ }),
 
@@ -459,7 +459,7 @@ module.exports = "<div class=\"nav-wrapper\">\r\n    <app-side-nav-bar></app-sid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  not-authorized works!\n</p>\n"
+module.exports = "<p>\r\n  not-authorized works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -481,7 +481,7 @@ module.exports = "<!--Side Nav Bar Section-->\r\n<div class=\"bg-primary\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
+module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User {{this.portalService.firstName}}</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -1308,7 +1308,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ClaimantService = class ClaimantService {
-    // oldUrl = "http://localhost:8082/api/claimant";
+    // url = "http://localhost:8082/api/claimant";
     constructor(http, toasterService) {
         this.http = http;
         this.toasterService = toasterService;
@@ -1446,7 +1446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SurveyService = class SurveyService {
-    // oldUrl = "http://localhost:8081/api/";
+    // url = "http://localhost:8081/api/";
     constructor(httpClient) {
         this.httpClient = httpClient;
         this.url = "http://localhost:8080/surveyService/api/";
@@ -1609,6 +1609,47 @@ class UpdateClaimantSO {
 
 /***/ }),
 
+/***/ "./src/app/agency-service.service.ts":
+/*!*******************************************!*\
+  !*** ./src/app/agency-service.service.ts ***!
+  \*******************************************/
+/*! exports provided: AgencyServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgencyServiceService", function() { return AgencyServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
+
+
+
+
+let AgencyServiceService = class AgencyServiceService {
+    constructor(http, toasterService) {
+        this.http = http;
+        this.toasterService = toasterService;
+        this.url = "http://localhost:8080/agencyService";
+    }
+    getAgencyStaff(agencyStaffId) {
+        // const agencyUrl = `${this.url}/api/agency/${agencyStaffId}`;
+        const agencyUrl = `${this.url}/api/agency/getAgencyByUserId/${agencyStaffId}`;
+        return this.http.get(agencyUrl);
+    }
+};
+AgencyServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"]])
+], AgencyServiceService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-init.ts":
 /*!*****************************!*\
   !*** ./src/app/app-init.ts ***!
@@ -1713,15 +1754,11 @@ const routes = [
             },
             {
                 path: 'claimant-registration',
-                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"],
-                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
-                data: { roles: ['asdasdas', 'asdasda'] }
+                component: _main_claimant_registration_claimant_registration_component__WEBPACK_IMPORTED_MODULE_9__["ClaimantRegistrationComponent"]
             },
             {
                 path: 'claimant-search/:claimantInfo',
-                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"],
-                canActivate: [_app_authguard__WEBPACK_IMPORTED_MODULE_11__["AppAuthGuard"]],
-                data: { roles: ['ClaimsTaker', 'asdasda'] }
+                component: _main_claimant_search_claimant_search_component__WEBPACK_IMPORTED_MODULE_6__["ClaimantSearchComponent"]
             },
             {
                 path: 'claim/:claimantId',
@@ -2204,11 +2241,13 @@ __webpack_require__.r(__webpack_exports__);
 let JsqueryTestComponent = class JsqueryTestComponent {
     constructor() { }
     ngOnInit() {
-        $('.table').footable();
-        $("button").click(function () {
-            $(".test").hide();
-            alert("hello werld");
-        });
+        // (<any>('.table')).footable();
+        // $("button").click(
+        //   function() {
+        //     $(".test").hide();
+        //     alert("hello werld");
+        //   }
+        // );
     }
 };
 JsqueryTestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -3203,6 +3242,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm2015/ngx-toastr.js");
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+/* harmony import */ var src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/agency-service.service */ "./src/app/agency-service.service.ts");
+/* harmony import */ var projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! projects/opt-library/src/portal-services/portal.service */ "./projects/opt-library/src/portal-services/portal.service.ts");
 
 //import angular modules
 
@@ -3211,11 +3252,15 @@ __webpack_require__.r(__webpack_exports__);
 //import services
 
 
+
+
 //import models or constants
 let HomeComponent = class HomeComponent {
-    constructor(toasterService, keycloakService) {
+    constructor(toasterService, keycloakService, agencyService, portalService) {
         this.toasterService = toasterService;
         this.keycloakService = keycloakService;
+        this.agencyService = agencyService;
+        this.portalService = portalService;
     }
     ngOnInit() {
         this.toasterService.overlayContainer = this.toastContainer;
@@ -3224,9 +3269,41 @@ let HomeComponent = class HomeComponent {
         console.log(userDetails.tokenParsed["exp"]);
         // console.log(userDetails.realmAccess["roles"]);
         // console.log(userDetails.profile["email"]);
+        this.keycloakService.getToken().then(data => {
+            console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+            console.log("getting the token");
+            this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("token is", this.userid);
+            console.log("inside the getToken()");
+            this.agencyService.getAgencyStaff(this.userid).subscribe(dataNew => {
+                console.log("inside the getAgencyService", dataNew);
+                console.log("setting the first name to", dataNew.firstName);
+                this.portalService.firstName = dataNew.firstName;
+            });
+        });
     }
     success() {
         this.toasterService.success("Success!", "Welcome to Home");
+    }
+    getToken() {
+        this.keycloakService.getToken().then(data => {
+            console.log("we are inside the get token function");
+            console.log("this is the tokenParsed", this.keycloakService.getKeycloakInstance().tokenParsed);
+            console.log("this is the idTokenParsed", this.keycloakService.getKeycloakInstance().idTokenParsed);
+            console.log("this might be the token ", this.keycloakService.getKeycloakInstance().tokenParsed.sub);
+            this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+        });
+    }
+    getAgencyButton() {
+        this.keycloakService.getToken().then(data => {
+            console.log("getting the token");
+            this.userid = this.keycloakService.getKeycloakInstance().tokenParsed.sub;
+            console.log("inside the getToken()");
+            this.agencyService.getAgencyStaff(this.userid).subscribe(dataNew => {
+                console.log("inside the getAgencyService", dataNew);
+                this.portalService.firstName = "jane eyre";
+            });
+        });
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -3238,7 +3315,7 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-home',
         template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/main/home/home.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_3__["ToasterService"], keycloak_angular__WEBPACK_IMPORTED_MODULE_4__["KeycloakService"], src_app_agency_service_service__WEBPACK_IMPORTED_MODULE_5__["AgencyServiceService"], projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_6__["PortalService"]])
 ], HomeComponent);
 
 
@@ -3502,14 +3579,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
+/* harmony import */ var projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/portal.service */ "./projects/opt-library/src/portal-services/portal.service.ts");
+
 
 
 
 
 let TopNavBarComponent = class TopNavBarComponent {
-    constructor(router, keycloakService) {
+    constructor(router, keycloakService, portalService) {
         this.router = router;
         this.keycloakService = keycloakService;
+        this.portalService = portalService;
         this.router.routeReuseStrategy.shouldReuseRoute = function () {
             return false;
         };
@@ -3519,8 +3599,10 @@ let TopNavBarComponent = class TopNavBarComponent {
                 window.scrollTo(0, 0);
             }
         });
+        this.portalService = portalService;
     }
     ngOnInit() {
+        this.firstName = this.portalService.firstName;
     }
     searchClaimant() {
         var claimantInfo = document.getElementById('searchText').value;
@@ -3539,7 +3621,7 @@ TopNavBarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-top-nav-bar',
         template: __webpack_require__(/*! raw-loader!./top-nav-bar.component.html */ "./node_modules/raw-loader/index.js!./src/app/top-nav-bar/top-nav-bar.component.html")
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], keycloak_angular__WEBPACK_IMPORTED_MODULE_3__["KeycloakService"], projects_opt_library_src_portal_services_portal_service__WEBPACK_IMPORTED_MODULE_4__["PortalService"]])
 ], TopNavBarComponent);
 
 
@@ -3614,7 +3696,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\jose.ibardaloza\Documents\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\internship v3\agency-portal-v2\agency-portal\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router"
 import { KeycloakService } from 'keycloak-angular';
+import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -8,8 +9,8 @@ import { KeycloakService } from 'keycloak-angular';
   styles: []
 })
 export class TopNavBarComponent implements OnInit {
-
-  constructor(private router: Router, private keycloakService: KeycloakService) {
+  firstName: string;
+  constructor(private router: Router, private keycloakService: KeycloakService, public portalService: PortalService) {
     this.router.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
    }
@@ -21,9 +22,12 @@ export class TopNavBarComponent implements OnInit {
       }
     });
 
+
+    this.portalService = portalService;
   }
 
   ngOnInit() {
+    this.firstName = this.portalService.firstName;
   }
 
   searchClaimant(){

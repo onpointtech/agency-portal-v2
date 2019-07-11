@@ -13,15 +13,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 public class ZuulServiceNewApplication {
 
-	  @RequestMapping(value = "/available")
-	  public String available() {
-	    return "<h1>PAGE: Available</h1>";
-	  }
-
-	  @RequestMapping(value = "/checked-out")
-	  public String checkedOut() {
-	    return "PAGE: Checked Out";
-	  }
+//	  @RequestMapping(value = "/available")
+//	  public String available() {
+//	    return "<h1>PAGE: Available</h1>";
+//	  }
+//
+//	  @RequestMapping(value = "/checked-out")
+//	  public String checkedOut() {
+//	    return "PAGE: Checked Out";
+//	  }
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ZuulServiceNewApplication.class, args);

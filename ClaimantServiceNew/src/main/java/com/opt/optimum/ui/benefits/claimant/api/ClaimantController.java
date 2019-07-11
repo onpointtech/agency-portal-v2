@@ -29,34 +29,34 @@ public class ClaimantController {
 		this.claimantBusinessService = claimantBusinessService;
 	}
 	
-//	@CrossOrigin(origins = "http://localhost:8083")
+	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/registerClaimant", method = RequestMethod.POST)
 	public long registerClaimant(@RequestBody ClaimantProfileSO claimantProfileSO) {
 		logger.info("Register Claimant Request Received ", claimantProfileSO.toString());
 		return claimantBusinessService.registerClaimant(claimantProfileSO);
 	}
 	
-//	@CrossOrigin(origins = "http://localhost:8083")
+	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/getClaimantById/{claimantId}", method = RequestMethod.GET)
 	public ClaimantProfile  getClaimantById(@PathVariable long claimantId) {
 		ClaimantProfile claimantProfile = claimantBusinessService.getClaimantById(claimantId);
 		return claimantProfile;
 	}
 	
-//	@CrossOrigin(origins = "http://localhost:8083")
+//	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/getAllClaimants", method = RequestMethod.GET)
 	public List<ClaimantProfile> getAllClaimants() {
 		List<ClaimantProfile> claimantProfiles = claimantBusinessService.getAllClaimants();
 		return claimantProfiles;
 	}
 	
-//	@CrossOrigin(origins = "http://localhost:8083")
+//	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/updateClaimant/{claimantId}", method = RequestMethod.PUT)
 	public ClaimantProfile updateClaimant(@RequestBody UpdateClaimantProfileSO claimantProfileSO, @PathVariable long claimantId) {
 		return claimantBusinessService.updateClaimant(claimantProfileSO, claimantId);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:8083")
+	@CrossOrigin(origins = "http://localhost:8080")
 	@RequestMapping(value = "/searchClaimant/{claimantInfo}", method = RequestMethod.GET)
 	public List<ClaimantProfile> searchClaimant(@PathVariable String claimantInfo) {
 		return claimantBusinessService.searchClaimant(claimantInfo);

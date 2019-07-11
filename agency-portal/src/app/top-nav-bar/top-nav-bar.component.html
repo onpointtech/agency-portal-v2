@@ -5,7 +5,7 @@
         <div class="col-sm-7 col-sm-push-5 margin-bot-sm">
            <div class="row pull-right">
             <span class="hidden-xs">
-              <span class="icon margin-right custom-welcome">Welcome User</span>
+              <span class="icon margin-right custom-welcome">Welcome User {{this.portalService.firstName}}</span>
             </span>
             <a class="view icon p-2 custom-m-1" ui-sref="sign-out({ manualSignout:true })" (click) = "doLogout()">Logout</a>
             <span ng-if="searchBar.displayLanguageTranslator" ></span>
