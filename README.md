@@ -1,23 +1,56 @@
 # Welcome to our angular portal
+```
+   __   __    /\/|      _   __  __      ___        ____   _       _   /\/| __   __               
+  / /  / /   |/\/      | | |  \/  |    ( _ )      / ___| (_)   __| | |/\/  \ \  \ \              
+ / /  / /           _  | | | |\/| |    / _ \/\   | |     | |  / _` |        \ \  \ \             
+ \ \  \ \          | |_| | | |  | |   | (_>  <   | |___  | | | (_| |        / /  / /             
+  \_\  \_\          \___/  |_|  |_|    \___/\/    \____| |_|  \__,_|       /_/  /_/              
+                                                                                                 
+              _____   _                ___           _                                           
+          _  |_   _| | |__     ___    |_ _|  _ __   | |_    ___   _ __   _ __    ___   _         
+  _____  (_)   | |   | '_ \   / _ \    | |  | '_ \  | __|  / _ \ | '__| | '_ \  / __| (_)  _____ 
+ |_____|  _    | |   | | | | |  __/    | |  | | | | | |_  |  __/ | |    | | | | \__ \  _  |_____|
+         (_)   |_|   |_| |_|  \___|   |___| |_| |_|  \__|  \___| |_|    |_| |_| |___/ (_)        
+```                                                                                               
+
 We made this portal to recreate the original agency portal, to go about upgrading angular 1 to angular 8. This is our guide to be able to use this project in the future
 
 
-## How to run the angular project
+## How to build the angular project
 To run, open the directory `agency-portal-v2/agency-portal`, open terminal and type
 
-`ng serve`
+`ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
 
-Then open this link in your browser
+The `--watch` automatically builds the angular app everytime there are changes to the angular files. This command places the angular files in the zuul app, and Zuul app runs it later.
 
-`localhost:4200`
 
-## How to run the backend (angular)
-1. Open eclipse
-2. Choose ClaimantServiceNew
-3. Build the project as maven project
-3. Right click and run the application (ClaimantServiceNewApplication)
-4. Open this link in your browser
-`http://localhost:8080/swagger-ui.html`
+## How to start to run the 3 backend applications
+1. Open 
+2. Import the 3 maven projects (ClaimantServiceNew, SurveyServiceNew, ZuulServiceNew)
+2. To run the claimant service app
+   1. Choose ClaimantServiceNew
+   2. Right click, press build as a maven project
+   3. Right click, press run as Java application (ClaimantServiceNewApplication)
+   4. You may view the apis for this at `localhost:8082/swagger-ui.html`
+   5. Note that this app runs at `localhost:8082`
+2. To run the survey service app
+   1. Choose SurveyServiceNew
+   2. Right click, press build as a maven project
+   3. Right click, press run as Java application (SurveyServiceNewApplication)
+   4. You may view the apis for this at `localhost:8081/swagger-ui.html`
+   5. Note that this app runs at `localhost:8081`
+2. To run the zuul service app !! important to build angular first
+   1. Choose ZuulServiceNew
+   2. Right click, press build as a maven project
+   3. Right click, press run as Java application (ZuulServiceNewApplication)
+   4. Note that this app runs at `localhost:8080`
+
+## Developing the angular app
+1. Save the changes made in angular
+2. Run the build functions `ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
+3. Note ZuulServiceNew should already be running or else you do not need to do the following steps
+4. In eclipse, rigth click the __ZuulServiceNew__ press refresh or press _F5_
+5. Refresh the URL in the browser
 
 
 ## How to download and install the portal (Windows)
@@ -39,7 +72,7 @@ Install the node modules
 `npm install`
 
 
-## How to develop the agency portal
+## How to add to the agency portal angular app
 
 ### Component generation
 
