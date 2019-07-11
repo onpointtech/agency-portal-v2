@@ -3,6 +3,9 @@
     <div id = "main-toastr" toastContainer></div>
   <div id="content" class="container">
     <app-top-nav-bar></app-top-nav-bar>
+    <p><strong>{{idleState}}</strong></p>
+<p *ngIf="lastPing"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>
+<button (click)="reset()" *ngIf="timedOut">Restart</button>
    <router-outlet>
    </router-outlet>
   </div>

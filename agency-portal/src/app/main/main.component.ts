@@ -30,7 +30,8 @@ export class MainComponent implements OnInit {
     private router: Router,
     private keycloakService: KeycloakService,
     private idle: Idle,
-    private keepalive: Keepalive
+    private keepalive: Keepalive,
+    private alert: AlertService
   ) {
     router.events.forEach(event => {
       if(event instanceof NavigationEnd) {
@@ -39,9 +40,9 @@ export class MainComponent implements OnInit {
     });
 
     // sets an idle timeout of 5 seconds, for testing purposes.
-    idle.setIdle(5000);
+    idle.setIdle(5);
     // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-    idle.setTimeout(1000);
+    idle.setTimeout(30);
     // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
     idle.setInterrupts(DEFAULT_INTERRUPTSOURCES);
     

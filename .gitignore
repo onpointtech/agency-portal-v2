@@ -6,3 +6,5 @@ node_modules/
 agency-portal/dist/
 agency-portal/dist/opt-library/
 agency-portal/package-lock.json
+ZuulServiceNew/src/main/resources/static/
+ZuulServiceNew/src/main/resources/static/main.js

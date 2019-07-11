@@ -448,7 +448,7 @@ module.exports = "\r\n<p>\r\n  home works eyo!\r\n</p>"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-wrapper\">\r\n    <app-side-nav-bar></app-side-nav-bar>\r\n    <div id = \"main-toastr\" toastContainer></div>\r\n  <div id=\"content\" class=\"container\">\r\n    <app-top-nav-bar></app-top-nav-bar>\r\n   <router-outlet>\r\n   </router-outlet>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
+module.exports = "<div class=\"nav-wrapper\">\r\n    <app-side-nav-bar></app-side-nav-bar>\r\n    <div id = \"main-toastr\" toastContainer></div>\r\n  <div id=\"content\" class=\"container\">\r\n    <app-top-nav-bar></app-top-nav-bar>\r\n    <p><strong>{{idleState}}</strong></p>\r\n<p *ngIf=\"lastPing\"><small>Last keepalive ping <strong>{{lastPing | amTimeAgo}}</strong></small></p>\r\n<button (click)=\"reset()\" *ngIf=\"timedOut\">Restart</button>\r\n   <router-outlet>\r\n   </router-outlet>\r\n  </div>\r\n</div>\r\n\r\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -3247,8 +3247,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var projects_opt_library_src_portal_services_toaster_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! projects/opt-library/src/portal-services/toaster.service */ "./projects/opt-library/src/portal-services/toaster.service.ts");
 /* harmony import */ var projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! projects/opt-library/src/portal-services/modal.service */ "./projects/opt-library/src/portal-services/modal.service.ts");
 /* harmony import */ var keycloak_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! keycloak-angular */ "./node_modules/keycloak-angular/fesm2015/keycloak-angular.js");
-/* harmony import */ var _ng_idle_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ng-idle/core */ "./node_modules/@ng-idle/core/index.js");
-/* harmony import */ var _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ng-idle/keepalive */ "./node_modules/@ng-idle/keepalive/index.js");
+/* harmony import */ var projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! projects/opt-library/src/portal-services/alert.service */ "./projects/opt-library/src/portal-services/alert.service.ts");
+/* harmony import */ var _ng_idle_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ng-idle/core */ "./node_modules/@ng-idle/core/index.js");
+/* harmony import */ var _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ng-idle/keepalive */ "./node_modules/@ng-idle/keepalive/index.js");
+
 
 
 
@@ -3259,13 +3261,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let MainComponent = class MainComponent {
-    constructor(toasterService, modalService, router, keycloakService, idle, keepalive) {
+    constructor(toasterService, modalService, router, keycloakService, idle, keepalive, alert) {
         this.toasterService = toasterService;
         this.modalService = modalService;
         this.router = router;
         this.keycloakService = keycloakService;
         this.idle = idle;
         this.keepalive = keepalive;
+        this.alert = alert;
         this.idleState = 'Not started.';
         this.timedOut = false;
         this.lastPing = null;
@@ -3276,11 +3279,11 @@ let MainComponent = class MainComponent {
             }
         });
         // sets an idle timeout of 5 seconds, for testing purposes.
-        idle.setIdle(5000);
+        idle.setIdle(5);
         // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-        idle.setTimeout(1000);
+        idle.setTimeout(30);
         // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
-        idle.setInterrupts(_ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_INTERRUPTSOURCES"]);
+        idle.setInterrupts(_ng_idle_core__WEBPACK_IMPORTED_MODULE_8__["DEFAULT_INTERRUPTSOURCES"]);
         idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');
         idle.onTimeout.subscribe(() => {
             this.idleState = 'Timed out!';
@@ -3323,8 +3326,9 @@ MainComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         projects_opt_library_src_portal_services_modal_service__WEBPACK_IMPORTED_MODULE_5__["ModalService"],
         _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
         keycloak_angular__WEBPACK_IMPORTED_MODULE_6__["KeycloakService"],
-        _ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["Idle"],
-        _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_8__["Keepalive"]])
+        _ng_idle_core__WEBPACK_IMPORTED_MODULE_8__["Idle"],
+        _ng_idle_keepalive__WEBPACK_IMPORTED_MODULE_9__["Keepalive"],
+        projects_opt_library_src_portal_services_alert_service__WEBPACK_IMPORTED_MODULE_7__["AlertService"]])
 ], MainComponent);
 
 
@@ -3510,6 +3514,8 @@ let TopNavBarComponent = class TopNavBarComponent {
     doLogout() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             yield this.keycloakService.logout();
+            this.router.navigate(['']);
+            this.router.navigate(['main/home']);
         });
     }
 };

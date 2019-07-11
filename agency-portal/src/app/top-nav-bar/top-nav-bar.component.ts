@@ -33,6 +33,8 @@ export class TopNavBarComponent implements OnInit {
 
   async doLogout() {
     await this.keycloakService.logout();
+    this.router.navigate(['']);
+    this.router.navigate(['main/home']);
   }
 
 }
