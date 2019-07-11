@@ -437,7 +437,7 @@ module.exports = "<ng-container *ngIf=\"claimantSO\">\r\n  <ng-container *ngIf=\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<p>\r\n  this is the 12:00 nn version\r\n</p>\r\n<!-- <button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button> -->\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
+module.exports = "\r\n<p>\r\n  this is the 5:25 pm version\r\n</p>\r\n\r\n<h1> \r\n Hello {{this.name}}! \r\n</h1>\r\n\r\n<button>Hello there</button>\r\n<!-- <button (click)=\"this.getToken()\">Press this to get the userid</button>\r\n\r\n<p> id to get: </p><input type=\"text\" [(ngModel)]=\"this.userid\">\r\n<br>\r\n<button (click)=\"this.getAgencyButton()\">Press this to see what the agency service returns</button> -->\r\n\r\n\r\n<!-- <app-jsquery-test></app-jsquery-test> -->\r\n"
 
 /***/ }),
 
@@ -481,7 +481,7 @@ module.exports = "<!--Side Nav Bar Section-->\r\n<div class=\"bg-primary\">\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User {{this.portalService.firstName}}</span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
+module.exports = "  <!--Top Nav Bar Section-->\r\n  <nav class=\"navbar navbar-default\" aria-label=\"Top Nav Bar\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-7 col-sm-push-5 margin-bot-sm\">\r\n           <div class=\"row pull-right\">\r\n            <span class=\"hidden-xs\">\r\n              <span class=\"icon margin-right custom-welcome\">Welcome User <b>{{this.portalService.firstName | titlecase}} </b> </span>\r\n            </span>\r\n            <a class=\"view icon p-2 custom-m-1\" ui-sref=\"sign-out({ manualSignout:true })\" (click) = \"doLogout()\">Logout</a>\r\n            <span ng-if=\"searchBar.displayLanguageTranslator\" ></span>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-5 col-sm-pull-7\">\r\n          <button type=\"button\" id=\"sidebarCollapse\" class=\"pull-left icon btn btn-primary\" title=\"Menu\" aria-label=\"Menu\">\r\n            <i class=\"fa fa-bars\"></i>\r\n          </button>\r\n          <form role=\"search\" class=\"navbar-form-custom searchbar-custom search-bar-width\" >\r\n            <div class=\"input-group\">\r\n              <input type=\"text\" placeholder=\"Search\" class=\"form-control\" id=\"searchText\">\r\n              <span class=\"input-group-addon\">\r\n               <button class=\"fa fa-search\" (click)=\"searchClaimant()\"></button>\r\n              </span>\r\n            </div>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </nav>"
 
 /***/ }),
 
@@ -3292,6 +3292,10 @@ let HomeComponent = class HomeComponent {
     }
 };
 tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+], HomeComponent.prototype, "name", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastContainerDirective"], { static: false }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", ngx_toastr__WEBPACK_IMPORTED_MODULE_2__["ToastContainerDirective"])
 ], HomeComponent.prototype, "toastContainer", void 0);
@@ -3353,9 +3357,9 @@ let MainComponent = class MainComponent {
             }
         });
         // sets an idle timeout of 5 seconds, for testing purposes.
-        idle.setIdle(5);
+        idle.setIdle(300);
         // sets a timeout period of 5 seconds. after 10 seconds of inactivity, the user will be considered timed out.
-        idle.setTimeout(30);
+        idle.setTimeout(300);
         // sets the default interrupts, in this case, things like clicks, scrolls, touches to the document
         idle.setInterrupts(_ng_idle_core__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_INTERRUPTSOURCES"]);
         idle.onIdleEnd.subscribe(() => this.idleState = 'No longer idle.');

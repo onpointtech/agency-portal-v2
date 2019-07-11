@@ -407,6 +407,22 @@ then in the html, you can now use the component as
 
 Components can have inputs and outputs (we call these event emitters)
 
+For Inputs: Here is a general idea
+Inside the code we have an input declaration 
+```
+@Input: varName
+```
+
+Inside the html we put a value to the input variable
+```
+<app-name-some
+varName="some value Ill input"
+></app-name-some>
+```
+
+For outputs: (no idea yet)
+
+
 ### Services
 These are pieces of code that are used again and again throughout the site. Think of it as recurring functions.
 
@@ -435,7 +451,7 @@ This is used to have a component be replaced by different components by utilizin
 There is very little documentation on Zuul + Maven + Angular so this section will be a benefit to many others
 Zuul makes all the routes pass through it, and is able to redirect and "proxy" routes on different ports to make them all on "the same port" by using modified routes. 
 
-Current routes used:
+Current ports used by the java apps:
 - 8080 : keycloak, angular app, zuul service
 - 8081: survey service
 - 8082: claimant service
