@@ -18,9 +18,15 @@ export class ClaimantService {
 
 
   constructor(private http: HttpClient, private toasterService: ToasterService) { }
-  public getClaimantById(claimantId: number): Observable<ClaimantSO> {
-    const claimantUrl = `${this.url}/getClaimantById/${claimantId}`;
-    return this.http.get<ClaimantSO>(claimantUrl)
+  // public getClaimantById(claimantId: number): Observable<ClaimantSO> {
+  //   const claimantUrl = `${this.url}/getClaimantById/${claimantId}`;
+  //   return this.http.get<ClaimantSO>(claimantUrl)
+  // }
+
+  
+  public getClaimantById(claimantId: number): Observable<any> {
+    const claimantUrl = `http://localhost:8080/getClaimant/api/claimant/${claimantId}`;
+    return this.http.get<any>(claimantUrl);
   }
 
   public getAllClaimants(): Observable<ClaimantSO[]> { //Observable<ClaimantSO[]> {
