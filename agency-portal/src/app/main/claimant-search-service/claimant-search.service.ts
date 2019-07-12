@@ -12,13 +12,14 @@ export class ClaimantSearchService {
   constructor(private http: HttpClient) { }
 
   // url = environment.apis.claimantSearch;
-  url = 'http://localhost:8080/claimant-search';
+  url = 'http://localhost:8080/';
 
   public searchClaimant(claimantInfo: string): Observable<any> {
+    const claimantUrl = `${this.url}/claimant-search`;
     var claimant: any = {
       "maximumResultCount": 100,
       "searchString": claimantInfo
     }
-    return this.http.post<any>(this.url, claimant);
+    return this.http.post<any>(claimantUrl, claimant);
   }
 }

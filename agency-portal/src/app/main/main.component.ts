@@ -30,7 +30,8 @@ export class MainComponent implements OnInit {
     private router: Router,
     private keycloakService: KeycloakService,
     private idle: Idle,
-    private keepalive: Keepalive
+    private keepalive: Keepalive,
+    private alert: AlertService
   ) {
     router.events.forEach(event => {
       if(event instanceof NavigationEnd) {

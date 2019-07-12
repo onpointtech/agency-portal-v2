@@ -14,6 +14,7 @@ import { PortalService } from 'projects/opt-library/src/portal-services/portal.s
 
 //import models or constants
 import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so';
+import { ClaimantSearchService } from '../claimant-search-service/claimant-search.service';
 
 
 @Component({
@@ -23,12 +24,14 @@ import { ClaimantSO } from 'projects/opt-library/src/service-objects/claimant-so
 })
 export class ClaimantOverviewComponent implements OnInit {
   @Input() claimantId: number
-
-  claimantSO: ClaimantSO
+  claimantSO: any
+  flag: number;
 
   constructor(private route: ActivatedRoute, 
     private claimantService: ClaimantService,
-    private claimantUsed: PortalService) { }
+    private claimantUsed: PortalService,
+    private searchService: ClaimantSearchService
+  ) { }
 
   ngOnInit() {
     this.claimantId = Number(this.route
@@ -40,12 +43,13 @@ export class ClaimantOverviewComponent implements OnInit {
   }
 
   claimantOverview(claimantId: number){
-    this.claimantService.
-    getClaimantById(claimantId)
+    this.claimantService
+    .getClaimantById(claimantId)
     .subscribe(claimantSO => { 
+      console.log(claimantSO);
       this.claimantSO = claimantSO; 
       this.claimantUsed.claimantSO = this.claimantSO;
-     });
+    });
   }
 
 }

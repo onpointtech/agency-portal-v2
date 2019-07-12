@@ -214,7 +214,8 @@ Run `ng generate application app-name --prefix appn`
 You continue normal app development in angular. And use number 6 above, to see how to build components live.
 
 ### How to build an external library and send it through html
-- Move to its own readme
+
+#### How to build the external library for the first time
 1. make an app to be external
    - run `ng new appname`
 2. make a component
@@ -242,7 +243,7 @@ You continue normal app development in angular. And use number 6 above, to see h
    - remove the bootstrap[]...
 7. Remove the following files inside the web component
    - app.component (.ts, css, html, spec.ts)
-8. run `npm run build`
+8. run `npm run build` this only needs to be done on the first build
 9. create a script called `custombuild.sh` inside the root folder with the following
 
 ``` 
@@ -250,6 +251,14 @@ You continue normal app development in angular. And use number 6 above, to see h
 ng build external-app --prod --output-hashing=none && cat dist/external-app/runtime-es2015.js dist/external-app/polyfills-es2015.js dist/external-app/scripts.js dist/external-app/main-es2015.js > preview/externalapp.js 
 ```
 10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
+    - During the next builds, you only need to keep running this script (also you need git bash or bash terminal, doesnt work on command prompt).
+
+#### How to build the external library the following times
+10. Run the script (might need bash such as git bash on windows) `./custombuild.sh`
+    - During the next builds, you only need to keep running this script (also you need git bash or bash terminal, doesnt work on command prompt).
+
+
+#### How to send the external library through html
 11. Open the root folder and run `http-server "path of the made js file" -p 9000`
 12. Inside the app-module.ts where you'll import the web component add the following 
 ``` 
