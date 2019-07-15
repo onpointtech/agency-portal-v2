@@ -464,7 +464,19 @@ Current ports used by the java apps:
 - 8080 : keycloak, angular app, zuul service
 - 8081: survey service
 - 8082: claimant service
-- 8083: not used, maybe can be used to deploy external libraries
+- 8083: not used, maybe can be used to deploy external 
+
+### Security and Testing
+#### Security
+Recently, we came across a security vulnerability with our angular app. The source of that vulnerability was from a dependency used was outdated. A simple way of resolving those security issues was by opening the angular app core folder and running `npm audit fix` . This will look at the dependencies imported and update them. These dependencies also have other dependencies and I know angular updates those as well. 
+
+#### Testing
+Angular has a functionality for testing. It automatically generates *.spec.ts components, which specify how to make functionalities work. You can specify an input, and a needed output in the html. With regards to waiting, there is a function that waits for a stable state before checking the output (html). 
+
+To run the test you can open the angular app folder and run `ng test` note that this doesn't run out of the box or when you generate components. There needs to be some modification to the components/angular app still. What modification needs to be done is not yet known by us. This is one of the things that still need to be studied.
+
+Per component you will specify what functionalities need to work, and these will show in the testing module that will appear in the browser. If this is done right, an `ng test` will run and have a summary of components, the functionalities they have, and which of those functionalities work under testing.
+
 
 ***
 ## AngularJS to Angular v8 Guide
