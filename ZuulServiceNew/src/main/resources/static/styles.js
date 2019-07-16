@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\internship v3\agency-portal-v2\agency-portal\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! D:\Users\jose.ibardaloza\Documents\agency-portal-v2\agency-portal\src\styles.css */"./src/styles.css");
 
 
 /***/ })

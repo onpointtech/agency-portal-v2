@@ -1,0 +1,68 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<link href="../styles/optimum-base.css" rel="stylesheet">
+<link href="../styles/portal-style.css" rel="stylesheet">
+
+<script>
+    var sideNavBar = angular
+        .module("sideNavBar", [])
+        .component('sideNavBar', {
+            templateUrl: "./top-nav-bar.htm"
+        });
+
+    sideNavBar.value('$routerRootComponent', 'myApp');
+</script>
+
+<script>
+    var topNavBar = angular
+        .module("topNavBar", [])
+        .component('topNavBar', {
+            templateUrl: "./side-nav-bar.htm"
+        });
+
+    topNavBar.value('$routerRootComponent', 'myApp');
+</script>
+
+<body ng-app="myApp">
+
+    <div>
+        <ng-include src=" './top-nav-bar.htm' "></ng-include>
+        <ng-include src=" './side-nav-bar.htm' "></ng-include>
+    </div>
+
+    <my-app></my-app>
+
+    <!-- <div ng-modules="topNavBar, sideNavBar"></div> -->
+
+    <a href="#/!">Home</a>
+    <br>
+    <a href="#!claimant-overview">Claimant Overview</a>
+    <br>
+    <a href="#!claimant-profile">Claimant Profile</a>
+    <br>
+
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute", "topNavBar", "sideNavBar"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "./home.htm"
+                })
+                .when("/claimant-overview", {
+                    templateUrl: "./claimant-overview.htm"
+                })
+                .when("/claimant-profile", {
+                    templateUrl: "./claimant-profile.htm"
+                })
+                .otherwise({
+                    template: "<h1>NONE</h1>"
+                });
+        });
+    </script>
+
+</body>
+
+</html>
