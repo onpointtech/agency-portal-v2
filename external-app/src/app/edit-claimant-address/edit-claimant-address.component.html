@@ -1,0 +1,183 @@
+<div class="modal-header">
+  <h4 class="modal-title">Edit Claimant Details</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+
+
+  <form [formGroup]="profileForm" class="form-horizontal">
+    <div class="form-group">
+      <!-- Address Line 1 -->
+      <div class="col-xs-12 col-md-12">
+          <label for="addressLine1" class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Address Line 1:
+          </label>
+          <div [class] = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['addressLine1'].invalid? '(Required)' : '' "
+            [(ngModel)] = "updateClaimantAddress.addressLine1"
+            formControlName = "addressLine1">
+
+            <span *ngIf = "profileForm.controls['addressLine1'].invalid && profileForm.controls['addressLine1'].touched"
+          class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+          aria-hidden = "true">
+        </span>
+
+        <div class = "text-danger">
+          <val-errors controlName = "addressLine1">
+            <ng-template valError = "required">
+              <p class = "ng-scope">
+                <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Address Line 1.
+              </p>
+            </ng-template>
+          </val-errors>
+        </div>
+
+          </div>
+      </div>
+
+      <!-- Address Line 2 -->
+      <div class="col-xs-12 col-md-12">
+          <label for="addressLine2" class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Address Line 2:
+          </label>
+          <div [class] = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['addressLine2'].invalid? '(Required)' : '' "
+            [(ngModel)] = "updateClaimantAddress.addressLine2"
+            formControlName = "addressLine2">
+
+            <span *ngIf = "profileForm.controls['addressLine2'].invalid && profileForm.controls['addressLine2'].touched"
+          class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+          aria-hidden = "true">
+        </span>
+
+        <div class = "text-danger">
+          <val-errors controlName = "addressLine2">
+            <ng-template valError = "required">
+              <p class = "ng-scope">
+                <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Address Line 2.
+              </p>
+            </ng-template>
+          </val-errors>
+        </div>
+
+          </div>
+      </div>
+
+      <!-- City and State -->
+      <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-md-6">
+          <label for="city" class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>City:
+          </label>
+          <div [class] = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['city'].invalid? '(Required)' : '' "
+            [(ngModel)] = "updateClaimantAddress.city" 
+            formControlName = "city">
+
+            <span *ngIf = "profileForm.controls['city'].invalid && profileForm.controls['city'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
+
+          <div class = "text-danger">
+            <val-errors controlName = "city">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid City.
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
+          
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>State:
+          </label>
+          <div
+            [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['state'].invalid && profileForm.controls['state'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="state" [compareWith]="compareFn" [(ngModel)]="updateClaimantAddress.state">
+              <option value="" disabled=true>{{updateClaimantAddress.state}}</option>
+              <option [value]="choice" *ngFor="let choice of stateChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div *ngIf="profileForm.controls['state'].invalid && profileForm.controls['state'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['state'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid State.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zip Code and Zip Code Extension -->
+      <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-md-6">
+          <label for="zipCode" class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Zip Code:
+          </label>
+          <div [class] = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['zipCode'].invalid? '(Required)' : '' "
+            [(ngModel)] = "updateClaimantAddress.zipCode"
+            formControlName = "zipCode">
+
+            <span *ngIf = "profileForm.controls['zipCode'].invalid && profileForm.controls['zipCode'].touched"
+            class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+            aria-hidden = "true"></span>
+
+          <div class = "text-danger">
+            <val-errors controlName = "zipCode">
+              <ng-template valError = "required">
+                <p class = "ng-scope">
+                  <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                  Please enter a valid Zip Code.
+                </p>
+              </ng-template>
+            </val-errors>
+          </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label for="zipExt" class="col-xs-12 head control-label">Zip Code Extension:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <input type="text" class="form-control edit_field" [(ngModel)]="updateClaimantAddress.zipExt"
+              formControlName="zipExt" placeholder="{{updateClaimantAddress.zipExt}}">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="updateClaimantDetails()">Submit</button>
+  <button type="button" class="btn btn-info" (click)="close()">Cancel</button>
+</div>

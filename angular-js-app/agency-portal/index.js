@@ -11,6 +11,9 @@ angular.module("agencyPortal", ["ngRoute"])
             .when("/claimant-profile", {
                 template: '<claimant-profile></claimant-profile>'
             })
+            .when("/angular-claimant-profile", {
+                template: '<app-simple-claimant-profile firstName = "JM" lastName = "Ibardaloza" phone = "9999999999" address = "Somewhere in QC" ></app-simple-claimant-profile>'
+            })
             .otherwise({
                 template: "<h1>NONE</h1>"
             });

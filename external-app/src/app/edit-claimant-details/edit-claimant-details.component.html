@@ -1,0 +1,382 @@
+<div class="modal-header">
+  <h4 class="modal-title">Edit Claimant Details</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="profileForm" class="form-horizontal">
+    <div class="form-group">
+
+      <!-- SSN and Alternate ClaimantID -->
+      <div class="col-xs-12 no-padding">
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+            SSN:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <!-- FORM INPUT -->
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.ssn" formControlName="ssn"
+              readonly="readonly" placeholder="{{claimantProfileCopy.ssn}}">
+          </div>
+          <div *ngIf="debug==true">
+            <br>
+            DEBUG: model.ssn content: {{claimantProfileCopy.ssn}}
+            <br>
+            DEBUG: profileForm status: {{profileForm.status}}
+            <br>
+            DEBUG: profileForm dirty: {{profileForm.dirty}}
+            <br>
+            DEBUG: profileForm touched: {{profileForm.touched}}
+            <br>
+            DEBUG: model content: {{ claimantProfileCopy | json }}
+            <br>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+            Alternate ClaimantID:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <!-- FORM INPUT -->
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.alternateClaimantId"
+              formControlName="alternateClaimantId" readonly="readonly"
+              placeholder="{{claimantProfileCopy.alternateClaimantId}}">
+          </div>
+          <div *ngIf="debug==true">
+            <br>
+            DEBUG: model.alternateClaimantId content: {{claimantProfileCopy.alternateClaimantId}}
+            <br>
+            DEBUG: profileForm status: {{profileForm.status}}
+            <br>
+            DEBUG: profileForm dirty: {{profileForm.dirty}}
+            <br>
+            DEBUG: profileForm touched: {{profileForm.touched}}
+            <br>
+            DEBUG: model content: {{ claimantProfileCopy | json }}
+            <br>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- First Name and Last Name -->
+      <div class="col-xs-12 no-padding">
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+            First Name:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <!-- FORM INPUT -->
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.firstName" formControlName="firstName"
+              readonly="readonly" placeholder="{{claimantProfileCopy.firstName}}">
+          </div>
+          <div *ngIf="debug==true">
+            <br>
+            DEBUG: model.firstName content: {{claimantProfileCopy.firstName}}
+            <br>
+            DEBUG: profileForm status: {{profileForm.status}}
+            <br>
+            DEBUG: profileForm dirty: {{profileForm.dirty}}
+            <br>
+            DEBUG: profileForm touched: {{profileForm.touched}}
+            <br>
+            DEBUG: model content: {{ claimantProfileCopy | json }}
+            <br>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+            Last Name:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <!-- FORM INPUT -->
+            <input class="field" type="text" [(ngModel)]="claimantProfileCopy.lastName" formControlName="lastName"
+              readonly="readonly" placeholder="{{claimantProfileCopy.lastName}}">
+          </div>
+          <div *ngIf="debug==true">
+            <br>
+            DEBUG: model.lastName content: {{claimantProfileCopy.lastName}}
+            <br>
+            DEBUG: profileForm status: {{profileForm.status}}
+            <br>
+            DEBUG: profileForm dirty: {{profileForm.dirty}}
+            <br>
+            DEBUG: profileForm touched: {{profileForm.touched}}
+            <br>
+            DEBUG: model content: {{ claimantProfileCopy | json }}
+            <br>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Middle Initial and Home Phone -->
+      <div class="col-xs-12 no-padding">
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Middle Initial:
+          </label>
+          <div [class]="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <input [class]="profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched ? 'edit_field error': 'edit_field'" type="text" [(ngModel)]="claimantProfileCopy.middleInitial"
+              formControlName="middleInitial" [placeholder] = "profileForm.controls['middleInitial'].invalid? '(Required)' : '' ">
+
+            <span *ngIf = "profileForm.controls['middleInitial'].invalid && profileForm.controls['middleInitial'].touched"
+              class = "glyphicon glyphicon-exclamation-sign form-control-feedback"
+              aria-hidden = "true">
+            </span>
+
+              <div class = "text-danger">
+                  <val-errors controlName = "middleInitial">
+                    <ng-template valError = "maxlength">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Middle Initial can only have a maximum of 1 letter
+                      </p>
+                    </ng-template>
+      
+                    <ng-template valError = "pattern">
+                      <p class = "ng-scope">
+                        <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                        Only a letter can be entered as a middle initial
+                      </p>
+                    </ng-template>
+                  </val-errors>
+                </div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label for="homePhone" class="col-xs-12 head control-label">
+            <span class = "text-danger">*</span>Home Phone:
+          </label>
+          <div [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <input [class] = "profileForm.controls['homePhone'].invalid && profileForm.controls['homePhone'].touched ? 'edit_field error': 'edit_field'"
+            type = "text"
+            [placeholder] = "profileForm.controls['homePhone'].invalid? '(000) 000-000 (Required)' : '' "
+            [(ngModel)] = "claimantProfileCopy.homePhone"
+            formControlName = "homePhone"
+            mask = "(000) 000-0000">
+          </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "homePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
+        </div>
+      </div>
+
+      <!-- Mobile Phone  & Language Preference div -->
+      <div class="col-xs-12 no-padding">
+
+        <div class="col-xs-12 col-md-6">
+          <label for="mobilePhone" class="col-xs-12 head control-label">Mobile Phone:
+          </label>
+          <div class="col-xs-12 has-feedback">
+            <input type = "text"
+            class = "form-control edit_field"
+            [(ngModel)] = "claimantProfileCopy.mobilePhone"
+            formControlName = "mobilePhone"
+            placeholder = "(000) 000-000"
+            mask = "(000) 000-0000">
+          </div>
+
+          <div class = "text-danger">
+              <val-errors controlName = "mobilePhone">
+                <ng-template valError = "pattern">
+                  <p class = "ng-scope">
+                    <span class = "glyphicon glyphicon-exclamation-sign"></span>
+                    Only numbers are allowed to be inputted in this field.
+                  </p>
+                </ng-template>
+              </val-errors>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Language Preference:
+          </label>
+          <div
+            [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="languagePreference" [compareWith]="compareFn"
+              [(ngModel)]="claimantProfileCopy.languagePreference">
+              <option value="" disabled=true>{{claimantProfileCopy.languagePreference}}</option>
+              <option [value]="choice" *ngFor="let choice of languagePreferenceChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span
+              *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div
+              *ngIf="profileForm.controls['languagePreference'].invalid && profileForm.controls['languagePreference'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['languagePreference'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Language Preference.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Education Level & Gender div -->
+      <div class="col-xs-12 no-padding">
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Education Level:
+          </label>
+          <div
+            [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="educationLevel" [compareWith]="compareFn"
+              [(ngModel)]="claimantProfileCopy.educationLevel">
+              <option value="" disabled=true>{{claimantProfileCopy.educationLevel}}</option>
+              <option [value]="choice" *ngFor="let choice of educationLevelChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span
+              *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div
+              *ngIf="profileForm.controls['educationLevel'].invalid && profileForm.controls['educationLevel'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['educationLevel'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Education Level.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Gender:
+          </label>
+          <div
+            [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="gender" [compareWith]="compareFn" [(ngModel)]="claimantProfileCopy.gender">
+              <option value="" disabled=true>{{claimantProfileCopy.gender}}</option>
+              <option [value]="choice" *ngFor="let choice of genderChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span *ngIf="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div *ngIf="profileForm.controls['gender'].invalid && profileForm.controls['gender'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['gender'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Gender.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Race & Ethnicity div -->
+      <div class="col-xs-12 no-padding">
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Race:
+          </label>
+          <div
+            [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['race'].invalid && profileForm.controls['race'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="race" [compareWith]="compareFn" [(ngModel)]="claimantProfileCopy.race">
+              <option value="" disabled=true>{{claimantProfileCopy.race}}</option>
+              <option [value]="choice" *ngFor="let choice of raceChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span *ngIf="profileForm.controls['race'].invalid && profileForm.controls['race'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div *ngIf="profileForm.controls['race'].invalid && profileForm.controls['race'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['race'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Race.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-6">
+          <label class="col-xs-12 head control-label">
+              <span class = "text-danger">*</span>Ethnicity:
+          </label>
+          <div
+            [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'col-xs-12 has-error has-feedback': 'col-xs-12 has-feedback'">
+            <!-- FORM INPUT -->
+            <select
+              [class]="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched ? 'edit_field error': 'edit_field'"
+              formControlName="ethnicity" [compareWith]="compareFn" [(ngModel)]="claimantProfileCopy.ethnicity">
+              <option value="" disabled=true>{{claimantProfileCopy.ethnicity}}</option>
+              <option [value]="choice" *ngFor="let choice of ethnicityChoices">{{choice}}</option>
+            </select>
+
+            <!-- ERROR   -->
+            <span *ngIf="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
+              class="glyphicon glyphicon-exclamation-sign form-control-feedback" aria-hidden="true"></span>
+            <div *ngIf="profileForm.controls['ethnicity'].invalid && profileForm.controls['ethnicity'].touched"
+              class="text-danger">
+
+              <!-- ERROR LIST -->
+
+              <p *ngIf="profileForm.controls['ethnicity'].invalid" class="ng-scope">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                Please enter a valid Ethnicity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type = "submit" class="btn btn-primary"  (click)="updateClaimantDetails()">Submit</button>
+  <button type="button" class="btn btn-info" (click)="close()">Cancel</button>
+</div>
