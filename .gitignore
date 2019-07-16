@@ -1,8 +1,7 @@
 ClaimantServiceNew/.project
 ClaimantServiceNew/.settings/org.eclipse.m2e.core.prefs
 ClaimantServiceNew/target/
-ZuulServiceNew/src/main/resources/static/
-ZuulServiceNew/src/main/resources/static/main.js
+ZuulServiceNew/src/main/resources/static
 external-app/node_modules
 agency-portal/node_modules
 survey-editor/node_modules
