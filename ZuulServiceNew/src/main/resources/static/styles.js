@@ -1058,7 +1058,6 @@ if(false) {}
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
-
 __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\src\styles.css */"./src/styles.css");
 __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_modules\survey-angular\survey.css */"./node_modules/survey-angular/survey.css");
@@ -1080,8 +1079,6 @@ __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_mod
 __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_modules\jquery-bar-rating\dist\themes\bootstrap-stars.css */"./node_modules/jquery-bar-rating/dist/themes/bootstrap-stars.css");
 __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_modules\jquery-bar-rating\dist\themes\fontawesome-stars-o.css */"./node_modules/jquery-bar-rating/dist/themes/fontawesome-stars-o.css");
 module.exports = __webpack_require__(/*! D:\internship v3\agency-portal-v2\survey-editor\node_modules\ngx-toastr\toastr.css */"./node_modules/ngx-toastr/toastr.css");
-
-
 /***/ })
 
 },[[2,"runtime"]]]);

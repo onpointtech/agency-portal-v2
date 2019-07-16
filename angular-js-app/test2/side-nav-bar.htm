@@ -1,0 +1,28 @@
+<body>
+  <!--Side Nav Bar Section-->
+  <div class="bg-primary">
+    <nav id="sidebar" aria-label="Side Nav Bar" ng-controller="SideNavBarCtrl as sideNavBar">
+      <div ng-if="!sideNavBar.portalService.getIsNavBarMinimized()">
+        <a ui-sref="agency-portal.home">
+          <img alt="logo" class="logo logo-width logo-style mob_hide" src="https://agency-portal.opt-dev.optimumui.com/agency-portal/optimum-ui-customizations/image/state_logo.png"> </a>
+      </div>
+      <div class="sidebar-header">
+        <div class="text-center rounded-section">
+          <h3>Agency Portal</h3>
+          <strong>AP</strong>
+        </div>
+      </div>
+      <ul side-navigation id="side-menu" class="list-unstyled components">
+        <li ui-sref-active="active" ng-click="sideNavBar.collapse($event)">
+          <a [routerLink]="['home']" ui-sref="portal.main" uib-tooltip="Home" tooltip-placement="right" tooltip-enable="sideNavBar.toolTipFlag && sideNavBar.portalService.getIsNavBarMinimized()">
+            <div>
+              <i class="glyphicon glyphicon-home"></i>
+              <span class="sideNavText">Home</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!--End Side Nav Bar-->
+</body>

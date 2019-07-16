@@ -1,0 +1,32 @@
+<body>
+        <!--Top Nav Bar Section-->
+        <nav class="navbar navbar-default" aria-label="Top Nav Bar">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-7 col-sm-push-5 margin-bot-sm">
+                <div class="row pull-right">
+                  <span class="hidden-xs">
+                    <span class="icon margin-right custom-welcome">Welcome User {{this.portalService.firstName}}</span>
+                  </span>
+                  <a class="view icon p-2 custom-m-1" ui-sref="sign-out({ manualSignout:true })" (click)="doLogout()">Logout</a>
+                  <span ng-if="searchBar.displayLanguageTranslator"></span>
+                </div>
+              </div>
+              <div class="col-sm-5 col-sm-pull-7">
+                <button type="button" id="sidebarCollapse" class="pull-left icon btn btn-primary" title="Menu" aria-label="Menu">
+                  <i class="fa fa-bars"></i>
+                </button>
+                <form role="search" class="navbar-form-custom searchbar-custom search-bar-width">
+                  <div class="input-group">
+                    <input type="text" placeholder="Search" class="form-control" id="searchText">
+                    <span class="input-group-addon">
+                      <button class="fa fa-search"></button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!--End of Top Nav Bar Section-->
+      </body>
