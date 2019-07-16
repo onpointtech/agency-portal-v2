@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router"
 import { KeycloakService } from 'keycloak-angular';
 import { PortalService } from 'projects/opt-library/src/portal-services/portal.service';
-
+import { TitleCasePipe } from '@angular/common'
+ 
 @Component({
   selector: 'app-top-nav-bar',
   templateUrl: './top-nav-bar.component.html',

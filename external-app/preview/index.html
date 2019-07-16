@@ -1,6 +1,16 @@
 <html>
   <body>
-    <app-simple-claimant-profile></app-simple-claimant-profile>
+<h1>Welcome to our html file importing an angular component </h1>
+
+<h3> This is importing the component without inputs </h3>
+<app-simple-claimant-profile></app-simple-claimant-profile>
+<h3> This is importing the component with inputs </h3>
+ <app-simple-claimant-profile
+firstName = "JM"
+lastName = "Ibardaloza"
+phone = "9999999999"
+address = "Somewhere in QC"
+></app-simple-claimant-profile>
     <script src="./externalapp.js"></script>
   </body>
 </html>
