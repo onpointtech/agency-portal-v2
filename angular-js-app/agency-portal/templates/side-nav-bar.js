@@ -1,8 +1,3 @@
-angular.module('agencyPortal').directive('sideNavBar', function() {
-    return {
-        restrict: 'E',
-        transclude: true,
-        scope: {},
-        templateUrl: './templates/side-nav-bar.html'
-    }
+angular.module('agencyPortal').component('sideNavBar', {
+    templateUrl: './templates/side-nav-bar.html'
 });

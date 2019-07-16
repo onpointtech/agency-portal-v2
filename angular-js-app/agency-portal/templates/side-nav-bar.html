@@ -1,6 +1,6 @@
 
         <!--Side Nav Bar Section-->
-        <div class="bg-primary">
+        <div class="bg-primary" ng-controller="agencyPortalController">
           <nav id="sidebar">
               <a ui-sref="agency-portal.home">
                 <img alt="logo" class="logo logo-width logo-style mob_hide" src="https://agency-portal.opt-dev.optimumui.com/agency-portal/optimum-ui-customizations/image/state_logo.png"> </a>
@@ -15,7 +15,7 @@
                 <a ui-sref="portal.main" uib-tooltip="Home" tooltip-placement="right">
                   <div>
                     <i class="glyphicon glyphicon-home"></i>
-                    <span class="sideNavText">Home</span>
+                    <span class="sideNavText" ng-click="go('')">Home</span>
                   </div>
                 </a>
               </li>

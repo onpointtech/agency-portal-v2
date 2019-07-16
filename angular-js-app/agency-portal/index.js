@@ -1,14 +1,13 @@
-
 angular.module("agencyPortal", ["ngRoute"])
     .config(function ($routeProvider) {
         $routeProvider
             .when("/", {
                 template: '<home></home>'
             })
-            .when("/claimant-overview", {
+            .when("/claimant-overview/:id", {
                 template: '<claimant-overview></claimant-overview>'
             })
-            .when("/claimant-profile", {
+            .when("/claimant-profile/:id", {
                 template: '<claimant-profile></claimant-profile>'
             })
             .otherwise({
