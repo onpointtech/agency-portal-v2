@@ -1,15 +1,21 @@
-# Welcome to our Angular Portal Proof of Concept
+# Welcome to our Angular v8 Portal Proof of Concept
 
-We made this portal to recreate the original agency portal, to go about upgrading from angular 1 to angular 8. This is our guide to be able to use this project in the future
+We made our version of the Agency Portal, keeping the core features. 
+
+Here we did our best to explain how to install, build, and develop this app. We also quickly discuss about upgrading from angular 1 to angular 8. Mainly this guide is made to be able to use this project in the future.
 
 ## Running Guide
+A summary of how to run this project is:
+
 1. Build the angular project
 2. Start running the 3 backend applications
 3. Open `localhost:8080` in your browser
 4. Develop the angular app while having it live on your browser
 
-### How to build the angular project
-To run, open the directory `agency-portal-v2/agency-portal`, open a terminal and type
+### Build the angular project
+Here angular will place all the components into a few javascript files + css containing all the required functionalities.
+
+To run, open the directory `agency-portal-v2/agency-portal`, open command and type
 
 `ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
 
@@ -17,6 +23,8 @@ The `--watch` automatically builds the angular app everytime there are changes t
 
 
 ### How to start to run the 3 backend applications
+The backend will be the applications that manage the data, talk to the database, and update the data. The frontend will manage displaying the data, and making everything look neat, responsive, and organized.
+
 1. Open eclipse
 2. Import the 3 maven projects (ClaimantServiceNew, SurveyServiceNew, ZuulServiceNew)
 3. To run the __claimant service app__
@@ -38,6 +46,8 @@ The `--watch` automatically builds the angular app everytime there are changes t
    4. Note that this app runs at `localhost:8080`
 
 ### Developing the angular app
+Angular has a feature that once you serve the website, all the changes will be detected. And it will automatically build the website and automatically refresh. Basically as you hit save, your website will automatically update.
+
 1. Save the changes made in angular
 2. Run the build functions `ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
 3. Note ZuulServiceNew should already be running or else you do not need to do the following steps
