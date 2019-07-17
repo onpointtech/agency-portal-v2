@@ -46,7 +46,7 @@ The backend will be the applications that manage the data, talk to the database,
    4. Note that this app runs at `localhost:8080`
 
 ### Developing the angular app
-Angular has a feature that once you serve the website, all the changes will be detected. And it will automatically build the website and automatically refresh. Basically as you hit save, your website will automatically update.
+Angular has a feature that once you serve the website, all succeeding changes and saves will be detected. It will then automatically build and refresh the website. Basically as you hit save, your website will automatically update.
 
 1. Save the changes made in angular
 2. Run the build functions `ng build --output-path "~~~~~yourpath~~~~~~~\agency-portal-v2\ZuulServiceNew\src\main\resources\static" --watch`
@@ -55,14 +55,25 @@ Angular has a feature that once you serve the website, all the changes will be d
 5. Refresh the URL in the browser
 
 
-## How to get started to use the intern's proof of concept
+## How to get started and install the dependencies
+
+Prerequisites:
+- Git
+- Node
+- Angular
+- Angular Node Modules Needed
+- Java (most have this)
+- Eclipse
+
+
+### Install Git
 First, to download and install the portal on Windows
 
-Install git from
+you may get the installer of git for windows from
 
 `https://git-for-windows.github.io/`
 
-Git clone the repository by going to terminal and typing
+Git clone the repository by going to terminal and doing
 
 `git clone https://github.com/onpointtech/agency-portal-v2.git`
 
@@ -70,16 +81,33 @@ Open the folder agency-portal
 
 `cd agency-portal`
 
+### Install Node
 
-Install the node modules
+You may get the installer from `https://nodejs.org/en/download/`
+
+### Install Angular
+
+Open the terminal and do:
+`npm install -g @angular/cli`
+
+
+### Install the Angular Node Modules Needed
+To install the node modules, open the `agency-portal-v2` folder
 
 `npm install`
 
-Once done, you can try out the angular app by doing
+Once done, everything is supposed to work, you can try out the angular app by doing
 
 `ng serve --port 8080`
 
 And then opening your browser on `localhost:8080`
+
+### Install Java
+You may get the installer from `https://www.oracle.com/technetwork/java/javase/downloads/index.html`
+
+
+### Install Eclipse
+You may get the installer from `https://www.eclipse.org/downloads/packages/release/2019-06/r/eclipse-ide-java-developers`
 
 
 ## How to develop the agency portal angular app
@@ -153,7 +181,7 @@ __Inside the declarations:__
   ...
   ```
 __Inside the exports:__
-You should not find your component yet, you need to explicitly add it there. Modify it to be like this
+You should not find your component in the _exports_ yet, you need to explicitly add it there. Modify it to be like this
 
 from this
 ```
@@ -205,7 +233,7 @@ We need to do three things here
   ]
 ```
 #### 6. Editing the components live
-We will assume you are doing an ng serve while the app is importing a component that is being edited
+We will assume you are doing an ng serve while the app is importing a component/library that is being edited.
 Instead of our usual build library we will use the `--watch` to have the changes compiled live
 
 `ng build library-name --watch`
@@ -215,7 +243,7 @@ Instead of our usual build library we will use the `--watch` to have the changes
 + Run `ng build library-name --watch` once to unlink the library to the main app
 + Run `ng build library-name --watch` a second time to finally build it
 + Run `ng serve` to your app. You're done. 
-+ This error doesn't happen if you save code that works.
++ This error doesn't happen if your saved code works.
 
 ### Building your own app in a library
 
@@ -223,7 +251,8 @@ Run `ng generate application app-name --prefix appn`
 
 You continue normal app development in angular. And use number 6 above, to see how to build components live.
 
-### How to build an external library and send it through html
+### How to build an external library and send it through html (Called an Angular Element)
+This is still experimental and has problems importing different modules inside a singular application.
 
 #### How to build the external library for the first time
 1. make an app to be external
@@ -284,7 +313,7 @@ schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 ## Coding Standards
 ### Architecture
-- [ ] (Unfinished) More info to be taken and summarized from the angular style guide
+- [ ] (Unfinished) More info may be taken and summarized from the angular style guide
 
 https://angular.io/guide/styleguide
 
@@ -301,7 +330,6 @@ https://angular.io/guide/styleguide
 
 * Each file should be less than 400 lines per code
 * Each file should serve a single purpose
-
 
 ### Importing
 Importing should ideally have the following sequence
