@@ -1,4 +1,4 @@
-angular.module("agencyPortal", ["ngRoute"])
+angular.module("agencyPortal", ['ngRoute', 'toaster', 'ngAnimate'])
     .config(function ($routeProvider) {
         $routeProvider
             .when("/", {

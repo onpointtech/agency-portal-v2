@@ -1,6 +1,6 @@
 var app = angular.module('agencyPortal');
 
-app.controller('agencyPortalController', function ($scope, $http, $routeParams, $location) {
+app.controller('agencyPortalController', function ($scope, $http, $routeParams, $location, toaster) {
     var id = $routeParams.id;
 
     if(id != null){
@@ -16,5 +16,9 @@ app.controller('agencyPortalController', function ($scope, $http, $routeParams, 
 
     $scope.go = function(path) {
         $location.path(path);
+    };
+
+    $scope.pop = function() {
+        toaster.pop('info', "title", "text");
     };
 });

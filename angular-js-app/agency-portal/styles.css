@@ -5,3 +5,4 @@
 @import url("./styles/template-style.css");
 @import url("./styles/optimum-base.css");
 @import url("./styles/portal-style.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/3.0.0/toaster.min.css");
